@@ -2,9 +2,10 @@ using UnityEngine;
 
 public class CharacterMoveRandom : MonoBehaviour
 {
-    public float speed = 2f; // Vitesse de déplacement
-    public float moveTime = 2f; // Temps avant changement de direction
-    public float returnTime = 10f; // Temps avant de revenir au point d'origine
+    public float speed = 2f;
+    public float moveTime = 2f;
+
+    public float returnTime = 10f;
 
     private float elapsedTime = 0f;
     private float returnElapsedTime = 0f;
