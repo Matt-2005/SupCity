@@ -13,6 +13,8 @@ public class randomNPC : MonoBehaviour
 
     private Animator animator;
 
+    public LayerMask solidObjectsLayer;
+
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -60,7 +62,18 @@ public class randomNPC : MonoBehaviour
         animator.SetFloat("moveX", currentDirection.x);
         animator.SetFloat("moveY", currentDirection.y);
         animator.SetBool("isMoving", true);
+        if (isWalkable(horizontal, vertical))
+        {
+            transform.Translate(new Vector3(horizontal, vertical, 0));
+        }
+    }
 
-        transform.Translate(new Vector3(horizontal, vertical, 0));
+    private bool isWalkable(float x, float y)
+    {
+        if (Physics2D.OverlapCircle(transform.position + new Vector3(x, y, 0), 0.2f, solidObjectsLayer) != null)
+        {
+            return false;
+        }
+        return true;
     }
 }

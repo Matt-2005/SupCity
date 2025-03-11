@@ -15,7 +15,7 @@ public class CameraControl : MonoBehaviour
 
     void Start()
     {
-        Tilemap tilemap = GameObject.Find("Tilemap").GetComponent<Tilemap>();
+        Tilemap tilemap = GameObject.Find("Background").GetComponent<Tilemap>();
 
         Bounds tilemapBounds = tilemap.localBounds;
 
