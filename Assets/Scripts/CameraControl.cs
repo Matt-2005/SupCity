@@ -54,12 +54,15 @@ public class CameraControl : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(1))
         {
-            dragOrigin = MousePosition.MouseWorldPosition;
+            dragOrigin = Input.mousePosition;
         }
         if (Input.GetMouseButton(1))
         {
-            Vector3 difference = dragOrigin - MousePosition.MouseWorldPosition;
+            Vector3 difference = Camera.main.ScreenToWorldPoint(dragOrigin) - Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            difference.z = 0f;
+            
             transform.position += difference * dragSpeed;
+            dragOrigin = Input.mousePosition;
         }
     }
 
