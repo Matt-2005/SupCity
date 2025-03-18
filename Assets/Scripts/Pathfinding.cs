@@ -1,7 +1,7 @@
 using UnityEngine;
 using Pathfinding;
 
-public class AI : MonoBehaviour
+public class PathfindingAI : MonoBehaviour
 {
     public Transform target;
     public float speed = 200f;
@@ -17,13 +17,7 @@ public class AI : MonoBehaviour
     {
         seeker = GetComponent<Seeker>();
 
-        if (target == null)
-        {
-            Debug.LogError("Target not assigned.");
-            return;
-        }
-
-        InvokeRepeating("UpdatePath", 0f, 1f);
+        InvokeRepeating("UpdatePath", 0f, 0.5f);
     }
 
     void UpdatePath()
@@ -65,7 +59,7 @@ public class AI : MonoBehaviour
 
         transform.position += move;
 
-        float distance = Vector2.Distance(transform.position, path.vectorPath[currentWayPoint]);
+        float distance = Vector3.Distance(transform.position, path.vectorPath[currentWayPoint]);
 
         if (distance < nextWayPointDistance)
         {
