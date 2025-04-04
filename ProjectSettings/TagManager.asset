@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - Object
+  - Route
   layers:
   - Default
   - TransparentFX
@@ -13,7 +15,7 @@ TagManager:
   - UI
   - 
   - SolidObjects
-  - 
+  - Routes
   - 
   - 
   - 
@@ -46,6 +48,9 @@ TagManager:
     locked: 0
   - name: Foreground
     uniqueID: 880837459
+    locked: 0
+  - name: TempTilemap
+    uniqueID: 389974951
     locked: 0
   - name: Player
     uniqueID: 2195867405
