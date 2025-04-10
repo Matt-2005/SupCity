@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "SupCity.sln"
+    "dotnet.defaultSolution": "SupCity-backup.sln"
 }
