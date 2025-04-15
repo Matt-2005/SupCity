@@ -12,6 +12,7 @@ public class PathfindingAI : MonoBehaviour
     private bool reachedEndOfPath = false;
 
     private Seeker seeker;
+    public LayerMask solidObjectsLayer;
 
     void Start()
     {
@@ -39,31 +40,26 @@ public class PathfindingAI : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (path == null)
-        {
-            return;
-        }
+        if (path == null) return;
 
         if (currentWayPoint >= path.vectorPath.Count)
         {
             reachedEndOfPath = true;
             return;
         }
-        else
-        {
-            reachedEndOfPath = false;
-        }
 
-        Vector3 direction = ((Vector3)path.vectorPath[currentWayPoint] - transform.position).normalized;
-        Vector3 move = direction * speed * Time.deltaTime;
+        reachedEndOfPath = false;
 
-        transform.position += move;
+        Vector3 targetPosition = path.vectorPath[currentWayPoint];
+        targetPosition.z = transform.position.z;
 
-        float distance = Vector3.Distance(transform.position, path.vectorPath[currentWayPoint]);
+        transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
 
-        if (distance < nextWayPointDistance)
+        float distance = Vector3.Distance(transform.position, targetPosition);
+        if (distance < 0.05f)
         {
             currentWayPoint++;
         }
     }
+
 }
