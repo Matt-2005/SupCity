@@ -29,7 +29,7 @@ public class BuildManager : MonoBehaviour
             Vector2 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Collider2D hit = Physics2D.OverlapPoint(mouseWorldPos);
 
-            if (hit != null && hit.CompareTag("Object")) // ou autre condition
+            if (hit != null && hit.CompareTag("Object"))
             {
                 Destroy(hit.gameObject);
             }

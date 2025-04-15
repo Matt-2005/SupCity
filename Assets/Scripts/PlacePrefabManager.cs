@@ -5,64 +5,56 @@ public class PlacePrefabManager : MonoBehaviour
 {
     public Grid grid;
     private GameObject previewObject = null;
+    private GameObject lastSelectedPrefab = null;
 
-    // Update is called once per frame
+
     void Update()
-{
-    // Empêche de placer si souris sur UI
-    if (EventSystem.current.IsPointerOverGameObject()) return;
-
-    GameObject selectedPrefab = BuildManager.instance.GetSelectedPrefab();
-
-    if (selectedPrefab != null)
     {
-        Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mouseWorld.z = 0f; // s’assurer qu’on reste bien en 2D
-        Vector3Int cellPos = grid.WorldToCell(mouseWorld);
-        Vector3 placePos = grid.CellToWorld(cellPos);
+        if (EventSystem.current.IsPointerOverGameObject()) return;
 
-        // S’il n’y a pas encore de preview → on la crée
-        if (previewObject == null)
+        GameObject selectedPrefab = BuildManager.instance.GetSelectedPrefab();
+
+        if (selectedPrefab != null)
         {
-            previewObject = Instantiate(selectedPrefab, placePos, Quaternion.identity);
-            SetPreviewMode(previewObject); // on rend l'objet visuellement différent
+            Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mouseWorld.z = 0f;
+            Vector3Int cellPos = grid.WorldToCell(mouseWorld);
+            Vector3 placePos = grid.CellToWorld(cellPos);
+
+            // 🆕 Si le prefab sélectionné a changé, on détruit l’ancien preview
+            if (selectedPrefab != lastSelectedPrefab)
+            {
+                if (previewObject != null)
+                {
+                    Destroy(previewObject);
+                }
+                previewObject = Instantiate(selectedPrefab, placePos, Quaternion.identity);
+                lastSelectedPrefab = selectedPrefab;
+            }
+            else
+            {
+                // Sinon on déplace simplement le preview existant
+                if (previewObject != null)
+                    previewObject.transform.position = placePos;
+            }
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                Instantiate(selectedPrefab, placePos, Quaternion.identity);
+            }
         }
         else
         {
-            // Sinon on le déplace simplement
-            previewObject.transform.position = placePos;
+            if (previewObject != null)
+            {
+                Destroy(previewObject);
+                previewObject = null;
+            }
+
+            lastSelectedPrefab = null;
         }
 
-        // Clic gauche → place le vrai objet
-        if (Input.GetMouseButtonDown(0))
-        {
-            Instantiate(selectedPrefab, placePos, Quaternion.identity);
-        }
-    }
-    else
-    {
-        // Aucun prefab sélectionné → on supprime le preview s’il existe
-        if (previewObject != null)
-        {
-            Destroy(previewObject);
-            previewObject = null;
-        }
-    }
-}
-void SetPreviewMode(GameObject obj)
-{
-    foreach (var r in obj.GetComponentsInChildren<SpriteRenderer>())
-    {
-        Color c = r.color;
-        c.a = 0.5f; // 50% de transparence
-        r.color = c;
     }
 
-    // On désactive les collisions si besoin :
-    foreach (var col in obj.GetComponentsInChildren<Collider2D>())
-    {
-        col.enabled = false;
-    }
-}
 
 }
