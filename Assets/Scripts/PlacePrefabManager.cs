@@ -46,6 +46,7 @@ public class PlacePrefabManager : MonoBehaviour
                 {
                     Instantiate(selectedPrefab, placePos, Quaternion.identity);
                     lastPlacedPosition = cellPos;
+                    AstarPath.active.UpdateGraphs(new Bounds(placePos, Vector3.one));
                 }
                 
             }

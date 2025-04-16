@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 4585256532858734816}
   - component: {fileID: 2397511836009210025}
   - component: {fileID: 2623204417529221840}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: maison5x5
-  m_TagString: Untagged
+  m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
