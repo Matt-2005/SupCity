@@ -281,6 +281,8 @@ GameObject:
   - component: {fileID: 1910029045966304119}
   - component: {fileID: 6847753269359466706}
   - component: {fileID: 1365063599815800065}
+  - component: {fileID: 1968415336746359375}
+  - component: {fileID: 327232732441161766}
   m_Layer: 0
   m_Name: Arbres
   m_TagString: Untagged
@@ -354,6 +356,30 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &1968415336746359375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7364043067358860948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0ef51b1e883344bca35e939a76cc866, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &327232732441161766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7364043067358860948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51c5eba182ea84644a00e27fe25faaa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &7906586112399525764
 MonoBehaviour:
   m_ObjectHideFlags: 0

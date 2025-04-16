@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4585256532858734816}
   - component: {fileID: 2397511836009210025}
+  - component: {fileID: 2623204417529221840}
   m_Layer: 0
   m_Name: maison5x5
   m_TagString: Untagged
@@ -45,6 +46,18 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+--- !u!114 &2623204417529221840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6572127476045572575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51c5eba182ea84644a00e27fe25faaa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6721334774128262045
 GameObject:
   m_ObjectHideFlags: 0
@@ -59,6 +72,7 @@ GameObject:
   - component: {fileID: 3419031291594821210}
   - component: {fileID: 5845459822445925950}
   - component: {fileID: 6151510837242223862}
+  - component: {fileID: 3610656783009852645}
   m_Layer: 7
   m_Name: Layer1
   m_TagString: Object
@@ -198,7 +212,7 @@ TilemapRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
-  m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
+  m_ChunkCullingBounds: {x: 2, y: 2, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
@@ -315,6 +329,18 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!114 &3610656783009852645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6721334774128262045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51c5eba182ea84644a00e27fe25faaa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2948809592819364827
 MonoBehaviour:
   m_ObjectHideFlags: 0

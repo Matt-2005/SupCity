@@ -281,6 +281,8 @@ GameObject:
   - component: {fileID: 7407493328142350563}
   - component: {fileID: 2196177728124632532}
   - component: {fileID: 8601786471768937509}
+  - component: {fileID: 8492085658865030335}
+  - component: {fileID: 4416935751471866918}
   m_Layer: 0
   m_Name: ArbresFruitiers
   m_TagString: Untagged
@@ -354,6 +356,30 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &8492085658865030335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4919578563188407501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0ef51b1e883344bca35e939a76cc866, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4416935751471866918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4919578563188407501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51c5eba182ea84644a00e27fe25faaa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &8512767265402418935
 MonoBehaviour:
   m_ObjectHideFlags: 0

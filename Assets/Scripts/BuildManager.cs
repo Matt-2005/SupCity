@@ -24,16 +24,16 @@ public class BuildManager : MonoBehaviour
     {
         if (isErasing)
         {
-            if (Input.GetMouseButtonDown(0))
-        {
-            Vector2 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Collider2D hit = Physics2D.OverlapPoint(mouseWorldPos);
-
-            if (hit != null && hit.CompareTag("Object"))
+            if (Input.GetMouseButton(0))
             {
-                Destroy(hit.gameObject);
+                Vector2 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                Collider2D hit = Physics2D.OverlapPoint(mouseWorldPos);
+
+                if (hit != null && hit.GetComponent<ObjectEraseable>())
+                {
+                    Destroy(hit.gameObject);
+                }
             }
-        }
         }
         
     }

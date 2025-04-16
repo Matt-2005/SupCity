@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Object
   - Route
+  - Arbre
+  - MultiPlaceable
   layers:
   - Default
   - TransparentFX
