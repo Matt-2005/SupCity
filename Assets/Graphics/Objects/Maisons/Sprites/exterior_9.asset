@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: punyworld-overworld-tileset_508
+  m_Name: exterior_9
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 874835270, guid: 4ec6de34fa6dc47e19c57187c9c18395, type: 3}
+  m_Sprite: {fileID: 4237089280290449207, guid: 80c881134b5bf4ac4a82bb137391e354, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1

@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: punyworld-overworld-tileset_486
+  m_Name: Lumber Mill 64x64_0
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 731046455, guid: b94698a8934724142bc6afff3ddc2ac2, type: 3}
+  m_Sprite: {fileID: 5424817688547807450, guid: a7e986b02da4b4e4bb7a3e9b58c52d8c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1

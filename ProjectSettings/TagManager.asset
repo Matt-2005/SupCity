@@ -8,6 +8,9 @@ TagManager:
   - Route
   - Arbre
   - MultiPlaceable
+  - usineBois
+  - feuDeCamp
+  - usineOutils
   layers:
   - Default
   - TransparentFX
