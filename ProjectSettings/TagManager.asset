@@ -11,6 +11,16 @@ TagManager:
   - usineBois
   - feuDeCamp
   - usineOutils
+  - pierre
+  - usinePierre
+  - usineOutilsPierre
+  - argile
+  - usineArgile
+  - potterie
+  - usineBrique
+  - usineEau
+  - baies
+  - usineBaie
   layers:
   - Default
   - TransparentFX
