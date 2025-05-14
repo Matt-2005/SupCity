@@ -4,30 +4,27 @@ using System.Collections;
 public class FoodHut : MonoBehaviour
 {
     [Header("Production Settings")]
-    [SerializeField] private float productionInterval = 5f; // Temps en secondes entre chaque production
-    [SerializeField] private int productionAmount = 1; // Quantité produite à chaque cycle
-    [SerializeField] private int maxStorageCapacity = 50; // Capacité maximale de stockage
+    [SerializeField] private float productionInterval = 4f; 
+    [SerializeField] private int productionAmount = 3;
+    [SerializeField] private int maxStorageCapacity = 5000;
 
     [Header("References")]
-    [SerializeField] private GameObject foodPrefab; // Préfab pour la visualisation (optionnel)
+    [SerializeField] private GameObject foodPrefab;
 
     // Variables privées
     private int currentStoredFood = 0;
     private bool isProducing = false;
     private Coroutine productionCoroutine;
 
-    // Variables pour l'interface utilisateur (à implémenter selon votre UI)
     private bool showUI = false;
 
     private void Start()
     {
-        // Démarre la production automatiquement quand la cabane est placée
         StartProduction();
     }
 
     private void OnEnable()
     {
-        // Redémarre la production si l'objet est réactivé
         if (!isProducing)
         {
             StartProduction();
@@ -36,11 +33,9 @@ public class FoodHut : MonoBehaviour
 
     private void OnDisable()
     {
-        // Arrête la production si l'objet est désactivé
         StopProduction();
     }
 
-    // Méthode pour commencer la production
     public void StartProduction()
     {
         if (!isProducing)
@@ -51,7 +46,6 @@ public class FoodHut : MonoBehaviour
         }
     }
 
-    // Méthode pour arrêter la production
     public void StopProduction()
     {
         if (isProducing && productionCoroutine != null)
@@ -62,7 +56,6 @@ public class FoodHut : MonoBehaviour
         }
     }
 
-    // Coroutine pour produire de la nourriture à intervalle régulier
     private IEnumerator ProduceFood()
     {
         while (true)
@@ -75,7 +68,6 @@ public class FoodHut : MonoBehaviour
                 currentStoredFood += amountToAdd;
                 Debug.Log($"Nourriture produite: +{amountToAdd}. Total stocké: {currentStoredFood}/{maxStorageCapacity}");
                 
-                // Option: Visualiser la nourriture produite
                 UpdateFoodVisualization();
             }
             else
@@ -85,14 +77,13 @@ public class FoodHut : MonoBehaviour
         }
     }
 
-    // Méthode pour visualiser la nourriture (à adapter selon votre jeu)
     private void UpdateFoodVisualization()
     {
         // Exemple simple: On pourrait instantier un objet visuel pour représenter la nourriture
         // ou mettre à jour un compteur dans l'interface utilisateur
     }
 
-    // Méthode pour récupérer de la nourriture
+
     public int CollectFood(int amountToCollect)
     {
         int collectedAmount = Mathf.Min(amountToCollect, currentStoredFood);
@@ -104,7 +95,7 @@ public class FoodHut : MonoBehaviour
         return collectedAmount;
     }
 
-    // Méthode pour récupérer toute la nourriture
+
     public int CollectAllFood()
     {
         int collectedAmount = currentStoredFood;
@@ -116,7 +107,6 @@ public class FoodHut : MonoBehaviour
         return collectedAmount;
     }
 
-    // Permet de connaître la quantité de nourriture stockée
     public int GetStoredFoodAmount()
     {
         return currentStoredFood;
