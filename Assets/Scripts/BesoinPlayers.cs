@@ -4,208 +4,245 @@ public class BesoinPlayers : MonoBehaviour
 {
     public float soif = 1f, faim = 1f, energie = 1f;
     public float tauxFaim = 0.02f, tauxSoif = 0.01f, tauxEnergie = 0.01f;
+
     public enum BesoinType { Rien, Faim, Soif, Energie }
     public float seuilCritique = 0.15f;
     public float seuilAction = 0.3f;
-    public BesoinType GetBesoinPrioritaire()
-    {
-        // Priorité basée sur des seuils
-        if (faim <= 0.15f) return BesoinType.Faim;
-        if (soif <= 0.15f) return BesoinType.Soif;
-        if (energie <= 0.15f) return BesoinType.Energie;
-        return BesoinType.Rien;
-    }
-    private bool enAction = false; // Initialisé à false
+
+    public enum EtatPNJ { Idle, AllerManger, Manger, AllerBoire, Boire, AllerDormir, Dormir }
+    private EtatPNJ etatActuel = EtatPNJ.Idle;
+
+    private bool enAction = false;
     private bool estChezSoi = false;
     private BesoinType besoinActuel;
-    
-   void Update()
+
+    private float actionTimer = 0f;
+    private float actionDuration = 2f;
+
+    void Update()
     {
         faim = Mathf.Clamp01(faim - tauxFaim * Time.deltaTime);
         soif = Mathf.Clamp01(soif - tauxSoif * Time.deltaTime);
         energie = Mathf.Clamp01(energie - tauxEnergie * Time.deltaTime);
 
-        // Vérifier le besoin prioritaire
-        besoinActuel = GetBesoinPrioritaire();
+        Debug.Log($"État actuel : {etatActuel} | Faim: {faim:F2} | Soif: {soif:F2} | Énergie: {energie:F2}");
 
-        if (!enAction)
+        // 🔒 Vérifie si la cible a été supprimée
+        if (etatActuel == EtatPNJ.AllerManger || etatActuel == EtatPNJ.AllerBoire || etatActuel == EtatPNJ.AllerDormir)
         {
-            switch(besoinActuel)
+            var currentTarget = GetComponent<PathfindingAI>().target;
+            if (currentTarget == null)
             {
-                case BesoinType.Faim:
-                    GererFaim();
-                    break;
-                    
-                case BesoinType.Soif:
-                    GererSoif();
-                    break;
-                    
-                case BesoinType.Energie:
-                    GererEnergie();
-                    break;
-                    
-                case BesoinType.Rien:
-                    if (estChezSoi) 
-                    {
-                        Debug.Log("Repos à domicile - tous besoins satisfaits");
-                        
-                    }
-                    else
-                    {
-                        Debug.Log("En déplacement - aucun besoin urgent");
-                    }
-                    break;
+                Debug.LogWarning("La ressource a été détruite avant l’arrivée. Retour à Idle.");
+                etatActuel = EtatPNJ.Idle;
+                return;
             }
+        }
+
+        switch (etatActuel)
+        {
+            case EtatPNJ.Idle:
+                besoinActuel = GetBesoinPrioritaire();
+                Debug.Log($"Besoin prioritaire détecté : {besoinActuel}");
+                switch (besoinActuel)
+                {
+                    case BesoinType.Faim:
+                        Manger();
+                        break;
+                    case BesoinType.Soif:
+                        Boire();
+                        break;
+                    case BesoinType.Energie:
+                        Dormir();
+                        break;
+                }
+                break;
+
+            case EtatPNJ.Manger:
+                actionTimer += Time.deltaTime;
+                if (actionTimer >= actionDuration)
+                {
+                    FinManger();
+                }
+                break;
+            case EtatPNJ.Boire:
+                actionTimer += Time.deltaTime;
+                if (actionTimer >= actionDuration)
+                {
+                    FinBoire();
+                }
+                break;
+            case EtatPNJ.Dormir:
+                actionTimer += Time.deltaTime;
+                if (actionTimer >= actionDuration)
+                {
+                    FinDormir();
+                }
+                break;
         }
     }
 
 
-    void GererFaim()
+    public BesoinType GetBesoinPrioritaire()
     {
-        if (faim <= seuilCritique)
+        if (faim <= 0.15f) return BesoinType.Faim;
+        if (soif <= 0.15f) return BesoinType.Soif;
+        if (energie <= 0.15f) return BesoinType.Energie;
+        return BesoinType.Rien;
+    }
+
+    public void NotifieArrivee()
+    {
+        Transform target = GetComponent<PathfindingAI>().target;
+        if (target == null)
         {
-            if (!estChezSoi)
-            {
-                Debug.Log("Faim critique! Retour à la maison");
-                RetournerChezSoi();
-                Manger();
-            }
-            else
-            {
-                Debug.Log("Attente à la maison (faim < 15%)");
-                Manger();
-            }
+            Debug.LogWarning("La ressource a disparu avant l’arrivée. Retour à l’état Idle.");
+            etatActuel = EtatPNJ.Idle;
+            return;
         }
-        else if (faim <= seuilAction)
+
+        switch (etatActuel)
         {
-            if (estChezSoi)
-            {
-                Debug.Log("Manger à la maison");
-                Manger();
-            }
-            else
-            {
-                Debug.Log("Aller à la maison pour manger");
-                RetournerChezSoi();
-            }
+            case EtatPNJ.AllerManger:
+                etatActuel = EtatPNJ.Manger;
+                actionTimer = 0f;
+                break;
+            case EtatPNJ.AllerBoire:
+                etatActuel = EtatPNJ.Boire;
+                actionTimer = 0f;
+                break;
+            case EtatPNJ.AllerDormir:
+                etatActuel = EtatPNJ.Dormir;
+                actionTimer = 0f;
+                break;
         }
     }
 
-    void GererSoif()
-    {
-        if (soif <= seuilCritique)
-        {
-            if (!estChezSoi)
-            {
-                Debug.Log("Soif critique! Retour à la maison");
-                RetournerChezSoi();
-                Boire();
-            }
-            else
-            {
-                Debug.Log("Attente à la maison (soif < 15%)");
-                Boire();
-            }
-        }
-        else if (soif <= seuilAction)
-        {
-            if (estChezSoi)
-            {
-                Debug.Log("Boire à la maison");
-                Boire();
-            }
-            else
-            {
-                Debug.Log("Aller à la maison pour boire");
-                RetournerChezSoi();
-            }
-        }
-    }
-
-    void GererEnergie()
-    {
-        if (energie <= seuilCritique)
-        {
-            if (!estChezSoi)
-            {
-                Debug.Log("Fatigue critique! Retour à la maison");
-                RetournerChezSoi();
-                Dormir();
-            }
-            else
-            {
-                Debug.Log("Attente à la maison (énergie < 15%)");
-                Dormir();
-            }
-        }
-        else if (energie <= seuilAction)
-        {
-            if (estChezSoi)
-            {
-                Debug.Log("Dormir à la maison");
-                Dormir();
-            }
-            else
-            {
-                Debug.Log("Aller à la maison pour dormir");
-                RetournerChezSoi();
-            }
-        }
-    }
-
-    void RetournerChezSoi()
-    {
-        Debug.Log("En chemin vers la maison...");
-        Invoke("ArriverChezSoi", 5f);
-    }
-
-    void ArriverChezSoi()
-    {
-        estChezSoi = true;
-        Debug.Log("Arrivé à la maison");
-    }
 
     void Manger()
     {
-        enAction = true;
-        Debug.Log("Manger en cours...");
-        FinManger();
+        Debug.Log("Recherche d'un buisson pour manger...");
+        StartCoroutine(AttendreEtChercher("baies", EtatPNJ.AllerManger));
     }
 
     void FinManger()
     {
-        faim = faim + 1f;
-        enAction = false;
-        Debug.Log("Faim satisfaite");
+        faim = 1f;
+        etatActuel = EtatPNJ.Idle;
+        actionTimer = 0f;
+        LibererRessource();
+
+        // Détruire la baie utilisée après un court délai
+        Transform target = GetComponent<PathfindingAI>().target;
+        if (target != null)
+        {
+            AutoDestroyAfterUse destruction = target.GetComponent<AutoDestroyAfterUse>();
+            if (destruction != null)
+            {
+                destruction.DéclencherDestruction();
+            }
+        }
+
+        Debug.Log("Faim satisfaite, baie supprimée.");
     }
+
 
     void Boire()
     {
-        enAction = true;
-        Debug.Log("Boire en cours...");
-        FinBoire();
+        Debug.Log("Recherche d'une maison pour boire...");
+        StartCoroutine(AttendreEtChercher("Maison", EtatPNJ.AllerBoire));
     }
 
     void FinBoire()
     {
-        soif = soif + 1f;
-        enAction = false;
-        Debug.Log("Soif étanchée");
+        soif = 1f;
+        etatActuel = EtatPNJ.Idle;
+        actionTimer = 0f;
+        LibererRessource();
+        Debug.Log("Soif étanchée.");
     }
 
     void Dormir()
     {
-        enAction = true;
-        Debug.Log("Dormir en cours...");
-        FinDormir();
+        Debug.Log("Recherche d'une maison pour dormir...");
+        StartCoroutine(AttendreEtChercher("Maison", EtatPNJ.AllerDormir));
     }
 
     void FinDormir()
     {
-        energie = energie + 1f;
-        enAction = false;
-        estChezSoi = false; // Quitte la maison après avoir dormi
-        Debug.Log("Energie restaurée");
+        energie = 1f;
+        etatActuel = EtatPNJ.Idle;
+        actionTimer = 0f;
+        LibererRessource();
+        Debug.Log("Énergie restaurée.");
     }
-   
+
+    public Transform ChercherTarget(string tag)
+    {
+        GameObject[] targets = GameObject.FindGameObjectsWithTag(tag);
+
+        if (targets.Length == 0)
+        {
+            return null;
+        }
+
+        GameObject nearestTarget = null;
+        float minDistance = Mathf.Infinity;
+
+        foreach (GameObject obj in targets)
+        {
+            RessourceMaxPlayerCapacity slot = obj.GetComponent<RessourceMaxPlayerCapacity>();
+            if (slot != null && !slot.EstDisponible())
+            {
+                continue;
+            }
+
+            float distance = Vector3.Distance(transform.position, obj.transform.position);
+            if (distance < minDistance)
+            {
+                minDistance = distance;
+                nearestTarget = obj;
+            }
+        }
+
+        if (nearestTarget != null)
+        {
+            RessourceMaxPlayerCapacity slot = nearestTarget.GetComponent<RessourceMaxPlayerCapacity>();
+            if (slot != null) slot.VoirDisponibilite();
+
+            return nearestTarget.transform;
+        }
+
+        return null;
+    }
+
+    void LibererRessource()
+    {
+        Transform currentTarget = GetComponent<PathfindingAI>().target;
+        if (currentTarget != null)
+        {
+            RessourceMaxPlayerCapacity slot = currentTarget.GetComponent<RessourceMaxPlayerCapacity>();
+            if (slot != null) slot.Liberer();
+        }
+    }
+
+    private System.Collections.IEnumerator AttendreEtChercher(string tag, EtatPNJ nouvelEtat)
+    {
+        yield return new WaitForSeconds(Random.Range(0.01f, 0.2f));
+
+        Transform target = ChercherTarget(tag);
+        if (target != null)
+        {
+            GetComponent<PathfindingAI>().setTarget(target);
+            etatActuel = nouvelEtat;
+            Debug.Log($"En route vers {tag}...");
+        }
+        else
+        {
+            Debug.LogWarning($"Aucune ressource avec le tag {tag} trouvée !");
+        }
+    }
+
+
+
 }

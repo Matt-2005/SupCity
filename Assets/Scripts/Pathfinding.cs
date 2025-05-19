@@ -45,6 +45,7 @@ public class PathfindingAI : MonoBehaviour
         if (currentWayPoint >= path.vectorPath.Count)
         {
             reachedEndOfPath = true;
+            GetComponent<BesoinPlayers>().NotifieArrivee();
             return;
         }
 
@@ -60,5 +61,10 @@ public class PathfindingAI : MonoBehaviour
         {
             currentWayPoint++;
         }
+    }
+
+    public void setTarget(Transform newTarget)
+    {
+        target = newTarget;
     }
 }

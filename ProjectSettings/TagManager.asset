@@ -21,6 +21,7 @@ TagManager:
   - usineEau
   - baies
   - usineBaie
+  - Maison
   layers:
   - Default
   - TransparentFX

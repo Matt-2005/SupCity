@@ -15,9 +15,10 @@ GameObject:
   - component: {fileID: 1535251274040918472}
   - component: {fileID: 414659478362016385}
   - component: {fileID: 8714674267409380407}
+  - component: {fileID: 51586881244554396}
   m_Layer: 7
   m_Name: Layer1
-  m_TagString: Object
+  m_TagString: Maison
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -283,6 +284,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51c5eba182ea84644a00e27fe25faaa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &51586881244554396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4907444770314737681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 066da6596fbcb4156b2b0610ce44ec25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  capaciteMax: 0
 --- !u!1 &9000833444422698321
 GameObject:
   m_ObjectHideFlags: 0
@@ -296,7 +310,7 @@ GameObject:
   - component: {fileID: 6588787697682928362}
   m_Layer: 7
   m_Name: maison2x3
-  m_TagString: Object
+  m_TagString: Maison
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

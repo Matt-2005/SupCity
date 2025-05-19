@@ -2,15 +2,6 @@ using UnityEngine;
 
 public class MultiPlaceable : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    // Ce script sert uniquement de balise
+    // pour permettre le placement en maintenant le clic (ex: routes)
 }
