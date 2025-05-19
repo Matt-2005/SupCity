@@ -308,6 +308,7 @@ GameObject:
   - component: {fileID: 1682660592672857427}
   - component: {fileID: 6961577933115805872}
   - component: {fileID: 6588787697682928362}
+  - component: {fileID: 579824254266273915}
   m_Layer: 7
   m_Name: maison2x3
   m_TagString: Maison
@@ -381,6 +382,19 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &579824254266273915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9000833444422698321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 066da6596fbcb4156b2b0610ce44ec25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  capaciteMax: 2
 --- !u!114 &813097100987622390
 MonoBehaviour:
   m_ObjectHideFlags: 0

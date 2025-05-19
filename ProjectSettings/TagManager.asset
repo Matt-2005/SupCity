@@ -9,7 +9,6 @@ TagManager:
   - Arbre
   - MultiPlaceable
   - usineBois
-  - feuDeCamp
   - usineOutils
   - pierre
   - usinePierre
@@ -22,6 +21,7 @@ TagManager:
   - baies
   - usineBaie
   - Maison
+  - feu
   layers:
   - Default
   - TransparentFX

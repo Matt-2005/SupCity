@@ -130,21 +130,16 @@ public class BesoinPlayers : MonoBehaviour
         faim = 1f;
         etatActuel = EtatPNJ.Idle;
         actionTimer = 0f;
-        LibererRessource();
 
-        // Détruire la baie utilisée après un court délai
         Transform target = GetComponent<PathfindingAI>().target;
         if (target != null)
         {
-            AutoDestroyAfterUse destruction = target.GetComponent<AutoDestroyAfterUse>();
-            if (destruction != null)
-            {
-                destruction.DéclencherDestruction();
-            }
+            StartCoroutine(AttendreEtDetruire(target.gameObject));
         }
 
-        Debug.Log("Faim satisfaite, baie supprimée.");
+        Debug.Log("Faim satisfaite, baie en cours de suppression.");
     }
+
 
 
     void Boire()
@@ -180,22 +175,15 @@ public class BesoinPlayers : MonoBehaviour
     public Transform ChercherTarget(string tag)
     {
         GameObject[] targets = GameObject.FindGameObjectsWithTag(tag);
-
-        if (targets.Length == 0)
-        {
-            return null;
-        }
+        if (targets.Length == 0) return null;
 
         GameObject nearestTarget = null;
         float minDistance = Mathf.Infinity;
 
         foreach (GameObject obj in targets)
         {
-            RessourceMaxPlayerCapacity slot = obj.GetComponent<RessourceMaxPlayerCapacity>();
-            if (slot != null && !slot.EstDisponible())
-            {
-                continue;
-            }
+            var slot = obj.GetComponent<RessourceMaxPlayerCapacity>();
+            if (slot == null || !slot.EstDisponible()) continue;
 
             float distance = Vector3.Distance(transform.position, obj.transform.position);
             if (distance < minDistance)
@@ -205,26 +193,30 @@ public class BesoinPlayers : MonoBehaviour
             }
         }
 
+        // Réserver la ressource trouvée
         if (nearestTarget != null)
         {
-            RessourceMaxPlayerCapacity slot = nearestTarget.GetComponent<RessourceMaxPlayerCapacity>();
-            if (slot != null) slot.VoirDisponibilite();
-
-            return nearestTarget.transform;
+            var slot = nearestTarget.GetComponent<RessourceMaxPlayerCapacity>();
+            if (slot != null && slot.VoirDisponibilite()) // ✅ ici on réserve
+            {
+                return nearestTarget.transform;
+            }
         }
 
         return null;
     }
+
 
     void LibererRessource()
     {
         Transform currentTarget = GetComponent<PathfindingAI>().target;
         if (currentTarget != null)
         {
-            RessourceMaxPlayerCapacity slot = currentTarget.GetComponent<RessourceMaxPlayerCapacity>();
+            var slot = currentTarget.GetComponent<RessourceMaxPlayerCapacity>();
             if (slot != null) slot.Liberer();
         }
     }
+
 
     private System.Collections.IEnumerator AttendreEtChercher(string tag, EtatPNJ nouvelEtat)
     {
@@ -242,6 +234,20 @@ public class BesoinPlayers : MonoBehaviour
             Debug.LogWarning($"Aucune ressource avec le tag {tag} trouvée !");
         }
     }
+
+    private System.Collections.IEnumerator AttendreEtDetruire(GameObject cible)
+    {
+        yield return new WaitForSeconds(2f);
+        if (cible != null)
+        {
+            var slot = cible.GetComponent<RessourceMaxPlayerCapacity>();
+            if (slot != null) slot.Liberer();
+
+            Destroy(cible);
+            Debug.Log("Baie détruite 2 secondes après l'arrivée.");
+        }
+    }
+
 
 
 

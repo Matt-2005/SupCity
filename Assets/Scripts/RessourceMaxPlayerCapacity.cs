@@ -12,18 +12,12 @@ public class RessourceMaxPlayerCapacity : MonoBehaviour
             occupationActuelle++;
             return true;
         }
-        else
-        {
-            return false;
-        }
+        return false;
     }
 
     public void Liberer()
     {
-        if (occupationActuelle > 0)
-        {
-            occupationActuelle--;
-        }
+        occupationActuelle = Mathf.Max(0, occupationActuelle - 1);
     }
 
     public bool EstDisponible()

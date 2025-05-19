@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4132138364401125958}
   m_Layer: 7
   m_Name: feuDeCamp
-  m_TagString: feuDeCamp
+  m_TagString: feu
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61,7 +61,7 @@ GameObject:
   - component: {fileID: 5988406352230409856}
   m_Layer: 7
   m_Name: Layer1
-  m_TagString: feuDeCamp
+  m_TagString: feu
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
