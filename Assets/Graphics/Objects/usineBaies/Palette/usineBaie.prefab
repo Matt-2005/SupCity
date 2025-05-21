@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8551051729846577019}
   - component: {fileID: 6791588512261498579}
+  - component: {fileID: 2196388703908943962}
   m_Layer: 7
   m_Name: usineBaie
   m_TagString: usineBaie
@@ -45,6 +46,22 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+--- !u!114 &2196388703908943962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 233640100043450232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 713740ab3f02d1847a17fb5eace90efb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  productionInterval: 4
+  productionAmount: 3
+  maxStorageCapacity: 5000
+  foodPrefab: {fileID: 0}
 --- !u!1 &1188910525009028057
 GameObject:
   m_ObjectHideFlags: 0
@@ -58,6 +75,7 @@ GameObject:
   - component: {fileID: 8923814977831574247}
   - component: {fileID: 7134501942923017834}
   - component: {fileID: 373250690917558003}
+  - component: {fileID: 938836439663278269}
   - component: {fileID: 740321273776067119}
   m_Layer: 7
   m_Name: Layer1
@@ -270,6 +288,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &938836439663278269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1188910525009028057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 713740ab3f02d1847a17fb5eace90efb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  productionInterval: 4
+  productionAmount: 3
+  maxStorageCapacity: 5000
+  foodPrefab: {fileID: 0}
 --- !u!66 &740321273776067119
 CompositeCollider2D:
   m_ObjectHideFlags: 0

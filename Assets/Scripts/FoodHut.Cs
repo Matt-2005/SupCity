@@ -4,7 +4,7 @@ using System.Collections;
 public class FoodHut : MonoBehaviour
 {
     [Header("Production Settings")]
-    [SerializeField] private float productionInterval = 4f; 
+    [SerializeField] private float productionInterval = 4f;
     [SerializeField] private int productionAmount = 3;
     [SerializeField] private int maxStorageCapacity = 5000;
 
@@ -15,8 +15,6 @@ public class FoodHut : MonoBehaviour
     private int currentStoredFood = 0;
     private bool isProducing = false;
     private Coroutine productionCoroutine;
-
-    private bool showUI = false;
 
     private void Start()
     {

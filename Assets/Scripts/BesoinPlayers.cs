@@ -12,8 +12,8 @@ public class BesoinPlayers : MonoBehaviour
     public enum EtatPNJ { Idle, AllerManger, Manger, AllerBoire, Boire, AllerDormir, Dormir }
     private EtatPNJ etatActuel = EtatPNJ.Idle;
 
-    private bool enAction = false;
-    private bool estChezSoi = false;
+    //private bool enAction = false;
+    //private bool estChezSoi = false;
     private BesoinType besoinActuel;
 
     private float actionTimer = 0f;

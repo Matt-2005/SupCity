@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 290733516815891553}
   - component: {fileID: 2256769038223662726}
+  - component: {fileID: 5871571467836879309}
   - component: {fileID: 8936471660773649717}
   - component: {fileID: 4469408541281683403}
   - component: {fileID: 6900331164316236305}
@@ -108,6 +109,23 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &5871571467836879309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 254664559441041655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b768c3db0e3c12a419921349983d51b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  productionInterval: 5
+  productionAmount: 5
+  maxStorageCapacity: 5000
+  woodPrefab: {fileID: 0}
+  woodStorageArea: {fileID: 0}
 --- !u!483693784 &8936471660773649717
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -280,8 +298,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7308338582387461123}
   - component: {fileID: 3616256931676256805}
+  - component: {fileID: 400821399603798752}
   m_Layer: 7
-  m_Name: usineBois
+  m_Name: UsineBois
   m_TagString: usineBois
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -315,6 +334,23 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+--- !u!114 &400821399603798752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2870784635335022876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b768c3db0e3c12a419921349983d51b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  productionInterval: 5
+  productionAmount: 5
+  maxStorageCapacity: 5000
+  woodPrefab: {fileID: 0}
+  woodStorageArea: {fileID: 0}
 --- !u!114 &5815503629493996240
 MonoBehaviour:
   m_ObjectHideFlags: 0

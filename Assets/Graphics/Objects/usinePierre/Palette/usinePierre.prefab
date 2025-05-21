@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3638774105800783416}
   - component: {fileID: 2441142676492674545}
+  - component: {fileID: 1388755981786855735}
   m_Layer: 7
   m_Name: usinePierre
   m_TagString: usinePierre
@@ -45,6 +46,23 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+--- !u!114 &1388755981786855735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2852339301484108909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 532f50240d8cdf54eb21182a3b07419d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  productionInterval: 5
+  productionAmount: 1
+  maxStorageCapacity: 5000
+  stonePrefab: {fileID: 0}
+  stoneSpawnPoint: {fileID: 0}
 --- !u!1 &5835409841265107588
 GameObject:
   m_ObjectHideFlags: 0
@@ -55,6 +73,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8636343550976253012}
   - component: {fileID: 5046651059356171489}
+  - component: {fileID: 8145765655898312991}
   - component: {fileID: 6241533844835322125}
   - component: {fileID: 308623712401706612}
   - component: {fileID: 260296211124503128}
@@ -153,6 +172,23 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &8145765655898312991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5835409841265107588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 532f50240d8cdf54eb21182a3b07419d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  productionInterval: 5
+  productionAmount: 1
+  maxStorageCapacity: 5000
+  stonePrefab: {fileID: 0}
+  stoneSpawnPoint: {fileID: 0}
 --- !u!483693784 &6241533844835322125
 TilemapRenderer:
   m_ObjectHideFlags: 0
