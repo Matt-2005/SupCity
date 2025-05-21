@@ -18,6 +18,36 @@ public class BesoinPlayers : MonoBehaviour
 
     private float actionTimer = 0f;
     private float actionDuration = 2f;
+    public float dureeDeVieMin = 60f;
+    public float dureeDeVieMax = 120f;
+    private float dureeDeVie;
+    private float vieEcoulee = 0f;
+
+    // 🔄 Ajout : Référence vers le gestionnaire
+    public PopulationManager populationManager;
+
+    void Awake()
+    {
+        dureeDeVie = Random.Range(dureeDeVieMin, dureeDeVieMax);
+    }
+
+    void LateUpdate()
+    {
+        vieEcoulee += Time.deltaTime;
+        if (vieEcoulee >= dureeDeVie)
+        {
+            Debug.Log($"{gameObject.name} est mort de vieillesse.");
+
+            // 🔄 Notifie le manager avant de mourir
+            if (populationManager != null)
+            {
+                populationManager.PNJMort();
+            }
+
+            Destroy(gameObject);
+        }
+    }
+
 
     void Update()
     {
@@ -43,20 +73,24 @@ public class BesoinPlayers : MonoBehaviour
         {
             case EtatPNJ.Idle:
                 besoinActuel = GetBesoinPrioritaire();
-                Debug.Log($"Besoin prioritaire détecté : {besoinActuel}");
-                switch (besoinActuel)
+                if (besoinActuel != BesoinType.Rien)
                 {
-                    case BesoinType.Faim:
-                        Manger();
-                        break;
-                    case BesoinType.Soif:
-                        Boire();
-                        break;
-                    case BesoinType.Energie:
-                        Dormir();
-                        break;
+                    // Tant qu'on a un besoin, on retente régulièrement
+                    switch (besoinActuel)
+                    {
+                        case BesoinType.Faim:
+                            Manger();
+                            break;
+                        case BesoinType.Soif:
+                            Boire();
+                            break;
+                        case BesoinType.Energie:
+                            Dormir();
+                            break;
+                    }
                 }
                 break;
+
 
             case EtatPNJ.Manger:
                 actionTimer += Time.deltaTime;
@@ -82,7 +116,17 @@ public class BesoinPlayers : MonoBehaviour
         }
     }
 
+    public void Initialiser()
+    {
+        StartCoroutine(LancerLogiqueApresDelai());
+    }
 
+    private System.Collections.IEnumerator LancerLogiqueApresDelai()
+    {
+        yield return new WaitForSeconds(0.1f); // permet à Unity de finir l’instanciation proprement
+
+        etatActuel = EtatPNJ.Idle;
+    }
     public BesoinType GetBesoinPrioritaire()
     {
         if (faim <= 0.15f) return BesoinType.Faim;
@@ -193,18 +237,11 @@ public class BesoinPlayers : MonoBehaviour
             }
         }
 
-        // Réserver la ressource trouvée
-        if (nearestTarget != null)
-        {
-            var slot = nearestTarget.GetComponent<RessourceMaxPlayerCapacity>();
-            if (slot != null && slot.VoirDisponibilite()) // ✅ ici on réserve
-            {
-                return nearestTarget.transform;
-            }
-        }
-
-        return null;
+        // ❌ Ne réserve plus ici
+        return nearestTarget != null ? nearestTarget.transform : null;
     }
+
+
 
 
     void LibererRessource()
@@ -225,15 +262,24 @@ public class BesoinPlayers : MonoBehaviour
         Transform target = ChercherTarget(tag);
         if (target != null)
         {
-            GetComponent<PathfindingAI>().setTarget(target);
-            etatActuel = nouvelEtat;
-            Debug.Log($"En route vers {tag}...");
+            var slot = target.GetComponent<RessourceMaxPlayerCapacity>();
+            if (slot != null && slot.VoirDisponibilite()) // ✅ on réserve ici maintenant
+            {
+                GetComponent<PathfindingAI>().setTarget(target);
+                etatActuel = nouvelEtat;
+                Debug.Log($"En route vers {tag}...");
+            }
+            else
+            {
+                Debug.LogWarning($"Cible trouvée mais non disponible pour {tag}");
+            }
         }
         else
         {
             Debug.LogWarning($"Aucune ressource avec le tag {tag} trouvée !");
         }
     }
+
 
     private System.Collections.IEnumerator AttendreEtDetruire(GameObject cible)
     {
@@ -247,8 +293,10 @@ public class BesoinPlayers : MonoBehaviour
             Debug.Log("Baie détruite 2 secondes après l'arrivée.");
         }
     }
-
-
-
+    public static void CreerNouveauPNJ(GameObject prefabPNJ, Vector3 position)
+    {
+        GameObject nouveauPNJ = GameObject.Instantiate(prefabPNJ, position, Quaternion.identity);
+        Debug.Log("👶 Nouveau PNJ créé !");
+    }
 
 }
