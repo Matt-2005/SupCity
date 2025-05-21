@@ -17,7 +17,6 @@ public class PlayerBehaviourManager : MonoBehaviour
 
     void Update()
     {
-        // Ne vérifie que si ce n'est pas encore activé
         if (!modeActif)
         {
             GameObject feuObj = GameObject.FindWithTag("feu");
@@ -31,11 +30,15 @@ public class PlayerBehaviourManager : MonoBehaviour
     }
 
     void ActiverModePathfinding()
-{
-    if (randomNPC != null) randomNPC.enabled = false;
-    if (besoinPlayers != null) besoinPlayers.enabled = true;
-    if (pathfindingAI != null) pathfindingAI.enabled = true;
-}
+    {
+        // 🔄 On aligne l’enfant sur le parent (pas l’inverse)
+        if (randomNPC != null)
+        {
+            randomNPC.transform.position = transform.position;
+            randomNPC.enabled = false;
+        }
 
-
+        if (besoinPlayers != null) besoinPlayers.enabled = true;
+        if (pathfindingAI != null) pathfindingAI.enabled = true;
+    }
 }

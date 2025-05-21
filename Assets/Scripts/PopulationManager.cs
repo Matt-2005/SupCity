@@ -41,9 +41,7 @@ public class PopulationManager : MonoBehaviour
                 if (besoin != null)
                 {
                     besoin.populationManager = this;
-                    besoin.Initialiser(); // <--- 👈 appel de lancement propre
                 }
-
             }
         }
     }

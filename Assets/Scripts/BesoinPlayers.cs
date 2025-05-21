@@ -116,17 +116,7 @@ public class BesoinPlayers : MonoBehaviour
         }
     }
 
-    public void Initialiser()
-    {
-        StartCoroutine(LancerLogiqueApresDelai());
-    }
 
-    private System.Collections.IEnumerator LancerLogiqueApresDelai()
-    {
-        yield return new WaitForSeconds(0.1f); // permet à Unity de finir l’instanciation proprement
-
-        etatActuel = EtatPNJ.Idle;
-    }
     public BesoinType GetBesoinPrioritaire()
     {
         if (faim <= 0.15f) return BesoinType.Faim;
@@ -221,26 +211,41 @@ public class BesoinPlayers : MonoBehaviour
         GameObject[] targets = GameObject.FindGameObjectsWithTag(tag);
         if (targets.Length == 0) return null;
 
-        GameObject nearestTarget = null;
+        GameObject bestTarget = null;
         float minDistance = Mathf.Infinity;
 
         foreach (GameObject obj in targets)
         {
             var slot = obj.GetComponent<RessourceMaxPlayerCapacity>();
-            if (slot == null || !slot.EstDisponible()) continue;
+            if (slot == null) continue;
+
+            // 🔒 Essaye de réserver tout de suite
+            if (!slot.VoirDisponibilite()) continue;
+
+            // ✅ Si on arrive ici, la réservation est faite (occupation++)
 
             float distance = Vector3.Distance(transform.position, obj.transform.position);
             if (distance < minDistance)
             {
+                // Si on avait déjà réservé une autre ressource avant, on la libère
+                if (bestTarget != null)
+                {
+                    var oldSlot = bestTarget.GetComponent<RessourceMaxPlayerCapacity>();
+                    if (oldSlot != null) oldSlot.Liberer(); // libère la ressource précédente
+                }
+
+                bestTarget = obj;
                 minDistance = distance;
-                nearestTarget = obj;
+            }
+            else
+            {
+                // ❌ Pas retenue, on libère immédiatement
+                slot.Liberer();
             }
         }
 
-        // ❌ Ne réserve plus ici
-        return nearestTarget != null ? nearestTarget.transform : null;
+        return bestTarget != null ? bestTarget.transform : null;
     }
-
 
 
 
@@ -262,24 +267,15 @@ public class BesoinPlayers : MonoBehaviour
         Transform target = ChercherTarget(tag);
         if (target != null)
         {
-            var slot = target.GetComponent<RessourceMaxPlayerCapacity>();
-            if (slot != null && slot.VoirDisponibilite()) // ✅ on réserve ici maintenant
-            {
-                GetComponent<PathfindingAI>().setTarget(target);
-                etatActuel = nouvelEtat;
-                Debug.Log($"En route vers {tag}...");
-            }
-            else
-            {
-                Debug.LogWarning($"Cible trouvée mais non disponible pour {tag}");
-            }
+            GetComponent<PathfindingAI>().setTarget(target);
+            etatActuel = nouvelEtat;
+            Debug.Log($"En route vers {tag}...");
         }
         else
         {
             Debug.LogWarning($"Aucune ressource avec le tag {tag} trouvée !");
         }
     }
-
 
     private System.Collections.IEnumerator AttendreEtDetruire(GameObject cible)
     {
