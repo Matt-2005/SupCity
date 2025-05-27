@@ -30,6 +30,11 @@ public abstract class ProductionBuilding : MonoBehaviour
 
     protected virtual void Produce()
     {
+        if (ResourceManager.Instance == null)
+        {
+            Debug.LogError("❌ ResourceManager.Instance is null !");
+            return;
+        }
         if (inputResourceType != null)
         {
             if (!ResourceManager.Instance.ConsumeResource(inputResourceType.Value, inputAmount))
