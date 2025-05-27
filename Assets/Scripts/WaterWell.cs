@@ -1,10 +1,10 @@
 using UnityEngine;
-public class ClayHut : ProductionBuilding
+public class WaterWell : ProductionBuilding
 {
     protected override void Start()
     {
-        outputResourceType = ResourceType.Clay;
-        productionAmount = 4;
+        outputResourceType = ResourceType.Water;
+        productionAmount = 5;
         productionInterval = 5f;
         base.Start();
     }

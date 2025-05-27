@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1580535218145304902}
   - component: {fileID: 8953808252637478503}
+  - component: {fileID: 876123326311205888}
   - component: {fileID: 8172610360287625000}
   - component: {fileID: 3628322878615131158}
   - component: {fileID: 6065815685532401801}
@@ -108,6 +109,21 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &876123326311205888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4223743225216895404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb3fa8c4299e43240b989234d6b1a12c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outputResourceType: 0
+  productionAmount: 1
+  productionInterval: 5
 --- !u!483693784 &8172610360287625000
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -280,6 +296,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6462902008369122390}
   - component: {fileID: 3660527553506640473}
+  - component: {fileID: 7144738366236238826}
   m_Layer: 7
   m_Name: usineOutilsBois
   m_TagString: usineOutils
@@ -315,6 +332,21 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+--- !u!114 &7144738366236238826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4774212068797024992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb3fa8c4299e43240b989234d6b1a12c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outputResourceType: 0
+  productionAmount: 1
+  productionInterval: 5
 --- !u!114 &3851409343117409586
 MonoBehaviour:
   m_ObjectHideFlags: 0

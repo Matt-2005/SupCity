@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5191667626098200022}
   - component: {fileID: 1663121810917505718}
+  - component: {fileID: 3527827301480465620}
   - component: {fileID: 1855530468418851314}
   m_Layer: 0
   m_Name: Layer1
@@ -105,6 +106,21 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &3527827301480465620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1149440355498567514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87951f305f3752e4ea12318833c01da8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outputResourceType: 6
+  productionAmount: 1
+  productionInterval: 5
 --- !u!483693784 &1855530468418851314
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -167,6 +183,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6617700598433376644}
   - component: {fileID: 153310253001602521}
+  - component: {fileID: 8620975892714684840}
   m_Layer: 0
   m_Name: enclotPoule
   m_TagString: enclotPoule
@@ -202,6 +219,21 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+--- !u!114 &8620975892714684840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7568191449486017243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87951f305f3752e4ea12318833c01da8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outputResourceType: 0
+  productionAmount: 1
+  productionInterval: 5
 --- !u!114 &544235251057297456
 MonoBehaviour:
   m_ObjectHideFlags: 0

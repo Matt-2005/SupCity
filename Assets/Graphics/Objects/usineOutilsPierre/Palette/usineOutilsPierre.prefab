@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 948312535339684304}
   - component: {fileID: 5347983492110010756}
+  - component: {fileID: 803961980871770227}
   m_Layer: 7
   m_Name: usineOutilsPierre
   m_TagString: usineOutilsPierre
@@ -45,6 +46,21 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+--- !u!114 &803961980871770227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2023608840257756778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eac105a1919edef44b6756e39f034ee9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outputResourceType: 0
+  productionAmount: 1
+  productionInterval: 5
 --- !u!1 &8258337945167571785
 GameObject:
   m_ObjectHideFlags: 0
@@ -55,6 +71,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4377967367147407082}
   - component: {fileID: 5995149314300274757}
+  - component: {fileID: 118206191518959495}
   - component: {fileID: 1687653323112779344}
   - component: {fileID: 369838126873219754}
   - component: {fileID: 3847177330838100211}
@@ -153,6 +170,21 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &118206191518959495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8258337945167571785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eac105a1919edef44b6756e39f034ee9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outputResourceType: 0
+  productionAmount: 1
+  productionInterval: 5
 --- !u!483693784 &1687653323112779344
 TilemapRenderer:
   m_ObjectHideFlags: 0
