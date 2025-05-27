@@ -167,9 +167,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8686563650280930483}
   - component: {fileID: 420285863721328773}
-  - component: {fileID: 2362743806672883995}
   - component: {fileID: 5698064576322221439}
   - component: {fileID: 8074214139261599955}
+  - component: {fileID: 1142959060740955530}
   m_Layer: 0
   m_Name: Route
   m_TagString: Route
@@ -205,18 +205,6 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
---- !u!114 &2362743806672883995
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6643263109474709117}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0ef51b1e883344bca35e939a76cc866, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &5698064576322221439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -275,6 +263,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1142959060740955530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6643263109474709117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a71b775e395934d808798883c194f696, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &6675153972955723064
 MonoBehaviour:
   m_ObjectHideFlags: 0
