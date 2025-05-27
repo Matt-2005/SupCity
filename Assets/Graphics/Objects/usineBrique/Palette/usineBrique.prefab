@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2300426976904499665}
   - component: {fileID: 4967872395205777188}
+  - component: {fileID: 8087571211407888494}
   - component: {fileID: 2644047691556181699}
   - component: {fileID: 2491742234180964279}
   - component: {fileID: 3317739448672731287}
@@ -108,6 +109,21 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &8087571211407888494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5882940515122802458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55a63ed95952d9f439ef2e927ae29e53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outputResourceType: 0
+  productionAmount: 1
+  productionInterval: 5
 --- !u!483693784 &2644047691556181699
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -280,6 +296,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3551338323891315824}
   - component: {fileID: 5169529496914742098}
+  - component: {fileID: 7787431578022142054}
   m_Layer: 7
   m_Name: usineBrique
   m_TagString: usineBrique
@@ -315,6 +332,21 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+--- !u!114 &7787431578022142054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6321674579055664321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55a63ed95952d9f439ef2e927ae29e53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outputResourceType: 0
+  productionAmount: 1
+  productionInterval: 5
 --- !u!114 &5619347712822350862
 MonoBehaviour:
   m_ObjectHideFlags: 0

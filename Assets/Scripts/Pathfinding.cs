@@ -20,11 +20,6 @@ public class PathfindingAI : MonoBehaviour
     private int currentWayPoint = 0;
 
     private Seeker seeker;
-
-    /// <summary>Layer contenant les objets solides (non traversables).</summary>
-    public LayerMask solidObjectsLayer;
-
-    /// <summary>Référence à l’Animator (sur l’enfant du PNJ).</summary>
     private Animator animator;
 
     /// <summary>Initialise le seeker et démarre la mise à jour du chemin à intervalle régulier.</summary>
@@ -61,12 +56,7 @@ public class PathfindingAI : MonoBehaviour
 
         if (currentWayPoint >= path.vectorPath.Count)
         {
-            // Fin du chemin déjà atteinte
-            if (animator != null)
-            {
-                animator.SetBool("isMoving", false);
-            }
-
+            animator?.SetBool("isMoving", false);
             GetComponent<BesoinPlayers>().NotifieArrivee();
             return;
         }
@@ -90,29 +80,25 @@ public class PathfindingAI : MonoBehaviour
 
         float distance = Vector3.Distance(transform.position, targetPosition);
 
+        // Juste avant la fin du chemin → prépare la satisfaction
+        if (currentWayPoint == path.vectorPath.Count - 1)
+        {
+            GetComponent<BesoinPlayers>().PreparerSatisfaction();
+        }
+
         if (distance < nextWayPointDistance)
         {
             currentWayPoint++;
 
-            // 📌 Si c’est le dernier point qu’on atteint, snap direct pour éviter le ralentissement
             if (currentWayPoint >= path.vectorPath.Count)
             {
                 transform.position = targetPosition;
-
-                if (animator != null)
-                {
-                    animator.SetBool("isMoving", false);
-                }
-
+                animator?.SetBool("isMoving", false);
                 GetComponent<BesoinPlayers>().NotifieArrivee();
             }
         }
     }
 
-    /// <summary>
-    /// Définit dynamiquement une nouvelle cible à atteindre.
-    /// </summary>
-    /// <param name="newTarget">Transform de la nouvelle cible</param>
     public void setTarget(Transform newTarget)
     {
         target = newTarget;

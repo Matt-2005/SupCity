@@ -10,14 +10,8 @@ public class PopulationManager : MonoBehaviour
 {
     /// <summary>Prefab utilisé pour instancier de nouveaux PNJ.</summary>
     public GameObject prefabPNJ;
-
-    /// <summary>Intervalle de temps entre chaque naissance (en secondes).</summary>
-    public float intervalleNaissance = 10f;
-
-    /// <summary>Nombre maximal de PNJ autorisés dans la scène.</summary>
-    public int populationMax = 50;
-
-    /// <summary>Nombre actuel de PNJ vivants.</summary>
+    public float intervalleNaissance = 5f;
+    public int populationMax = 1000;
     private int populationActuelle = 0;
 
     /// <summary>Position de spawn des nouveaux PNJ.</summary>

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5928314073287160431}
   - component: {fileID: 3093938822903845267}
+  - component: {fileID: 545708699787705275}
   m_Layer: 7
   m_Name: usineEau
   m_TagString: usineEau
@@ -45,6 +46,21 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+--- !u!114 &545708699787705275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534605004595455918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ee73fc831223084e91660d2578c16d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outputResourceType: 0
+  productionAmount: 1
+  productionInterval: 5
 --- !u!1 &8148038821458123748
 GameObject:
   m_ObjectHideFlags: 0
@@ -55,6 +71,7 @@ GameObject:
   m_Component:
   - component: {fileID: 299244634043289014}
   - component: {fileID: 3267652939566113533}
+  - component: {fileID: 8163566980852255709}
   - component: {fileID: 1551537315876143053}
   - component: {fileID: 7617733365756338720}
   - component: {fileID: 4026838548913039541}
@@ -153,6 +170,21 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &8163566980852255709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8148038821458123748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ee73fc831223084e91660d2578c16d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outputResourceType: 0
+  productionAmount: 1
+  productionInterval: 5
 --- !u!483693784 &1551537315876143053
 TilemapRenderer:
   m_ObjectHideFlags: 0

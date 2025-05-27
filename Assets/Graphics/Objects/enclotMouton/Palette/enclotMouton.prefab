@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4324790216584894586}
   - component: {fileID: 4128956979576968000}
+  - component: {fileID: 4636005329464097205}
   m_Layer: 0
   m_Name: enclotMouton
   m_TagString: enclotMouton
@@ -45,6 +46,21 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+--- !u!114 &4636005329464097205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1273505424632738372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e019038c93849b84a95b0b3280279387, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outputResourceType: 0
+  productionAmount: 1
+  productionInterval: 5
 --- !u!1 &3854247773818922096
 GameObject:
   m_ObjectHideFlags: 0
@@ -55,6 +71,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3120587367980109719}
   - component: {fileID: 3092234598292689266}
+  - component: {fileID: 2171130146100730204}
   - component: {fileID: 438058728737804661}
   m_Layer: 0
   m_Name: Layer1
@@ -150,6 +167,21 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &2171130146100730204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3854247773818922096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e019038c93849b84a95b0b3280279387, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outputResourceType: 0
+  productionAmount: 1
+  productionInterval: 5
 --- !u!483693784 &438058728737804661
 TilemapRenderer:
   m_ObjectHideFlags: 0
