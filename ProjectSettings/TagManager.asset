@@ -22,6 +22,8 @@ TagManager:
   - usineBaie
   - Maison
   - feu
+  - enclotMouton
+  - enclotPoule
   layers:
   - Default
   - TransparentFX
