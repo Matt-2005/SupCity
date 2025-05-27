@@ -8,6 +8,8 @@ public class BesoinPlayers : MonoBehaviour
     public enum BesoinType { Rien, Faim, Soif, Energie }
     public float seuilCritique = 0.15f;
     public float seuilAction = 0.3f;
+    public enum TachePNJ { Aucun, Bucheron, Carrier, OuvrierBois, OuvrierPierre, OuvrierArgile }
+    public TachePNJ tache = TachePNJ.Aucun;
 
     public enum EtatPNJ { Idle, AllerManger, Manger, AllerBoire, Boire, AllerDormir, Dormir }
     private EtatPNJ etatActuel = EtatPNJ.Idle;
@@ -18,8 +20,8 @@ public class BesoinPlayers : MonoBehaviour
 
     private float actionTimer = 0f;
     private float actionDuration = 2f;
-    public float dureeDeVieMin = 60f;
-    public float dureeDeVieMax = 120f;
+    public float dureeDeVieMin = 120f;
+    public float dureeDeVieMax = 240f;
     private float dureeDeVie;
     private float vieEcoulee = 0f;
 
@@ -68,6 +70,23 @@ public class BesoinPlayers : MonoBehaviour
                 return;
             }
         }
+        if (etatActuel == EtatPNJ.Idle && GetBesoinPrioritaire() == BesoinType.Rien)
+        {
+            switch (tache)
+            {
+                case TachePNJ.Bucheron:
+                    StartCoroutine(AttendreEtChercher("Woodcutter", EtatPNJ.AllerManger)); break;
+                case TachePNJ.Carrier:
+                    StartCoroutine(AttendreEtChercher("StoneQuarry", EtatPNJ.AllerManger)); break;
+                case TachePNJ.OuvrierBois:
+                    StartCoroutine(AttendreEtChercher("WoodToolFactory", EtatPNJ.AllerManger)); break;
+                case TachePNJ.OuvrierPierre:
+                    StartCoroutine(AttendreEtChercher("StoneToolFactory", EtatPNJ.AllerManger)); break;
+                case TachePNJ.OuvrierArgile:
+                    StartCoroutine(AttendreEtChercher("BrickFactory", EtatPNJ.AllerManger)); break;
+            }
+        }
+
 
         switch (etatActuel)
         {
@@ -123,6 +142,12 @@ public class BesoinPlayers : MonoBehaviour
         if (soif <= 0.15f) return BesoinType.Soif;
         if (energie <= 0.15f) return BesoinType.Energie;
         return BesoinType.Rien;
+    }
+    public void PreparerSatisfaction()
+    {
+        if (etatActuel == EtatPNJ.AllerManger) faim = 1f;
+        if (etatActuel == EtatPNJ.AllerBoire) soif = 1f;
+        if (etatActuel == EtatPNJ.AllerDormir) energie = 1f;
     }
 
     public void NotifieArrivee()
@@ -270,9 +295,15 @@ public class BesoinPlayers : MonoBehaviour
             GetComponent<PathfindingAI>().setTarget(target);
             etatActuel = nouvelEtat;
             Debug.Log($"En route vers {tag}...");
+            FinManger();
+            FinBoire();
+            FinDormir();
         }
         else
         {
+            FinManger();
+            FinBoire();
+            FinDormir();
             Debug.LogWarning($"Aucune ressource avec le tag {tag} trouvée !");
         }
     }

@@ -5,8 +5,8 @@ public class PopulationManager : MonoBehaviour
 {
     public GameObject prefabPNJ;
 
-    public float intervalleNaissance = 10f;
-    public int populationMax = 50;
+    public float intervalleNaissance = 5f;
+    public int populationMax = 1000;
     private int populationActuelle = 0;
 
     private Vector3 spawnPosition = new Vector3(-20f, 22f, 0f);

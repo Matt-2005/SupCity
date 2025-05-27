@@ -8,7 +8,7 @@ public class WoodToolFactory : ProductionBuilding
     {
         outputResourceType = ResourceType.WoodTools;
         productionAmount = 2;
-        productionInterval = 8f;
+        productionInterval = 15f;
         base.Start();
     }
 }

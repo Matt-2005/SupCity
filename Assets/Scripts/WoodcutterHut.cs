@@ -4,8 +4,8 @@ public class WoodcutterHut : ProductionBuilding
     protected override void Start()
     {
         outputResourceType = ResourceType.Wood;
-        productionAmount = 5;
-        productionInterval = 5f;
+        productionAmount = 10;
+        productionInterval = 3f;
         base.Start();
     }
 }

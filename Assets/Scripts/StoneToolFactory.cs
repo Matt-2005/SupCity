@@ -8,7 +8,7 @@ public class StoneToolFactory : ProductionBuilding
     {
         outputResourceType = ResourceType.StoneTools;
         productionAmount = 2;
-        productionInterval = 9f;
+        productionInterval = 15;
         base.Start();
     }
 }

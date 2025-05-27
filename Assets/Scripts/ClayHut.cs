@@ -5,7 +5,7 @@ public class ClayHut : ProductionBuilding
     {
         outputResourceType = ResourceType.Clay;
         productionAmount = 4;
-        productionInterval = 5f;
+        productionInterval = 6f;
         base.Start();
     }
 }
