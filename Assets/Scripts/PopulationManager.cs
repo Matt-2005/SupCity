@@ -4,7 +4,6 @@ using System.Collections;
 public class PopulationManager : MonoBehaviour
 {
     public GameObject prefabPNJ;
-
     public float intervalleNaissance = 5f;
     public int populationMax = 1000;
     private int populationActuelle = 0;
