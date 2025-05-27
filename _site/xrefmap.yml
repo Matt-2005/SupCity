@@ -1,0 +1,174 @@
+### YamlMime:XRefMap
+sorted: true
+references:
+- uid: basic-concepts
+  name: Basic Concepts
+  href: Library/PackageCache/com.unity.inputsystem%40920b46832575/Documentation~/Concepts.html
+- uid: collections-allocation
+  name: Use allocators to control unmanaged memory
+  href: Library/PackageCache/com.unity.collections%4056bff8827a7e/Documentation~/allocation.html
+- uid: collections-known-issues
+  name: Known issues
+  href: Library/PackageCache/com.unity.collections%4056bff8827a7e/Documentation~/issues.html
+- uid: collections-overview
+  name: Collections package
+  href: Library/PackageCache/com.unity.collections%4056bff8827a7e/Documentation~/index.html
+- uid: com.unity.ugui.api_index
+  name: Scripting API reference for Unity UI and TextMesh Pro
+  href: Library/PackageCache/com.unity.ugui%40603b5c2e4e5a/Documentation~/api_index.html
+- uid: input-system-action-assets
+  name: Input Action Assets
+  href: Library/PackageCache/com.unity.inputsystem%40920b46832575/Documentation~/ActionAssets.html
+- uid: input-system-action-bindings
+  name: Input Bindings
+  href: Library/PackageCache/com.unity.inputsystem%40920b46832575/Documentation~/ActionBindings.html
+- uid: input-system-actions
+  name: Actions
+  href: Library/PackageCache/com.unity.inputsystem%40920b46832575/Documentation~/Actions.html
+- uid: input-system-architecture
+  name: Architecture
+  href: Library/PackageCache/com.unity.inputsystem%40920b46832575/Documentation~/Architecture.html
+- uid: input-system-configuring-input
+  name: Configuring Input with the Actions Editor
+  href: Library/PackageCache/com.unity.inputsystem%40920b46832575/Documentation~/ActionsEditor.html
+- uid: input-system-contributing
+  name: Contributing
+  href: Library/PackageCache/com.unity.inputsystem%40920b46832575/Documentation~/Contributing.html
+- uid: input-system-controls
+  name: Controls
+  href: Library/PackageCache/com.unity.inputsystem%40920b46832575/Documentation~/Controls.html
+- uid: input-system-debugging
+  name: Debugging
+  href: Library/PackageCache/com.unity.inputsystem%40920b46832575/Documentation~/Debugging.html
+- uid: input-system-devices
+  name: Devices
+  href: Library/PackageCache/com.unity.inputsystem%40920b46832575/Documentation~/Devices.html
+- uid: input-system-editor-features
+  name: Input System Editor Features
+  href: Library/PackageCache/com.unity.inputsystem%40920b46832575/Documentation~/EditorFeatures.html
+- uid: input-system-events
+  name: Input events
+  href: Library/PackageCache/com.unity.inputsystem%40920b46832575/Documentation~/Events.html
+- uid: input-system-gamepad
+  name: Gamepad Support
+  href: Library/PackageCache/com.unity.inputsystem%40920b46832575/Documentation~/Gamepad.html
+- uid: input-system-hid
+  name: HID Support
+  href: Library/PackageCache/com.unity.inputsystem%40920b46832575/Documentation~/HID.html
+- uid: input-system-how-do-i
+  name: How do I…?
+  href: Library/PackageCache/com.unity.inputsystem%40920b46832575/Documentation~/HowDoI.html
+- uid: input-system-index
+  name: Input System
+  href: Library/PackageCache/com.unity.inputsystem%40920b46832575/Documentation~/index.html
+- uid: input-system-installation
+  name: Installation guide
+  href: Library/PackageCache/com.unity.inputsystem%40920b46832575/Documentation~/Installation.html
+- uid: input-system-interactions
+  name: Interactions
+  href: Library/PackageCache/com.unity.inputsystem%40920b46832575/Documentation~/Interactions.html
+- uid: input-system-joystick
+  name: Joystick support
+  href: Library/PackageCache/com.unity.inputsystem%40920b46832575/Documentation~/Joystick.html
+- uid: input-system-keyboard
+  name: Keyboard support
+  href: Library/PackageCache/com.unity.inputsystem%40920b46832575/Documentation~/Keyboard.html
+- uid: input-system-known-limitations
+  name: Known Limitations
+  href: Library/PackageCache/com.unity.inputsystem%40920b46832575/Documentation~/KnownLimitations.html
+- uid: input-system-layouts
+  name: Layouts
+  href: Library/PackageCache/com.unity.inputsystem%40920b46832575/Documentation~/Layouts.html
+- uid: input-system-migration
+  name: Migrating from the old Input Manager
+  href: Library/PackageCache/com.unity.inputsystem%40920b46832575/Documentation~/Migration.html
+- uid: input-system-mouse
+  name: Mouse support
+  href: Library/PackageCache/com.unity.inputsystem%40920b46832575/Documentation~/Mouse.html
+- uid: input-system-on-screen
+  name: On-screen Controls
+  href: Library/PackageCache/com.unity.inputsystem%40920b46832575/Documentation~/OnScreen.html
+- uid: input-system-pen
+  name: Pen, tablet, and stylus support
+  href: Library/PackageCache/com.unity.inputsystem%40920b46832575/Documentation~/Pen.html
+- uid: input-system-player-input
+  name: The Player Input component
+  href: Library/PackageCache/com.unity.inputsystem%40920b46832575/Documentation~/PlayerInput.html
+- uid: input-system-player-input-manager
+  name: The Player Input Manager component
+  href: Library/PackageCache/com.unity.inputsystem%40920b46832575/Documentation~/PlayerInputManager.html
+- uid: input-system-pointers
+  name: Pointers
+  href: Library/PackageCache/com.unity.inputsystem%40920b46832575/Documentation~/Pointers.html
+- uid: input-system-processors
+  name: Processors
+  href: Library/PackageCache/com.unity.inputsystem%40920b46832575/Documentation~/Processors.html
+- uid: input-system-sensors
+  name: Sensor support
+  href: Library/PackageCache/com.unity.inputsystem%40920b46832575/Documentation~/Sensors.html
+- uid: input-system-settings
+  name: Input settings
+  href: Library/PackageCache/com.unity.inputsystem%40920b46832575/Documentation~/Settings.html
+- uid: input-system-supported-devices
+  name: Supported Input Devices
+  href: Library/PackageCache/com.unity.inputsystem%40920b46832575/Documentation~/SupportedDevices.html
+- uid: input-system-testing
+  name: Input testing
+  href: Library/PackageCache/com.unity.inputsystem%40920b46832575/Documentation~/Testing.html
+- uid: input-system-touch
+  name: Touch support
+  href: Library/PackageCache/com.unity.inputsystem%40920b46832575/Documentation~/Touch.html
+- uid: input-system-ui-support
+  name: UI support
+  href: Library/PackageCache/com.unity.inputsystem%40920b46832575/Documentation~/UISupport.html
+- uid: input-system-use-in-editor
+  name: Using Input in the Editor
+  href: Library/PackageCache/com.unity.inputsystem%40920b46832575/Documentation~/UseInEditor.html
+- uid: input-system-user-management
+  name: User Management
+  href: Library/PackageCache/com.unity.inputsystem%40920b46832575/Documentation~/UserManagement.html
+- uid: input-system-workflow-direct
+  name: Workflow Overview - Directly Reading Device States
+  href: Library/PackageCache/com.unity.inputsystem%40920b46832575/Documentation~/Workflow-Direct.html
+- uid: input-system-workflow-player-input
+  name: Workflow Overview - Actions and the PlayerInput Component
+  href: Library/PackageCache/com.unity.inputsystem%40920b46832575/Documentation~/Workflow-PlayerInput.html
+- uid: input-system-workflow-project-wide-actions
+  name: Workflow Overview - Actions
+  href: Library/PackageCache/com.unity.inputsystem%40920b46832575/Documentation~/Workflow-Actions.html
+- uid: input-system-workflows
+  name: Input System Workflows
+  href: Library/PackageCache/com.unity.inputsystem%40920b46832575/Documentation~/Workflows.html
+- uid: neon-intrinsics
+  name: Burst Arm Neon intrinsics reference
+  href: Library/PackageCache/com.unity.burst%407a907cf5a459/Documentation~/csharp-burst-intrinsics-neon.html
+- uid: project-wide-actions
+  name: Project-Wide Actions
+  href: Library/PackageCache/com.unity.inputsystem%40920b46832575/Documentation~/ProjectWideActions.html
+- uid: timing-latency
+  name: Timing and Latency
+  href: Library/PackageCache/com.unity.inputsystem%40920b46832575/Documentation~/timing-and-latency.html
+- uid: um-profiler-ui
+  name: UI and UI Details Profiler
+  href: Library/PackageCache/com.unity.ugui%40603b5c2e4e5a/Documentation~/ProfilerUI.html
+- uid: um-srp-creating-render-pipeline-asset-and-render-pipeline-instance
+  name: Create a Render Pipeline Asset and Render Pipeline Instance in a custom render pipeline
+  href: Library/PackageCache/com.unity.render-pipelines.core%4089eb3bdcd743/Documentation~/srp-creating-render-pipeline-asset-and-render-pipeline-instance.html
+- uid: um-srp-creating-simple-render-loop
+  name: Create a simple render loop in a custom render pipeline
+  href: Library/PackageCache/com.unity.render-pipelines.core%4089eb3bdcd743/Documentation~/srp-creating-simple-render-loop.html
+- uid: um-srp-custom
+  name: Creating a custom render pipeline
+  href: Library/PackageCache/com.unity.render-pipelines.core%4089eb3bdcd743/Documentation~/srp-custom.html
+- uid: um-srp-custom-getting-started
+  name: Create a custom render pipeline
+  href: Library/PackageCache/com.unity.render-pipelines.core%4089eb3bdcd743/Documentation~/srp-custom-getting-started.html
+- uid: um-srp-using-scriptable-render-context
+  name: Execute rendering commands in a custom render pipeline
+  href: Library/PackageCache/com.unity.render-pipelines.core%4089eb3bdcd743/Documentation~/srp-using-scriptable-render-context.html
+- uid: urp-changelog
+  name: Changelog
+  href: Library/PackageCache/com.unity.render-pipelines.universal%4015fef0f41df6/CHANGELOG.html
+- uid: urp-index
+  name: Universal Render Pipeline (URP) scripting reference
+  href: Library/PackageCache/com.unity.render-pipelines.universal%4015fef0f41df6/Documentation~/index.html

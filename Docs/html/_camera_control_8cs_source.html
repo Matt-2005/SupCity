@@ -1,0 +1,241 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SupCity:  Fichier source de Assets/Scripts/CameraControl.cs</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">SupCity
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('_camera_control_8cs_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">CameraControl.cs</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_camera_control_8cs.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using </span>UnityEngine;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="keyword">using </span>UnityEngine.Tilemaps;</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span></div>
+<div class="foldopen" id="foldopen00008" data-start="{" data-end="};">
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="class_camera_control.html">    8</a></span><span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="class_camera_control.html">CameraControl</a> : MonoBehaviour</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>{</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="class_camera_control.html#a7ee661d1d153b49d7796d1dc5072849b">   11</a></span>    <span class="keyword">private</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="class_camera_control.html#a7ee661d1d153b49d7796d1dc5072849b">speed</a> = 50.0f;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="class_camera_control.html#a683c8e12c32c8b0a3f81c4646d30e3df">   14</a></span>    <span class="keyword">private</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="class_camera_control.html#a683c8e12c32c8b0a3f81c4646d30e3df">zoomSpeed</a> = 50.0f;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="class_camera_control.html#ab91721d1ad5e987c7c957a43ae96845e">   17</a></span>    <span class="keyword">private</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="class_camera_control.html#ab91721d1ad5e987c7c957a43ae96845e">minZoom</a> = 3.0f;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="class_camera_control.html#a056b5e10aba138948a52e3b4563373f5">   20</a></span>    <span class="keyword">private</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="class_camera_control.html#a056b5e10aba138948a52e3b4563373f5">maxZoom</a> = 70.0f;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="class_camera_control.html#a2aa63a25adbc8bb026a1c8417859b172">   23</a></span>    <span class="keyword">private</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="class_camera_control.html#a2aa63a25adbc8bb026a1c8417859b172">dragSpeed</a> = 3.0f;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="class_camera_control.html#adad78ca51f6dab61f6242a648034fd36">   26</a></span>    <span class="keyword">private</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="class_camera_control.html#adad78ca51f6dab61f6242a648034fd36">acceleration</a> = 5.0f;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="class_camera_control.html#a8cf0e317638e9851a7ed1bf8a01ff5ec">   28</a></span>    <span class="keyword">private</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="class_camera_control.html#a8cf0e317638e9851a7ed1bf8a01ff5ec">minX</a>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="class_camera_control.html#a17246dc547a40b1ef03bb23d249fff3e">   29</a></span>    <span class="keyword">private</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="class_camera_control.html#a17246dc547a40b1ef03bb23d249fff3e">maxX</a>;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="class_camera_control.html#ae0f6e760fb665d396ad3792d6a57279e">   30</a></span>    <span class="keyword">private</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="class_camera_control.html#ae0f6e760fb665d396ad3792d6a57279e">minY</a>;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="class_camera_control.html#ad417756871a304e2f5f431a0281d2246">   31</a></span>    <span class="keyword">private</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="class_camera_control.html#ad417756871a304e2f5f431a0281d2246">maxY</a>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="class_camera_control.html#a67188cc4eedada332037396e5b6c8e8e">   33</a></span>    <span class="keyword">private</span> Vector3 <a class="code hl_variable" href="class_camera_control.html#a67188cc4eedada332037396e5b6c8e8e">velocity</a> = Vector3.zero;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="class_camera_control.html#a4c1d11702ceb161516b8536f07949b31">   34</a></span>    <span class="keyword">private</span> Vector3 <a class="code hl_variable" href="class_camera_control.html#a4c1d11702ceb161516b8536f07949b31">dragOrigin</a>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="class_camera_control.html#aba6c801ea58e9fb77af7a12ea32027e4">   35</a></span>    <span class="keyword">private</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="class_camera_control.html#aba6c801ea58e9fb77af7a12ea32027e4">targetZoom</a>;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span></div>
+<div class="foldopen" id="foldopen00041" data-start="{" data-end="}">
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="class_camera_control.html#a09bfe3af8a2b8df140115a478c308a1f">   41</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_camera_control.html#a09bfe3af8a2b8df140115a478c308a1f">Start</a>()</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    {</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        Tilemap tilemap = GameObject.Find(<span class="stringliteral">&quot;Background&quot;</span>).GetComponent&lt;Tilemap&gt;();</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        Bounds tilemapBounds = tilemap.localBounds;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <a class="code hl_variable" href="class_camera_control.html#a8cf0e317638e9851a7ed1bf8a01ff5ec">minX</a> = tilemapBounds.min.x;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <a class="code hl_variable" href="class_camera_control.html#a17246dc547a40b1ef03bb23d249fff3e">maxX</a> = tilemapBounds.max.x;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <a class="code hl_variable" href="class_camera_control.html#ae0f6e760fb665d396ad3792d6a57279e">minY</a> = tilemapBounds.min.y;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <a class="code hl_variable" href="class_camera_control.html#ad417756871a304e2f5f431a0281d2246">maxY</a> = tilemapBounds.max.y;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <a class="code hl_variable" href="class_camera_control.html#aba6c801ea58e9fb77af7a12ea32027e4">targetZoom</a> = Camera.main.orthographicSize;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    }</div>
+</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span></div>
+<div class="foldopen" id="foldopen00057" data-start="{" data-end="}">
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="class_camera_control.html#aeda2ba0b564b26307faf65b0bd0f3307">   57</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_camera_control.html#aeda2ba0b564b26307faf65b0bd0f3307">Update</a>()</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    {</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        <a class="code hl_function" href="class_camera_control.html#a417bc867b3a6c81d806e71e460d649c6">HandleKeyboardMovement</a>();</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        <a class="code hl_function" href="class_camera_control.html#a2317a84280313ddc34fc2904619cd2c3">HandleMouseDrag</a>();</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        <a class="code hl_function" href="class_camera_control.html#a35cb496d00a377797c93f1eeb665bd3e">HandleZoom</a>();</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <a class="code hl_function" href="class_camera_control.html#abb80665b86bf5a98ae791b56b2e02693">ApplyMovement</a>();</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    }</div>
+</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span></div>
+<div class="foldopen" id="foldopen00068" data-start="{" data-end="}">
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="class_camera_control.html#a417bc867b3a6c81d806e71e460d649c6">   68</a></span>    <span class="keyword">private</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_camera_control.html#a417bc867b3a6c81d806e71e460d649c6">HandleKeyboardMovement</a>()</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    {</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        <span class="keywordtype">float</span> horizontal = Input.GetAxis(<span class="stringliteral">&quot;Horizontal&quot;</span>);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <span class="keywordtype">float</span> vertical = Input.GetAxis(<span class="stringliteral">&quot;Vertical&quot;</span>);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        Vector3 direction = <span class="keyword">new</span> Vector3(horizontal, vertical, 0).normalized;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        <a class="code hl_variable" href="class_camera_control.html#a67188cc4eedada332037396e5b6c8e8e">velocity</a> = Vector3.Lerp(<a class="code hl_variable" href="class_camera_control.html#a67188cc4eedada332037396e5b6c8e8e">velocity</a>, direction * <a class="code hl_variable" href="class_camera_control.html#a7ee661d1d153b49d7796d1dc5072849b">speed</a>, Time.deltaTime * <a class="code hl_variable" href="class_camera_control.html#adad78ca51f6dab61f6242a648034fd36">acceleration</a>);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    }</div>
+</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span></div>
+<div class="foldopen" id="foldopen00080" data-start="{" data-end="}">
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="class_camera_control.html#a2317a84280313ddc34fc2904619cd2c3">   80</a></span>    <span class="keyword">private</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_camera_control.html#a2317a84280313ddc34fc2904619cd2c3">HandleMouseDrag</a>()</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    {</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        <span class="keywordflow">if</span> (Input.GetMouseButtonDown(1))</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        {</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            <a class="code hl_variable" href="class_camera_control.html#a4c1d11702ceb161516b8536f07949b31">dragOrigin</a> = Input.mousePosition;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        }</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        <span class="keywordflow">if</span> (Input.GetMouseButton(1))</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        {</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>            Vector3 difference = Camera.main.ScreenToWorldPoint(<a class="code hl_variable" href="class_camera_control.html#a4c1d11702ceb161516b8536f07949b31">dragOrigin</a>) - Camera.main.ScreenToWorldPoint(Input.mousePosition);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>            difference.z = 0f;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>            transform.position += difference * <a class="code hl_variable" href="class_camera_control.html#a2aa63a25adbc8bb026a1c8417859b172">dragSpeed</a>;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>            <a class="code hl_variable" href="class_camera_control.html#a4c1d11702ceb161516b8536f07949b31">dragOrigin</a> = Input.mousePosition;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        }</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    }</div>
+</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span></div>
+<div class="foldopen" id="foldopen00100" data-start="{" data-end="}">
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno"><a class="line" href="class_camera_control.html#a35cb496d00a377797c93f1eeb665bd3e">  100</a></span>    <span class="keyword">private</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_camera_control.html#a35cb496d00a377797c93f1eeb665bd3e">HandleZoom</a>()</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    {</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        <span class="keywordtype">float</span> scroll = Input.GetAxis(<span class="stringliteral">&quot;Mouse ScrollWheel&quot;</span>);</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        <span class="keywordflow">if</span> (scroll != 0.0f)</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        {</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>            <span class="keywordtype">float</span> zoomFactor = 1.2f;</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>            <a class="code hl_variable" href="class_camera_control.html#aba6c801ea58e9fb77af7a12ea32027e4">targetZoom</a> *= (scroll &gt; 0) ? 1 / zoomFactor : zoomFactor;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>            <a class="code hl_variable" href="class_camera_control.html#aba6c801ea58e9fb77af7a12ea32027e4">targetZoom</a> = Mathf.Clamp(<a class="code hl_variable" href="class_camera_control.html#aba6c801ea58e9fb77af7a12ea32027e4">targetZoom</a>, <a class="code hl_variable" href="class_camera_control.html#ab91721d1ad5e987c7c957a43ae96845e">minZoom</a>, <a class="code hl_variable" href="class_camera_control.html#a056b5e10aba138948a52e3b4563373f5">maxZoom</a>);</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>            Vector3 mouseToCamera = <a class="code hl_class" href="class_mouse_position.html">MousePosition</a>.<a class="code hl_variable" href="class_mouse_position.html#ab8c82ab5841aa7f647d6e108731f320c">MouseWorldPosition</a> - transform.position;</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>            transform.position += mouseToCamera * (1 - <a class="code hl_variable" href="class_camera_control.html#aba6c801ea58e9fb77af7a12ea32027e4">targetZoom</a> / Camera.main.orthographicSize);</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        }</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        Camera.main.orthographicSize = Mathf.Lerp(Camera.main.orthographicSize, <a class="code hl_variable" href="class_camera_control.html#aba6c801ea58e9fb77af7a12ea32027e4">targetZoom</a>, Time.deltaTime * 5);</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    }</div>
+</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span></div>
+<div class="foldopen" id="foldopen00119" data-start="{" data-end="}">
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno"><a class="line" href="class_camera_control.html#abb80665b86bf5a98ae791b56b2e02693">  119</a></span>    <span class="keyword">private</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_camera_control.html#abb80665b86bf5a98ae791b56b2e02693">ApplyMovement</a>()</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    {</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        Vector3 newPosition = transform.position + <a class="code hl_variable" href="class_camera_control.html#a67188cc4eedada332037396e5b6c8e8e">velocity</a> * Time.deltaTime;</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        <span class="keywordtype">float</span> cameraHeight = 2f * Camera.main.orthographicSize;</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        <span class="keywordtype">float</span> cameraWidth = cameraHeight * Camera.main.aspect;</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        newPosition.x = Mathf.Clamp(newPosition.x, <a class="code hl_variable" href="class_camera_control.html#a8cf0e317638e9851a7ed1bf8a01ff5ec">minX</a> + cameraWidth / 2, <a class="code hl_variable" href="class_camera_control.html#a17246dc547a40b1ef03bb23d249fff3e">maxX</a> - cameraWidth / 2);</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        newPosition.y = Mathf.Clamp(newPosition.y, <a class="code hl_variable" href="class_camera_control.html#ae0f6e760fb665d396ad3792d6a57279e">minY</a> + cameraHeight / 2, <a class="code hl_variable" href="class_camera_control.html#ad417756871a304e2f5f431a0281d2246">maxY</a> - cameraHeight / 2);</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        transform.position = newPosition;</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    }</div>
+</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>}</div>
+</div>
+<div class="ttc" id="aclass_camera_control_html"><div class="ttname"><a href="class_camera_control.html">CameraControl</a></div><div class="ttdoc">Gère les déplacements, le zoom et le drag de la caméra dans un environnement 2D basé sur une Tilemap....</div><div class="ttdef"><b>Definition</b> <a href="#l00008">CameraControl.cs:9</a></div></div>
+<div class="ttc" id="aclass_camera_control_html_a056b5e10aba138948a52e3b4563373f5"><div class="ttname"><a href="class_camera_control.html#a056b5e10aba138948a52e3b4563373f5">CameraControl::maxZoom</a></div><div class="ttdeci">float maxZoom</div><div class="ttdoc">Zoom maximum autorisé.</div><div class="ttdef"><b>Definition</b> <a href="#l00020">CameraControl.cs:20</a></div></div>
+<div class="ttc" id="aclass_camera_control_html_a09bfe3af8a2b8df140115a478c308a1f"><div class="ttname"><a href="class_camera_control.html#a09bfe3af8a2b8df140115a478c308a1f">CameraControl::Start</a></div><div class="ttdeci">void Start()</div><div class="ttdoc">Initialise les limites de la carte en fonction de la Tilemap &quot;Background&quot; et définit le zoom initial.</div><div class="ttdef"><b>Definition</b> <a href="#l00041">CameraControl.cs:41</a></div></div>
+<div class="ttc" id="aclass_camera_control_html_a17246dc547a40b1ef03bb23d249fff3e"><div class="ttname"><a href="class_camera_control.html#a17246dc547a40b1ef03bb23d249fff3e">CameraControl::maxX</a></div><div class="ttdeci">float maxX</div><div class="ttdef"><b>Definition</b> <a href="#l00029">CameraControl.cs:29</a></div></div>
+<div class="ttc" id="aclass_camera_control_html_a2317a84280313ddc34fc2904619cd2c3"><div class="ttname"><a href="class_camera_control.html#a2317a84280313ddc34fc2904619cd2c3">CameraControl::HandleMouseDrag</a></div><div class="ttdeci">void HandleMouseDrag()</div><div class="ttdoc">Gère le déplacement de la caméra en cliquant et glissant avec le bouton droit.</div><div class="ttdef"><b>Definition</b> <a href="#l00080">CameraControl.cs:80</a></div></div>
+<div class="ttc" id="aclass_camera_control_html_a2aa63a25adbc8bb026a1c8417859b172"><div class="ttname"><a href="class_camera_control.html#a2aa63a25adbc8bb026a1c8417859b172">CameraControl::dragSpeed</a></div><div class="ttdeci">float dragSpeed</div><div class="ttdoc">Vitesse de déplacement par glisser à la souris (clic droit).</div><div class="ttdef"><b>Definition</b> <a href="#l00023">CameraControl.cs:23</a></div></div>
+<div class="ttc" id="aclass_camera_control_html_a35cb496d00a377797c93f1eeb665bd3e"><div class="ttname"><a href="class_camera_control.html#a35cb496d00a377797c93f1eeb665bd3e">CameraControl::HandleZoom</a></div><div class="ttdeci">void HandleZoom()</div><div class="ttdoc">Gère le zoom avant/arrière avec la molette de la souris. Ajuste la position de la caméra pour garder ...</div><div class="ttdef"><b>Definition</b> <a href="#l00100">CameraControl.cs:100</a></div></div>
+<div class="ttc" id="aclass_camera_control_html_a417bc867b3a6c81d806e71e460d649c6"><div class="ttname"><a href="class_camera_control.html#a417bc867b3a6c81d806e71e460d649c6">CameraControl::HandleKeyboardMovement</a></div><div class="ttdeci">void HandleKeyboardMovement()</div><div class="ttdoc">Gère les déplacements clavier (touches fléchées ou WASD).</div><div class="ttdef"><b>Definition</b> <a href="#l00068">CameraControl.cs:68</a></div></div>
+<div class="ttc" id="aclass_camera_control_html_a4c1d11702ceb161516b8536f07949b31"><div class="ttname"><a href="class_camera_control.html#a4c1d11702ceb161516b8536f07949b31">CameraControl::dragOrigin</a></div><div class="ttdeci">Vector3 dragOrigin</div><div class="ttdef"><b>Definition</b> <a href="#l00034">CameraControl.cs:34</a></div></div>
+<div class="ttc" id="aclass_camera_control_html_a67188cc4eedada332037396e5b6c8e8e"><div class="ttname"><a href="class_camera_control.html#a67188cc4eedada332037396e5b6c8e8e">CameraControl::velocity</a></div><div class="ttdeci">Vector3 velocity</div><div class="ttdef"><b>Definition</b> <a href="#l00033">CameraControl.cs:33</a></div></div>
+<div class="ttc" id="aclass_camera_control_html_a683c8e12c32c8b0a3f81c4646d30e3df"><div class="ttname"><a href="class_camera_control.html#a683c8e12c32c8b0a3f81c4646d30e3df">CameraControl::zoomSpeed</a></div><div class="ttdeci">float zoomSpeed</div><div class="ttdoc">Vitesse du zoom à la molette.</div><div class="ttdef"><b>Definition</b> <a href="#l00014">CameraControl.cs:14</a></div></div>
+<div class="ttc" id="aclass_camera_control_html_a7ee661d1d153b49d7796d1dc5072849b"><div class="ttname"><a href="class_camera_control.html#a7ee661d1d153b49d7796d1dc5072849b">CameraControl::speed</a></div><div class="ttdeci">float speed</div><div class="ttdoc">Vitesse de déplacement clavier de la caméra.</div><div class="ttdef"><b>Definition</b> <a href="#l00011">CameraControl.cs:11</a></div></div>
+<div class="ttc" id="aclass_camera_control_html_a8cf0e317638e9851a7ed1bf8a01ff5ec"><div class="ttname"><a href="class_camera_control.html#a8cf0e317638e9851a7ed1bf8a01ff5ec">CameraControl::minX</a></div><div class="ttdeci">float minX</div><div class="ttdef"><b>Definition</b> <a href="#l00028">CameraControl.cs:28</a></div></div>
+<div class="ttc" id="aclass_camera_control_html_ab91721d1ad5e987c7c957a43ae96845e"><div class="ttname"><a href="class_camera_control.html#ab91721d1ad5e987c7c957a43ae96845e">CameraControl::minZoom</a></div><div class="ttdeci">float minZoom</div><div class="ttdoc">Zoom minimum autorisé.</div><div class="ttdef"><b>Definition</b> <a href="#l00017">CameraControl.cs:17</a></div></div>
+<div class="ttc" id="aclass_camera_control_html_aba6c801ea58e9fb77af7a12ea32027e4"><div class="ttname"><a href="class_camera_control.html#aba6c801ea58e9fb77af7a12ea32027e4">CameraControl::targetZoom</a></div><div class="ttdeci">float targetZoom</div><div class="ttdef"><b>Definition</b> <a href="#l00035">CameraControl.cs:35</a></div></div>
+<div class="ttc" id="aclass_camera_control_html_abb80665b86bf5a98ae791b56b2e02693"><div class="ttname"><a href="class_camera_control.html#abb80665b86bf5a98ae791b56b2e02693">CameraControl::ApplyMovement</a></div><div class="ttdeci">void ApplyMovement()</div><div class="ttdoc">Applique le déplacement calculé tout en gardant la caméra dans les limites de la carte.</div><div class="ttdef"><b>Definition</b> <a href="#l00119">CameraControl.cs:119</a></div></div>
+<div class="ttc" id="aclass_camera_control_html_ad417756871a304e2f5f431a0281d2246"><div class="ttname"><a href="class_camera_control.html#ad417756871a304e2f5f431a0281d2246">CameraControl::maxY</a></div><div class="ttdeci">float maxY</div><div class="ttdef"><b>Definition</b> <a href="#l00031">CameraControl.cs:31</a></div></div>
+<div class="ttc" id="aclass_camera_control_html_adad78ca51f6dab61f6242a648034fd36"><div class="ttname"><a href="class_camera_control.html#adad78ca51f6dab61f6242a648034fd36">CameraControl::acceleration</a></div><div class="ttdeci">float acceleration</div><div class="ttdoc">Facteur d’accélération du mouvement (pour le Lerp).</div><div class="ttdef"><b>Definition</b> <a href="#l00026">CameraControl.cs:26</a></div></div>
+<div class="ttc" id="aclass_camera_control_html_ae0f6e760fb665d396ad3792d6a57279e"><div class="ttname"><a href="class_camera_control.html#ae0f6e760fb665d396ad3792d6a57279e">CameraControl::minY</a></div><div class="ttdeci">float minY</div><div class="ttdef"><b>Definition</b> <a href="#l00030">CameraControl.cs:30</a></div></div>
+<div class="ttc" id="aclass_camera_control_html_aeda2ba0b564b26307faf65b0bd0f3307"><div class="ttname"><a href="class_camera_control.html#aeda2ba0b564b26307faf65b0bd0f3307">CameraControl::Update</a></div><div class="ttdeci">void Update()</div><div class="ttdoc">Met à jour le mouvement clavier, le drag souris et le zoom à chaque frame.</div><div class="ttdef"><b>Definition</b> <a href="#l00057">CameraControl.cs:57</a></div></div>
+<div class="ttc" id="aclass_mouse_position_html"><div class="ttname"><a href="class_mouse_position.html">MousePosition</a></div><div class="ttdoc">Met à jour en continu la position de la souris dans le monde (2D). Stocke la position en temps réel d...</div><div class="ttdef"><b>Definition</b> <a href="_mouse_position_8cs_source.html#l00007">MousePosition.cs:8</a></div></div>
+<div class="ttc" id="aclass_mouse_position_html_ab8c82ab5841aa7f647d6e108731f320c"><div class="ttname"><a href="class_mouse_position.html#ab8c82ab5841aa7f647d6e108731f320c">MousePosition::MouseWorldPosition</a></div><div class="ttdeci">static Vector3 MouseWorldPosition</div><div class="ttdoc">Position de la souris dans le monde (plan X/Y, z = 0). Accessible en lecture seule depuis n&#39;importe q...</div><div class="ttdef"><b>Definition</b> <a href="_mouse_position_8cs_source.html#l00013">MousePosition.cs:13</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_84bbf7b3c7f28a5a18725745e1505219.html">Assets</a></li><li class="navelem"><a href="dir_f13b41af88cf68434578284aaf699e39.html">Scripts</a></li><li class="navelem"><a href="_camera_control_8cs.html">CameraControl.cs</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

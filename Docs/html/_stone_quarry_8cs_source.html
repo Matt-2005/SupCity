@@ -1,0 +1,277 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SupCity:  Fichier source de Assets/Scripts/StoneQuarry.cs</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">SupCity
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('_stone_quarry_8cs_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">StoneQuarry.cs</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_stone_quarry_8cs.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using </span>UnityEngine;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="keyword">using </span>System.Collections;</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span></div>
+<div class="foldopen" id="foldopen00009" data-start="{" data-end="};">
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="class_stone_quarry.html">    9</a></span><span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="class_stone_quarry.html">StoneQuarry</a> : MonoBehaviour</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>{</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    [Header(<span class="stringliteral">&quot;Production Settings&quot;</span>)]</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="class_stone_quarry.html#abef3ef4873962678d56684c7bf1f63e1">   13</a></span>    [SerializeField] <span class="keyword">private</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="class_stone_quarry.html#abef3ef4873962678d56684c7bf1f63e1">productionInterval</a> = 5f;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="class_stone_quarry.html#adad9c5bea0de7b093f0869a5a52ad788">   16</a></span>    [SerializeField] <span class="keyword">private</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="class_stone_quarry.html#adad9c5bea0de7b093f0869a5a52ad788">productionAmount</a> = 1;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="class_stone_quarry.html#acbd56cd6854076f22bbad0382638c787">   19</a></span>    [SerializeField] <span class="keyword">private</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="class_stone_quarry.html#acbd56cd6854076f22bbad0382638c787">maxStorageCapacity</a> = 5000;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    [Header(<span class="stringliteral">&quot;References&quot;</span>)]</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="class_stone_quarry.html#a161c3f8ad6b94e71bdd9722f5ea3684a">   23</a></span>    [SerializeField] <span class="keyword">private</span> GameObject <a class="code hl_variable" href="class_stone_quarry.html#a161c3f8ad6b94e71bdd9722f5ea3684a">stonePrefab</a>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="class_stone_quarry.html#a9976d7f83d79bb2f4049d970ed0c47cf">   26</a></span>    [SerializeField] <span class="keyword">private</span> Transform <a class="code hl_variable" href="class_stone_quarry.html#a9976d7f83d79bb2f4049d970ed0c47cf">stoneSpawnPoint</a>;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="comment">// Variables privées</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="class_stone_quarry.html#a32972c5940cbb6a348ebba1b1a9e2648">   30</a></span>    <span class="keyword">private</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="class_stone_quarry.html#a32972c5940cbb6a348ebba1b1a9e2648">currentStoredStone</a> = 0;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="class_stone_quarry.html#a3a6dd9328d53cf65d4432d184ab0ddf9">   33</a></span>    <span class="keyword">private</span> <span class="keywordtype">bool</span> <a class="code hl_variable" href="class_stone_quarry.html#a3a6dd9328d53cf65d4432d184ab0ddf9">isProducing</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="class_stone_quarry.html#a0e6717eeb80116433bf974c0545bbf95">   36</a></span>    <span class="keyword">private</span> Coroutine <a class="code hl_variable" href="class_stone_quarry.html#a0e6717eeb80116433bf974c0545bbf95">productionCoroutine</a>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span></div>
+<div class="foldopen" id="foldopen00039" data-start="{" data-end="}">
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="class_stone_quarry.html#a7ea67737da00cee1acbf9d6001e0639f">   39</a></span>    <span class="keyword">private</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_stone_quarry.html#a7ea67737da00cee1acbf9d6001e0639f">Start</a>()</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    {</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <a class="code hl_function" href="class_stone_quarry.html#aac9e04696a6f677b89856865f04ea951">StartProduction</a>();</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    }</div>
+</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span></div>
+<div class="foldopen" id="foldopen00045" data-start="{" data-end="}">
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="class_stone_quarry.html#a763ce8b3cfc437e1436a294a77b8951a">   45</a></span>    <span class="keyword">private</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_stone_quarry.html#a763ce8b3cfc437e1436a294a77b8951a">OnEnable</a>()</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    {</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="keywordflow">if</span> (!<a class="code hl_variable" href="class_stone_quarry.html#a3a6dd9328d53cf65d4432d184ab0ddf9">isProducing</a>)</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        {</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            <a class="code hl_function" href="class_stone_quarry.html#aac9e04696a6f677b89856865f04ea951">StartProduction</a>();</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        }</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    }</div>
+</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span></div>
+<div class="foldopen" id="foldopen00054" data-start="{" data-end="}">
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="class_stone_quarry.html#a14a7049a8732514651db5dfd98101ff2">   54</a></span>    <span class="keyword">private</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_stone_quarry.html#a14a7049a8732514651db5dfd98101ff2">OnDisable</a>()</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    {</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        <a class="code hl_function" href="class_stone_quarry.html#ab2d292bf8254b940f5825f1176ee6f99">StopProduction</a>();</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    }</div>
+</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span></div>
+<div class="foldopen" id="foldopen00060" data-start="{" data-end="}">
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="class_stone_quarry.html#aac9e04696a6f677b89856865f04ea951">   60</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_stone_quarry.html#aac9e04696a6f677b89856865f04ea951">StartProduction</a>()</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    {</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <span class="keywordflow">if</span> (!<a class="code hl_variable" href="class_stone_quarry.html#a3a6dd9328d53cf65d4432d184ab0ddf9">isProducing</a>)</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        {</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            <a class="code hl_variable" href="class_stone_quarry.html#a3a6dd9328d53cf65d4432d184ab0ddf9">isProducing</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            <a class="code hl_variable" href="class_stone_quarry.html#a0e6717eeb80116433bf974c0545bbf95">productionCoroutine</a> = StartCoroutine(<a class="code hl_function" href="class_stone_quarry.html#acbd0adbd289ffdf6933e2f9071dc225b">ProduceStone</a>());</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            Debug.Log(<span class="stringliteral">&quot;La carrière commence à produire de la pierre.&quot;</span>);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        }</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    }</div>
+</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span></div>
+<div class="foldopen" id="foldopen00071" data-start="{" data-end="}">
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="class_stone_quarry.html#ab2d292bf8254b940f5825f1176ee6f99">   71</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_stone_quarry.html#ab2d292bf8254b940f5825f1176ee6f99">StopProduction</a>()</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    {</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_stone_quarry.html#a3a6dd9328d53cf65d4432d184ab0ddf9">isProducing</a> &amp;&amp; <a class="code hl_variable" href="class_stone_quarry.html#a0e6717eeb80116433bf974c0545bbf95">productionCoroutine</a> != null)</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        {</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>            StopCoroutine(<a class="code hl_variable" href="class_stone_quarry.html#a0e6717eeb80116433bf974c0545bbf95">productionCoroutine</a>);</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>            <a class="code hl_variable" href="class_stone_quarry.html#a3a6dd9328d53cf65d4432d184ab0ddf9">isProducing</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            Debug.Log(<span class="stringliteral">&quot;La carrière arrête de produire de la pierre.&quot;</span>);</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        }</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    }</div>
+</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span></div>
+<div class="foldopen" id="foldopen00082" data-start="{" data-end="}">
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="class_stone_quarry.html#acbd0adbd289ffdf6933e2f9071dc225b">   82</a></span>    <span class="keyword">private</span> IEnumerator <a class="code hl_function" href="class_stone_quarry.html#acbd0adbd289ffdf6933e2f9071dc225b">ProduceStone</a>()</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    {</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        <span class="keywordflow">while</span> (<span class="keyword">true</span>)</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        {</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            yield <span class="keywordflow">return</span> <span class="keyword">new</span> WaitForSeconds(<a class="code hl_variable" href="class_stone_quarry.html#abef3ef4873962678d56684c7bf1f63e1">productionInterval</a>);</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_stone_quarry.html#a32972c5940cbb6a348ebba1b1a9e2648">currentStoredStone</a> &lt; <a class="code hl_variable" href="class_stone_quarry.html#acbd56cd6854076f22bbad0382638c787">maxStorageCapacity</a>)</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>            {</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>                <span class="keywordtype">int</span> amountToAdd = Mathf.Min(<a class="code hl_variable" href="class_stone_quarry.html#adad9c5bea0de7b093f0869a5a52ad788">productionAmount</a>, <a class="code hl_variable" href="class_stone_quarry.html#acbd56cd6854076f22bbad0382638c787">maxStorageCapacity</a> - <a class="code hl_variable" href="class_stone_quarry.html#a32972c5940cbb6a348ebba1b1a9e2648">currentStoredStone</a>);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>                <a class="code hl_variable" href="class_stone_quarry.html#a32972c5940cbb6a348ebba1b1a9e2648">currentStoredStone</a> += amountToAdd;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>                Debug.Log($<span class="stringliteral">&quot;Pierre produite: +{amountToAdd}. Total stocké: {currentStoredStone}/{maxStorageCapacity}&quot;</span>);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>                <a class="code hl_function" href="class_stone_quarry.html#a0382ec3d916da675414d2ac66dd407db">UpdateStoneVisualization</a>();</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            }</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>            <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>            {</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>                Debug.Log(<span class="stringliteral">&quot;Le stockage de pierre est plein. La production est en pause.&quot;</span>);</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>            }</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        }</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    }</div>
+</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span></div>
+<div class="foldopen" id="foldopen00107" data-start="{" data-end="}">
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="class_stone_quarry.html#a0382ec3d916da675414d2ac66dd407db">  107</a></span>    <span class="keyword">private</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_stone_quarry.html#a0382ec3d916da675414d2ac66dd407db">UpdateStoneVisualization</a>()</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    {</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        <span class="comment">// Exemple: visualisation des pierres empilées selon la quantité</span></div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    }</div>
+</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span></div>
+<div class="foldopen" id="foldopen00117" data-start="{" data-end="}">
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno"><a class="line" href="class_stone_quarry.html#ab152c950a7c93bcdb5fbffffe91029d8">  117</a></span>    <span class="keyword">public</span> <span class="keywordtype">int</span> <a class="code hl_function" href="class_stone_quarry.html#ab152c950a7c93bcdb5fbffffe91029d8">CollectStone</a>(<span class="keywordtype">int</span> amountToCollect)</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    {</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        <span class="keywordtype">int</span> collectedAmount = Mathf.Min(amountToCollect, <a class="code hl_variable" href="class_stone_quarry.html#a32972c5940cbb6a348ebba1b1a9e2648">currentStoredStone</a>);</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        <a class="code hl_variable" href="class_stone_quarry.html#a32972c5940cbb6a348ebba1b1a9e2648">currentStoredStone</a> -= collectedAmount;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        Debug.Log($<span class="stringliteral">&quot;Pierre collectée: {collectedAmount}. Restant: {currentStoredStone}&quot;</span>);</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        <a class="code hl_function" href="class_stone_quarry.html#a0382ec3d916da675414d2ac66dd407db">UpdateStoneVisualization</a>();</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        <span class="keywordflow">return</span> collectedAmount;</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    }</div>
+</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span></div>
+<div class="foldopen" id="foldopen00130" data-start="{" data-end="}">
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno"><a class="line" href="class_stone_quarry.html#aaf23df94e09a069f44e21e04a72e9295">  130</a></span>    <span class="keyword">public</span> <span class="keywordtype">int</span> <a class="code hl_function" href="class_stone_quarry.html#aaf23df94e09a069f44e21e04a72e9295">CollectAllStone</a>()</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    {</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        <span class="keywordtype">int</span> collectedAmount = <a class="code hl_variable" href="class_stone_quarry.html#a32972c5940cbb6a348ebba1b1a9e2648">currentStoredStone</a>;</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        <a class="code hl_variable" href="class_stone_quarry.html#a32972c5940cbb6a348ebba1b1a9e2648">currentStoredStone</a> = 0;</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>        Debug.Log($<span class="stringliteral">&quot;Toute la pierre collectée: {collectedAmount}&quot;</span>);</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>        <a class="code hl_function" href="class_stone_quarry.html#a0382ec3d916da675414d2ac66dd407db">UpdateStoneVisualization</a>();</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span> </div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>        <span class="keywordflow">return</span> collectedAmount;</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    }</div>
+</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span></div>
+<div class="foldopen" id="foldopen00142" data-start="{" data-end="}">
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno"><a class="line" href="class_stone_quarry.html#a1dac99926fd04f95e1a0173c4ea6035f">  142</a></span>    <span class="keyword">public</span> <span class="keywordtype">int</span> <a class="code hl_function" href="class_stone_quarry.html#a1dac99926fd04f95e1a0173c4ea6035f">GetStoredStoneAmount</a>()</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    {</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="class_stone_quarry.html#a32972c5940cbb6a348ebba1b1a9e2648">currentStoredStone</a>;</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    }</div>
+</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span></div>
+<div class="foldopen" id="foldopen00148" data-start="{" data-end="}">
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno"><a class="line" href="class_stone_quarry.html#a05103010fc696dd2dcda5859917d8e58">  148</a></span>    <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="class_stone_quarry.html#a05103010fc696dd2dcda5859917d8e58">IsStorageFull</a>()</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    {</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="class_stone_quarry.html#a32972c5940cbb6a348ebba1b1a9e2648">currentStoredStone</a> &gt;= <a class="code hl_variable" href="class_stone_quarry.html#acbd56cd6854076f22bbad0382638c787">maxStorageCapacity</a>;</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    }</div>
+</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span></div>
+<div class="foldopen" id="foldopen00154" data-start="{" data-end="}">
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno"><a class="line" href="class_stone_quarry.html#acdd6ebef262ddeccee9f053fda91cef2">  154</a></span>    <span class="keyword">public</span> <span class="keywordtype">float</span> <a class="code hl_function" href="class_stone_quarry.html#acdd6ebef262ddeccee9f053fda91cef2">GetStoragePercentage</a>()</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    {</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>        <span class="keywordflow">return</span> (<span class="keywordtype">float</span>)<a class="code hl_variable" href="class_stone_quarry.html#a32972c5940cbb6a348ebba1b1a9e2648">currentStoredStone</a> / <a class="code hl_variable" href="class_stone_quarry.html#acbd56cd6854076f22bbad0382638c787">maxStorageCapacity</a>;</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    }</div>
+</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>}</div>
+</div>
+<div class="ttc" id="aclass_stone_quarry_html"><div class="ttname"><a href="class_stone_quarry.html">StoneQuarry</a></div><div class="ttdoc">Gère la production et le stockage de pierres dans une carrière. La production se fait à intervalles r...</div><div class="ttdef"><b>Definition</b> <a href="#l00009">StoneQuarry.cs:10</a></div></div>
+<div class="ttc" id="aclass_stone_quarry_html_a0382ec3d916da675414d2ac66dd407db"><div class="ttname"><a href="class_stone_quarry.html#a0382ec3d916da675414d2ac66dd407db">StoneQuarry::UpdateStoneVisualization</a></div><div class="ttdeci">void UpdateStoneVisualization()</div><div class="ttdoc">Met à jour la visualisation de la pierre stockée (à implémenter selon besoin). Peut inclure la modifi...</div><div class="ttdef"><b>Definition</b> <a href="#l00107">StoneQuarry.cs:107</a></div></div>
+<div class="ttc" id="aclass_stone_quarry_html_a05103010fc696dd2dcda5859917d8e58"><div class="ttname"><a href="class_stone_quarry.html#a05103010fc696dd2dcda5859917d8e58">StoneQuarry::IsStorageFull</a></div><div class="ttdeci">bool IsStorageFull()</div><div class="ttdoc">Indique si la capacité de stockage est atteinte.</div><div class="ttdef"><b>Definition</b> <a href="#l00148">StoneQuarry.cs:148</a></div></div>
+<div class="ttc" id="aclass_stone_quarry_html_a0e6717eeb80116433bf974c0545bbf95"><div class="ttname"><a href="class_stone_quarry.html#a0e6717eeb80116433bf974c0545bbf95">StoneQuarry::productionCoroutine</a></div><div class="ttdeci">Coroutine productionCoroutine</div><div class="ttdoc">Coroutine de production active.</div><div class="ttdef"><b>Definition</b> <a href="#l00036">StoneQuarry.cs:36</a></div></div>
+<div class="ttc" id="aclass_stone_quarry_html_a14a7049a8732514651db5dfd98101ff2"><div class="ttname"><a href="class_stone_quarry.html#a14a7049a8732514651db5dfd98101ff2">StoneQuarry::OnDisable</a></div><div class="ttdeci">void OnDisable()</div><div class="ttdoc">Arrête la production si l’objet est désactivé.</div><div class="ttdef"><b>Definition</b> <a href="#l00054">StoneQuarry.cs:54</a></div></div>
+<div class="ttc" id="aclass_stone_quarry_html_a161c3f8ad6b94e71bdd9722f5ea3684a"><div class="ttname"><a href="class_stone_quarry.html#a161c3f8ad6b94e71bdd9722f5ea3684a">StoneQuarry::stonePrefab</a></div><div class="ttdeci">GameObject stonePrefab</div><div class="ttdoc">Prefab représentant la pierre produite (pour visualisation éventuelle).</div><div class="ttdef"><b>Definition</b> <a href="#l00023">StoneQuarry.cs:23</a></div></div>
+<div class="ttc" id="aclass_stone_quarry_html_a1dac99926fd04f95e1a0173c4ea6035f"><div class="ttname"><a href="class_stone_quarry.html#a1dac99926fd04f95e1a0173c4ea6035f">StoneQuarry::GetStoredStoneAmount</a></div><div class="ttdeci">int GetStoredStoneAmount()</div><div class="ttdoc">Retourne la quantité de pierre stockée actuellement.</div><div class="ttdef"><b>Definition</b> <a href="#l00142">StoneQuarry.cs:142</a></div></div>
+<div class="ttc" id="aclass_stone_quarry_html_a32972c5940cbb6a348ebba1b1a9e2648"><div class="ttname"><a href="class_stone_quarry.html#a32972c5940cbb6a348ebba1b1a9e2648">StoneQuarry::currentStoredStone</a></div><div class="ttdeci">int currentStoredStone</div><div class="ttdoc">Quantité actuelle de pierre stockée.</div><div class="ttdef"><b>Definition</b> <a href="#l00030">StoneQuarry.cs:30</a></div></div>
+<div class="ttc" id="aclass_stone_quarry_html_a3a6dd9328d53cf65d4432d184ab0ddf9"><div class="ttname"><a href="class_stone_quarry.html#a3a6dd9328d53cf65d4432d184ab0ddf9">StoneQuarry::isProducing</a></div><div class="ttdeci">bool isProducing</div><div class="ttdoc">Indique si la carrière est en train de produire.</div><div class="ttdef"><b>Definition</b> <a href="#l00033">StoneQuarry.cs:33</a></div></div>
+<div class="ttc" id="aclass_stone_quarry_html_a763ce8b3cfc437e1436a294a77b8951a"><div class="ttname"><a href="class_stone_quarry.html#a763ce8b3cfc437e1436a294a77b8951a">StoneQuarry::OnEnable</a></div><div class="ttdeci">void OnEnable()</div><div class="ttdoc">Redémarre la production si l’objet est réactivé.</div><div class="ttdef"><b>Definition</b> <a href="#l00045">StoneQuarry.cs:45</a></div></div>
+<div class="ttc" id="aclass_stone_quarry_html_a7ea67737da00cee1acbf9d6001e0639f"><div class="ttname"><a href="class_stone_quarry.html#a7ea67737da00cee1acbf9d6001e0639f">StoneQuarry::Start</a></div><div class="ttdeci">void Start()</div><div class="ttdoc">Démarre la production automatiquement au lancement du jeu.</div><div class="ttdef"><b>Definition</b> <a href="#l00039">StoneQuarry.cs:39</a></div></div>
+<div class="ttc" id="aclass_stone_quarry_html_a9976d7f83d79bb2f4049d970ed0c47cf"><div class="ttname"><a href="class_stone_quarry.html#a9976d7f83d79bb2f4049d970ed0c47cf">StoneQuarry::stoneSpawnPoint</a></div><div class="ttdeci">Transform stoneSpawnPoint</div><div class="ttdoc">Point de spawn des modèles visuels de pierre (optionnel).</div><div class="ttdef"><b>Definition</b> <a href="#l00026">StoneQuarry.cs:26</a></div></div>
+<div class="ttc" id="aclass_stone_quarry_html_aac9e04696a6f677b89856865f04ea951"><div class="ttname"><a href="class_stone_quarry.html#aac9e04696a6f677b89856865f04ea951">StoneQuarry::StartProduction</a></div><div class="ttdeci">void StartProduction()</div><div class="ttdoc">Démarre la coroutine de production de pierre.</div><div class="ttdef"><b>Definition</b> <a href="#l00060">StoneQuarry.cs:60</a></div></div>
+<div class="ttc" id="aclass_stone_quarry_html_aaf23df94e09a069f44e21e04a72e9295"><div class="ttname"><a href="class_stone_quarry.html#aaf23df94e09a069f44e21e04a72e9295">StoneQuarry::CollectAllStone</a></div><div class="ttdeci">int CollectAllStone()</div><div class="ttdoc">Collecte toute la pierre actuellement stockée.</div><div class="ttdef"><b>Definition</b> <a href="#l00130">StoneQuarry.cs:130</a></div></div>
+<div class="ttc" id="aclass_stone_quarry_html_ab152c950a7c93bcdb5fbffffe91029d8"><div class="ttname"><a href="class_stone_quarry.html#ab152c950a7c93bcdb5fbffffe91029d8">StoneQuarry::CollectStone</a></div><div class="ttdeci">int CollectStone(int amountToCollect)</div><div class="ttdoc">Collecte une quantité donnée de pierre (si disponible).</div><div class="ttdef"><b>Definition</b> <a href="#l00117">StoneQuarry.cs:117</a></div></div>
+<div class="ttc" id="aclass_stone_quarry_html_ab2d292bf8254b940f5825f1176ee6f99"><div class="ttname"><a href="class_stone_quarry.html#ab2d292bf8254b940f5825f1176ee6f99">StoneQuarry::StopProduction</a></div><div class="ttdeci">void StopProduction()</div><div class="ttdoc">Arrête la production de pierre si elle est active.</div><div class="ttdef"><b>Definition</b> <a href="#l00071">StoneQuarry.cs:71</a></div></div>
+<div class="ttc" id="aclass_stone_quarry_html_abef3ef4873962678d56684c7bf1f63e1"><div class="ttname"><a href="class_stone_quarry.html#abef3ef4873962678d56684c7bf1f63e1">StoneQuarry::productionInterval</a></div><div class="ttdeci">float productionInterval</div><div class="ttdoc">Temps en secondes entre chaque cycle de production de pierre.</div><div class="ttdef"><b>Definition</b> <a href="#l00013">StoneQuarry.cs:13</a></div></div>
+<div class="ttc" id="aclass_stone_quarry_html_acbd0adbd289ffdf6933e2f9071dc225b"><div class="ttname"><a href="class_stone_quarry.html#acbd0adbd289ffdf6933e2f9071dc225b">StoneQuarry::ProduceStone</a></div><div class="ttdeci">IEnumerator ProduceStone()</div><div class="ttdoc">Coroutine de production exécutée régulièrement selon le délai défini.</div><div class="ttdef"><b>Definition</b> <a href="#l00082">StoneQuarry.cs:82</a></div></div>
+<div class="ttc" id="aclass_stone_quarry_html_acbd56cd6854076f22bbad0382638c787"><div class="ttname"><a href="class_stone_quarry.html#acbd56cd6854076f22bbad0382638c787">StoneQuarry::maxStorageCapacity</a></div><div class="ttdeci">int maxStorageCapacity</div><div class="ttdoc">Capacité maximale de stockage de pierre.</div><div class="ttdef"><b>Definition</b> <a href="#l00019">StoneQuarry.cs:19</a></div></div>
+<div class="ttc" id="aclass_stone_quarry_html_acdd6ebef262ddeccee9f053fda91cef2"><div class="ttname"><a href="class_stone_quarry.html#acdd6ebef262ddeccee9f053fda91cef2">StoneQuarry::GetStoragePercentage</a></div><div class="ttdeci">float GetStoragePercentage()</div><div class="ttdoc">Retourne le pourcentage d’utilisation du stockage (0 à 1).</div><div class="ttdef"><b>Definition</b> <a href="#l00154">StoneQuarry.cs:154</a></div></div>
+<div class="ttc" id="aclass_stone_quarry_html_adad9c5bea0de7b093f0869a5a52ad788"><div class="ttname"><a href="class_stone_quarry.html#adad9c5bea0de7b093f0869a5a52ad788">StoneQuarry::productionAmount</a></div><div class="ttdeci">int productionAmount</div><div class="ttdoc">Quantité de pierre produite à chaque cycle.</div><div class="ttdef"><b>Definition</b> <a href="#l00016">StoneQuarry.cs:16</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_84bbf7b3c7f28a5a18725745e1505219.html">Assets</a></li><li class="navelem"><a href="dir_f13b41af88cf68434578284aaf699e39.html">Scripts</a></li><li class="navelem"><a href="_stone_quarry_8cs.html">StoneQuarry.cs</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

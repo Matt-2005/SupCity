@@ -7,5 +7,9 @@ using UnityEngine;
 /// </summary>
 public class MultiPlaceable : MonoBehaviour
 {
-    // Script balise (tag par composant)
+    /// <summary>
+    /// Script balise (tag par composant).
+    /// Utilisé pour identifier les objets "plaçables en série".
+    /// </summary>
+    // Aucun code requis
 }
