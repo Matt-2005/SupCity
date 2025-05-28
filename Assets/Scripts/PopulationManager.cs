@@ -16,6 +16,8 @@ public class PopulationManager : MonoBehaviour
 
     /// <summary>Position de spawn des nouveaux PNJ.</summary>
     private Vector3 spawnPosition = new Vector3(-20f, 22f, 0f);
+    
+    public StatistiquesManager statDisplay;
 
     /// <summary>
     /// Initialise le manager : compte les PNJ existants et leur assigne le manager.
@@ -29,7 +31,7 @@ public class PopulationManager : MonoBehaviour
         {
             p.populationManager = this;
         }
-
+        MettreAJourAffichage();
         StartCoroutine(GenererPNJ());
     }
 
@@ -40,11 +42,19 @@ public class PopulationManager : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(intervalleNaissance);
+            // Sécurité pour éviter division par 0
+            float facteur = Mathf.Max(0.1f, Time.timeScale);
+            float attente = intervalleNaissance / facteur;
+
+            yield return new WaitForSeconds(attente);
 
             if (populationActuelle < populationMax)
             {
                 GameObject nouveau = Instantiate(prefabPNJ, spawnPosition, Quaternion.identity);
+
+                // ✅ Renommer pour éviter "Clone"
+                nouveau.name = "Players (" + populationActuelle + ")";
+
                 populationActuelle++;
                 Debug.Log($"👶 PNJ né ! Population : {populationActuelle}");
 
@@ -53,6 +63,7 @@ public class PopulationManager : MonoBehaviour
                 {
                     besoin.populationManager = this;
                 }
+                MettreAJourAffichage();
             }
         }
     }
@@ -64,5 +75,15 @@ public class PopulationManager : MonoBehaviour
     {
         populationActuelle = Mathf.Max(0, populationActuelle - 1);
         Debug.Log($"💀 PNJ mort. Population : {populationActuelle}");
+        MettreAJourAffichage();
     }
+
+    private void MettreAJourAffichage()
+    {
+        if (statDisplay != null)
+        {
+            statDisplay.SetPopulation(populationActuelle);
+        }
+    }
+
 }
