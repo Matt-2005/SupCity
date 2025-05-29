@@ -88,6 +88,7 @@ GameObject:
   - component: {fileID: 3246238998285887221}
   - component: {fileID: 2171130146100730204}
   - component: {fileID: 438058728737804661}
+  - component: {fileID: 7678245970640761263}
   m_Layer: 0
   m_Name: Layer1
   m_TagString: enclotMouton
@@ -262,6 +263,18 @@ TilemapRenderer:
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
+--- !u!114 &7678245970640761263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3854247773818922096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51c5eba182ea84644a00e27fe25faaa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &4964174740660155230
 MonoBehaviour:
   m_ObjectHideFlags: 0

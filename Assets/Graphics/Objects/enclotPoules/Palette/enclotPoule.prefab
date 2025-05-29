@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6455359800621010760}
   - component: {fileID: 3527827301480465620}
   - component: {fileID: 1855530468418851314}
+  - component: {fileID: 9138495175901388481}
   m_Layer: 0
   m_Name: Layer1
   m_TagString: enclotPoule
@@ -187,6 +188,18 @@ TilemapRenderer:
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
+--- !u!114 &9138495175901388481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1149440355498567514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51c5eba182ea84644a00e27fe25faaa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7568191449486017243
 GameObject:
   m_ObjectHideFlags: 0

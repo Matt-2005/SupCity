@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 3628322878615131158}
   - component: {fileID: 6065815685532401801}
   - component: {fileID: 5153163890195457351}
+  - component: {fileID: 8323116110689391204}
   m_Layer: 7
   m_Name: Layer1
   m_TagString: usineOutils
@@ -300,6 +301,18 @@ CompositeCollider2D:
   m_OffsetDistance: 0.00005
   m_UseDelaunayMesh: 0
   m_CompositeGameObject: {fileID: 4223743225216895404}
+--- !u!114 &8323116110689391204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4223743225216895404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51c5eba182ea84644a00e27fe25faaa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4774212068797024992
 GameObject:
   m_ObjectHideFlags: 0
