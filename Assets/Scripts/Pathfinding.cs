@@ -20,6 +20,8 @@ public class PathfindingAI : MonoBehaviour
     private int currentWayPoint = 0;
 
     private Seeker seeker;
+    public LayerMask solidObjectsLayer;
+
     private Animator animator;
 
     /// <summary>Initialise le seeker et démarre la mise à jour du chemin à intervalle régulier.</summary>
@@ -56,8 +58,19 @@ public class PathfindingAI : MonoBehaviour
 
         if (currentWayPoint >= path.vectorPath.Count)
         {
-            animator?.SetBool("isMoving", false);
-            GetComponent<BesoinPlayers>().NotifieArrivee();
+            // Stoppe l’animation
+            if (animator != null)
+            {
+                animator.SetBool("isMoving", false);
+            }
+
+            // Appelle NotifieArrivee seulement si le composant existe
+            BesoinPlayers besoin = GetComponent<BesoinPlayers>();
+            if (besoin != null)
+            {
+                besoin.NotifieArrivee();
+            }
+
             return;
         }
 
@@ -66,7 +79,7 @@ public class PathfindingAI : MonoBehaviour
 
         Vector3 direction = (targetPosition - transform.position).normalized;
 
-        // 🎞️ Animation
+        // Animation
         if (animator != null)
         {
             animator.SetFloat("moveX", direction.x);
@@ -74,17 +87,10 @@ public class PathfindingAI : MonoBehaviour
             animator.SetBool("isMoving", true);
         }
 
-        // ✅ Mouvement constant
         Vector3 move = direction * speed * Time.deltaTime;
         transform.position += move;
 
         float distance = Vector3.Distance(transform.position, targetPosition);
-
-        // Juste avant la fin du chemin → prépare la satisfaction
-        if (currentWayPoint == path.vectorPath.Count - 1)
-        {
-            GetComponent<BesoinPlayers>().PreparerSatisfaction();
-        }
 
         if (distance < nextWayPointDistance)
         {
@@ -93,8 +99,17 @@ public class PathfindingAI : MonoBehaviour
             if (currentWayPoint >= path.vectorPath.Count)
             {
                 transform.position = targetPosition;
-                animator?.SetBool("isMoving", false);
-                GetComponent<BesoinPlayers>().NotifieArrivee();
+
+                if (animator != null)
+                {
+                    animator.SetBool("isMoving", false);
+                }
+
+                BesoinPlayers besoin = GetComponent<BesoinPlayers>();
+                if (besoin != null)
+                {
+                    besoin.NotifieArrivee();
+                }
             }
         }
     }

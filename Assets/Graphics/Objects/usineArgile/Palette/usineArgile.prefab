@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5452322900299562541}
   - component: {fileID: 2698354243002471962}
+  - component: {fileID: 6930007623401860782}
   - component: {fileID: 4240337842669000840}
   - component: {fileID: 3114158329483694493}
   - component: {fileID: 7241014135313832578}
@@ -109,6 +110,18 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &6930007623401860782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2071117799342448520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11852b70cbf05354b94f24018cd4537c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &4240337842669000840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -297,6 +310,7 @@ GameObject:
   - component: {fileID: 6657941502008780427}
   - component: {fileID: 8736977781390147586}
   - component: {fileID: 103818758862918492}
+  - component: {fileID: 902965386714324107}
   - component: {fileID: 8947079693453050920}
   m_Layer: 7
   m_Name: usineArgile
@@ -371,6 +385,19 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &902965386714324107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8762390563843424580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 066da6596fbcb4156b2b0610ce44ec25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  capaciteMax: 1
 --- !u!114 &8947079693453050920
 MonoBehaviour:
   m_ObjectHideFlags: 0

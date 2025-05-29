@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8551051729846577019}
   - component: {fileID: 6791588512261498579}
   - component: {fileID: 3625743023505381477}
+  - component: {fileID: 2726174396261600315}
   m_Layer: 7
   m_Name: usineBaie
   m_TagString: usineBaie
@@ -61,6 +62,19 @@ MonoBehaviour:
   outputResourceType: 0
   productionAmount: 1
   productionInterval: 5
+--- !u!114 &2726174396261600315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 233640100043450232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 066da6596fbcb4156b2b0610ce44ec25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  capaciteMax: 1
 --- !u!1 &1188910525009028057
 GameObject:
   m_ObjectHideFlags: 0
@@ -71,9 +85,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1330397734867740627}
   - component: {fileID: 182766126477510513}
+  - component: {fileID: 3861129419500379159}
+  - component: {fileID: 4641689523328571419}
   - component: {fileID: 8923814977831574247}
   - component: {fileID: 7134501942923017834}
-  - component: {fileID: 4641689523328571419}
   - component: {fileID: 373250690917558003}
   - component: {fileID: 740321273776067119}
   m_Layer: 7
@@ -170,6 +185,34 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &3861129419500379159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1188910525009028057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 066da6596fbcb4156b2b0610ce44ec25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  capaciteMax: 1
+--- !u!114 &4641689523328571419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1188910525009028057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6592a5ba3f0a40d499f20db37f3c3046, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outputResourceType: 0
+  productionAmount: 1
+  productionInterval: 5
 --- !u!483693784 &8923814977831574247
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -260,21 +303,6 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
---- !u!114 &4641689523328571419
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1188910525009028057}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6592a5ba3f0a40d499f20db37f3c3046, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outputResourceType: 0
-  productionAmount: 1
-  productionInterval: 5
 --- !u!50 &373250690917558003
 Rigidbody2D:
   serializedVersion: 5

@@ -12,6 +12,11 @@ public class RessourceMaxPlayerCapacity : MonoBehaviour
     /// <summary>Nombre actuel de joueurs utilisant cette ressource.</summary>
     private int occupationActuelle = 0;
 
+    public int OccupationActuelle
+    {
+        get { return occupationActuelle; }
+    }
+
     /// <summary>
     /// Tente de réserver la ressource.
     /// Incrémente l’occupation si elle est disponible.
