@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2709375837048307636}
   - component: {fileID: 7735785219249869774}
   - component: {fileID: 3205973422334249523}
+  - component: {fileID: 5904497588779489771}
   m_Layer: 0
   m_Name: Layer1
   m_TagString: Maison
@@ -157,6 +158,18 @@ TilemapRenderer:
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
+--- !u!114 &5904497588779489771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1332627745802036840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51c5eba182ea84644a00e27fe25faaa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2076356808839249297
 GameObject:
   m_ObjectHideFlags: 0
@@ -167,6 +180,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6678492017148048211}
   - component: {fileID: 7255848655520986586}
+  - component: {fileID: -1838074923892783209}
   m_Layer: 0
   m_Name: maison4
   m_TagString: Maison
@@ -202,6 +216,19 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+--- !u!114 &-1838074923892783209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2076356808839249297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 066da6596fbcb4156b2b0610ce44ec25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  capaciteMax: 3
 --- !u!114 &5336518626387240265
 MonoBehaviour:
   m_ObjectHideFlags: 0

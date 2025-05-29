@@ -59,6 +59,7 @@ GameObject:
   - component: {fileID: 7403842491656477726}
   - component: {fileID: 7331387314417166671}
   - component: {fileID: 1883713534605115022}
+  - component: {fileID: 5092811538511494973}
   m_Layer: 7
   m_Name: Layer1
   m_TagString: Arbre
@@ -315,6 +316,18 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!114 &5092811538511494973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8307031480755485902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51c5eba182ea84644a00e27fe25faaa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1282664757681557095
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -91,6 +91,7 @@ GameObject:
   - component: {fileID: 7134501942923017834}
   - component: {fileID: 373250690917558003}
   - component: {fileID: 740321273776067119}
+  - component: {fileID: 6385916669725127615}
   m_Layer: 7
   m_Name: Layer1
   m_TagString: usineBaie
@@ -375,6 +376,18 @@ CompositeCollider2D:
   m_OffsetDistance: 0.00005
   m_UseDelaunayMesh: 0
   m_CompositeGameObject: {fileID: 1188910525009028057}
+--- !u!114 &6385916669725127615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1188910525009028057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51c5eba182ea84644a00e27fe25faaa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1648975658258138148
 MonoBehaviour:
   m_ObjectHideFlags: 0
