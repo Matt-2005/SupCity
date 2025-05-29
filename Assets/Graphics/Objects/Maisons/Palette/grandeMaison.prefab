@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 066da6596fbcb4156b2b0610ce44ec25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  capaciteMax: 1
+  capaciteMax: 5
 --- !u!1 &6107060921162992974
 GameObject:
   m_ObjectHideFlags: 0
