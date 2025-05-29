@@ -10,7 +10,6 @@ public class PlayerBehaviourManager : MonoBehaviour
     private BesoinPlayers besoinPlayers;
     private PathfindingAI pathfindingAI;
 
-    /// <summary>Initialise les références vers les composants liés au comportement du PNJ.</summary>
     void Start()
     {
         randomNPC = GetComponentInChildren<RandomNPC>();
@@ -19,11 +18,6 @@ public class PlayerBehaviourManager : MonoBehaviour
     }
 
     private bool modeActif = false;
-
-    /// <summary>
-    /// Vérifie chaque frame si un objet "feu" est actif dans la scène.
-    /// Si c’est le cas, bascule en mode pathfinding en désactivant le déplacement aléatoire.
-    /// </summary>
     void Update()
     {
         if (!modeActif)
@@ -38,17 +32,13 @@ public class PlayerBehaviourManager : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Active les composants de gestion des besoins et du pathfinding, 
-    /// et désactive le script de déplacement aléatoire.
-    /// </summary>
     void ActiverModePathfinding()
     {
-        if (randomNPC != null)
+        /*if (randomNPC != null)
         {
             randomNPC.transform.position = transform.position;
             randomNPC.enabled = false;
-        }
+        }*/
 
         if (besoinPlayers != null) besoinPlayers.enabled = true;
         if (pathfindingAI != null) pathfindingAI.enabled = true;

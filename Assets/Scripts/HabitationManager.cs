@@ -8,7 +8,6 @@ public class HabitationManager : MonoBehaviour
 
     void Start()
     {
-        // Récupère tous les bâtiments capables d’héberger (tag "Maison" ou autre)
         logements = FindObjectsOfType<RessourceMaxPlayerCapacity>();
 
         StartCoroutine(MiseAJourPeriodique());
@@ -19,7 +18,7 @@ public class HabitationManager : MonoBehaviour
         while (true)
         {
             MettreAJourAffichage();
-            yield return new WaitForSeconds(0.5f); // toutes les 0.5s
+            yield return new WaitForSeconds(0.5f);
         }
     }
 
@@ -31,8 +30,6 @@ public class HabitationManager : MonoBehaviour
         foreach (var logement in logements)
         {
             capaciteTotale += logement.capaciteMax;
-
-            // Expose occupationActuelle proprement
             placesOccupees += logement.OccupationActuelle;
         }
 

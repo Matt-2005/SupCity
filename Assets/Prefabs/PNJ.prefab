@@ -167,6 +167,7 @@ GameObject:
   - component: {fileID: 9092279603568341951}
   - component: {fileID: 2580189177336085596}
   - component: {fileID: 7237260640743118988}
+  - component: {fileID: -817298856065395509}
   m_Layer: 0
   m_Name: PNJ
   m_TagString: Untagged
@@ -263,8 +264,6 @@ MonoBehaviour:
   tauxFaim: 0.02
   tauxSoif: 0.01
   tauxEnergie: 0.01
-  seuilCritique: 1
-  seuilAction: 1
   tache: 0
   dureeDeVieMin: 60
   dureeDeVieMax: 120
@@ -288,7 +287,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8948247754006853256}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 044ee8ea862a147bc806355244674c21, type: 3}
   m_Name: 
@@ -304,7 +303,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8948247754006853256}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: b5b5ed03f1e4747c2908d65559c0c1af, type: 2}
   m_CullingMode: 0
@@ -318,3 +317,17 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-817298856065395509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8948247754006853256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd60fa5dc643b7140a6953cde121c1c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveRadius: 10
+  waitTime: 3

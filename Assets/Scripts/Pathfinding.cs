@@ -2,46 +2,56 @@ using UnityEngine;
 using Pathfinding;
 
 /// <summary>
-/// Gère le déplacement automatique d’un PNJ vers une cible en utilisant le pathfinding A*.
-/// Met à jour les animations selon la direction et notifie l'arrivée via le script <c>BesoinPlayers</c>.
+/// Gère le déplacement automatique d’un PNJ vers une cible à l’aide d’A* Pathfinding.
+/// Met à jour les animations et notifie l’arrivée au script BesoinPlayers.
 /// </summary>
 public class PathfindingAI : MonoBehaviour
 {
-    /// <summary>Transform de la cible à atteindre.</summary>
     public Transform target;
-
-    /// <summary>Vitesse de déplacement du PNJ.</summary>
-    public float speed = 200f;
-
-    /// <summary>Distance minimale pour passer au waypoint suivant.</summary>
+    public float speed = 3f;
     public float nextWayPointDistance = 0.3f;
 
     private Path path;
     private int currentWayPoint = 0;
 
     private Seeker seeker;
-    public LayerMask solidObjectsLayer;
-
+    private Rigidbody2D rb;
     private Animator animator;
 
-    /// <summary>Initialise le seeker et démarre la mise à jour du chemin à intervalle régulier.</summary>
     void Start()
     {
         seeker = GetComponent<Seeker>();
+        rb = GetComponent<Rigidbody2D>();
         animator = GetComponentInChildren<Animator>();
+
         InvokeRepeating("UpdatePath", 0f, 0.5f);
     }
 
-    /// <summary>Demande au Seeker de recalculer un chemin vers la cible.</summary>
     void UpdatePath()
     {
         if (seeker.IsDone() && target != null)
         {
-            seeker.StartPath(transform.position, target.position, OnPathComplete);
+            Vector3 startPosition = transform.position;
+
+        if (TryGetComponent<Rigidbody2D>(out var rb))
+        {
+            startPosition = rb.position;
+        }
+        else
+        {
+            Debug.LogWarning($"❌ {gameObject.name} n’a pas de Rigidbody2D, utilisation de transform.position.");
+        }
+        seeker.StartPath(startPosition, target.position, OnPathComplete);
         }
     }
+    public void setTargetPos(Vector3 worldPosition)
+    {
+        GameObject tempTarget = new GameObject("TempTarget");
+        tempTarget.transform.position = worldPosition;
+        target = tempTarget.transform;
+    }
 
-    /// <summary>Callback appelée lorsque le chemin est calculé avec succès.</summary>
+
     void OnPathComplete(Path p)
     {
         if (!p.error)
@@ -51,69 +61,50 @@ public class PathfindingAI : MonoBehaviour
         }
     }
 
-    /// <summary>Déplace le PNJ frame par frame en suivant le chemin calculé.</summary>
     void FixedUpdate()
     {
         if (path == null || target == null) return;
+        if (target != null && target.name == "TargetTemp" && currentWayPoint >= path.vectorPath.Count)
+        {
+            Destroy(target.gameObject);
+            target = null;
+        }
 
         if (currentWayPoint >= path.vectorPath.Count)
         {
-            // Stoppe l’animation
-            if (animator != null)
-            {
-                animator.SetBool("isMoving", false);
-            }
-
-            // Appelle NotifieArrivee seulement si le composant existe
-            BesoinPlayers besoin = GetComponent<BesoinPlayers>();
-            if (besoin != null)
-            {
-                besoin.NotifieArrivee();
-            }
-
+            animator?.SetBool("isMoving", false);
+            GetComponent<BesoinPlayers>()?.NotifieArrivee();
             return;
         }
 
-        Vector3 targetPosition = path.vectorPath[currentWayPoint];
-        targetPosition.z = transform.position.z;
+        Vector2 direction = ((Vector2)path.vectorPath[currentWayPoint] - rb.position).normalized;
+        Vector2 movement = direction * speed * Time.fixedDeltaTime;
 
-        Vector3 direction = (targetPosition - transform.position).normalized;
+        rb.MovePosition(rb.position + movement);
 
-        // Animation
         if (animator != null)
         {
+            animator.SetBool("isMoving", true);
             animator.SetFloat("moveX", direction.x);
             animator.SetFloat("moveY", direction.y);
-            animator.SetBool("isMoving", true);
         }
 
-        Vector3 move = direction * speed * Time.deltaTime;
-        transform.position += move;
-
-        float distance = Vector3.Distance(transform.position, targetPosition);
-
+        float distance = Vector2.Distance(rb.position, path.vectorPath[currentWayPoint]);
         if (distance < nextWayPointDistance)
         {
             currentWayPoint++;
+        }
 
-            if (currentWayPoint >= path.vectorPath.Count)
-            {
-                transform.position = targetPosition;
-
-                if (animator != null)
-                {
-                    animator.SetBool("isMoving", false);
-                }
-
-                BesoinPlayers besoin = GetComponent<BesoinPlayers>();
-                if (besoin != null)
-                {
-                    besoin.NotifieArrivee();
-                }
-            }
+        // Snap final pour précision
+        if (currentWayPoint >= path.vectorPath.Count)
+        {
+            rb.position = path.vectorPath[^1];
+            animator?.SetBool("isMoving", false);
+            GetComponent<BesoinPlayers>()?.NotifieArrivee();
         }
     }
 
+    /// <summary>Définit dynamiquement une nouvelle cible à atteindre.</summary>
     public void setTarget(Transform newTarget)
     {
         target = newTarget;
