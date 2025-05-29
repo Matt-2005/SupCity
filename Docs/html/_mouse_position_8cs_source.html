@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SupCity:  Fichier source de Assets/Scripts/MousePosition.cs</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">SupCity
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('_mouse_position_8cs_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">MousePosition.cs</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_mouse_position_8cs.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using </span>UnityEngine;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span></div>
+<div class="foldopen" id="foldopen00007" data-start="{" data-end="};">
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="class_mouse_position.html">    7</a></span><span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="class_mouse_position.html">MousePosition</a> : MonoBehaviour</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>{</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="class_mouse_position.html#ab8c82ab5841aa7f647d6e108731f320c">   13</a></span>    <span class="keyword">public</span> <span class="keyword">static</span> Vector3 <a class="code hl_variable" href="class_mouse_position.html#ab8c82ab5841aa7f647d6e108731f320c">MouseWorldPosition</a> { get; <span class="keyword">private</span> <a class="code hl_variable" href="class_mouse_position.html#ab7dabcbc9eb403c4e39a3b2f5caeffc3">set</a>; }</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span></div>
+<div class="foldopen" id="foldopen00018" data-start="{" data-end="}">
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="class_mouse_position.html#a67d8c10a1eca452cd6424faaab73a430">   18</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_mouse_position.html#a67d8c10a1eca452cd6424faaab73a430">Update</a>()</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        Vector3 tempPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        tempPosition.z = 0f;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <a class="code hl_variable" href="class_mouse_position.html#ab8c82ab5841aa7f647d6e108731f320c">MouseWorldPosition</a> = tempPosition;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    }</div>
+</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>}</div>
+</div>
+<div class="ttc" id="aclass_mouse_position_html"><div class="ttname"><a href="class_mouse_position.html">MousePosition</a></div><div class="ttdoc">Met à jour en continu la position de la souris dans le monde (2D). Stocke la position en temps réel d...</div><div class="ttdef"><b>Definition</b> <a href="#l00007">MousePosition.cs:8</a></div></div>
+<div class="ttc" id="aclass_mouse_position_html_a67d8c10a1eca452cd6424faaab73a430"><div class="ttname"><a href="class_mouse_position.html#a67d8c10a1eca452cd6424faaab73a430">MousePosition::Update</a></div><div class="ttdeci">void Update()</div><div class="ttdoc">Met à jour la position de la souris dans le monde à chaque frame.</div><div class="ttdef"><b>Definition</b> <a href="#l00018">MousePosition.cs:18</a></div></div>
+<div class="ttc" id="aclass_mouse_position_html_ab7dabcbc9eb403c4e39a3b2f5caeffc3"><div class="ttname"><a href="class_mouse_position.html#ab7dabcbc9eb403c4e39a3b2f5caeffc3">MousePosition::set</a></div><div class="ttdeci">set</div><div class="ttdef"><b>Definition</b> <a href="#l00013">MousePosition.cs:13</a></div></div>
+<div class="ttc" id="aclass_mouse_position_html_ab8c82ab5841aa7f647d6e108731f320c"><div class="ttname"><a href="class_mouse_position.html#ab8c82ab5841aa7f647d6e108731f320c">MousePosition::MouseWorldPosition</a></div><div class="ttdeci">static Vector3 MouseWorldPosition</div><div class="ttdoc">Position de la souris dans le monde (plan X/Y, z = 0). Accessible en lecture seule depuis n&#39;importe q...</div><div class="ttdef"><b>Definition</b> <a href="#l00013">MousePosition.cs:13</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_84bbf7b3c7f28a5a18725745e1505219.html">Assets</a></li><li class="navelem"><a href="dir_f13b41af88cf68434578284aaf699e39.html">Scripts</a></li><li class="navelem"><a href="_mouse_position_8cs.html">MousePosition.cs</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

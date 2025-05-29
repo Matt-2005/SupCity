@@ -1,0 +1,914 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SupCity: Référence de la classe WoodcutterHut</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">SupCity
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('class_woodcutter_hut.html','','class_woodcutter_hut-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Référence de la classe WoodcutterHut</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Gère la production automatique de bois dans une cabane de bûcheron. Le bois est produit à intervalles réguliers jusqu'à remplir le stockage. Permet la collecte partielle, totale ou l’ajout manuel.  
+ <a href="#details">Plus de détails...</a></p>
+<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Graphe d'héritage de WoodcutterHut:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+ <div class="center">
+  <img src="class_woodcutter_hut.png" alt=""/>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Fonctions membres publiques</h2></td></tr>
+<tr class="memitem:a15b5c8dd57fe8832bacfa88461ac6442" id="r_a15b5c8dd57fe8832bacfa88461ac6442"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a15b5c8dd57fe8832bacfa88461ac6442">StartProduction</a> ()</td></tr>
+<tr class="memdesc:a15b5c8dd57fe8832bacfa88461ac6442"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lance la coroutine de production de bois.  <br /></td></tr>
+<tr class="memitem:a4ab698c9919566d5d129e024be201a23" id="r_a4ab698c9919566d5d129e024be201a23"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4ab698c9919566d5d129e024be201a23">StopProduction</a> ()</td></tr>
+<tr class="memdesc:a4ab698c9919566d5d129e024be201a23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Arrête la production de bois si elle est active.  <br /></td></tr>
+<tr class="memitem:afd2c25a88fee991062ea84e45eaff6d2" id="r_afd2c25a88fee991062ea84e45eaff6d2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afd2c25a88fee991062ea84e45eaff6d2">CollectWood</a> (int amountToCollect)</td></tr>
+<tr class="memdesc:afd2c25a88fee991062ea84e45eaff6d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Collecte une quantité précise de bois.  <br /></td></tr>
+<tr class="memitem:a7d9ffe34e5f09076a31c492dab84a8eb" id="r_a7d9ffe34e5f09076a31c492dab84a8eb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7d9ffe34e5f09076a31c492dab84a8eb">CollectAllWood</a> ()</td></tr>
+<tr class="memdesc:a7d9ffe34e5f09076a31c492dab84a8eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Collecte tout le bois disponible.  <br /></td></tr>
+<tr class="memitem:a4875c2a60f4093bb948280f1bf5c56e2" id="r_a4875c2a60f4093bb948280f1bf5c56e2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4875c2a60f4093bb948280f1bf5c56e2">GetStoredWoodAmount</a> ()</td></tr>
+<tr class="memdesc:a4875c2a60f4093bb948280f1bf5c56e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne la quantité actuelle de bois stockée.  <br /></td></tr>
+<tr class="memitem:a96a6d901d38541189562121aada47c12" id="r_a96a6d901d38541189562121aada47c12"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a96a6d901d38541189562121aada47c12">IsStorageFull</a> ()</td></tr>
+<tr class="memdesc:a96a6d901d38541189562121aada47c12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indique si le stockage est plein.  <br /></td></tr>
+<tr class="memitem:a76cc343e33872d9191b9d538a2ee77a1" id="r_a76cc343e33872d9191b9d538a2ee77a1"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a76cc343e33872d9191b9d538a2ee77a1">GetStoragePercentage</a> ()</td></tr>
+<tr class="memdesc:a76cc343e33872d9191b9d538a2ee77a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne un pourcentage du remplissage du stockage.  <br /></td></tr>
+<tr class="memitem:aa7c96d3f6fb6448db04dee370661d020" id="r_aa7c96d3f6fb6448db04dee370661d020"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa7c96d3f6fb6448db04dee370661d020">AddWood</a> (int amountToAdd)</td></tr>
+<tr class="memdesc:aa7c96d3f6fb6448db04dee370661d020"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute manuellement du bois à la cabane (ex : récompense ou transfert).  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Fonctions membres privées</h2></td></tr>
+<tr class="memitem:a5ea557d9a6d889696f5cdb2c49c5873c" id="r_a5ea557d9a6d889696f5cdb2c49c5873c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5ea557d9a6d889696f5cdb2c49c5873c">Start</a> ()</td></tr>
+<tr class="memdesc:a5ea557d9a6d889696f5cdb2c49c5873c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Démarre automatiquement la production au lancement.  <br /></td></tr>
+<tr class="memitem:a6418b45fc4a1151fed336617b25c3ee5" id="r_a6418b45fc4a1151fed336617b25c3ee5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6418b45fc4a1151fed336617b25c3ee5">OnEnable</a> ()</td></tr>
+<tr class="memdesc:a6418b45fc4a1151fed336617b25c3ee5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Relance la production si l’objet est activé.  <br /></td></tr>
+<tr class="memitem:a2f2713443e1ba85a1d9eaec1475e1686" id="r_a2f2713443e1ba85a1d9eaec1475e1686"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2f2713443e1ba85a1d9eaec1475e1686">OnDisable</a> ()</td></tr>
+<tr class="memdesc:a2f2713443e1ba85a1d9eaec1475e1686"><td class="mdescLeft">&#160;</td><td class="mdescRight">Arrête la production si l’objet est désactivé.  <br /></td></tr>
+<tr class="memitem:a02d235f1bd1b17f8c82194ea8af2e967" id="r_a02d235f1bd1b17f8c82194ea8af2e967"><td class="memItemLeft" align="right" valign="top">IEnumerator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a02d235f1bd1b17f8c82194ea8af2e967">ProduceWood</a> ()</td></tr>
+<tr class="memdesc:a02d235f1bd1b17f8c82194ea8af2e967"><td class="mdescLeft">&#160;</td><td class="mdescRight">Coroutine qui gère la production régulière du bois.  <br /></td></tr>
+<tr class="memitem:a0da543ec0c588f3dcca6f68d9e84a789" id="r_a0da543ec0c588f3dcca6f68d9e84a789"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0da543ec0c588f3dcca6f68d9e84a789">UpdateWoodVisualization</a> ()</td></tr>
+<tr class="memdesc:a0da543ec0c588f3dcca6f68d9e84a789"><td class="mdescLeft">&#160;</td><td class="mdescRight">Met à jour la visualisation du bois stocké (ex : jauge, modèles 3D).  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Attributs privés</h2></td></tr>
+<tr class="memitem:a72e0cac6da2446aa7e69f09c51075e4c" id="r_a72e0cac6da2446aa7e69f09c51075e4c"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a72e0cac6da2446aa7e69f09c51075e4c">productionInterval</a> = 5f</td></tr>
+<tr class="memdesc:a72e0cac6da2446aa7e69f09c51075e4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Temps entre deux cycles de production de bois (en secondes).  <br /></td></tr>
+<tr class="memitem:afa856cfb971c4c05333709135ff53ed3" id="r_afa856cfb971c4c05333709135ff53ed3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afa856cfb971c4c05333709135ff53ed3">productionAmount</a> = 5</td></tr>
+<tr class="memdesc:afa856cfb971c4c05333709135ff53ed3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Quantité de bois produite à chaque cycle.  <br /></td></tr>
+<tr class="memitem:a9f8e24acbfc9cad89be4ae82c6eb75ad" id="r_a9f8e24acbfc9cad89be4ae82c6eb75ad"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9f8e24acbfc9cad89be4ae82c6eb75ad">maxStorageCapacity</a> = 5000</td></tr>
+<tr class="memdesc:a9f8e24acbfc9cad89be4ae82c6eb75ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Capacité maximale de stockage de bois.  <br /></td></tr>
+<tr class="memitem:af038a5a965c5486c8506cbff87fa41b5" id="r_af038a5a965c5486c8506cbff87fa41b5"><td class="memItemLeft" align="right" valign="top">GameObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af038a5a965c5486c8506cbff87fa41b5">woodPrefab</a></td></tr>
+<tr class="memdesc:af038a5a965c5486c8506cbff87fa41b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prefab du bois (optionnel, pour la visualisation).  <br /></td></tr>
+<tr class="memitem:ae233939bb95ed4b4c43f9d66b4145911" id="r_ae233939bb95ed4b4c43f9d66b4145911"><td class="memItemLeft" align="right" valign="top">Transform&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae233939bb95ed4b4c43f9d66b4145911">woodStorageArea</a></td></tr>
+<tr class="memdesc:ae233939bb95ed4b4c43f9d66b4145911"><td class="mdescLeft">&#160;</td><td class="mdescRight">Point de stockage ou de visualisation des bûches (optionnel).  <br /></td></tr>
+<tr class="memitem:ae83deed3088ac627f8fc87db7fdd5702" id="r_ae83deed3088ac627f8fc87db7fdd5702"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae83deed3088ac627f8fc87db7fdd5702">currentStoredWood</a> = 0</td></tr>
+<tr class="memitem:a4aef0785637dcd1638aa8b89b31368d6" id="r_a4aef0785637dcd1638aa8b89b31368d6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4aef0785637dcd1638aa8b89b31368d6">isProducing</a> = false</td></tr>
+<tr class="memitem:a8edefa27983b83201f5f77c73490992a" id="r_a8edefa27983b83201f5f77c73490992a"><td class="memItemLeft" align="right" valign="top">Coroutine&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8edefa27983b83201f5f77c73490992a">productionCoroutine</a></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>Gère la production automatique de bois dans une cabane de bûcheron. Le bois est produit à intervalles réguliers jusqu'à remplir le stockage. Permet la collecte partielle, totale ou l’ajout manuel. </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="_woodcutter_hut_8cs_source.html#l00009">9</a> du fichier <a class="el" href="_woodcutter_hut_8cs_source.html">WoodcutterHut.cs</a>.</p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentation des fonctions membres</h2>
+<a id="aa7c96d3f6fb6448db04dee370661d020" name="aa7c96d3f6fb6448db04dee370661d020"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7c96d3f6fb6448db04dee370661d020">&#9670;&#160;</a></span>AddWood()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int WoodcutterHut::AddWood </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>amountToAdd</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ajoute manuellement du bois à la cabane (ex : récompense ou transfert). </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">amountToAdd</td><td>Quantité à ajouter</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Quantité réellement ajoutée (en fonction de l’espace disponible)</dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="_woodcutter_hut_8cs_source.html#l00157">157</a> du fichier <a class="el" href="_woodcutter_hut_8cs_source.html">WoodcutterHut.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  158</span>    {</div>
+<div class="line"><span class="lineno">  159</span>        <span class="keywordtype">int</span> actuallyAdded = Mathf.Min(amountToAdd, <a class="code hl_variable" href="#a9f8e24acbfc9cad89be4ae82c6eb75ad">maxStorageCapacity</a> - <a class="code hl_variable" href="#ae83deed3088ac627f8fc87db7fdd5702">currentStoredWood</a>);</div>
+<div class="line"><span class="lineno">  160</span>        <a class="code hl_variable" href="#ae83deed3088ac627f8fc87db7fdd5702">currentStoredWood</a> += actuallyAdded;</div>
+<div class="line"><span class="lineno">  161</span> </div>
+<div class="line"><span class="lineno">  162</span>        Debug.Log($<span class="stringliteral">&quot;Bois ajouté: {actuallyAdded}. Total actuel: {currentStoredWood}/{maxStorageCapacity}&quot;</span>);</div>
+<div class="line"><span class="lineno">  163</span>        <a class="code hl_function" href="#a0da543ec0c588f3dcca6f68d9e84a789">UpdateWoodVisualization</a>();</div>
+<div class="line"><span class="lineno">  164</span> </div>
+<div class="line"><span class="lineno">  165</span>        <span class="keywordflow">return</span> actuallyAdded;</div>
+<div class="line"><span class="lineno">  166</span>    }</div>
+<div class="ttc" id="aclass_woodcutter_hut_html_a0da543ec0c588f3dcca6f68d9e84a789"><div class="ttname"><a href="#a0da543ec0c588f3dcca6f68d9e84a789">WoodcutterHut::UpdateWoodVisualization</a></div><div class="ttdeci">void UpdateWoodVisualization()</div><div class="ttdoc">Met à jour la visualisation du bois stocké (ex : jauge, modèles 3D).</div><div class="ttdef"><b>Definition</b> <a href="_woodcutter_hut_8cs_source.html#l00098">WoodcutterHut.cs:98</a></div></div>
+<div class="ttc" id="aclass_woodcutter_hut_html_a9f8e24acbfc9cad89be4ae82c6eb75ad"><div class="ttname"><a href="#a9f8e24acbfc9cad89be4ae82c6eb75ad">WoodcutterHut::maxStorageCapacity</a></div><div class="ttdeci">int maxStorageCapacity</div><div class="ttdoc">Capacité maximale de stockage de bois.</div><div class="ttdef"><b>Definition</b> <a href="_woodcutter_hut_8cs_source.html#l00019">WoodcutterHut.cs:19</a></div></div>
+<div class="ttc" id="aclass_woodcutter_hut_html_ae83deed3088ac627f8fc87db7fdd5702"><div class="ttname"><a href="#ae83deed3088ac627f8fc87db7fdd5702">WoodcutterHut::currentStoredWood</a></div><div class="ttdeci">int currentStoredWood</div><div class="ttdef"><b>Definition</b> <a href="_woodcutter_hut_8cs_source.html#l00028">WoodcutterHut.cs:28</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Références <a class="el" href="_woodcutter_hut_8cs_source.html#l00028">currentStoredWood</a>, <a class="el" href="_woodcutter_hut_8cs_source.html#l00019">maxStorageCapacity</a>, et <a class="el" href="_woodcutter_hut_8cs_source.html#l00098">UpdateWoodVisualization()</a>.</p>
+
+</div>
+</div>
+<a id="a7d9ffe34e5f09076a31c492dab84a8eb" name="a7d9ffe34e5f09076a31c492dab84a8eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d9ffe34e5f09076a31c492dab84a8eb">&#9670;&#160;</a></span>CollectAllWood()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int WoodcutterHut::CollectAllWood </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Collecte tout le bois disponible. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>Quantité totale collectée</dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="_woodcutter_hut_8cs_source.html#l00123">123</a> du fichier <a class="el" href="_woodcutter_hut_8cs_source.html">WoodcutterHut.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  124</span>    {</div>
+<div class="line"><span class="lineno">  125</span>        <span class="keywordtype">int</span> collectedAmount = <a class="code hl_variable" href="#ae83deed3088ac627f8fc87db7fdd5702">currentStoredWood</a>;</div>
+<div class="line"><span class="lineno">  126</span>        <a class="code hl_variable" href="#ae83deed3088ac627f8fc87db7fdd5702">currentStoredWood</a> = 0;</div>
+<div class="line"><span class="lineno">  127</span> </div>
+<div class="line"><span class="lineno">  128</span>        Debug.Log($<span class="stringliteral">&quot;Tout le bois collecté: {collectedAmount}&quot;</span>);</div>
+<div class="line"><span class="lineno">  129</span>        <a class="code hl_function" href="#a0da543ec0c588f3dcca6f68d9e84a789">UpdateWoodVisualization</a>();</div>
+<div class="line"><span class="lineno">  130</span> </div>
+<div class="line"><span class="lineno">  131</span>        <span class="keywordflow">return</span> collectedAmount;</div>
+<div class="line"><span class="lineno">  132</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">Références <a class="el" href="_woodcutter_hut_8cs_source.html#l00028">currentStoredWood</a>, et <a class="el" href="_woodcutter_hut_8cs_source.html#l00098">UpdateWoodVisualization()</a>.</p>
+
+</div>
+</div>
+<a id="afd2c25a88fee991062ea84e45eaff6d2" name="afd2c25a88fee991062ea84e45eaff6d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd2c25a88fee991062ea84e45eaff6d2">&#9670;&#160;</a></span>CollectWood()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int WoodcutterHut::CollectWood </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>amountToCollect</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Collecte une quantité précise de bois. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">amountToCollect</td><td>Quantité demandée</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Quantité effectivement collectée</dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="_woodcutter_hut_8cs_source.html#l00108">108</a> du fichier <a class="el" href="_woodcutter_hut_8cs_source.html">WoodcutterHut.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  109</span>    {</div>
+<div class="line"><span class="lineno">  110</span>        <span class="keywordtype">int</span> collectedAmount = Mathf.Min(amountToCollect, <a class="code hl_variable" href="#ae83deed3088ac627f8fc87db7fdd5702">currentStoredWood</a>);</div>
+<div class="line"><span class="lineno">  111</span>        <a class="code hl_variable" href="#ae83deed3088ac627f8fc87db7fdd5702">currentStoredWood</a> -= collectedAmount;</div>
+<div class="line"><span class="lineno">  112</span> </div>
+<div class="line"><span class="lineno">  113</span>        Debug.Log($<span class="stringliteral">&quot;Bois collecté: {collectedAmount}. Restant: {currentStoredWood}&quot;</span>);</div>
+<div class="line"><span class="lineno">  114</span>        <a class="code hl_function" href="#a0da543ec0c588f3dcca6f68d9e84a789">UpdateWoodVisualization</a>();</div>
+<div class="line"><span class="lineno">  115</span> </div>
+<div class="line"><span class="lineno">  116</span>        <span class="keywordflow">return</span> collectedAmount;</div>
+<div class="line"><span class="lineno">  117</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">Références <a class="el" href="_woodcutter_hut_8cs_source.html#l00028">currentStoredWood</a>, et <a class="el" href="_woodcutter_hut_8cs_source.html#l00098">UpdateWoodVisualization()</a>.</p>
+
+</div>
+</div>
+<a id="a76cc343e33872d9191b9d538a2ee77a1" name="a76cc343e33872d9191b9d538a2ee77a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76cc343e33872d9191b9d538a2ee77a1">&#9670;&#160;</a></span>GetStoragePercentage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float WoodcutterHut::GetStoragePercentage </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retourne un pourcentage du remplissage du stockage. </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="_woodcutter_hut_8cs_source.html#l00147">147</a> du fichier <a class="el" href="_woodcutter_hut_8cs_source.html">WoodcutterHut.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  148</span>    {</div>
+<div class="line"><span class="lineno">  149</span>        <span class="keywordflow">return</span> (<span class="keywordtype">float</span>)<a class="code hl_variable" href="#ae83deed3088ac627f8fc87db7fdd5702">currentStoredWood</a> / <a class="code hl_variable" href="#a9f8e24acbfc9cad89be4ae82c6eb75ad">maxStorageCapacity</a>;</div>
+<div class="line"><span class="lineno">  150</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">Références <a class="el" href="_woodcutter_hut_8cs_source.html#l00028">currentStoredWood</a>, et <a class="el" href="_woodcutter_hut_8cs_source.html#l00019">maxStorageCapacity</a>.</p>
+
+</div>
+</div>
+<a id="a4875c2a60f4093bb948280f1bf5c56e2" name="a4875c2a60f4093bb948280f1bf5c56e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4875c2a60f4093bb948280f1bf5c56e2">&#9670;&#160;</a></span>GetStoredWoodAmount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int WoodcutterHut::GetStoredWoodAmount </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retourne la quantité actuelle de bois stockée. </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="_woodcutter_hut_8cs_source.html#l00135">135</a> du fichier <a class="el" href="_woodcutter_hut_8cs_source.html">WoodcutterHut.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  136</span>    {</div>
+<div class="line"><span class="lineno">  137</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="#ae83deed3088ac627f8fc87db7fdd5702">currentStoredWood</a>;</div>
+<div class="line"><span class="lineno">  138</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">Références <a class="el" href="_woodcutter_hut_8cs_source.html#l00028">currentStoredWood</a>.</p>
+
+</div>
+</div>
+<a id="a96a6d901d38541189562121aada47c12" name="a96a6d901d38541189562121aada47c12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96a6d901d38541189562121aada47c12">&#9670;&#160;</a></span>IsStorageFull()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool WoodcutterHut::IsStorageFull </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Indique si le stockage est plein. </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="_woodcutter_hut_8cs_source.html#l00141">141</a> du fichier <a class="el" href="_woodcutter_hut_8cs_source.html">WoodcutterHut.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  142</span>    {</div>
+<div class="line"><span class="lineno">  143</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="#ae83deed3088ac627f8fc87db7fdd5702">currentStoredWood</a> &gt;= <a class="code hl_variable" href="#a9f8e24acbfc9cad89be4ae82c6eb75ad">maxStorageCapacity</a>;</div>
+<div class="line"><span class="lineno">  144</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">Références <a class="el" href="_woodcutter_hut_8cs_source.html#l00028">currentStoredWood</a>, et <a class="el" href="_woodcutter_hut_8cs_source.html#l00019">maxStorageCapacity</a>.</p>
+
+</div>
+</div>
+<a id="a2f2713443e1ba85a1d9eaec1475e1686" name="a2f2713443e1ba85a1d9eaec1475e1686"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f2713443e1ba85a1d9eaec1475e1686">&#9670;&#160;</a></span>OnDisable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WoodcutterHut::OnDisable </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Arrête la production si l’objet est désactivé. </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="_woodcutter_hut_8cs_source.html#l00048">48</a> du fichier <a class="el" href="_woodcutter_hut_8cs_source.html">WoodcutterHut.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   49</span>    {</div>
+<div class="line"><span class="lineno">   50</span>        <a class="code hl_function" href="#a4ab698c9919566d5d129e024be201a23">StopProduction</a>();</div>
+<div class="line"><span class="lineno">   51</span>    }</div>
+<div class="ttc" id="aclass_woodcutter_hut_html_a4ab698c9919566d5d129e024be201a23"><div class="ttname"><a href="#a4ab698c9919566d5d129e024be201a23">WoodcutterHut::StopProduction</a></div><div class="ttdeci">void StopProduction()</div><div class="ttdoc">Arrête la production de bois si elle est active.</div><div class="ttdef"><b>Definition</b> <a href="_woodcutter_hut_8cs_source.html#l00065">WoodcutterHut.cs:65</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Références <a class="el" href="_woodcutter_hut_8cs_source.html#l00065">StopProduction()</a>.</p>
+
+</div>
+</div>
+<a id="a6418b45fc4a1151fed336617b25c3ee5" name="a6418b45fc4a1151fed336617b25c3ee5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6418b45fc4a1151fed336617b25c3ee5">&#9670;&#160;</a></span>OnEnable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WoodcutterHut::OnEnable </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Relance la production si l’objet est activé. </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="_woodcutter_hut_8cs_source.html#l00039">39</a> du fichier <a class="el" href="_woodcutter_hut_8cs_source.html">WoodcutterHut.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   40</span>    {</div>
+<div class="line"><span class="lineno">   41</span>        <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#a4aef0785637dcd1638aa8b89b31368d6">isProducing</a>)</div>
+<div class="line"><span class="lineno">   42</span>        {</div>
+<div class="line"><span class="lineno">   43</span>            <a class="code hl_function" href="#a15b5c8dd57fe8832bacfa88461ac6442">StartProduction</a>();</div>
+<div class="line"><span class="lineno">   44</span>        }</div>
+<div class="line"><span class="lineno">   45</span>    }</div>
+<div class="ttc" id="aclass_woodcutter_hut_html_a15b5c8dd57fe8832bacfa88461ac6442"><div class="ttname"><a href="#a15b5c8dd57fe8832bacfa88461ac6442">WoodcutterHut::StartProduction</a></div><div class="ttdeci">void StartProduction()</div><div class="ttdoc">Lance la coroutine de production de bois.</div><div class="ttdef"><b>Definition</b> <a href="_woodcutter_hut_8cs_source.html#l00054">WoodcutterHut.cs:54</a></div></div>
+<div class="ttc" id="aclass_woodcutter_hut_html_a4aef0785637dcd1638aa8b89b31368d6"><div class="ttname"><a href="#a4aef0785637dcd1638aa8b89b31368d6">WoodcutterHut::isProducing</a></div><div class="ttdeci">bool isProducing</div><div class="ttdef"><b>Definition</b> <a href="_woodcutter_hut_8cs_source.html#l00029">WoodcutterHut.cs:29</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Références <a class="el" href="_woodcutter_hut_8cs_source.html#l00029">isProducing</a>, et <a class="el" href="_woodcutter_hut_8cs_source.html#l00054">StartProduction()</a>.</p>
+
+</div>
+</div>
+<a id="a02d235f1bd1b17f8c82194ea8af2e967" name="a02d235f1bd1b17f8c82194ea8af2e967"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02d235f1bd1b17f8c82194ea8af2e967">&#9670;&#160;</a></span>ProduceWood()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">IEnumerator WoodcutterHut::ProduceWood </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Coroutine qui gère la production régulière du bois. </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="_woodcutter_hut_8cs_source.html#l00076">76</a> du fichier <a class="el" href="_woodcutter_hut_8cs_source.html">WoodcutterHut.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   77</span>    {</div>
+<div class="line"><span class="lineno">   78</span>        <span class="keywordflow">while</span> (<span class="keyword">true</span>)</div>
+<div class="line"><span class="lineno">   79</span>        {</div>
+<div class="line"><span class="lineno">   80</span>            yield <span class="keywordflow">return</span> <span class="keyword">new</span> WaitForSeconds(<a class="code hl_variable" href="#a72e0cac6da2446aa7e69f09c51075e4c">productionInterval</a>);</div>
+<div class="line"><span class="lineno">   81</span> </div>
+<div class="line"><span class="lineno">   82</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="#ae83deed3088ac627f8fc87db7fdd5702">currentStoredWood</a> &lt; <a class="code hl_variable" href="#a9f8e24acbfc9cad89be4ae82c6eb75ad">maxStorageCapacity</a>)</div>
+<div class="line"><span class="lineno">   83</span>            {</div>
+<div class="line"><span class="lineno">   84</span>                <span class="keywordtype">int</span> amountToAdd = Mathf.Min(<a class="code hl_variable" href="#afa856cfb971c4c05333709135ff53ed3">productionAmount</a>, <a class="code hl_variable" href="#a9f8e24acbfc9cad89be4ae82c6eb75ad">maxStorageCapacity</a> - <a class="code hl_variable" href="#ae83deed3088ac627f8fc87db7fdd5702">currentStoredWood</a>);</div>
+<div class="line"><span class="lineno">   85</span>                <a class="code hl_variable" href="#ae83deed3088ac627f8fc87db7fdd5702">currentStoredWood</a> += amountToAdd;</div>
+<div class="line"><span class="lineno">   86</span>                Debug.Log($<span class="stringliteral">&quot;Bois produit: +{amountToAdd}. Total stocké: {currentStoredWood}/{maxStorageCapacity}&quot;</span>);</div>
+<div class="line"><span class="lineno">   87</span> </div>
+<div class="line"><span class="lineno">   88</span>                <a class="code hl_function" href="#a0da543ec0c588f3dcca6f68d9e84a789">UpdateWoodVisualization</a>();</div>
+<div class="line"><span class="lineno">   89</span>            }</div>
+<div class="line"><span class="lineno">   90</span>            <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   91</span>            {</div>
+<div class="line"><span class="lineno">   92</span>                Debug.Log(<span class="stringliteral">&quot;Le stockage de bois est plein. La production est en pause.&quot;</span>);</div>
+<div class="line"><span class="lineno">   93</span>            }</div>
+<div class="line"><span class="lineno">   94</span>        }</div>
+<div class="line"><span class="lineno">   95</span>    }</div>
+<div class="ttc" id="aclass_woodcutter_hut_html_a72e0cac6da2446aa7e69f09c51075e4c"><div class="ttname"><a href="#a72e0cac6da2446aa7e69f09c51075e4c">WoodcutterHut::productionInterval</a></div><div class="ttdeci">float productionInterval</div><div class="ttdoc">Temps entre deux cycles de production de bois (en secondes).</div><div class="ttdef"><b>Definition</b> <a href="_woodcutter_hut_8cs_source.html#l00013">WoodcutterHut.cs:13</a></div></div>
+<div class="ttc" id="aclass_woodcutter_hut_html_afa856cfb971c4c05333709135ff53ed3"><div class="ttname"><a href="#afa856cfb971c4c05333709135ff53ed3">WoodcutterHut::productionAmount</a></div><div class="ttdeci">int productionAmount</div><div class="ttdoc">Quantité de bois produite à chaque cycle.</div><div class="ttdef"><b>Definition</b> <a href="_woodcutter_hut_8cs_source.html#l00016">WoodcutterHut.cs:16</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Références <a class="el" href="_woodcutter_hut_8cs_source.html#l00028">currentStoredWood</a>, <a class="el" href="_woodcutter_hut_8cs_source.html#l00019">maxStorageCapacity</a>, <a class="el" href="_woodcutter_hut_8cs_source.html#l00016">productionAmount</a>, <a class="el" href="_woodcutter_hut_8cs_source.html#l00013">productionInterval</a>, et <a class="el" href="_woodcutter_hut_8cs_source.html#l00098">UpdateWoodVisualization()</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="_woodcutter_hut_8cs_source.html#l00054">StartProduction()</a>.</p>
+
+</div>
+</div>
+<a id="a5ea557d9a6d889696f5cdb2c49c5873c" name="a5ea557d9a6d889696f5cdb2c49c5873c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ea557d9a6d889696f5cdb2c49c5873c">&#9670;&#160;</a></span>Start()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WoodcutterHut::Start </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Démarre automatiquement la production au lancement. </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="_woodcutter_hut_8cs_source.html#l00033">33</a> du fichier <a class="el" href="_woodcutter_hut_8cs_source.html">WoodcutterHut.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   34</span>    {</div>
+<div class="line"><span class="lineno">   35</span>        <a class="code hl_function" href="#a15b5c8dd57fe8832bacfa88461ac6442">StartProduction</a>();</div>
+<div class="line"><span class="lineno">   36</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">Références <a class="el" href="_woodcutter_hut_8cs_source.html#l00054">StartProduction()</a>.</p>
+
+</div>
+</div>
+<a id="a15b5c8dd57fe8832bacfa88461ac6442" name="a15b5c8dd57fe8832bacfa88461ac6442"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15b5c8dd57fe8832bacfa88461ac6442">&#9670;&#160;</a></span>StartProduction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WoodcutterHut::StartProduction </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Lance la coroutine de production de bois. </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="_woodcutter_hut_8cs_source.html#l00054">54</a> du fichier <a class="el" href="_woodcutter_hut_8cs_source.html">WoodcutterHut.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   55</span>    {</div>
+<div class="line"><span class="lineno">   56</span>        <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#a4aef0785637dcd1638aa8b89b31368d6">isProducing</a>)</div>
+<div class="line"><span class="lineno">   57</span>        {</div>
+<div class="line"><span class="lineno">   58</span>            <a class="code hl_variable" href="#a4aef0785637dcd1638aa8b89b31368d6">isProducing</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   59</span>            <a class="code hl_variable" href="#a8edefa27983b83201f5f77c73490992a">productionCoroutine</a> = StartCoroutine(<a class="code hl_function" href="#a02d235f1bd1b17f8c82194ea8af2e967">ProduceWood</a>());</div>
+<div class="line"><span class="lineno">   60</span>            Debug.Log(<span class="stringliteral">&quot;La cabane du bûcheron commence à produire du bois.&quot;</span>);</div>
+<div class="line"><span class="lineno">   61</span>        }</div>
+<div class="line"><span class="lineno">   62</span>    }</div>
+<div class="ttc" id="aclass_woodcutter_hut_html_a02d235f1bd1b17f8c82194ea8af2e967"><div class="ttname"><a href="#a02d235f1bd1b17f8c82194ea8af2e967">WoodcutterHut::ProduceWood</a></div><div class="ttdeci">IEnumerator ProduceWood()</div><div class="ttdoc">Coroutine qui gère la production régulière du bois.</div><div class="ttdef"><b>Definition</b> <a href="_woodcutter_hut_8cs_source.html#l00076">WoodcutterHut.cs:76</a></div></div>
+<div class="ttc" id="aclass_woodcutter_hut_html_a8edefa27983b83201f5f77c73490992a"><div class="ttname"><a href="#a8edefa27983b83201f5f77c73490992a">WoodcutterHut::productionCoroutine</a></div><div class="ttdeci">Coroutine productionCoroutine</div><div class="ttdef"><b>Definition</b> <a href="_woodcutter_hut_8cs_source.html#l00030">WoodcutterHut.cs:30</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Références <a class="el" href="_woodcutter_hut_8cs_source.html#l00029">isProducing</a>, <a class="el" href="_woodcutter_hut_8cs_source.html#l00076">ProduceWood()</a>, et <a class="el" href="_woodcutter_hut_8cs_source.html#l00030">productionCoroutine</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="_woodcutter_hut_8cs_source.html#l00039">OnEnable()</a>, et <a class="el" href="_woodcutter_hut_8cs_source.html#l00033">Start()</a>.</p>
+
+</div>
+</div>
+<a id="a4ab698c9919566d5d129e024be201a23" name="a4ab698c9919566d5d129e024be201a23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ab698c9919566d5d129e024be201a23">&#9670;&#160;</a></span>StopProduction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WoodcutterHut::StopProduction </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Arrête la production de bois si elle est active. </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="_woodcutter_hut_8cs_source.html#l00065">65</a> du fichier <a class="el" href="_woodcutter_hut_8cs_source.html">WoodcutterHut.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   66</span>    {</div>
+<div class="line"><span class="lineno">   67</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a4aef0785637dcd1638aa8b89b31368d6">isProducing</a> &amp;&amp; <a class="code hl_variable" href="#a8edefa27983b83201f5f77c73490992a">productionCoroutine</a> != null)</div>
+<div class="line"><span class="lineno">   68</span>        {</div>
+<div class="line"><span class="lineno">   69</span>            StopCoroutine(<a class="code hl_variable" href="#a8edefa27983b83201f5f77c73490992a">productionCoroutine</a>);</div>
+<div class="line"><span class="lineno">   70</span>            <a class="code hl_variable" href="#a4aef0785637dcd1638aa8b89b31368d6">isProducing</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   71</span>            Debug.Log(<span class="stringliteral">&quot;La cabane du bûcheron arrête de produire du bois.&quot;</span>);</div>
+<div class="line"><span class="lineno">   72</span>        }</div>
+<div class="line"><span class="lineno">   73</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">Références <a class="el" href="_woodcutter_hut_8cs_source.html#l00029">isProducing</a>, et <a class="el" href="_woodcutter_hut_8cs_source.html#l00030">productionCoroutine</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="_woodcutter_hut_8cs_source.html#l00048">OnDisable()</a>.</p>
+
+</div>
+</div>
+<a id="a0da543ec0c588f3dcca6f68d9e84a789" name="a0da543ec0c588f3dcca6f68d9e84a789"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0da543ec0c588f3dcca6f68d9e84a789">&#9670;&#160;</a></span>UpdateWoodVisualization()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WoodcutterHut::UpdateWoodVisualization </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Met à jour la visualisation du bois stocké (ex : jauge, modèles 3D). </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="_woodcutter_hut_8cs_source.html#l00098">98</a> du fichier <a class="el" href="_woodcutter_hut_8cs_source.html">WoodcutterHut.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   99</span>    {</div>
+<div class="line"><span class="lineno">  100</span>        <span class="comment">// Implémenter visualisation ici selon votre système</span></div>
+<div class="line"><span class="lineno">  101</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">Référencé par <a class="el" href="_woodcutter_hut_8cs_source.html#l00157">AddWood()</a>, <a class="el" href="_woodcutter_hut_8cs_source.html#l00123">CollectAllWood()</a>, <a class="el" href="_woodcutter_hut_8cs_source.html#l00108">CollectWood()</a>, et <a class="el" href="_woodcutter_hut_8cs_source.html#l00076">ProduceWood()</a>.</p>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Documentation des données membres</h2>
+<a id="ae83deed3088ac627f8fc87db7fdd5702" name="ae83deed3088ac627f8fc87db7fdd5702"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae83deed3088ac627f8fc87db7fdd5702">&#9670;&#160;</a></span>currentStoredWood</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int WoodcutterHut::currentStoredWood = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="_woodcutter_hut_8cs_source.html#l00028">28</a> du fichier <a class="el" href="_woodcutter_hut_8cs_source.html">WoodcutterHut.cs</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="_woodcutter_hut_8cs_source.html#l00157">AddWood()</a>, <a class="el" href="_woodcutter_hut_8cs_source.html#l00123">CollectAllWood()</a>, <a class="el" href="_woodcutter_hut_8cs_source.html#l00108">CollectWood()</a>, <a class="el" href="_woodcutter_hut_8cs_source.html#l00147">GetStoragePercentage()</a>, <a class="el" href="_woodcutter_hut_8cs_source.html#l00135">GetStoredWoodAmount()</a>, <a class="el" href="_woodcutter_hut_8cs_source.html#l00141">IsStorageFull()</a>, et <a class="el" href="_woodcutter_hut_8cs_source.html#l00076">ProduceWood()</a>.</p>
+
+</div>
+</div>
+<a id="a4aef0785637dcd1638aa8b89b31368d6" name="a4aef0785637dcd1638aa8b89b31368d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4aef0785637dcd1638aa8b89b31368d6">&#9670;&#160;</a></span>isProducing</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool WoodcutterHut::isProducing = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="_woodcutter_hut_8cs_source.html#l00029">29</a> du fichier <a class="el" href="_woodcutter_hut_8cs_source.html">WoodcutterHut.cs</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="_woodcutter_hut_8cs_source.html#l00039">OnEnable()</a>, <a class="el" href="_woodcutter_hut_8cs_source.html#l00054">StartProduction()</a>, et <a class="el" href="_woodcutter_hut_8cs_source.html#l00065">StopProduction()</a>.</p>
+
+</div>
+</div>
+<a id="a9f8e24acbfc9cad89be4ae82c6eb75ad" name="a9f8e24acbfc9cad89be4ae82c6eb75ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f8e24acbfc9cad89be4ae82c6eb75ad">&#9670;&#160;</a></span>maxStorageCapacity</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int WoodcutterHut::maxStorageCapacity = 5000</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Capacité maximale de stockage de bois. </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="_woodcutter_hut_8cs_source.html#l00019">19</a> du fichier <a class="el" href="_woodcutter_hut_8cs_source.html">WoodcutterHut.cs</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="_woodcutter_hut_8cs_source.html#l00157">AddWood()</a>, <a class="el" href="_woodcutter_hut_8cs_source.html#l00147">GetStoragePercentage()</a>, <a class="el" href="_woodcutter_hut_8cs_source.html#l00141">IsStorageFull()</a>, et <a class="el" href="_woodcutter_hut_8cs_source.html#l00076">ProduceWood()</a>.</p>
+
+</div>
+</div>
+<a id="afa856cfb971c4c05333709135ff53ed3" name="afa856cfb971c4c05333709135ff53ed3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa856cfb971c4c05333709135ff53ed3">&#9670;&#160;</a></span>productionAmount</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int WoodcutterHut::productionAmount = 5</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Quantité de bois produite à chaque cycle. </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="_woodcutter_hut_8cs_source.html#l00016">16</a> du fichier <a class="el" href="_woodcutter_hut_8cs_source.html">WoodcutterHut.cs</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="_woodcutter_hut_8cs_source.html#l00076">ProduceWood()</a>.</p>
+
+</div>
+</div>
+<a id="a8edefa27983b83201f5f77c73490992a" name="a8edefa27983b83201f5f77c73490992a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8edefa27983b83201f5f77c73490992a">&#9670;&#160;</a></span>productionCoroutine</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Coroutine WoodcutterHut::productionCoroutine</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="_woodcutter_hut_8cs_source.html#l00030">30</a> du fichier <a class="el" href="_woodcutter_hut_8cs_source.html">WoodcutterHut.cs</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="_woodcutter_hut_8cs_source.html#l00054">StartProduction()</a>, et <a class="el" href="_woodcutter_hut_8cs_source.html#l00065">StopProduction()</a>.</p>
+
+</div>
+</div>
+<a id="a72e0cac6da2446aa7e69f09c51075e4c" name="a72e0cac6da2446aa7e69f09c51075e4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72e0cac6da2446aa7e69f09c51075e4c">&#9670;&#160;</a></span>productionInterval</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float WoodcutterHut::productionInterval = 5f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Temps entre deux cycles de production de bois (en secondes). </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="_woodcutter_hut_8cs_source.html#l00013">13</a> du fichier <a class="el" href="_woodcutter_hut_8cs_source.html">WoodcutterHut.cs</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="_woodcutter_hut_8cs_source.html#l00076">ProduceWood()</a>.</p>
+
+</div>
+</div>
+<a id="af038a5a965c5486c8506cbff87fa41b5" name="af038a5a965c5486c8506cbff87fa41b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af038a5a965c5486c8506cbff87fa41b5">&#9670;&#160;</a></span>woodPrefab</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GameObject WoodcutterHut::woodPrefab</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Prefab du bois (optionnel, pour la visualisation). </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="_woodcutter_hut_8cs_source.html#l00023">23</a> du fichier <a class="el" href="_woodcutter_hut_8cs_source.html">WoodcutterHut.cs</a>.</p>
+
+</div>
+</div>
+<a id="ae233939bb95ed4b4c43f9d66b4145911" name="ae233939bb95ed4b4c43f9d66b4145911"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae233939bb95ed4b4c43f9d66b4145911">&#9670;&#160;</a></span>woodStorageArea</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Transform WoodcutterHut::woodStorageArea</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Point de stockage ou de visualisation des bûches (optionnel). </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="_woodcutter_hut_8cs_source.html#l00026">26</a> du fichier <a class="el" href="_woodcutter_hut_8cs_source.html">WoodcutterHut.cs</a>.</p>
+
+</div>
+</div>
+<hr/>La documentation de cette classe a été générée à partir du fichier suivant :<ul>
+<li>Assets/Scripts/<a class="el" href="_woodcutter_hut_8cs_source.html">WoodcutterHut.cs</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="class_woodcutter_hut.html">WoodcutterHut</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

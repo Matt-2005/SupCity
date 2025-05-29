@@ -1,0 +1,38 @@
+# Projet Unity - Fichier Doxygen
+
+PROJECT_NAME           = SupCity
+OUTPUT_DIRECTORY       = Docs
+INPUT                  = Assets/Scripts
+RECURSIVE              = YES
+FILE_PATTERNS          = *.cs
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = YES
+EXTRACT_STATIC         = YES
+EXTRACT_LOCAL_CLASSES  = YES
+
+GENERATE_LATEX         = NO
+GENERATE_HTML          = YES
+GENERATE_TREEVIEW      = YES
+
+# Documentation à partir des commentaires
+JAVADOC_AUTOBRIEF      = YES
+QT_AUTOBRIEF           = YES
+MULTILINE_CPP_IS_BRIEF = YES
+
+# Pour accepter les /// ou /**
+EXTENSION_MAPPING      = cs=C#
+
+# Style
+HTML_COLORSTYLE_HUE    = 220
+HTML_DYNAMIC_SECTIONS  = YES
+
+# Optimisations
+SOURCE_BROWSER         = YES
+INLINE_SOURCES         = YES
+REFERENCED_BY_RELATION = YES
+REFERENCES_RELATION    = YES
+CALL_GRAPH             = YES
+CALLER_GRAPH           = YES
+
+# Langue
+OUTPUT_LANGUAGE        = French

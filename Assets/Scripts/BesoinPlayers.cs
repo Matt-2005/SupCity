@@ -1,21 +1,33 @@
 using UnityEngine;
 
+/// <summary>
+/// Gère les besoins vitaux des PNJ : faim, soif, énergie.
+/// Le PNJ choisit une action à effectuer selon ses besoins.
+/// Il vieillit avec le temps et peut mourir naturellement.
+/// </summary>
 public class BesoinPlayers : MonoBehaviour
 {
+    /// <summary>Valeur de la soif du PNJ (1 = pleine, 0 = vide).</summary>
     public float soif = 1f, faim = 1f, energie = 1f;
+
+    /// <summary>Vitesse de diminution de la faim, de la soif et de l'énergie.</summary>
     public float tauxFaim = 0.02f, tauxSoif = 0.01f, tauxEnergie = 0.01f;
 
+    /// <summary>Type de besoin prioritaire du PNJ.</summary>
     public enum BesoinType { Rien, Faim, Soif, Energie }
+
+    /// <summary>Seuil critique en-dessous duquel un besoin devient prioritaire.</summary>
     public float seuilCritique = 0.15f;
+
+    /// <summary>Seuil d'action à partir duquel le PNJ commence à chercher une solution.</summary>
     public float seuilAction = 0.3f;
     public enum TachePNJ { Aucun, Bucheron, Carrier, OuvrierBois, OuvrierPierre, OuvrierArgile }
     public TachePNJ tache = TachePNJ.Aucun;
 
+    /// <summary>État actuel du PNJ selon ses besoins ou son activité.</summary>
     public enum EtatPNJ { Idle, AllerManger, Manger, AllerBoire, Boire, AllerDormir, Dormir }
     private EtatPNJ etatActuel = EtatPNJ.Idle;
 
-    //private bool enAction = false;
-    //private bool estChezSoi = false;
     private BesoinType besoinActuel;
 
     private float actionTimer = 0f;
@@ -25,7 +37,7 @@ public class BesoinPlayers : MonoBehaviour
     private float dureeDeVie;
     private float vieEcoulee = 0f;
 
-    // 🔄 Ajout : Référence vers le gestionnaire
+    /// <summary>Référence au gestionnaire de population (pour notifier les décès).</summary>
     public PopulationManager populationManager;
 
     void Awake()
@@ -40,7 +52,6 @@ public class BesoinPlayers : MonoBehaviour
         {
             Debug.Log($"{gameObject.name} est mort de vieillesse.");
 
-            // 🔄 Notifie le manager avant de mourir
             if (populationManager != null)
             {
                 populationManager.PNJMort();
@@ -50,7 +61,6 @@ public class BesoinPlayers : MonoBehaviour
         }
     }
 
-
     void Update()
     {
         faim = Mathf.Clamp01(faim - tauxFaim * Time.deltaTime);
@@ -59,7 +69,6 @@ public class BesoinPlayers : MonoBehaviour
 
         Debug.Log($"État actuel : {etatActuel} | Faim: {faim:F2} | Soif: {soif:F2} | Énergie: {energie:F2}");
 
-        // 🔒 Vérifie si la cible a été supprimée
         if (etatActuel == EtatPNJ.AllerManger || etatActuel == EtatPNJ.AllerBoire || etatActuel == EtatPNJ.AllerDormir)
         {
             var currentTarget = GetComponent<PathfindingAI>().target;
@@ -94,7 +103,6 @@ public class BesoinPlayers : MonoBehaviour
                 besoinActuel = GetBesoinPrioritaire();
                 if (besoinActuel != BesoinType.Rien)
                 {
-                    // Tant qu'on a un besoin, on retente régulièrement
                     switch (besoinActuel)
                     {
                         case BesoinType.Faim:
@@ -110,32 +118,24 @@ public class BesoinPlayers : MonoBehaviour
                 }
                 break;
 
-
             case EtatPNJ.Manger:
-                actionTimer += Time.deltaTime;
-                if (actionTimer >= actionDuration)
-                {
-                    FinManger();
-                }
-                break;
             case EtatPNJ.Boire:
-                actionTimer += Time.deltaTime;
-                if (actionTimer >= actionDuration)
-                {
-                    FinBoire();
-                }
-                break;
             case EtatPNJ.Dormir:
                 actionTimer += Time.deltaTime;
                 if (actionTimer >= actionDuration)
                 {
-                    FinDormir();
+                    switch (etatActuel)
+                    {
+                        case EtatPNJ.Manger: FinManger(); break;
+                        case EtatPNJ.Boire: FinBoire(); break;
+                        case EtatPNJ.Dormir: FinDormir(); break;
+                    }
                 }
                 break;
         }
     }
 
-
+    /// <summary>Retourne le besoin prioritaire selon les valeurs actuelles.</summary>
     public BesoinType GetBesoinPrioritaire()
     {
         if (faim <= 0.15f) return BesoinType.Faim;
@@ -177,7 +177,6 @@ public class BesoinPlayers : MonoBehaviour
         }
     }
 
-
     void Manger()
     {
         Debug.Log("Recherche d'un buisson pour manger...");
@@ -198,8 +197,6 @@ public class BesoinPlayers : MonoBehaviour
 
         Debug.Log("Faim satisfaite, baie en cours de suppression.");
     }
-
-
 
     void Boire()
     {
@@ -231,6 +228,7 @@ public class BesoinPlayers : MonoBehaviour
         Debug.Log("Énergie restaurée.");
     }
 
+    /// <summary>Cherche la ressource la plus proche disponible avec le tag spécifié.</summary>
     public Transform ChercherTarget(string tag)
     {
         GameObject[] targets = GameObject.FindGameObjectsWithTag(tag);
@@ -243,20 +241,15 @@ public class BesoinPlayers : MonoBehaviour
         {
             var slot = obj.GetComponent<RessourceMaxPlayerCapacity>();
             if (slot == null) continue;
-
-            // 🔒 Essaye de réserver tout de suite
             if (!slot.VoirDisponibilite()) continue;
-
-            // ✅ Si on arrive ici, la réservation est faite (occupation++)
 
             float distance = Vector3.Distance(transform.position, obj.transform.position);
             if (distance < minDistance)
             {
-                // Si on avait déjà réservé une autre ressource avant, on la libère
                 if (bestTarget != null)
                 {
                     var oldSlot = bestTarget.GetComponent<RessourceMaxPlayerCapacity>();
-                    if (oldSlot != null) oldSlot.Liberer(); // libère la ressource précédente
+                    if (oldSlot != null) oldSlot.Liberer();
                 }
 
                 bestTarget = obj;
@@ -264,7 +257,6 @@ public class BesoinPlayers : MonoBehaviour
             }
             else
             {
-                // ❌ Pas retenue, on libère immédiatement
                 slot.Liberer();
             }
         }
@@ -272,8 +264,7 @@ public class BesoinPlayers : MonoBehaviour
         return bestTarget != null ? bestTarget.transform : null;
     }
 
-
-
+    /// <summary>Libère la ressource actuellement ciblée par le PNJ.</summary>
     void LibererRessource()
     {
         Transform currentTarget = GetComponent<PathfindingAI>().target;
@@ -283,7 +274,6 @@ public class BesoinPlayers : MonoBehaviour
             if (slot != null) slot.Liberer();
         }
     }
-
 
     private System.Collections.IEnumerator AttendreEtChercher(string tag, EtatPNJ nouvelEtat)
     {
@@ -320,10 +310,11 @@ public class BesoinPlayers : MonoBehaviour
             Debug.Log("Baie détruite 2 secondes après l'arrivée.");
         }
     }
+
+    /// <summary>Instancie un nouveau PNJ dans la scène à la position donnée.</summary>
     public static void CreerNouveauPNJ(GameObject prefabPNJ, Vector3 position)
     {
         GameObject nouveauPNJ = GameObject.Instantiate(prefabPNJ, position, Quaternion.identity);
         Debug.Log("👶 Nouveau PNJ créé !");
     }
-
 }

@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SupCity:  Fichier source de Assets/Scripts/BuildManager.cs</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">SupCity
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('_build_manager_8cs_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">BuildManager.cs</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_build_manager_8cs.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using </span>TMPro;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="keyword">using </span>UnityEngine;</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span></div>
+<div class="foldopen" id="foldopen00009" data-start="{" data-end="};">
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="class_build_manager.html">    9</a></span><span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="class_build_manager.html">BuildManager</a> : MonoBehaviour</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>{</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="class_build_manager.html#adb44ee5dcc2eafbefd103e12c7da2ea7">   14</a></span>    <span class="keyword">public</span> <span class="keyword">static</span> <a class="code hl_class" href="class_build_manager.html">BuildManager</a> <a class="code hl_variable" href="class_build_manager.html#adb44ee5dcc2eafbefd103e12c7da2ea7">instance</a>;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="class_build_manager.html#a7354e5a0aee769a8944ba647f21f220e">   19</a></span>    <span class="keyword">private</span> GameObject <a class="code hl_variable" href="class_build_manager.html#a7354e5a0aee769a8944ba647f21f220e">selectedPrefab</a>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="class_build_manager.html#ada20c150360b55676c6756c07954ff10">   24</a></span>    <span class="keyword">private</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="class_build_manager.html#ada20c150360b55676c6756c07954ff10">currentButton</a>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="class_build_manager.html#af3a0972f4e939f4079f5b4c81ef5d5bb">   29</a></span>    <span class="keyword">private</span> <span class="keywordtype">bool</span> <a class="code hl_variable" href="class_build_manager.html#af3a0972f4e939f4079f5b4c81ef5d5bb">isErasing</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="foldopen" id="foldopen00031" data-start="{" data-end="}">
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="class_build_manager.html#a6e07a42e68e5c354cd4972fc120dc8f9">   31</a></span>    <span class="keyword">private</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_build_manager.html#a6e07a42e68e5c354cd4972fc120dc8f9">Awake</a>()</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    {</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_build_manager.html#adb44ee5dcc2eafbefd103e12c7da2ea7">instance</a> == null)</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        {</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>            <a class="code hl_variable" href="class_build_manager.html#adb44ee5dcc2eafbefd103e12c7da2ea7">instance</a> = <span class="keyword">this</span>;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            Destroy(gameObject);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        }</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    }</div>
+</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="foldopen" id="foldopen00041" data-start="{" data-end="}">
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="class_build_manager.html#acf93897744773ac8126264fad9892c4a">   41</a></span>    <span class="keyword">private</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_build_manager.html#acf93897744773ac8126264fad9892c4a">Update</a>()</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    {</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_build_manager.html#af3a0972f4e939f4079f5b4c81ef5d5bb">isErasing</a>)</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        {</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            <span class="keywordflow">if</span> (Input.GetMouseButton(0))</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            {</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>                Vector2 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>                Collider2D hit = Physics2D.OverlapPoint(mouseWorldPos);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>                <span class="keywordflow">if</span> (hit != null &amp;&amp; hit.GetComponent&lt;<a class="code hl_class" href="class_object_eraseable.html">ObjectEraseable</a>&gt;())</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>                {</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>                    Destroy(hit.gameObject);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>                }</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            }</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        }</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    }</div>
+</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span></div>
+<div class="foldopen" id="foldopen00061" data-start="{" data-end="}">
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="class_build_manager.html#a0753a5c927b7c883898735f98504b801">   61</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_build_manager.html#a0753a5c927b7c883898735f98504b801">SelectPrefab</a>(GameObject prefab) {</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <a class="code hl_variable" href="class_build_manager.html#a7354e5a0aee769a8944ba647f21f220e">selectedPrefab</a> = prefab;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    }</div>
+</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span></div>
+<div class="foldopen" id="foldopen00068" data-start="{" data-end="}">
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="class_build_manager.html#aecaf1d05465b6fc832f63eb73b51b9db">   68</a></span>    <span class="keyword">public</span> GameObject <a class="code hl_function" href="class_build_manager.html#aecaf1d05465b6fc832f63eb73b51b9db">GetSelectedPrefab</a>() {</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="class_build_manager.html#a7354e5a0aee769a8944ba647f21f220e">selectedPrefab</a>;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    }</div>
+</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span></div>
+<div class="foldopen" id="foldopen00075" data-start="{" data-end="}">
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="class_build_manager.html#ac880415b8d1cfb179b52a27ac0b5234c">   75</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_build_manager.html#ac880415b8d1cfb179b52a27ac0b5234c">ClearSelectedPrefab</a>() {</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        <a class="code hl_variable" href="class_build_manager.html#a7354e5a0aee769a8944ba647f21f220e">selectedPrefab</a> = null;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    }</div>
+</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span></div>
+<div class="foldopen" id="foldopen00082" data-start="{" data-end="}">
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="class_build_manager.html#ab90ea59b6e32489b8436bcbe21716dcb">   82</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_build_manager.html#ab90ea59b6e32489b8436bcbe21716dcb">EraseObject</a>() {</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        <a class="code hl_function" href="class_build_manager.html#ac880415b8d1cfb179b52a27ac0b5234c">ClearSelectedPrefab</a>();</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        <a class="code hl_variable" href="class_build_manager.html#af3a0972f4e939f4079f5b4c81ef5d5bb">isErasing</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    }</div>
+</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>}</div>
+</div>
+<div class="ttc" id="aclass_build_manager_html"><div class="ttname"><a href="class_build_manager.html">BuildManager</a></div><div class="ttdoc">Gère la sélection d’un prefab à construire et la suppression d’objets dans la scène....</div><div class="ttdef"><b>Definition</b> <a href="#l00009">BuildManager.cs:10</a></div></div>
+<div class="ttc" id="aclass_build_manager_html_a0753a5c927b7c883898735f98504b801"><div class="ttname"><a href="class_build_manager.html#a0753a5c927b7c883898735f98504b801">BuildManager::SelectPrefab</a></div><div class="ttdeci">void SelectPrefab(GameObject prefab)</div><div class="ttdoc">Définit le prefab sélectionné pour la construction.</div><div class="ttdef"><b>Definition</b> <a href="#l00061">BuildManager.cs:61</a></div></div>
+<div class="ttc" id="aclass_build_manager_html_a6e07a42e68e5c354cd4972fc120dc8f9"><div class="ttname"><a href="class_build_manager.html#a6e07a42e68e5c354cd4972fc120dc8f9">BuildManager::Awake</a></div><div class="ttdeci">void Awake()</div><div class="ttdef"><b>Definition</b> <a href="#l00031">BuildManager.cs:31</a></div></div>
+<div class="ttc" id="aclass_build_manager_html_a7354e5a0aee769a8944ba647f21f220e"><div class="ttname"><a href="class_build_manager.html#a7354e5a0aee769a8944ba647f21f220e">BuildManager::selectedPrefab</a></div><div class="ttdeci">GameObject selectedPrefab</div><div class="ttdoc">Prefab actuellement sélectionné pour la construction.</div><div class="ttdef"><b>Definition</b> <a href="#l00019">BuildManager.cs:19</a></div></div>
+<div class="ttc" id="aclass_build_manager_html_ab90ea59b6e32489b8436bcbe21716dcb"><div class="ttname"><a href="class_build_manager.html#ab90ea59b6e32489b8436bcbe21716dcb">BuildManager::EraseObject</a></div><div class="ttdeci">void EraseObject()</div><div class="ttdoc">Active le mode suppression d’objet.</div><div class="ttdef"><b>Definition</b> <a href="#l00082">BuildManager.cs:82</a></div></div>
+<div class="ttc" id="aclass_build_manager_html_ac880415b8d1cfb179b52a27ac0b5234c"><div class="ttname"><a href="class_build_manager.html#ac880415b8d1cfb179b52a27ac0b5234c">BuildManager::ClearSelectedPrefab</a></div><div class="ttdeci">void ClearSelectedPrefab()</div><div class="ttdoc">Réinitialise le prefab sélectionné.</div><div class="ttdef"><b>Definition</b> <a href="#l00075">BuildManager.cs:75</a></div></div>
+<div class="ttc" id="aclass_build_manager_html_acf93897744773ac8126264fad9892c4a"><div class="ttname"><a href="class_build_manager.html#acf93897744773ac8126264fad9892c4a">BuildManager::Update</a></div><div class="ttdeci">void Update()</div><div class="ttdef"><b>Definition</b> <a href="#l00041">BuildManager.cs:41</a></div></div>
+<div class="ttc" id="aclass_build_manager_html_ada20c150360b55676c6756c07954ff10"><div class="ttname"><a href="class_build_manager.html#ada20c150360b55676c6756c07954ff10">BuildManager::currentButton</a></div><div class="ttdeci">int currentButton</div><div class="ttdoc">Index du bouton actuellement utilisé (si utile pour l’UI).</div><div class="ttdef"><b>Definition</b> <a href="#l00024">BuildManager.cs:24</a></div></div>
+<div class="ttc" id="aclass_build_manager_html_adb44ee5dcc2eafbefd103e12c7da2ea7"><div class="ttname"><a href="class_build_manager.html#adb44ee5dcc2eafbefd103e12c7da2ea7">BuildManager::instance</a></div><div class="ttdeci">static BuildManager instance</div><div class="ttdoc">Instance unique du BuildManager (singleton).</div><div class="ttdef"><b>Definition</b> <a href="#l00014">BuildManager.cs:14</a></div></div>
+<div class="ttc" id="aclass_build_manager_html_aecaf1d05465b6fc832f63eb73b51b9db"><div class="ttname"><a href="class_build_manager.html#aecaf1d05465b6fc832f63eb73b51b9db">BuildManager::GetSelectedPrefab</a></div><div class="ttdeci">GameObject GetSelectedPrefab()</div><div class="ttdoc">Retourne le prefab actuellement sélectionné.</div><div class="ttdef"><b>Definition</b> <a href="#l00068">BuildManager.cs:68</a></div></div>
+<div class="ttc" id="aclass_build_manager_html_af3a0972f4e939f4079f5b4c81ef5d5bb"><div class="ttname"><a href="class_build_manager.html#af3a0972f4e939f4079f5b4c81ef5d5bb">BuildManager::isErasing</a></div><div class="ttdeci">bool isErasing</div><div class="ttdoc">Indique si le mode suppression est activé.</div><div class="ttdef"><b>Definition</b> <a href="#l00029">BuildManager.cs:29</a></div></div>
+<div class="ttc" id="aclass_object_eraseable_html"><div class="ttname"><a href="class_object_eraseable.html">ObjectEraseable</a></div><div class="ttdoc">Marque un objet comme étant effaçable (ex. : en mode suppression). Peut être détecté par des systèmes...</div><div class="ttdef"><b>Definition</b> <a href="_object_eraseable_8cs_source.html#l00007">ObjectEraseable.cs:8</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_84bbf7b3c7f28a5a18725745e1505219.html">Assets</a></li><li class="navelem"><a href="dir_f13b41af88cf68434578284aaf699e39.html">Scripts</a></li><li class="navelem"><a href="_build_manager_8cs.html">BuildManager.cs</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>
