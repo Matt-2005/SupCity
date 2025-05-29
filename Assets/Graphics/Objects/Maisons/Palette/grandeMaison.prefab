@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4374770617455445223}
   - component: {fileID: 8729507224466859440}
+  - component: {fileID: 1825124072767995724}
   m_Layer: 7
   m_Name: grandeMaison
   m_TagString: Maison
@@ -45,6 +46,19 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+--- !u!114 &1825124072767995724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4864215404639515092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 066da6596fbcb4156b2b0610ce44ec25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  capaciteMax: 1
 --- !u!1 &6107060921162992974
 GameObject:
   m_ObjectHideFlags: 0
@@ -55,6 +69,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5288447889292647404}
   - component: {fileID: 3458433990529140392}
+  - component: {fileID: 4503398210265010284}
   - component: {fileID: 7427955954980322595}
   - component: {fileID: 8786006467530639433}
   - component: {fileID: 1031019830547471888}
@@ -153,6 +168,19 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &4503398210265010284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6107060921162992974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 066da6596fbcb4156b2b0610ce44ec25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  capaciteMax: 1
 --- !u!483693784 &7427955954980322595
 TilemapRenderer:
   m_ObjectHideFlags: 0

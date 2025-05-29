@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2300426976904499665}
   - component: {fileID: 4967872395205777188}
+  - component: {fileID: 8850824400126227909}
   - component: {fileID: 8087571211407888494}
   - component: {fileID: 2644047691556181699}
   - component: {fileID: 2491742234180964279}
@@ -109,6 +110,19 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &8850824400126227909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5882940515122802458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 066da6596fbcb4156b2b0610ce44ec25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  capaciteMax: 1
 --- !u!114 &8087571211407888494
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -297,6 +311,7 @@ GameObject:
   - component: {fileID: 3551338323891315824}
   - component: {fileID: 5169529496914742098}
   - component: {fileID: 7787431578022142054}
+  - component: {fileID: 5761280560417638493}
   m_Layer: 7
   m_Name: usineBrique
   m_TagString: usineBrique
@@ -347,6 +362,19 @@ MonoBehaviour:
   outputResourceType: 0
   productionAmount: 1
   productionInterval: 5
+--- !u!114 &5761280560417638493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6321674579055664321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 066da6596fbcb4156b2b0610ce44ec25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  capaciteMax: 1
 --- !u!114 &5619347712822350862
 MonoBehaviour:
   m_ObjectHideFlags: 0

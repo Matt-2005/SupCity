@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5117706913347909627}
   - component: {fileID: 3276221994072030108}
+  - component: {fileID: 887768466313763323}
   - component: {fileID: 5434155755095236391}
   m_Layer: 0
   m_Name: Layer1
@@ -105,6 +106,19 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &887768466313763323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2473779822297912314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 066da6596fbcb4156b2b0610ce44ec25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  capaciteMax: 1
 --- !u!483693784 &5434155755095236391
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -167,8 +181,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6641532004676579460}
   - component: {fileID: 6425184267710038280}
+  - component: {fileID: 1660824213690196436}
   m_Layer: 0
-  m_Name: Tente
+  m_Name: tente
   m_TagString: Maison
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -202,6 +217,19 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+--- !u!114 &1660824213690196436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6818192733162461795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 066da6596fbcb4156b2b0610ce44ec25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  capaciteMax: 1
 --- !u!114 &457908393073451267
 MonoBehaviour:
   m_ObjectHideFlags: 0
