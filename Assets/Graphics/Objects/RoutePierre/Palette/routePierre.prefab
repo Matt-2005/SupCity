@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4564618708072799004}
   m_Layer: 8
   m_Name: routePierre
-  m_TagString: Object
+  m_TagString: Route
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 9063058217958206811}
   m_Layer: 0
   m_Name: Layer1
-  m_TagString: Untagged
+  m_TagString: Route
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
