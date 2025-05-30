@@ -9,7 +9,7 @@ public class BesoinPlayers : MonoBehaviour
     public float seuilCritique = 0.15f;
     public float seuilAction = 0.3f;
 
-    public enum EtatPNJ { Idle, AllerManger, Manger, AllerBoire, Boire, AllerDormir, Dormir }
+    public enum EtatPNJ { Idle, AllerManger, Manger, AllerBoire, Boire, AllerDormir, Dormir, AllerTravailler, Travailler }
     private EtatPNJ etatActuel = EtatPNJ.Idle;
 
     private bool enAction = false;
@@ -19,16 +19,17 @@ public class BesoinPlayers : MonoBehaviour
     private float actionTimer = 0f;
     private float actionDuration = 2f;
 
+    private string[] tagsUsines = { "usineArgile", "usineBrique", "usineEau", "usineBaie", "enclotMouton", "enclotPoule" };
+
     void Update()
     {
         faim = Mathf.Clamp01(faim - tauxFaim * Time.deltaTime);
         soif = Mathf.Clamp01(soif - tauxSoif * Time.deltaTime);
         energie = Mathf.Clamp01(energie - tauxEnergie * Time.deltaTime);
 
-        Debug.Log($"État actuel : {etatActuel} | Faim: {faim:F2} | Soif: {soif:F2} | Énergie: {energie:F2}");
+        Debug.Log($"\u00c9tat actuel : {etatActuel} | Faim: {faim:F2} | Soif: {soif:F2} | \u00c9nergie: {energie:F2}");
 
-        // 🔒 Vérifie si la cible a été supprimée
-        if (etatActuel == EtatPNJ.AllerManger || etatActuel == EtatPNJ.AllerBoire || etatActuel == EtatPNJ.AllerDormir)
+        if (etatActuel == EtatPNJ.AllerManger || etatActuel == EtatPNJ.AllerBoire || etatActuel == EtatPNJ.AllerDormir || etatActuel == EtatPNJ.AllerTravailler)
         {
             var currentTarget = GetComponent<PathfindingAI>().target;
             if (currentTarget == null)
@@ -55,6 +56,9 @@ public class BesoinPlayers : MonoBehaviour
                     case BesoinType.Energie:
                         Dormir();
                         break;
+                    case BesoinType.Rien:
+                        Travailler();
+                        break;
                 }
                 break;
 
@@ -79,15 +83,21 @@ public class BesoinPlayers : MonoBehaviour
                     FinDormir();
                 }
                 break;
+            case EtatPNJ.Travailler:
+                actionTimer += Time.deltaTime;
+                if (actionTimer >= actionDuration)
+                {
+                    FinTravailler();
+                }
+                break;
         }
     }
 
-
     public BesoinType GetBesoinPrioritaire()
     {
-        if (faim <= 0.15f) return BesoinType.Faim;
-        if (soif <= 0.15f) return BesoinType.Soif;
-        if (energie <= 0.15f) return BesoinType.Energie;
+        if (faim <= seuilCritique) return BesoinType.Faim;
+        if (soif <= seuilCritique) return BesoinType.Soif;
+        if (energie <= seuilCritique) return BesoinType.Energie;
         return BesoinType.Rien;
     }
 
@@ -115,9 +125,12 @@ public class BesoinPlayers : MonoBehaviour
                 etatActuel = EtatPNJ.Dormir;
                 actionTimer = 0f;
                 break;
+            case EtatPNJ.AllerTravailler:
+                etatActuel = EtatPNJ.Travailler;
+                actionTimer = 0f;
+                break;
         }
     }
-
 
     void Manger()
     {
@@ -127,20 +140,16 @@ public class BesoinPlayers : MonoBehaviour
 
     void FinManger()
     {
+        Transform cible = GetComponent<PathfindingAI>().target;
         faim = 1f;
         etatActuel = EtatPNJ.Idle;
         actionTimer = 0f;
-
-        Transform target = GetComponent<PathfindingAI>().target;
-        if (target != null)
+        if (cible != null)
         {
-            StartCoroutine(AttendreEtDetruire(target.gameObject));
+            StartCoroutine(AttendreEtDetruire(cible.gameObject));
         }
-
         Debug.Log("Faim satisfaite, baie en cours de suppression.");
     }
-
-
 
     void Boire()
     {
@@ -172,6 +181,21 @@ public class BesoinPlayers : MonoBehaviour
         Debug.Log("Énergie restaurée.");
     }
 
+    void Travailler()
+    {
+        Debug.Log("Recherche d'une usine pour travailler...");
+        string tagAleatoire = tagsUsines[Random.Range(0, tagsUsines.Length)];
+        StartCoroutine(AttendreEtChercher(tagAleatoire, EtatPNJ.AllerTravailler));
+    }
+
+    void FinTravailler()
+    {
+        etatActuel = EtatPNJ.Idle;
+        actionTimer = 0f;
+        LibererRessource();
+        Debug.Log("Travail accompli.");
+    }
+
     public Transform ChercherTarget(string tag)
     {
         GameObject[] targets = GameObject.FindGameObjectsWithTag(tag);
@@ -193,11 +217,10 @@ public class BesoinPlayers : MonoBehaviour
             }
         }
 
-        // Réserver la ressource trouvée
         if (nearestTarget != null)
         {
             var slot = nearestTarget.GetComponent<RessourceMaxPlayerCapacity>();
-            if (slot != null && slot.VoirDisponibilite()) // ✅ ici on réserve
+            if (slot != null && slot.VoirDisponibilite())
             {
                 return nearestTarget.transform;
             }
@@ -205,7 +228,6 @@ public class BesoinPlayers : MonoBehaviour
 
         return null;
     }
-
 
     void LibererRessource()
     {
@@ -216,7 +238,6 @@ public class BesoinPlayers : MonoBehaviour
             if (slot != null) slot.Liberer();
         }
     }
-
 
     private System.Collections.IEnumerator AttendreEtChercher(string tag, EtatPNJ nouvelEtat)
     {
@@ -247,8 +268,4 @@ public class BesoinPlayers : MonoBehaviour
             Debug.Log("Baie détruite 2 secondes après l'arrivée.");
         }
     }
-
-
-
-
 }
