@@ -3,6 +3,7 @@ using System.Collections;
 
 public class PopulationManager : MonoBehaviour
 {
+    public static PopulationManager Instance;
     public GameObject prefabPNJ;
     public float intervalleNaissance = 5f;
     public int populationMax = 100;
@@ -12,6 +13,18 @@ public class PopulationManager : MonoBehaviour
 
     public StatistiquesManager statDisplay;
 
+    void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+    
     void Start()
     {
         // Compte les PNJ déjà présents dans la scène
@@ -46,5 +59,10 @@ public class PopulationManager : MonoBehaviour
         {
             statDisplay.SetPopulation(populationActuelle);
         }
+    }
+
+    public int GetPopulation()
+    {
+        return populationActuelle;
     }
 }
