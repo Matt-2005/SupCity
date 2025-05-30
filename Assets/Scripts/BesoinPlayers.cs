@@ -1,5 +1,4 @@
 using UnityEngine;
-using System.Collections;
 
 public class BesoinPlayers : MonoBehaviour
 {
@@ -7,43 +6,18 @@ public class BesoinPlayers : MonoBehaviour
     public float tauxFaim = 0.02f, tauxSoif = 0.01f, tauxEnergie = 0.01f;
 
     public enum BesoinType { Rien, Faim, Soif, Energie }
-    public enum EtatPNJ { Idle, AllerManger, Manger, AllerBoire, Boire, AllerDormir, Dormir, AllerTravailler, Travailler, AllerSeDetendre, SeDetendre }
-    public enum TachePNJ { Aucun, Bucheron, Carrier, OuvrierBois, OuvrierPierre, OuvrierArgile }
+    public float seuilCritique = 0.15f;
+    public float seuilAction = 0.3f;
 
-    public TachePNJ tache = TachePNJ.Aucun;
+    public enum EtatPNJ { Idle, AllerManger, Manger, AllerBoire, Boire, AllerDormir, Dormir }
     private EtatPNJ etatActuel = EtatPNJ.Idle;
+
+    private bool enAction = false;
+    private bool estChezSoi = false;
     private BesoinType besoinActuel;
 
     private float actionTimer = 0f;
     private float actionDuration = 2f;
-    public float dureeDeVieMin = 120f;
-    public float dureeDeVieMax = 240f;
-    private float dureeDeVie;
-    private float vieEcoulee = 0f;
-
-    public PopulationManager populationManager;
-    private Vector3 pointDeDepart;
-
-    void Awake()
-    {
-        dureeDeVie = Random.Range(dureeDeVieMin, dureeDeVieMax);
-    }
-
-    void Start()
-    {
-        pointDeDepart = transform.position;
-    }
-
-    void LateUpdate()
-    {
-        vieEcoulee += Time.deltaTime;
-        if (vieEcoulee >= dureeDeVie)
-        {
-            Debug.Log($"{gameObject.name} est mort de vieillesse.");
-            if (populationManager != null) populationManager.PNJMort();
-            Destroy(gameObject);
-        }
-    }
 
     void Update()
     {
@@ -51,53 +25,63 @@ public class BesoinPlayers : MonoBehaviour
         soif = Mathf.Clamp01(soif - tauxSoif * Time.deltaTime);
         energie = Mathf.Clamp01(energie - tauxEnergie * Time.deltaTime);
 
+        Debug.Log($"État actuel : {etatActuel} | Faim: {faim:F2} | Soif: {soif:F2} | Énergie: {energie:F2}");
+
+        // 🔒 Vérifie si la cible a été supprimée
+        if (etatActuel == EtatPNJ.AllerManger || etatActuel == EtatPNJ.AllerBoire || etatActuel == EtatPNJ.AllerDormir)
+        {
+            var currentTarget = GetComponent<PathfindingAI>().target;
+            if (currentTarget == null)
+            {
+                Debug.LogWarning("La ressource a été détruite avant l’arrivée. Retour à Idle.");
+                etatActuel = EtatPNJ.Idle;
+                return;
+            }
+        }
+
         switch (etatActuel)
         {
             case EtatPNJ.Idle:
                 besoinActuel = GetBesoinPrioritaire();
-                if (besoinActuel != BesoinType.Rien)
+                Debug.Log($"Besoin prioritaire détecté : {besoinActuel}");
+                switch (besoinActuel)
                 {
-                    switch (besoinActuel)
-                    {
-                        case BesoinType.Faim: Manger(); break;
-                        case BesoinType.Soif: Boire(); break;
-                        case BesoinType.Energie: Dormir(); break;
-                    }
-                }
-                else
-                {
-                    switch (tache)
-                    {
-                        case TachePNJ.Bucheron: StartCoroutine(AttendreEtChercher("Woodcutter", EtatPNJ.AllerTravailler)); break;
-                        case TachePNJ.Carrier: StartCoroutine(AttendreEtChercher("StoneQuarry", EtatPNJ.AllerTravailler)); break;
-                        case TachePNJ.OuvrierBois: StartCoroutine(AttendreEtChercher("WoodToolFactory", EtatPNJ.AllerTravailler)); break;
-                        case TachePNJ.OuvrierPierre: StartCoroutine(AttendreEtChercher("StoneToolFactory", EtatPNJ.AllerTravailler)); break;
-                        case TachePNJ.OuvrierArgile: StartCoroutine(AttendreEtChercher("BrickFactory", EtatPNJ.AllerTravailler)); break;
-                        case TachePNJ.Aucun: StartCoroutine(SeDetendreAutour()); break;
-                    }
+                    case BesoinType.Faim:
+                        Manger();
+                        break;
+                    case BesoinType.Soif:
+                        Boire();
+                        break;
+                    case BesoinType.Energie:
+                        Dormir();
+                        break;
                 }
                 break;
 
             case EtatPNJ.Manger:
-            case EtatPNJ.Boire:
-            case EtatPNJ.Dormir:
-            case EtatPNJ.Travailler:
-            case EtatPNJ.SeDetendre:
                 actionTimer += Time.deltaTime;
                 if (actionTimer >= actionDuration)
                 {
-                    switch (etatActuel)
-                    {
-                        case EtatPNJ.Manger: FinManger(); break;
-                        case EtatPNJ.Boire: FinBoire(); break;
-                        case EtatPNJ.Dormir: FinDormir(); break;
-                        case EtatPNJ.Travailler: RetourMaison(); break;
-                        case EtatPNJ.SeDetendre: etatActuel = EtatPNJ.Idle; break;
-                    }
+                    FinManger();
+                }
+                break;
+            case EtatPNJ.Boire:
+                actionTimer += Time.deltaTime;
+                if (actionTimer >= actionDuration)
+                {
+                    FinBoire();
+                }
+                break;
+            case EtatPNJ.Dormir:
+                actionTimer += Time.deltaTime;
+                if (actionTimer >= actionDuration)
+                {
+                    FinDormir();
                 }
                 break;
         }
     }
+
 
     public BesoinType GetBesoinPrioritaire()
     {
@@ -110,30 +94,58 @@ public class BesoinPlayers : MonoBehaviour
     public void NotifieArrivee()
     {
         Transform target = GetComponent<PathfindingAI>().target;
-        if (target == null) { etatActuel = EtatPNJ.Idle; return; }
+        if (target == null)
+        {
+            Debug.LogWarning("La ressource a disparu avant l’arrivée. Retour à l’état Idle.");
+            etatActuel = EtatPNJ.Idle;
+            return;
+        }
 
         switch (etatActuel)
         {
-            case EtatPNJ.AllerManger: etatActuel = EtatPNJ.Manger; break;
-            case EtatPNJ.AllerBoire: etatActuel = EtatPNJ.Boire; break;
-            case EtatPNJ.AllerDormir: etatActuel = EtatPNJ.Dormir; break;
-            case EtatPNJ.AllerTravailler: etatActuel = EtatPNJ.Travailler; break;
-            case EtatPNJ.AllerSeDetendre: etatActuel = EtatPNJ.SeDetendre; break;
+            case EtatPNJ.AllerManger:
+                etatActuel = EtatPNJ.Manger;
+                actionTimer = 0f;
+                break;
+            case EtatPNJ.AllerBoire:
+                etatActuel = EtatPNJ.Boire;
+                actionTimer = 0f;
+                break;
+            case EtatPNJ.AllerDormir:
+                etatActuel = EtatPNJ.Dormir;
+                actionTimer = 0f;
+                break;
         }
-        actionTimer = 0f;
     }
 
-    void Manger() => StartCoroutine(AttendreEtChercher("usineBaie", EtatPNJ.AllerManger));
-    void Boire() => StartCoroutine(AttendreEtChercher("Maison", EtatPNJ.AllerBoire));
-    void Dormir() => StartCoroutine(AttendreEtChercher("Maison", EtatPNJ.AllerDormir));
+
+    void Manger()
+    {
+        Debug.Log("Recherche d'un buisson pour manger...");
+        StartCoroutine(AttendreEtChercher("baies", EtatPNJ.AllerManger));
+    }
 
     void FinManger()
     {
         faim = 1f;
         etatActuel = EtatPNJ.Idle;
         actionTimer = 0f;
+
         Transform target = GetComponent<PathfindingAI>().target;
-        if (target != null) StartCoroutine(AttendreEtDetruire(target.gameObject));
+        if (target != null)
+        {
+            StartCoroutine(AttendreEtDetruire(target.gameObject));
+        }
+
+        Debug.Log("Faim satisfaite, baie en cours de suppression.");
+    }
+
+
+
+    void Boire()
+    {
+        Debug.Log("Recherche d'une maison pour boire...");
+        StartCoroutine(AttendreEtChercher("Maison", EtatPNJ.AllerBoire));
     }
 
     void FinBoire()
@@ -142,6 +154,13 @@ public class BesoinPlayers : MonoBehaviour
         etatActuel = EtatPNJ.Idle;
         actionTimer = 0f;
         LibererRessource();
+        Debug.Log("Soif étanchée.");
+    }
+
+    void Dormir()
+    {
+        Debug.Log("Recherche d'une maison pour dormir...");
+        StartCoroutine(AttendreEtChercher("Maison", EtatPNJ.AllerDormir));
     }
 
     void FinDormir()
@@ -150,85 +169,86 @@ public class BesoinPlayers : MonoBehaviour
         etatActuel = EtatPNJ.Idle;
         actionTimer = 0f;
         LibererRessource();
+        Debug.Log("Énergie restaurée.");
     }
 
-    void RetourMaison()
-    {
-        StartCoroutine(AttendreEtChercher("Maison", EtatPNJ.AllerDormir));
-    }
-
-    Transform ChercherTarget(string tag)
+    public Transform ChercherTarget(string tag)
     {
         GameObject[] targets = GameObject.FindGameObjectsWithTag(tag);
         if (targets.Length == 0) return null;
 
-        GameObject best = null;
-        float minDist = Mathf.Infinity;
+        GameObject nearestTarget = null;
+        float minDistance = Mathf.Infinity;
 
         foreach (GameObject obj in targets)
         {
             var slot = obj.GetComponent<RessourceMaxPlayerCapacity>();
-            if (slot == null || !slot.VoirDisponibilite()) continue;
+            if (slot == null || !slot.EstDisponible()) continue;
 
-            float dist = Vector3.Distance(transform.position, obj.transform.position);
-            if (dist < minDist)
+            float distance = Vector3.Distance(transform.position, obj.transform.position);
+            if (distance < minDistance)
             {
-                if (best != null) best.GetComponent<RessourceMaxPlayerCapacity>()?.Liberer();
-                best = obj;
-                minDist = dist;
+                minDistance = distance;
+                nearestTarget = obj;
             }
-            else slot.Liberer();
         }
 
-        return best != null ? best.transform : null;
+        // Réserver la ressource trouvée
+        if (nearestTarget != null)
+        {
+            var slot = nearestTarget.GetComponent<RessourceMaxPlayerCapacity>();
+            if (slot != null && slot.VoirDisponibilite()) // ✅ ici on réserve
+            {
+                return nearestTarget.transform;
+            }
+        }
+
+        return null;
     }
+
 
     void LibererRessource()
     {
-        Transform t = GetComponent<PathfindingAI>().target;
-        if (t != null)
+        Transform currentTarget = GetComponent<PathfindingAI>().target;
+        if (currentTarget != null)
         {
-            var slot = t.GetComponent<RessourceMaxPlayerCapacity>();
+            var slot = currentTarget.GetComponent<RessourceMaxPlayerCapacity>();
             if (slot != null) slot.Liberer();
         }
     }
 
-    IEnumerator AttendreEtChercher(string tag, EtatPNJ nouvelEtat)
+
+    private System.Collections.IEnumerator AttendreEtChercher(string tag, EtatPNJ nouvelEtat)
     {
-        yield return new WaitForSeconds(Random.Range(0.05f, 0.15f));
+        yield return new WaitForSeconds(Random.Range(0.01f, 0.2f));
+
         Transform target = ChercherTarget(tag);
         if (target != null)
         {
             GetComponent<PathfindingAI>().setTarget(target);
             etatActuel = nouvelEtat;
+            Debug.Log($"En route vers {tag}...");
+        }
+        else
+        {
+            Debug.LogWarning($"Aucune ressource avec le tag {tag} trouvée !");
         }
     }
 
-    IEnumerator AttendreEtDetruire(GameObject cible)
+    private System.Collections.IEnumerator AttendreEtDetruire(GameObject cible)
     {
         yield return new WaitForSeconds(2f);
         if (cible != null)
         {
             var slot = cible.GetComponent<RessourceMaxPlayerCapacity>();
             if (slot != null) slot.Liberer();
+
             Destroy(cible);
+            Debug.Log("Baie détruite 2 secondes après l'arrivée.");
         }
     }
 
-    IEnumerator SeDetendreAutour()
-    {
-        yield return new WaitForSeconds(0.2f);
-        Vector3 point = pointDeDepart + new Vector3(Random.Range(-2f, 2f), Random.Range(-2f, 2f), 0f);
-        GameObject temp = new GameObject("TargetRelax");
-        temp.transform.position = point;
-        GetComponent<PathfindingAI>().setTarget(temp.transform);
-        etatActuel = EtatPNJ.AllerSeDetendre;
-        Destroy(temp, 5f);
-    }
 
-    public static void CreerNouveauPNJ(GameObject prefabPNJ, Vector3 position)
-    {
-        GameObject nouveau = Instantiate(prefabPNJ, position, Quaternion.identity);
-        Debug.Log("👶 Nouveau PNJ créé !");
-    }
+
+
 }

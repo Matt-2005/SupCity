@@ -18,6 +18,8 @@ public class PathfindingAI : MonoBehaviour
     private Rigidbody2D rb;
     private Animator animator;
 
+    private bool aNotifieArrivee = false;
+
     void Start()
     {
         seeker = GetComponent<Seeker>();
@@ -31,26 +33,10 @@ public class PathfindingAI : MonoBehaviour
     {
         if (seeker.IsDone() && target != null)
         {
-            Vector3 startPosition = transform.position;
-
-        if (TryGetComponent<Rigidbody2D>(out var rb))
-        {
-            startPosition = rb.position;
-        }
-        else
-        {
-            Debug.LogWarning($"❌ {gameObject.name} n’a pas de Rigidbody2D, utilisation de transform.position.");
-        }
-        seeker.StartPath(startPosition, target.position, OnPathComplete);
+            Vector3 startPosition = rb != null ? rb.position : transform.position;
+            seeker.StartPath(startPosition, target.position, OnPathComplete);
         }
     }
-    public void setTargetPos(Vector3 worldPosition)
-    {
-        GameObject tempTarget = new GameObject("TempTarget");
-        tempTarget.transform.position = worldPosition;
-        target = tempTarget.transform;
-    }
-
 
     void OnPathComplete(Path p)
     {
@@ -58,22 +44,29 @@ public class PathfindingAI : MonoBehaviour
         {
             path = p;
             currentWayPoint = 0;
+            aNotifieArrivee = false;
         }
     }
 
     void FixedUpdate()
     {
         if (path == null || target == null) return;
-        if (target != null && target.name == "TargetTemp" && currentWayPoint >= path.vectorPath.Count)
-        {
-            Destroy(target.gameObject);
-            target = null;
-        }
 
         if (currentWayPoint >= path.vectorPath.Count)
         {
-            animator?.SetBool("isMoving", false);
-            GetComponent<BesoinPlayers>()?.NotifieArrivee();
+            if (!aNotifieArrivee)
+            {
+                aNotifieArrivee = true;
+                animator?.SetBool("isMoving", false);
+
+                if (target.name.StartsWith("TempTarget") || target.name.StartsWith("TargetRelax"))
+                {
+                    Destroy(target.gameObject);
+                    target = null;
+                }
+
+                GetComponent<BesoinPlayers>()?.NotifieArrivee();
+            }
             return;
         }
 
@@ -95,11 +88,19 @@ public class PathfindingAI : MonoBehaviour
             currentWayPoint++;
         }
 
-        // Snap final pour précision
-        if (currentWayPoint >= path.vectorPath.Count)
+        // Snap final
+        if (currentWayPoint >= path.vectorPath.Count && !aNotifieArrivee)
         {
             rb.position = path.vectorPath[^1];
+            aNotifieArrivee = true;
             animator?.SetBool("isMoving", false);
+
+            if (target.name.StartsWith("TempTarget") || target.name.StartsWith("TargetRelax"))
+            {
+                Destroy(target.gameObject);
+                target = null;
+            }
+
             GetComponent<BesoinPlayers>()?.NotifieArrivee();
         }
     }
@@ -108,5 +109,13 @@ public class PathfindingAI : MonoBehaviour
     public void setTarget(Transform newTarget)
     {
         target = newTarget;
+        aNotifieArrivee = false;
+    }
+
+    public void setTargetPos(Vector3 worldPosition)
+    {
+        GameObject tempTarget = new GameObject("TempTarget");
+        tempTarget.transform.position = worldPosition;
+        setTarget(tempTarget.transform);
     }
 }

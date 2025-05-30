@@ -34,13 +34,23 @@ public class PlayerBehaviourManager : MonoBehaviour
 
     void ActiverModePathfinding()
     {
-        /*if (randomNPC != null)
+        if (randomNPC != null)
         {
             randomNPC.transform.position = transform.position;
             randomNPC.enabled = false;
-        }*/
+        }
 
-        if (besoinPlayers != null) besoinPlayers.enabled = true;
+        if (besoinPlayers != null)
+        {
+            besoinPlayers.enabled = true;
+            besoinPlayers.faim = 0f;     // Pour forcer un besoin déclenché
+            besoinPlayers.soif = 0f;
+            besoinPlayers.energie = 0f;
+
+            besoinPlayers.SendMessage("Start"); // ⚠️ force Start() à s’exécuter
+        }
+
         if (pathfindingAI != null) pathfindingAI.enabled = true;
     }
+
 }
