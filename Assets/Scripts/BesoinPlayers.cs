@@ -248,9 +248,9 @@ public class BesoinPlayers : MonoBehaviour
         Transform target = ChercherTarget(tag);
         if (target != null)
         {
-            GetComponent<PathfindingAI>().setTarget(target);
+            RouteManager.Instance.AllerViaRoute(this.gameObject, target);
             etatActuel = nouvelEtat;
-            Debug.Log($"En route vers {tag}...");
+            Debug.Log($"En route vers {tag} via route...");
         }
         else
         {
