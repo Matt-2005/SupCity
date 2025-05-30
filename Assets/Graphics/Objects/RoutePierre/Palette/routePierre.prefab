@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5015977396265782703}
   - component: {fileID: 8391884512531487495}
+  - component: {fileID: 685038426159202499}
   - component: {fileID: 3139985182847162361}
-  - component: {fileID: 7058196208630972500}
   - component: {fileID: 4564618708072799004}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: routePierre
   m_TagString: Route
   m_Icon: {fileID: 0}
@@ -48,6 +48,18 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+--- !u!114 &685038426159202499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1327422304176659956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51c5eba182ea84644a00e27fe25faaa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!65 &3139985182847162361
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -69,18 +81,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: -0.5, y: -0.5, z: 0}
---- !u!114 &7058196208630972500
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1327422304176659956}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51c5eba182ea84644a00e27fe25faaa9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &4564618708072799004
 MonoBehaviour:
   m_ObjectHideFlags: 0
