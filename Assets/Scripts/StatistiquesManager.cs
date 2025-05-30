@@ -20,10 +20,10 @@ public class StatistiquesManager : MonoBehaviour
             habitationsText.text = "Habitations : " + occupes + " / " + capaciteTotale;
     }
 
-    public void SetEmplois(int value)
+    public void SetEmplois(int occupes, int disponibles)
     {
         if (emploisText != null)
-            emploisText.text = "Emplois : " + value;
+            emploisText.text = $"Emplois : {occupes} / {disponibles}";
     }
 
     public void SetProgression(float pourcentage)

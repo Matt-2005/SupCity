@@ -14,6 +14,7 @@ public class BesoinPlayers : MonoBehaviour
 
     private bool enAction = false;
     private bool estChezSoi = false;
+    public bool aUnLogement = false;
     private BesoinType besoinActuel;
 
     private float actionTimer = 0f;
@@ -177,6 +178,7 @@ public class BesoinPlayers : MonoBehaviour
         energie = 1f;
         etatActuel = EtatPNJ.Idle;
         actionTimer = 0f;
+        aUnLogement = true;
         LibererRessource();
         Debug.Log("Énergie restaurée.");
     }

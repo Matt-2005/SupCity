@@ -4,12 +4,9 @@ using System.Collections;
 public class HabitationManager : MonoBehaviour
 {
     public StatistiquesManager statDisplay;
-    private RessourceMaxPlayerCapacity[] logements;
 
     void Start()
     {
-        logements = FindObjectsOfType<RessourceMaxPlayerCapacity>();
-
         StartCoroutine(MiseAJourPeriodique());
     }
 
@@ -25,22 +22,21 @@ public class HabitationManager : MonoBehaviour
     void MettreAJourAffichage()
     {
         int capaciteTotale = 0;
-        int placesOccupees = 0;
+        int personnesLogees = 0;
+
+        var logements = GameObject.FindGameObjectsWithTag("Maison");
 
         foreach (var logement in logements)
         {
-            capaciteTotale += logement.capaciteMax;
-            placesOccupees += logement.OccupationActuelle;
+            if (!logement.activeInHierarchy) continue;
+
+            var capacite = logement.GetComponent<RessourceMaxPlayerCapacity>();
+            if (capacite == null) continue;
+
+            capaciteTotale += capacite.capaciteMax;
+            personnesLogees += capacite.OccupationActuelle;
         }
 
-        if (statDisplay != null)
-        {
-            statDisplay.SetHabitations(placesOccupees, capaciteTotale);
-        }
-    }
-    
-    public void RafraichirListeLogements()
-    {
-        logements = FindObjectsOfType<RessourceMaxPlayerCapacity>();
+        statDisplay?.SetHabitations(personnesLogees, capaciteTotale);
     }
 }

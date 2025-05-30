@@ -24,6 +24,9 @@ TagManager:
   - feu
   - enclotMouton
   - enclotPoule
+  - peche
+  - RoutePierre
+  - Tente
   layers:
   - Default
   - TransparentFX
