@@ -19,7 +19,7 @@ public class BesoinPlayers : MonoBehaviour
     private float actionTimer = 0f;
     private float actionDuration = 2f;
 
-    private string[] tagsUsines = { "usineArgile", "usineBrique", "usineEau", "usineBaie", "enclotMouton", "enclotPoule" };
+    private string[] tagsUsines = { "usineArgile", "usineBrique", "usineEau", "usineBaie","usineBois", "usineOutils","usinePierre","usineOutilsPierre", "potterie", "enclotMouton", "enclotPoule" };
 
     void Update()
     {
