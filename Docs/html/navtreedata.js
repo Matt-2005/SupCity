@@ -38,7 +38,12 @@ var NAVTREE =
       ] ]
     ] ],
     [ "Fichiers", "files.html", [
-      [ "Liste des fichiers", "files.html", "files_dup" ]
+      [ "Liste des fichiers", "files.html", "files_dup" ],
+      [ "Membres de fichier", "globals.html", [
+        [ "Tout", "globals.html", null ],
+        [ "Énumérations", "globals_enum.html", null ],
+        [ "Valeurs énumérées", "globals_eval.html", null ]
+      ] ]
     ] ]
   ] ]
 ];
@@ -46,7 +51,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_auto_destroy_after_use_8cs.html",
-"class_stone_quarry.html#a763ce8b3cfc437e1436a294a77b8951a"
+"class_pathfinding_a_i.html#a4e7a839920c5f913804b5e85c11172ea"
 ];
 
 var SYNCONMSG = 'cliquez pour désactiver la synchronisation du panel';

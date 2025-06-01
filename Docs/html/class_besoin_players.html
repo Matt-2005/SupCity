@@ -92,7 +92,7 @@ $(function(){initNavTree('class_besoin_players.html','','class_besoin_players-me
 </div><!--header-->
 <div class="contents">
 
-<p>Gère les besoins vitaux des PNJ : faim, soif, énergie. Le PNJ choisit une action à effectuer selon ses besoins. Il vieillit avec le temps et peut mourir naturellement.  
+<p>Gère les besoins fondamentaux (faim, soif, énergie) et les comportements associés des PNJ. Permet aux personnages d'agir selon leurs priorités : manger, boire, dormir ou travailler.  
  <a href="#details">Plus de détails...</a></p>
 <div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Graphe d'héritage de BesoinPlayers:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -109,7 +109,7 @@ Types publics</h2></td></tr>
 , <a class="el" href="#aa6d9cca74f6935b3d9c85b61f400b09faae6ae39187b7810c173cd5b8010e9b36">Soif</a>
 , <a class="el" href="#aa6d9cca74f6935b3d9c85b61f400b09faca8db314d83d91cc9d6ce166c094adef">Energie</a>
  }</td></tr>
-<tr class="memdesc:aa6d9cca74f6935b3d9c85b61f400b09f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type de besoin prioritaire du PNJ.  <a href="#aa6d9cca74f6935b3d9c85b61f400b09f">Plus de détails...</a><br /></td></tr>
+<tr class="memdesc:aa6d9cca74f6935b3d9c85b61f400b09f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Types de besoins pouvant être prioritaires pour un PNJ.  <a href="#aa6d9cca74f6935b3d9c85b61f400b09f">Plus de détails...</a><br /></td></tr>
 <tr class="memitem:a9692fc8e12255c50c6bbde946a29984c" id="r_a9692fc8e12255c50c6bbde946a29984c"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9692fc8e12255c50c6bbde946a29984c">EtatPNJ</a> { <br />
 &#160;&#160;<a class="el" href="#a9692fc8e12255c50c6bbde946a29984ca08aeb9717dc78b86a8ddad342d927873">Idle</a>
 , <a class="el" href="#a9692fc8e12255c50c6bbde946a29984cade5769379bdf18839c044297c2a7f41f">AllerManger</a>
@@ -119,73 +119,86 @@ Types publics</h2></td></tr>
 &#160;&#160;<a class="el" href="#a9692fc8e12255c50c6bbde946a29984caab2b133a25cca6f98899eb4a9a46a916">Boire</a>
 , <a class="el" href="#a9692fc8e12255c50c6bbde946a29984ca0bde974acb9e7651b03f7274c4b33ddc">AllerDormir</a>
 , <a class="el" href="#a9692fc8e12255c50c6bbde946a29984ca8460695e1a99572444ccce4ac4c919a5">Dormir</a>
+, <a class="el" href="#a9692fc8e12255c50c6bbde946a29984ca93fc3f96b2729e7cf704599b1c00e87e">AllerTravailler</a>
+, <br />
+&#160;&#160;<a class="el" href="#a9692fc8e12255c50c6bbde946a29984caa9f90631800b17516f2cb532fbd9ff61">Travailler</a>
 <br />
  }</td></tr>
-<tr class="memdesc:a9692fc8e12255c50c6bbde946a29984c"><td class="mdescLeft">&#160;</td><td class="mdescRight">État actuel du PNJ selon ses besoins ou son activité.  <a href="#a9692fc8e12255c50c6bbde946a29984c">Plus de détails...</a><br /></td></tr>
+<tr class="memdesc:a9692fc8e12255c50c6bbde946a29984c"><td class="mdescLeft">&#160;</td><td class="mdescRight">États possibles du PNJ en fonction de ses actions ou déplacements.  <a href="#a9692fc8e12255c50c6bbde946a29984c">Plus de détails...</a><br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
-<tr class="memitem:ac7e0e212c0ae647bd3d5db36f36bd4d3" id="r_ac7e0e212c0ae647bd3d5db36f36bd4d3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac7e0e212c0ae647bd3d5db36f36bd4d3">Awake</a> ()</td></tr>
-<tr class="memitem:a81475c872c7d03e50e2bb71de822e3d6" id="r_a81475c872c7d03e50e2bb71de822e3d6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a81475c872c7d03e50e2bb71de822e3d6">LateUpdate</a> ()</td></tr>
-<tr class="memitem:aa060436748fb56219f6ab72b292611c8" id="r_aa060436748fb56219f6ab72b292611c8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa060436748fb56219f6ab72b292611c8">Update</a> ()</td></tr>
 <tr class="memitem:ae6ee2f8f3b1ae0bfa7a56acf6bc6d2e6" id="r_ae6ee2f8f3b1ae0bfa7a56acf6bc6d2e6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aa6d9cca74f6935b3d9c85b61f400b09f">BesoinType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae6ee2f8f3b1ae0bfa7a56acf6bc6d2e6">GetBesoinPrioritaire</a> ()</td></tr>
-<tr class="memdesc:ae6ee2f8f3b1ae0bfa7a56acf6bc6d2e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le besoin prioritaire selon les valeurs actuelles.  <br /></td></tr>
+<tr class="memdesc:ae6ee2f8f3b1ae0bfa7a56acf6bc6d2e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le besoin prioritaire du PNJ en fonction des seuils critiques.  <br /></td></tr>
 <tr class="memitem:ac10fe4d6dc2be54589994c65c91fe364" id="r_ac10fe4d6dc2be54589994c65c91fe364"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac10fe4d6dc2be54589994c65c91fe364">NotifieArrivee</a> ()</td></tr>
-<tr class="memdesc:ac10fe4d6dc2be54589994c65c91fe364"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notifie l'arrivée à la ressource et change l'état vers l'action correspondante.  <br /></td></tr>
+<tr class="memdesc:ac10fe4d6dc2be54589994c65c91fe364"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notifie le script que le PNJ est arrivé à destination, déclenchant l’action correspondante.  <br /></td></tr>
 <tr class="memitem:a380fae56d17f87f47a187e13448fcd4f" id="r_a380fae56d17f87f47a187e13448fcd4f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a380fae56d17f87f47a187e13448fcd4f">Manger</a> ()</td></tr>
+<tr class="memdesc:a380fae56d17f87f47a187e13448fcd4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lance la recherche et le déplacement vers une ressource de type "baies".  <br /></td></tr>
 <tr class="memitem:a78f9c5499a83a625f1e18bf48fcb645a" id="r_a78f9c5499a83a625f1e18bf48fcb645a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a78f9c5499a83a625f1e18bf48fcb645a">FinManger</a> ()</td></tr>
+<tr class="memdesc:a78f9c5499a83a625f1e18bf48fcb645a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Termine l'action de manger, remet la faim à 1 et détruit la ressource.  <br /></td></tr>
 <tr class="memitem:a7d94be49f66c6375829a0d940741de58" id="r_a7d94be49f66c6375829a0d940741de58"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7d94be49f66c6375829a0d940741de58">Boire</a> ()</td></tr>
+<tr class="memdesc:a7d94be49f66c6375829a0d940741de58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lance la recherche et le déplacement vers une maison pour boire.  <br /></td></tr>
 <tr class="memitem:ae7503ed05a93ce0df2b9f3200d23ff1d" id="r_ae7503ed05a93ce0df2b9f3200d23ff1d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae7503ed05a93ce0df2b9f3200d23ff1d">FinBoire</a> ()</td></tr>
+<tr class="memdesc:ae7503ed05a93ce0df2b9f3200d23ff1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Termine l'action de boire, remet la soif à 1.  <br /></td></tr>
 <tr class="memitem:a354ecc3db942bbf36bc1d26fc37b63e2" id="r_a354ecc3db942bbf36bc1d26fc37b63e2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a354ecc3db942bbf36bc1d26fc37b63e2">Dormir</a> ()</td></tr>
+<tr class="memdesc:a354ecc3db942bbf36bc1d26fc37b63e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lance la recherche et le déplacement vers une maison pour dormir.  <br /></td></tr>
 <tr class="memitem:ab9baee7053421f9360934999b21d1062" id="r_ab9baee7053421f9360934999b21d1062"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab9baee7053421f9360934999b21d1062">FinDormir</a> ()</td></tr>
+<tr class="memdesc:ab9baee7053421f9360934999b21d1062"><td class="mdescLeft">&#160;</td><td class="mdescRight">Termine l'action de dormir, remet l'énergie à 1 et marque le logement comme acquis.  <br /></td></tr>
+<tr class="memitem:ac28589e4f53138d346675800f29aeedb" id="r_ac28589e4f53138d346675800f29aeedb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac28589e4f53138d346675800f29aeedb">Travailler</a> ()</td></tr>
+<tr class="memdesc:ac28589e4f53138d346675800f29aeedb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recherche une usine aléatoire disponible pour aller travailler.  <br /></td></tr>
+<tr class="memitem:a8dfa18889de23e0b1112879f0f393053" id="r_a8dfa18889de23e0b1112879f0f393053"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8dfa18889de23e0b1112879f0f393053">FinTravailler</a> ()</td></tr>
+<tr class="memdesc:a8dfa18889de23e0b1112879f0f393053"><td class="mdescLeft">&#160;</td><td class="mdescRight">Termine l'action de travail.  <br /></td></tr>
 <tr class="memitem:a2accc185c9c3bd3ec1bb2f621f26ef24" id="r_a2accc185c9c3bd3ec1bb2f621f26ef24"><td class="memItemLeft" align="right" valign="top">Transform&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2accc185c9c3bd3ec1bb2f621f26ef24">ChercherTarget</a> (string tag)</td></tr>
-<tr class="memdesc:a2accc185c9c3bd3ec1bb2f621f26ef24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cherche la ressource la plus proche disponible avec le tag spécifié.  <br /></td></tr>
+<tr class="memdesc:a2accc185c9c3bd3ec1bb2f621f26ef24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cherche la cible la plus proche avec un tag donné, en vérifiant les disponibilités de la ressource.  <br /></td></tr>
 <tr class="memitem:a92a208954f3801d2361d1418b4ba47cb" id="r_a92a208954f3801d2361d1418b4ba47cb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a92a208954f3801d2361d1418b4ba47cb">LibererRessource</a> ()</td></tr>
-<tr class="memdesc:a92a208954f3801d2361d1418b4ba47cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Libère la ressource actuellement ciblée par le PNJ.  <br /></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
-Fonctions membres publiques statiques</h2></td></tr>
-<tr class="memitem:a0c871e4ff0665f56cbf70eaa4535094e" id="r_a0c871e4ff0665f56cbf70eaa4535094e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0c871e4ff0665f56cbf70eaa4535094e">CreerNouveauPNJ</a> (GameObject prefabPNJ, Vector3 position)</td></tr>
-<tr class="memdesc:a0c871e4ff0665f56cbf70eaa4535094e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instancie un nouveau PNJ dans la scène à la position donnée.  <br /></td></tr>
+<tr class="memdesc:a92a208954f3801d2361d1418b4ba47cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Libère la ressource actuellement utilisée par le PNJ, si applicable.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Attributs publics</h2></td></tr>
 <tr class="memitem:a2d8b408760c455c49a9707dc7ed36e2c" id="r_a2d8b408760c455c49a9707dc7ed36e2c"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2d8b408760c455c49a9707dc7ed36e2c">soif</a> = 1f</td></tr>
-<tr class="memdesc:a2d8b408760c455c49a9707dc7ed36e2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valeur de la soif du PNJ (1 = pleine, 0 = vide).  <br /></td></tr>
+<tr class="memdesc:a2d8b408760c455c49a9707dc7ed36e2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valeur actuelle de la soif (entre 0 et 1).  <br /></td></tr>
 <tr class="memitem:a9903b249259c41231b5b9adaa7f0f7fd" id="r_a9903b249259c41231b5b9adaa7f0f7fd"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9903b249259c41231b5b9adaa7f0f7fd">faim</a> = 1f</td></tr>
+<tr class="memdesc:a9903b249259c41231b5b9adaa7f0f7fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valeur actuelle de la faim (entre 0 et 1).  <br /></td></tr>
 <tr class="memitem:ac1e677a229be0c7346ab74b2f0ce3739" id="r_ac1e677a229be0c7346ab74b2f0ce3739"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac1e677a229be0c7346ab74b2f0ce3739">energie</a> = 1f</td></tr>
+<tr class="memdesc:ac1e677a229be0c7346ab74b2f0ce3739"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valeur actuelle de l'énergie (entre 0 et 1).  <br /></td></tr>
 <tr class="memitem:ad20711cbabe145714a47be93f358dbb5" id="r_ad20711cbabe145714a47be93f358dbb5"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad20711cbabe145714a47be93f358dbb5">tauxFaim</a> = 0.02f</td></tr>
-<tr class="memdesc:ad20711cbabe145714a47be93f358dbb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vitesse de diminution de la faim, de la soif et de l'énergie.  <br /></td></tr>
+<tr class="memdesc:ad20711cbabe145714a47be93f358dbb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Taux de diminution de la faim par seconde.  <br /></td></tr>
 <tr class="memitem:a5ec5ff3f54925e155bbbf5412e71a7cf" id="r_a5ec5ff3f54925e155bbbf5412e71a7cf"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5ec5ff3f54925e155bbbf5412e71a7cf">tauxSoif</a> = 0.01f</td></tr>
+<tr class="memdesc:a5ec5ff3f54925e155bbbf5412e71a7cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Taux de diminution de la soif par seconde.  <br /></td></tr>
 <tr class="memitem:a1842c85c6263bd47528a8b35fdaea830" id="r_a1842c85c6263bd47528a8b35fdaea830"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1842c85c6263bd47528a8b35fdaea830">tauxEnergie</a> = 0.01f</td></tr>
+<tr class="memdesc:a1842c85c6263bd47528a8b35fdaea830"><td class="mdescLeft">&#160;</td><td class="mdescRight">Taux de diminution de l'énergie par seconde.  <br /></td></tr>
 <tr class="memitem:a187345d2e2cd31b4c3a42d113aab2530" id="r_a187345d2e2cd31b4c3a42d113aab2530"><td class="memItemLeft" align="right" valign="top">enum <a class="el" href="#aa6d9cca74f6935b3d9c85b61f400b09f">BesoinPlayers::BesoinType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a187345d2e2cd31b4c3a42d113aab2530">seuilCritique</a> = 0.15f</td></tr>
-<tr class="memdesc:a187345d2e2cd31b4c3a42d113aab2530"><td class="mdescLeft">&#160;</td><td class="mdescRight">Seuil critique en-dessous duquel un besoin devient prioritaire.  <br /></td></tr>
+<tr class="memdesc:a187345d2e2cd31b4c3a42d113aab2530"><td class="mdescLeft">&#160;</td><td class="mdescRight">Seuil à partir duquel un besoin est considéré critique et doit être comblé en priorité.  <br /></td></tr>
 <tr class="memitem:a47cea338662d64c00292af230c1a300e" id="r_a47cea338662d64c00292af230c1a300e"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a47cea338662d64c00292af230c1a300e">seuilAction</a> = 0.3f</td></tr>
-<tr class="memdesc:a47cea338662d64c00292af230c1a300e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Seuil d'action à partir duquel le PNJ commence à chercher une solution.  <br /></td></tr>
+<tr class="memdesc:a47cea338662d64c00292af230c1a300e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Seuil à partir duquel un besoin peut déclencher une action (non utilisé dans ce script).  <br /></td></tr>
 <tr class="memitem:a80ce0430a9c55b4009a489c7d4e3b58b" id="r_a80ce0430a9c55b4009a489c7d4e3b58b"><td class="memItemLeft" align="right" valign="top">enum <a class="el" href="#a9692fc8e12255c50c6bbde946a29984c">BesoinPlayers::EtatPNJ</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a80ce0430a9c55b4009a489c7d4e3b58b">etatActuel</a> = <a class="el" href="#a9692fc8e12255c50c6bbde946a29984ca08aeb9717dc78b86a8ddad342d927873">EtatPNJ.Idle</a></td></tr>
-<tr class="memitem:a23e00e50017191aec9f20101f67d1864" id="r_a23e00e50017191aec9f20101f67d1864"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a23e00e50017191aec9f20101f67d1864">dureeDeVieMin</a> = 60f</td></tr>
-<tr class="memdesc:a23e00e50017191aec9f20101f67d1864"><td class="mdescLeft">&#160;</td><td class="mdescRight">Durée de vie minimale et maximale du PNJ.  <br /></td></tr>
-<tr class="memitem:a46a55a8843964475b43f04b378a30add" id="r_a46a55a8843964475b43f04b378a30add"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a46a55a8843964475b43f04b378a30add">dureeDeVieMax</a> = 120f</td></tr>
-<tr class="memitem:a7a84ee6dd9bb1bfaccfb501780abcb2d" id="r_a7a84ee6dd9bb1bfaccfb501780abcb2d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_population_manager.html">PopulationManager</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7a84ee6dd9bb1bfaccfb501780abcb2d">populationManager</a></td></tr>
-<tr class="memdesc:a7a84ee6dd9bb1bfaccfb501780abcb2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Référence au gestionnaire de population (pour notifier les décès).  <br /></td></tr>
+<tr class="memdesc:a80ce0430a9c55b4009a489c7d4e3b58b"><td class="mdescLeft">&#160;</td><td class="mdescRight">État actuel du PNJ.  <br /></td></tr>
+<tr class="memitem:ac026c45777b96643b2df81df2ab3358e" id="r_ac026c45777b96643b2df81df2ab3358e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac026c45777b96643b2df81df2ab3358e">aUnLogement</a> = false</td></tr>
+<tr class="memdesc:ac026c45777b96643b2df81df2ab3358e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indique si le PNJ possède un logement attribué.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Fonctions membres privées</h2></td></tr>
+<tr class="memitem:aa060436748fb56219f6ab72b292611c8" id="r_aa060436748fb56219f6ab72b292611c8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa060436748fb56219f6ab72b292611c8">Update</a> ()</td></tr>
+<tr class="memdesc:aa060436748fb56219f6ab72b292611c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Met à jour les besoins du PNJ et gère les transitions d'état en fonction des priorités.  <br /></td></tr>
 <tr class="memitem:adb55a28ed2542204c990da6b4be57607" id="r_adb55a28ed2542204c990da6b4be57607"><td class="memItemLeft" align="right" valign="top">System Collections IEnumerator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adb55a28ed2542204c990da6b4be57607">AttendreEtChercher</a> (string tag, <a class="el" href="#a9692fc8e12255c50c6bbde946a29984c">EtatPNJ</a> nouvelEtat)</td></tr>
+<tr class="memdesc:adb55a28ed2542204c990da6b4be57607"><td class="mdescLeft">&#160;</td><td class="mdescRight">Coroutine qui attend un court instant avant de chercher une ressource avec un tag donné.  <br /></td></tr>
 <tr class="memitem:a21b495cac4cb8d48f181f2f4eb554e41" id="r_a21b495cac4cb8d48f181f2f4eb554e41"><td class="memItemLeft" align="right" valign="top">System Collections IEnumerator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a21b495cac4cb8d48f181f2f4eb554e41">AttendreEtDetruire</a> (GameObject cible)</td></tr>
+<tr class="memdesc:a21b495cac4cb8d48f181f2f4eb554e41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Coroutine qui attend puis détruit un objet ressource après un court délai.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Attributs privés</h2></td></tr>
+<tr class="memitem:a2956ec7ee4770257d40769af2e2d4f1c" id="r_a2956ec7ee4770257d40769af2e2d4f1c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2956ec7ee4770257d40769af2e2d4f1c">enAction</a> = false</td></tr>
+<tr class="memitem:ae49c07fb629f0561c1938c4a78648eed" id="r_ae49c07fb629f0561c1938c4a78648eed"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae49c07fb629f0561c1938c4a78648eed">estChezSoi</a> = false</td></tr>
 <tr class="memitem:adaab9e87c701ed10e89d2bb422a94cd7" id="r_adaab9e87c701ed10e89d2bb422a94cd7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aa6d9cca74f6935b3d9c85b61f400b09f">BesoinType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adaab9e87c701ed10e89d2bb422a94cd7">besoinActuel</a></td></tr>
 <tr class="memitem:adb1e6b3df199adab079b0828bc87b7b5" id="r_adb1e6b3df199adab079b0828bc87b7b5"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adb1e6b3df199adab079b0828bc87b7b5">actionTimer</a> = 0f</td></tr>
 <tr class="memitem:a21c7c51fdad637012f0f692649292df6" id="r_a21c7c51fdad637012f0f692649292df6"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a21c7c51fdad637012f0f692649292df6">actionDuration</a> = 2f</td></tr>
-<tr class="memitem:a37ff36746687fd557e644ad5091463a0" id="r_a37ff36746687fd557e644ad5091463a0"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a37ff36746687fd557e644ad5091463a0">dureeDeVie</a></td></tr>
-<tr class="memitem:aef701e3cc998217dacabfdd420cfff6f" id="r_aef701e3cc998217dacabfdd420cfff6f"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aef701e3cc998217dacabfdd420cfff6f">vieEcoulee</a> = 0f</td></tr>
+<tr class="memitem:aa7a145b3220b9f20697b362e7c3d817a" id="r_aa7a145b3220b9f20697b362e7c3d817a"><td class="memItemLeft" align="right" valign="top">string[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa7a145b3220b9f20697b362e7c3d817a">tagsUsines</a> = { &quot;usineArgile&quot;, &quot;usineBrique&quot;, &quot;usineEau&quot;, &quot;usineBaie&quot;, &quot;usineBois&quot;, &quot;usineOutils&quot;, &quot;usinePierre&quot;, &quot;usineOutilsPierre&quot;, &quot;potterie&quot;, &quot;enclotMouton&quot;, &quot;enclotPoule&quot; }</td></tr>
+<tr class="memdesc:aa7a145b3220b9f20697b362e7c3d817a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liste des tags d’usines pour la recherche d’un lieu de travail.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Description détaillée</h2>
-<div class="textblock"><p>Gère les besoins vitaux des PNJ : faim, soif, énergie. Le PNJ choisit une action à effectuer selon ses besoins. Il vieillit avec le temps et peut mourir naturellement. </p>
+<div class="textblock"><p>Gère les besoins fondamentaux (faim, soif, énergie) et les comportements associés des PNJ. Permet aux personnages d'agir selon leurs priorités : manger, boire, dormir ou travailler. </p>
 
-<p class="definition">Définition à la ligne <a class="el" href="_besoin_players_8cs_source.html#l00008">8</a> du fichier <a class="el" href="_besoin_players_8cs_source.html">BesoinPlayers.cs</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_besoin_players_8cs_source.html#l00007">7</a> du fichier <a class="el" href="_besoin_players_8cs_source.html">BesoinPlayers.cs</a>.</p>
 </div><a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Documentation des énumérations membres</h2>
 <a id="aa6d9cca74f6935b3d9c85b61f400b09f" name="aa6d9cca74f6935b3d9c85b61f400b09f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa6d9cca74f6935b3d9c85b61f400b09f">&#9670;&#160;</a></span>BesoinType</h2>
@@ -199,7 +212,7 @@ Attributs privés</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Type de besoin prioritaire du PNJ. </p>
+<p>Types de besoins pouvant être prioritaires pour un PNJ. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Valeurs énumérées</th></tr><tr><td class="fieldname"><a id="aa6d9cca74f6935b3d9c85b61f400b09fad19b194e3fcebf9b72e209a41e73d841" name="aa6d9cca74f6935b3d9c85b61f400b09fad19b194e3fcebf9b72e209a41e73d841"></a>Rien&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="aa6d9cca74f6935b3d9c85b61f400b09fad7763ee8a788adc0eccf9d0b7128e6ce" name="aa6d9cca74f6935b3d9c85b61f400b09fad7763ee8a788adc0eccf9d0b7128e6ce"></a>Faim&#160;</td><td class="fielddoc"></td></tr>
@@ -207,12 +220,12 @@ Attributs privés</h2></td></tr>
 <tr><td class="fieldname"><a id="aa6d9cca74f6935b3d9c85b61f400b09faca8db314d83d91cc9d6ce166c094adef" name="aa6d9cca74f6935b3d9c85b61f400b09faca8db314d83d91cc9d6ce166c094adef"></a>Energie&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Définition à la ligne <a class="el" href="_besoin_players_8cs_source.html#l00017">17</a> du fichier <a class="el" href="_besoin_players_8cs_source.html">BesoinPlayers.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   17</span>{ <a class="code hl_enumvalue" href="#aa6d9cca74f6935b3d9c85b61f400b09fad19b194e3fcebf9b72e209a41e73d841">Rien</a>, <a class="code hl_enumvalue" href="#aa6d9cca74f6935b3d9c85b61f400b09fad7763ee8a788adc0eccf9d0b7128e6ce">Faim</a>, <a class="code hl_enumvalue" href="#aa6d9cca74f6935b3d9c85b61f400b09faae6ae39187b7810c173cd5b8010e9b36">Soif</a>, <a class="code hl_enumvalue" href="#aa6d9cca74f6935b3d9c85b61f400b09faca8db314d83d91cc9d6ce166c094adef">Energie</a> }</div>
-<div class="ttc" id="aclass_besoin_players_html_aa6d9cca74f6935b3d9c85b61f400b09faae6ae39187b7810c173cd5b8010e9b36"><div class="ttname"><a href="#aa6d9cca74f6935b3d9c85b61f400b09faae6ae39187b7810c173cd5b8010e9b36">BesoinPlayers::Soif</a></div><div class="ttdeci">@ Soif</div><div class="ttdef"><b>Definition</b> <a href="_besoin_players_8cs_source.html#l00017">BesoinPlayers.cs:17</a></div></div>
-<div class="ttc" id="aclass_besoin_players_html_aa6d9cca74f6935b3d9c85b61f400b09faca8db314d83d91cc9d6ce166c094adef"><div class="ttname"><a href="#aa6d9cca74f6935b3d9c85b61f400b09faca8db314d83d91cc9d6ce166c094adef">BesoinPlayers::Energie</a></div><div class="ttdeci">@ Energie</div><div class="ttdef"><b>Definition</b> <a href="_besoin_players_8cs_source.html#l00017">BesoinPlayers.cs:17</a></div></div>
-<div class="ttc" id="aclass_besoin_players_html_aa6d9cca74f6935b3d9c85b61f400b09fad19b194e3fcebf9b72e209a41e73d841"><div class="ttname"><a href="#aa6d9cca74f6935b3d9c85b61f400b09fad19b194e3fcebf9b72e209a41e73d841">BesoinPlayers::Rien</a></div><div class="ttdeci">@ Rien</div><div class="ttdef"><b>Definition</b> <a href="_besoin_players_8cs_source.html#l00017">BesoinPlayers.cs:17</a></div></div>
-<div class="ttc" id="aclass_besoin_players_html_aa6d9cca74f6935b3d9c85b61f400b09fad7763ee8a788adc0eccf9d0b7128e6ce"><div class="ttname"><a href="#aa6d9cca74f6935b3d9c85b61f400b09fad7763ee8a788adc0eccf9d0b7128e6ce">BesoinPlayers::Faim</a></div><div class="ttdeci">@ Faim</div><div class="ttdef"><b>Definition</b> <a href="_besoin_players_8cs_source.html#l00017">BesoinPlayers.cs:17</a></div></div>
+<p class="definition">Définition à la ligne <a class="el" href="_besoin_players_8cs_source.html#l00028">28</a> du fichier <a class="el" href="_besoin_players_8cs_source.html">BesoinPlayers.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   28</span>{ <a class="code hl_enumvalue" href="#aa6d9cca74f6935b3d9c85b61f400b09fad19b194e3fcebf9b72e209a41e73d841">Rien</a>, <a class="code hl_enumvalue" href="#aa6d9cca74f6935b3d9c85b61f400b09fad7763ee8a788adc0eccf9d0b7128e6ce">Faim</a>, <a class="code hl_enumvalue" href="#aa6d9cca74f6935b3d9c85b61f400b09faae6ae39187b7810c173cd5b8010e9b36">Soif</a>, <a class="code hl_enumvalue" href="#aa6d9cca74f6935b3d9c85b61f400b09faca8db314d83d91cc9d6ce166c094adef">Energie</a> }</div>
+<div class="ttc" id="aclass_besoin_players_html_aa6d9cca74f6935b3d9c85b61f400b09faae6ae39187b7810c173cd5b8010e9b36"><div class="ttname"><a href="#aa6d9cca74f6935b3d9c85b61f400b09faae6ae39187b7810c173cd5b8010e9b36">BesoinPlayers::Soif</a></div><div class="ttdeci">@ Soif</div><div class="ttdef"><b>Definition</b> <a href="_besoin_players_8cs_source.html#l00028">BesoinPlayers.cs:28</a></div></div>
+<div class="ttc" id="aclass_besoin_players_html_aa6d9cca74f6935b3d9c85b61f400b09faca8db314d83d91cc9d6ce166c094adef"><div class="ttname"><a href="#aa6d9cca74f6935b3d9c85b61f400b09faca8db314d83d91cc9d6ce166c094adef">BesoinPlayers::Energie</a></div><div class="ttdeci">@ Energie</div><div class="ttdef"><b>Definition</b> <a href="_besoin_players_8cs_source.html#l00028">BesoinPlayers.cs:28</a></div></div>
+<div class="ttc" id="aclass_besoin_players_html_aa6d9cca74f6935b3d9c85b61f400b09fad19b194e3fcebf9b72e209a41e73d841"><div class="ttname"><a href="#aa6d9cca74f6935b3d9c85b61f400b09fad19b194e3fcebf9b72e209a41e73d841">BesoinPlayers::Rien</a></div><div class="ttdeci">@ Rien</div><div class="ttdef"><b>Definition</b> <a href="_besoin_players_8cs_source.html#l00028">BesoinPlayers.cs:28</a></div></div>
+<div class="ttc" id="aclass_besoin_players_html_aa6d9cca74f6935b3d9c85b61f400b09fad7763ee8a788adc0eccf9d0b7128e6ce"><div class="ttname"><a href="#aa6d9cca74f6935b3d9c85b61f400b09fad7763ee8a788adc0eccf9d0b7128e6ce">BesoinPlayers::Faim</a></div><div class="ttdeci">@ Faim</div><div class="ttdef"><b>Definition</b> <a href="_besoin_players_8cs_source.html#l00028">BesoinPlayers.cs:28</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -228,7 +241,7 @@ Attributs privés</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>État actuel du PNJ selon ses besoins ou son activité. </p>
+<p>États possibles du PNJ en fonction de ses actions ou déplacements. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Valeurs énumérées</th></tr><tr><td class="fieldname"><a id="a9692fc8e12255c50c6bbde946a29984ca08aeb9717dc78b86a8ddad342d927873" name="a9692fc8e12255c50c6bbde946a29984ca08aeb9717dc78b86a8ddad342d927873"></a>Idle&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a9692fc8e12255c50c6bbde946a29984cade5769379bdf18839c044297c2a7f41f" name="a9692fc8e12255c50c6bbde946a29984cade5769379bdf18839c044297c2a7f41f"></a>AllerManger&#160;</td><td class="fielddoc"></td></tr>
@@ -237,17 +250,21 @@ Attributs privés</h2></td></tr>
 <tr><td class="fieldname"><a id="a9692fc8e12255c50c6bbde946a29984caab2b133a25cca6f98899eb4a9a46a916" name="a9692fc8e12255c50c6bbde946a29984caab2b133a25cca6f98899eb4a9a46a916"></a>Boire&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a9692fc8e12255c50c6bbde946a29984ca0bde974acb9e7651b03f7274c4b33ddc" name="a9692fc8e12255c50c6bbde946a29984ca0bde974acb9e7651b03f7274c4b33ddc"></a>AllerDormir&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a9692fc8e12255c50c6bbde946a29984ca8460695e1a99572444ccce4ac4c919a5" name="a9692fc8e12255c50c6bbde946a29984ca8460695e1a99572444ccce4ac4c919a5"></a>Dormir&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a9692fc8e12255c50c6bbde946a29984ca93fc3f96b2729e7cf704599b1c00e87e" name="a9692fc8e12255c50c6bbde946a29984ca93fc3f96b2729e7cf704599b1c00e87e"></a>AllerTravailler&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a9692fc8e12255c50c6bbde946a29984caa9f90631800b17516f2cb532fbd9ff61" name="a9692fc8e12255c50c6bbde946a29984caa9f90631800b17516f2cb532fbd9ff61"></a>Travailler&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Définition à la ligne <a class="el" href="_besoin_players_8cs_source.html#l00026">26</a> du fichier <a class="el" href="_besoin_players_8cs_source.html">BesoinPlayers.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   26</span>{ <a class="code hl_enumvalue" href="#a9692fc8e12255c50c6bbde946a29984ca08aeb9717dc78b86a8ddad342d927873">Idle</a>, <a class="code hl_enumvalue" href="#a9692fc8e12255c50c6bbde946a29984cade5769379bdf18839c044297c2a7f41f">AllerManger</a>, <a class="code hl_enumvalue" href="#a9692fc8e12255c50c6bbde946a29984caf8996d8f698439956405a49bd84ed0f3">Manger</a>, <a class="code hl_enumvalue" href="#a9692fc8e12255c50c6bbde946a29984cae2d46b995beb1012d42a27d502d4ce96">AllerBoire</a>, <a class="code hl_enumvalue" href="#a9692fc8e12255c50c6bbde946a29984caab2b133a25cca6f98899eb4a9a46a916">Boire</a>, <a class="code hl_enumvalue" href="#a9692fc8e12255c50c6bbde946a29984ca0bde974acb9e7651b03f7274c4b33ddc">AllerDormir</a>, <a class="code hl_enumvalue" href="#a9692fc8e12255c50c6bbde946a29984ca8460695e1a99572444ccce4ac4c919a5">Dormir</a> }</div>
-<div class="ttc" id="aclass_besoin_players_html_a9692fc8e12255c50c6bbde946a29984ca08aeb9717dc78b86a8ddad342d927873"><div class="ttname"><a href="#a9692fc8e12255c50c6bbde946a29984ca08aeb9717dc78b86a8ddad342d927873">BesoinPlayers::Idle</a></div><div class="ttdeci">@ Idle</div><div class="ttdef"><b>Definition</b> <a href="_besoin_players_8cs_source.html#l00026">BesoinPlayers.cs:26</a></div></div>
-<div class="ttc" id="aclass_besoin_players_html_a9692fc8e12255c50c6bbde946a29984ca0bde974acb9e7651b03f7274c4b33ddc"><div class="ttname"><a href="#a9692fc8e12255c50c6bbde946a29984ca0bde974acb9e7651b03f7274c4b33ddc">BesoinPlayers::AllerDormir</a></div><div class="ttdeci">@ AllerDormir</div><div class="ttdef"><b>Definition</b> <a href="_besoin_players_8cs_source.html#l00026">BesoinPlayers.cs:26</a></div></div>
-<div class="ttc" id="aclass_besoin_players_html_a9692fc8e12255c50c6bbde946a29984ca8460695e1a99572444ccce4ac4c919a5"><div class="ttname"><a href="#a9692fc8e12255c50c6bbde946a29984ca8460695e1a99572444ccce4ac4c919a5">BesoinPlayers::Dormir</a></div><div class="ttdeci">@ Dormir</div><div class="ttdef"><b>Definition</b> <a href="_besoin_players_8cs_source.html#l00026">BesoinPlayers.cs:26</a></div></div>
-<div class="ttc" id="aclass_besoin_players_html_a9692fc8e12255c50c6bbde946a29984caab2b133a25cca6f98899eb4a9a46a916"><div class="ttname"><a href="#a9692fc8e12255c50c6bbde946a29984caab2b133a25cca6f98899eb4a9a46a916">BesoinPlayers::Boire</a></div><div class="ttdeci">@ Boire</div><div class="ttdef"><b>Definition</b> <a href="_besoin_players_8cs_source.html#l00026">BesoinPlayers.cs:26</a></div></div>
-<div class="ttc" id="aclass_besoin_players_html_a9692fc8e12255c50c6bbde946a29984cade5769379bdf18839c044297c2a7f41f"><div class="ttname"><a href="#a9692fc8e12255c50c6bbde946a29984cade5769379bdf18839c044297c2a7f41f">BesoinPlayers::AllerManger</a></div><div class="ttdeci">@ AllerManger</div><div class="ttdef"><b>Definition</b> <a href="_besoin_players_8cs_source.html#l00026">BesoinPlayers.cs:26</a></div></div>
-<div class="ttc" id="aclass_besoin_players_html_a9692fc8e12255c50c6bbde946a29984cae2d46b995beb1012d42a27d502d4ce96"><div class="ttname"><a href="#a9692fc8e12255c50c6bbde946a29984cae2d46b995beb1012d42a27d502d4ce96">BesoinPlayers::AllerBoire</a></div><div class="ttdeci">@ AllerBoire</div><div class="ttdef"><b>Definition</b> <a href="_besoin_players_8cs_source.html#l00026">BesoinPlayers.cs:26</a></div></div>
-<div class="ttc" id="aclass_besoin_players_html_a9692fc8e12255c50c6bbde946a29984caf8996d8f698439956405a49bd84ed0f3"><div class="ttname"><a href="#a9692fc8e12255c50c6bbde946a29984caf8996d8f698439956405a49bd84ed0f3">BesoinPlayers::Manger</a></div><div class="ttdeci">@ Manger</div><div class="ttdef"><b>Definition</b> <a href="_besoin_players_8cs_source.html#l00026">BesoinPlayers.cs:26</a></div></div>
+<p class="definition">Définition à la ligne <a class="el" href="_besoin_players_8cs_source.html#l00037">37</a> du fichier <a class="el" href="_besoin_players_8cs_source.html">BesoinPlayers.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   37</span>{ <a class="code hl_enumvalue" href="#a9692fc8e12255c50c6bbde946a29984ca08aeb9717dc78b86a8ddad342d927873">Idle</a>, <a class="code hl_enumvalue" href="#a9692fc8e12255c50c6bbde946a29984cade5769379bdf18839c044297c2a7f41f">AllerManger</a>, <a class="code hl_enumvalue" href="#a9692fc8e12255c50c6bbde946a29984caf8996d8f698439956405a49bd84ed0f3">Manger</a>, <a class="code hl_enumvalue" href="#a9692fc8e12255c50c6bbde946a29984cae2d46b995beb1012d42a27d502d4ce96">AllerBoire</a>, <a class="code hl_enumvalue" href="#a9692fc8e12255c50c6bbde946a29984caab2b133a25cca6f98899eb4a9a46a916">Boire</a>, <a class="code hl_enumvalue" href="#a9692fc8e12255c50c6bbde946a29984ca0bde974acb9e7651b03f7274c4b33ddc">AllerDormir</a>, <a class="code hl_enumvalue" href="#a9692fc8e12255c50c6bbde946a29984ca8460695e1a99572444ccce4ac4c919a5">Dormir</a>, <a class="code hl_enumvalue" href="#a9692fc8e12255c50c6bbde946a29984ca93fc3f96b2729e7cf704599b1c00e87e">AllerTravailler</a>, <a class="code hl_enumvalue" href="#a9692fc8e12255c50c6bbde946a29984caa9f90631800b17516f2cb532fbd9ff61">Travailler</a> }</div>
+<div class="ttc" id="aclass_besoin_players_html_a9692fc8e12255c50c6bbde946a29984ca08aeb9717dc78b86a8ddad342d927873"><div class="ttname"><a href="#a9692fc8e12255c50c6bbde946a29984ca08aeb9717dc78b86a8ddad342d927873">BesoinPlayers::Idle</a></div><div class="ttdeci">@ Idle</div><div class="ttdef"><b>Definition</b> <a href="_besoin_players_8cs_source.html#l00037">BesoinPlayers.cs:37</a></div></div>
+<div class="ttc" id="aclass_besoin_players_html_a9692fc8e12255c50c6bbde946a29984ca0bde974acb9e7651b03f7274c4b33ddc"><div class="ttname"><a href="#a9692fc8e12255c50c6bbde946a29984ca0bde974acb9e7651b03f7274c4b33ddc">BesoinPlayers::AllerDormir</a></div><div class="ttdeci">@ AllerDormir</div><div class="ttdef"><b>Definition</b> <a href="_besoin_players_8cs_source.html#l00037">BesoinPlayers.cs:37</a></div></div>
+<div class="ttc" id="aclass_besoin_players_html_a9692fc8e12255c50c6bbde946a29984ca8460695e1a99572444ccce4ac4c919a5"><div class="ttname"><a href="#a9692fc8e12255c50c6bbde946a29984ca8460695e1a99572444ccce4ac4c919a5">BesoinPlayers::Dormir</a></div><div class="ttdeci">@ Dormir</div><div class="ttdef"><b>Definition</b> <a href="_besoin_players_8cs_source.html#l00037">BesoinPlayers.cs:37</a></div></div>
+<div class="ttc" id="aclass_besoin_players_html_a9692fc8e12255c50c6bbde946a29984ca93fc3f96b2729e7cf704599b1c00e87e"><div class="ttname"><a href="#a9692fc8e12255c50c6bbde946a29984ca93fc3f96b2729e7cf704599b1c00e87e">BesoinPlayers::AllerTravailler</a></div><div class="ttdeci">@ AllerTravailler</div><div class="ttdef"><b>Definition</b> <a href="_besoin_players_8cs_source.html#l00037">BesoinPlayers.cs:37</a></div></div>
+<div class="ttc" id="aclass_besoin_players_html_a9692fc8e12255c50c6bbde946a29984caa9f90631800b17516f2cb532fbd9ff61"><div class="ttname"><a href="#a9692fc8e12255c50c6bbde946a29984caa9f90631800b17516f2cb532fbd9ff61">BesoinPlayers::Travailler</a></div><div class="ttdeci">@ Travailler</div><div class="ttdef"><b>Definition</b> <a href="_besoin_players_8cs_source.html#l00037">BesoinPlayers.cs:37</a></div></div>
+<div class="ttc" id="aclass_besoin_players_html_a9692fc8e12255c50c6bbde946a29984caab2b133a25cca6f98899eb4a9a46a916"><div class="ttname"><a href="#a9692fc8e12255c50c6bbde946a29984caab2b133a25cca6f98899eb4a9a46a916">BesoinPlayers::Boire</a></div><div class="ttdeci">@ Boire</div><div class="ttdef"><b>Definition</b> <a href="_besoin_players_8cs_source.html#l00037">BesoinPlayers.cs:37</a></div></div>
+<div class="ttc" id="aclass_besoin_players_html_a9692fc8e12255c50c6bbde946a29984cade5769379bdf18839c044297c2a7f41f"><div class="ttname"><a href="#a9692fc8e12255c50c6bbde946a29984cade5769379bdf18839c044297c2a7f41f">BesoinPlayers::AllerManger</a></div><div class="ttdeci">@ AllerManger</div><div class="ttdef"><b>Definition</b> <a href="_besoin_players_8cs_source.html#l00037">BesoinPlayers.cs:37</a></div></div>
+<div class="ttc" id="aclass_besoin_players_html_a9692fc8e12255c50c6bbde946a29984cae2d46b995beb1012d42a27d502d4ce96"><div class="ttname"><a href="#a9692fc8e12255c50c6bbde946a29984cae2d46b995beb1012d42a27d502d4ce96">BesoinPlayers::AllerBoire</a></div><div class="ttdeci">@ AllerBoire</div><div class="ttdef"><b>Definition</b> <a href="_besoin_players_8cs_source.html#l00037">BesoinPlayers.cs:37</a></div></div>
+<div class="ttc" id="aclass_besoin_players_html_a9692fc8e12255c50c6bbde946a29984caf8996d8f698439956405a49bd84ed0f3"><div class="ttname"><a href="#a9692fc8e12255c50c6bbde946a29984caf8996d8f698439956405a49bd84ed0f3">BesoinPlayers::Manger</a></div><div class="ttdeci">@ Manger</div><div class="ttdef"><b>Definition</b> <a href="_besoin_players_8cs_source.html#l00037">BesoinPlayers.cs:37</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -279,28 +296,30 @@ Attributs privés</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="_besoin_players_8cs_source.html#l00257">257</a> du fichier <a class="el" href="_besoin_players_8cs_source.html">BesoinPlayers.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  258</span>    {</div>
-<div class="line"><span class="lineno">  259</span>        yield <span class="keywordflow">return</span> <span class="keyword">new</span> WaitForSeconds(Random.Range(0.01f, 0.2f));</div>
-<div class="line"><span class="lineno">  260</span> </div>
-<div class="line"><span class="lineno">  261</span>        Transform target = <a class="code hl_function" href="#a2accc185c9c3bd3ec1bb2f621f26ef24">ChercherTarget</a>(tag);</div>
-<div class="line"><span class="lineno">  262</span>        <span class="keywordflow">if</span> (target != null)</div>
-<div class="line"><span class="lineno">  263</span>        {</div>
-<div class="line"><span class="lineno">  264</span>            GetComponent&lt;PathfindingAI&gt;().setTarget(target);</div>
-<div class="line"><span class="lineno">  265</span>            <a class="code hl_variable" href="#a80ce0430a9c55b4009a489c7d4e3b58b">etatActuel</a> = nouvelEtat;</div>
-<div class="line"><span class="lineno">  266</span>            Debug.Log($<span class="stringliteral">&quot;En route vers {tag}...&quot;</span>);</div>
-<div class="line"><span class="lineno">  267</span>        }</div>
-<div class="line"><span class="lineno">  268</span>        <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  269</span>        {</div>
-<div class="line"><span class="lineno">  270</span>            Debug.LogWarning($<span class="stringliteral">&quot;Aucune ressource avec le tag {tag} trouvée !&quot;</span>);</div>
-<div class="line"><span class="lineno">  271</span>        }</div>
-<div class="line"><span class="lineno">  272</span>    }</div>
-<div class="ttc" id="aclass_besoin_players_html_a2accc185c9c3bd3ec1bb2f621f26ef24"><div class="ttname"><a href="#a2accc185c9c3bd3ec1bb2f621f26ef24">BesoinPlayers::ChercherTarget</a></div><div class="ttdeci">Transform ChercherTarget(string tag)</div><div class="ttdoc">Cherche la ressource la plus proche disponible avec le tag spécifié.</div><div class="ttdef"><b>Definition</b> <a href="_besoin_players_8cs_source.html#l00211">BesoinPlayers.cs:211</a></div></div>
-<div class="ttc" id="aclass_besoin_players_html_a80ce0430a9c55b4009a489c7d4e3b58b"><div class="ttname"><a href="#a80ce0430a9c55b4009a489c7d4e3b58b">BesoinPlayers::etatActuel</a></div><div class="ttdeci">enum BesoinPlayers::EtatPNJ etatActuel</div></div>
-</div><!-- fragment -->
-<p class="reference">Références <a class="el" href="_besoin_players_8cs_source.html#l00211">ChercherTarget()</a>, et <a class="el" href="#a80ce0430a9c55b4009a489c7d4e3b58b">etatActuel</a>.</p>
+<p>Coroutine qui attend un court instant avant de chercher une ressource avec un tag donné. </p>
 
-<p class="reference">Référencé par <a class="el" href="_besoin_players_8cs_source.html#l00180">Boire()</a>, <a class="el" href="_besoin_players_8cs_source.html#l00195">Dormir()</a>, et <a class="el" href="_besoin_players_8cs_source.html#l00159">Manger()</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_besoin_players_8cs_source.html#l00300">300</a> du fichier <a class="el" href="_besoin_players_8cs_source.html">BesoinPlayers.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  301</span>    {</div>
+<div class="line"><span class="lineno">  302</span>        yield <span class="keywordflow">return</span> <span class="keyword">new</span> WaitForSeconds(Random.Range(0.01f, 0.2f));</div>
+<div class="line"><span class="lineno">  303</span> </div>
+<div class="line"><span class="lineno">  304</span>        Transform target = <a class="code hl_function" href="#a2accc185c9c3bd3ec1bb2f621f26ef24">ChercherTarget</a>(tag);</div>
+<div class="line"><span class="lineno">  305</span>        <span class="keywordflow">if</span> (target != null)</div>
+<div class="line"><span class="lineno">  306</span>        {</div>
+<div class="line"><span class="lineno">  307</span>            RouteManager.Instance.AllerViaRoute(this.gameObject, target);</div>
+<div class="line"><span class="lineno">  308</span>            <a class="code hl_variable" href="#a80ce0430a9c55b4009a489c7d4e3b58b">etatActuel</a> = nouvelEtat;</div>
+<div class="line"><span class="lineno">  309</span>            Debug.Log($<span class="stringliteral">&quot;En route vers {tag} via route...&quot;</span>);</div>
+<div class="line"><span class="lineno">  310</span>        }</div>
+<div class="line"><span class="lineno">  311</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  312</span>        {</div>
+<div class="line"><span class="lineno">  313</span>            Debug.LogWarning($<span class="stringliteral">&quot;Aucune ressource avec le tag {tag} trouvée !&quot;</span>);</div>
+<div class="line"><span class="lineno">  314</span>        }</div>
+<div class="line"><span class="lineno">  315</span>    }</div>
+<div class="ttc" id="aclass_besoin_players_html_a2accc185c9c3bd3ec1bb2f621f26ef24"><div class="ttname"><a href="#a2accc185c9c3bd3ec1bb2f621f26ef24">BesoinPlayers::ChercherTarget</a></div><div class="ttdeci">Transform ChercherTarget(string tag)</div><div class="ttdoc">Cherche la cible la plus proche avec un tag donné, en vérifiant les disponibilités de la ressource.</div><div class="ttdef"><b>Definition</b> <a href="_besoin_players_8cs_source.html#l00251">BesoinPlayers.cs:251</a></div></div>
+<div class="ttc" id="aclass_besoin_players_html_a80ce0430a9c55b4009a489c7d4e3b58b"><div class="ttname"><a href="#a80ce0430a9c55b4009a489c7d4e3b58b">BesoinPlayers::etatActuel</a></div><div class="ttdeci">enum BesoinPlayers::EtatPNJ etatActuel</div><div class="ttdoc">État actuel du PNJ.</div></div>
+</div><!-- fragment -->
+<p class="reference">Références <a class="el" href="_route_manager_8cs_source.html#l00055">RouteManager::AllerViaRoute()</a>, <a class="el" href="_besoin_players_8cs_source.html#l00251">ChercherTarget()</a>, <a class="el" href="#a80ce0430a9c55b4009a489c7d4e3b58b">etatActuel</a>, et <a class="el" href="_route_manager_8cs_source.html#l00013">RouteManager::Instance</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="_besoin_players_8cs_source.html#l00197">Boire()</a>, <a class="el" href="_besoin_players_8cs_source.html#l00214">Dormir()</a>, <a class="el" href="_besoin_players_8cs_source.html#l00176">Manger()</a>, et <a class="el" href="_besoin_players_8cs_source.html#l00232">Travailler()</a>.</p>
 
 </div>
 </div>
@@ -327,57 +346,22 @@ Attributs privés</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="_besoin_players_8cs_source.html#l00274">274</a> du fichier <a class="el" href="_besoin_players_8cs_source.html">BesoinPlayers.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  275</span>    {</div>
-<div class="line"><span class="lineno">  276</span>        yield <span class="keywordflow">return</span> <span class="keyword">new</span> WaitForSeconds(2f);</div>
-<div class="line"><span class="lineno">  277</span>        <span class="keywordflow">if</span> (cible != null)</div>
-<div class="line"><span class="lineno">  278</span>        {</div>
-<div class="line"><span class="lineno">  279</span>            var slot = cible.GetComponent&lt;RessourceMaxPlayerCapacity&gt;();</div>
-<div class="line"><span class="lineno">  280</span>            <span class="keywordflow">if</span> (slot != null) slot.Liberer();</div>
-<div class="line"><span class="lineno">  281</span> </div>
-<div class="line"><span class="lineno">  282</span>            Destroy(cible);</div>
-<div class="line"><span class="lineno">  283</span>            Debug.Log(<span class="stringliteral">&quot;Baie détruite 2 secondes après l&#39;arrivée.&quot;</span>);</div>
-<div class="line"><span class="lineno">  284</span>        }</div>
-<div class="line"><span class="lineno">  285</span>    }</div>
+<p>Coroutine qui attend puis détruit un objet ressource après un court délai. </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="_besoin_players_8cs_source.html#l00320">320</a> du fichier <a class="el" href="_besoin_players_8cs_source.html">BesoinPlayers.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  321</span>    {</div>
+<div class="line"><span class="lineno">  322</span>        yield <span class="keywordflow">return</span> <span class="keyword">new</span> WaitForSeconds(2f);</div>
+<div class="line"><span class="lineno">  323</span>        <span class="keywordflow">if</span> (cible != null)</div>
+<div class="line"><span class="lineno">  324</span>        {</div>
+<div class="line"><span class="lineno">  325</span>            var slot = cible.GetComponent&lt;RessourceMaxPlayerCapacity&gt;();</div>
+<div class="line"><span class="lineno">  326</span>            <span class="keywordflow">if</span> (slot != null) slot.Liberer();</div>
+<div class="line"><span class="lineno">  327</span> </div>
+<div class="line"><span class="lineno">  328</span>            Destroy(cible);</div>
+<div class="line"><span class="lineno">  329</span>            Debug.Log(<span class="stringliteral">&quot;Baie détruite 2 secondes après l&#39;arrivée.&quot;</span>);</div>
+<div class="line"><span class="lineno">  330</span>        }</div>
+<div class="line"><span class="lineno">  331</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">Références <a class="el" href="_ressource_max_player_capacity_8cs_source.html#l00033">RessourceMaxPlayerCapacity::Liberer()</a>.</p>
-
-<p class="reference">Référencé par <a class="el" href="_besoin_players_8cs_source.html#l00165">FinManger()</a>.</p>
-
-</div>
-</div>
-<a id="ac7e0e212c0ae647bd3d5db36f36bd4d3" name="ac7e0e212c0ae647bd3d5db36f36bd4d3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac7e0e212c0ae647bd3d5db36f36bd4d3">&#9670;&#160;</a></span>Awake()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void BesoinPlayers::Awake </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Définition à la ligne <a class="el" href="_besoin_players_8cs_source.html#l00044">44</a> du fichier <a class="el" href="_besoin_players_8cs_source.html">BesoinPlayers.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   45</span>    {</div>
-<div class="line"><span class="lineno">   46</span>        <a class="code hl_variable" href="#a37ff36746687fd557e644ad5091463a0">dureeDeVie</a> = Random.Range(<a class="code hl_variable" href="#a23e00e50017191aec9f20101f67d1864">dureeDeVieMin</a>, <a class="code hl_variable" href="#a46a55a8843964475b43f04b378a30add">dureeDeVieMax</a>);</div>
-<div class="line"><span class="lineno">   47</span>    }</div>
-<div class="ttc" id="aclass_besoin_players_html_a23e00e50017191aec9f20101f67d1864"><div class="ttname"><a href="#a23e00e50017191aec9f20101f67d1864">BesoinPlayers::dureeDeVieMin</a></div><div class="ttdeci">float dureeDeVieMin</div><div class="ttdoc">Durée de vie minimale et maximale du PNJ.</div><div class="ttdef"><b>Definition</b> <a href="_besoin_players_8cs_source.html#l00035">BesoinPlayers.cs:35</a></div></div>
-<div class="ttc" id="aclass_besoin_players_html_a37ff36746687fd557e644ad5091463a0"><div class="ttname"><a href="#a37ff36746687fd557e644ad5091463a0">BesoinPlayers::dureeDeVie</a></div><div class="ttdeci">float dureeDeVie</div><div class="ttdef"><b>Definition</b> <a href="_besoin_players_8cs_source.html#l00038">BesoinPlayers.cs:38</a></div></div>
-<div class="ttc" id="aclass_besoin_players_html_a46a55a8843964475b43f04b378a30add"><div class="ttname"><a href="#a46a55a8843964475b43f04b378a30add">BesoinPlayers::dureeDeVieMax</a></div><div class="ttdeci">float dureeDeVieMax</div><div class="ttdef"><b>Definition</b> <a href="_besoin_players_8cs_source.html#l00036">BesoinPlayers.cs:36</a></div></div>
-</div><!-- fragment -->
-<p class="reference">Références <a class="el" href="_besoin_players_8cs_source.html#l00038">dureeDeVie</a>, <a class="el" href="_besoin_players_8cs_source.html#l00036">dureeDeVieMax</a>, et <a class="el" href="_besoin_players_8cs_source.html#l00035">dureeDeVieMin</a>.</p>
+<p class="reference">Référencé par <a class="el" href="_besoin_players_8cs_source.html#l00183">FinManger()</a>.</p>
 
 </div>
 </div>
@@ -404,15 +388,17 @@ Attributs privés</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="_besoin_players_8cs_source.html#l00180">180</a> du fichier <a class="el" href="_besoin_players_8cs_source.html">BesoinPlayers.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  181</span>    {</div>
-<div class="line"><span class="lineno">  182</span>        Debug.Log(<span class="stringliteral">&quot;Recherche d&#39;une maison pour boire...&quot;</span>);</div>
-<div class="line"><span class="lineno">  183</span>        StartCoroutine(<a class="code hl_function" href="#adb55a28ed2542204c990da6b4be57607">AttendreEtChercher</a>(<span class="stringliteral">&quot;Maison&quot;</span>, <a class="code hl_enumeration" href="#a9692fc8e12255c50c6bbde946a29984c">EtatPNJ</a>.AllerBoire));</div>
-<div class="line"><span class="lineno">  184</span>    }</div>
-<div class="ttc" id="aclass_besoin_players_html_a9692fc8e12255c50c6bbde946a29984c"><div class="ttname"><a href="#a9692fc8e12255c50c6bbde946a29984c">BesoinPlayers::EtatPNJ</a></div><div class="ttdeci">EtatPNJ</div><div class="ttdoc">État actuel du PNJ selon ses besoins ou son activité.</div><div class="ttdef"><b>Definition</b> <a href="_besoin_players_8cs_source.html#l00026">BesoinPlayers.cs:26</a></div></div>
-<div class="ttc" id="aclass_besoin_players_html_adb55a28ed2542204c990da6b4be57607"><div class="ttname"><a href="#adb55a28ed2542204c990da6b4be57607">BesoinPlayers::AttendreEtChercher</a></div><div class="ttdeci">System Collections IEnumerator AttendreEtChercher(string tag, EtatPNJ nouvelEtat)</div><div class="ttdef"><b>Definition</b> <a href="_besoin_players_8cs_source.html#l00257">BesoinPlayers.cs:257</a></div></div>
+<p>Lance la recherche et le déplacement vers une maison pour boire. </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="_besoin_players_8cs_source.html#l00197">197</a> du fichier <a class="el" href="_besoin_players_8cs_source.html">BesoinPlayers.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  198</span>    {</div>
+<div class="line"><span class="lineno">  199</span>        Debug.Log(<span class="stringliteral">&quot;Recherche d&#39;une maison pour boire...&quot;</span>);</div>
+<div class="line"><span class="lineno">  200</span>        StartCoroutine(<a class="code hl_function" href="#adb55a28ed2542204c990da6b4be57607">AttendreEtChercher</a>(<span class="stringliteral">&quot;Maison&quot;</span>, <a class="code hl_enumeration" href="#a9692fc8e12255c50c6bbde946a29984c">EtatPNJ</a>.AllerBoire));</div>
+<div class="line"><span class="lineno">  201</span>    }</div>
+<div class="ttc" id="aclass_besoin_players_html_a9692fc8e12255c50c6bbde946a29984c"><div class="ttname"><a href="#a9692fc8e12255c50c6bbde946a29984c">BesoinPlayers::EtatPNJ</a></div><div class="ttdeci">EtatPNJ</div><div class="ttdoc">États possibles du PNJ en fonction de ses actions ou déplacements.</div><div class="ttdef"><b>Definition</b> <a href="_besoin_players_8cs_source.html#l00037">BesoinPlayers.cs:37</a></div></div>
+<div class="ttc" id="aclass_besoin_players_html_adb55a28ed2542204c990da6b4be57607"><div class="ttname"><a href="#adb55a28ed2542204c990da6b4be57607">BesoinPlayers::AttendreEtChercher</a></div><div class="ttdeci">System Collections IEnumerator AttendreEtChercher(string tag, EtatPNJ nouvelEtat)</div><div class="ttdoc">Coroutine qui attend un court instant avant de chercher une ressource avec un tag donné.</div><div class="ttdef"><b>Definition</b> <a href="_besoin_players_8cs_source.html#l00300">BesoinPlayers.cs:300</a></div></div>
 </div><!-- fragment -->
-<p class="reference">Références <a class="el" href="_besoin_players_8cs_source.html#l00257">AttendreEtChercher()</a>.</p>
+<p class="reference">Références <a class="el" href="_besoin_players_8cs_source.html#l00300">AttendreEtChercher()</a>.</p>
 
 </div>
 </div>
@@ -439,84 +425,43 @@ Attributs privés</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Cherche la ressource la plus proche disponible avec le tag spécifié. </p>
+<p>Cherche la cible la plus proche avec un tag donné, en vérifiant les disponibilités de la ressource. </p>
 
-<p class="definition">Définition à la ligne <a class="el" href="_besoin_players_8cs_source.html#l00211">211</a> du fichier <a class="el" href="_besoin_players_8cs_source.html">BesoinPlayers.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  212</span>    {</div>
-<div class="line"><span class="lineno">  213</span>        GameObject[] targets = GameObject.FindGameObjectsWithTag(tag);</div>
-<div class="line"><span class="lineno">  214</span>        <span class="keywordflow">if</span> (targets.Length == 0) <span class="keywordflow">return</span> null;</div>
-<div class="line"><span class="lineno">  215</span> </div>
-<div class="line"><span class="lineno">  216</span>        GameObject bestTarget = null;</div>
-<div class="line"><span class="lineno">  217</span>        <span class="keywordtype">float</span> minDistance = Mathf.Infinity;</div>
-<div class="line"><span class="lineno">  218</span> </div>
-<div class="line"><span class="lineno">  219</span>        <span class="keywordflow">foreach</span> (GameObject obj <span class="keywordflow">in</span> targets)</div>
-<div class="line"><span class="lineno">  220</span>        {</div>
-<div class="line"><span class="lineno">  221</span>            var slot = obj.GetComponent&lt;RessourceMaxPlayerCapacity&gt;();</div>
-<div class="line"><span class="lineno">  222</span>            <span class="keywordflow">if</span> (slot == null) <span class="keywordflow">continue</span>;</div>
-<div class="line"><span class="lineno">  223</span>            <span class="keywordflow">if</span> (!slot.VoirDisponibilite()) <span class="keywordflow">continue</span>;</div>
-<div class="line"><span class="lineno">  224</span> </div>
-<div class="line"><span class="lineno">  225</span>            <span class="keywordtype">float</span> distance = Vector3.Distance(transform.position, obj.transform.position);</div>
-<div class="line"><span class="lineno">  226</span>            <span class="keywordflow">if</span> (distance &lt; minDistance)</div>
-<div class="line"><span class="lineno">  227</span>            {</div>
-<div class="line"><span class="lineno">  228</span>                <span class="keywordflow">if</span> (bestTarget != null)</div>
-<div class="line"><span class="lineno">  229</span>                {</div>
-<div class="line"><span class="lineno">  230</span>                    var oldSlot = bestTarget.GetComponent&lt;RessourceMaxPlayerCapacity&gt;();</div>
-<div class="line"><span class="lineno">  231</span>                    <span class="keywordflow">if</span> (oldSlot != null) oldSlot.Liberer();</div>
-<div class="line"><span class="lineno">  232</span>                }</div>
-<div class="line"><span class="lineno">  233</span> </div>
-<div class="line"><span class="lineno">  234</span>                bestTarget = obj;</div>
-<div class="line"><span class="lineno">  235</span>                minDistance = distance;</div>
-<div class="line"><span class="lineno">  236</span>            }</div>
-<div class="line"><span class="lineno">  237</span>            <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  238</span>            {</div>
-<div class="line"><span class="lineno">  239</span>                slot.Liberer();</div>
-<div class="line"><span class="lineno">  240</span>            }</div>
-<div class="line"><span class="lineno">  241</span>        }</div>
-<div class="line"><span class="lineno">  242</span> </div>
-<div class="line"><span class="lineno">  243</span>        <span class="keywordflow">return</span> bestTarget != null ? bestTarget.transform : null;</div>
-<div class="line"><span class="lineno">  244</span>    }</div>
+<p class="definition">Définition à la ligne <a class="el" href="_besoin_players_8cs_source.html#l00251">251</a> du fichier <a class="el" href="_besoin_players_8cs_source.html">BesoinPlayers.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  252</span>    {</div>
+<div class="line"><span class="lineno">  253</span>        GameObject[] targets = GameObject.FindGameObjectsWithTag(tag);</div>
+<div class="line"><span class="lineno">  254</span>        <span class="keywordflow">if</span> (targets.Length == 0) <span class="keywordflow">return</span> null;</div>
+<div class="line"><span class="lineno">  255</span> </div>
+<div class="line"><span class="lineno">  256</span>        GameObject nearestTarget = null;</div>
+<div class="line"><span class="lineno">  257</span>        <span class="keywordtype">float</span> minDistance = Mathf.Infinity;</div>
+<div class="line"><span class="lineno">  258</span> </div>
+<div class="line"><span class="lineno">  259</span>        <span class="keywordflow">foreach</span> (GameObject obj <span class="keywordflow">in</span> targets)</div>
+<div class="line"><span class="lineno">  260</span>        {</div>
+<div class="line"><span class="lineno">  261</span>            var slot = obj.GetComponent&lt;RessourceMaxPlayerCapacity&gt;();</div>
+<div class="line"><span class="lineno">  262</span>            <span class="keywordflow">if</span> (slot == null || !slot.EstDisponible()) <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">  263</span> </div>
+<div class="line"><span class="lineno">  264</span>            <span class="keywordtype">float</span> distance = Vector3.Distance(transform.position, obj.transform.position);</div>
+<div class="line"><span class="lineno">  265</span>            <span class="keywordflow">if</span> (distance &lt; minDistance)</div>
+<div class="line"><span class="lineno">  266</span>            {</div>
+<div class="line"><span class="lineno">  267</span>                minDistance = distance;</div>
+<div class="line"><span class="lineno">  268</span>                nearestTarget = obj;</div>
+<div class="line"><span class="lineno">  269</span>            }</div>
+<div class="line"><span class="lineno">  270</span>        }</div>
+<div class="line"><span class="lineno">  271</span> </div>
+<div class="line"><span class="lineno">  272</span>        <span class="keywordflow">if</span> (nearestTarget != null)</div>
+<div class="line"><span class="lineno">  273</span>        {</div>
+<div class="line"><span class="lineno">  274</span>            var slot = nearestTarget.GetComponent&lt;RessourceMaxPlayerCapacity&gt;();</div>
+<div class="line"><span class="lineno">  275</span>            <span class="keywordflow">if</span> (slot != null &amp;&amp; slot.VoirDisponibilite())</div>
+<div class="line"><span class="lineno">  276</span>            {</div>
+<div class="line"><span class="lineno">  277</span>                <span class="keywordflow">return</span> nearestTarget.transform;</div>
+<div class="line"><span class="lineno">  278</span>            }</div>
+<div class="line"><span class="lineno">  279</span>        }</div>
+<div class="line"><span class="lineno">  280</span> </div>
+<div class="line"><span class="lineno">  281</span>        <span class="keywordflow">return</span> null;</div>
+<div class="line"><span class="lineno">  282</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">Références <a class="el" href="_ressource_max_player_capacity_8cs_source.html#l00033">RessourceMaxPlayerCapacity::Liberer()</a>.</p>
+<p class="reference">Référencé par <a class="el" href="_besoin_players_8cs_source.html#l00300">AttendreEtChercher()</a>.</p>
 
-<p class="reference">Référencé par <a class="el" href="_besoin_players_8cs_source.html#l00257">AttendreEtChercher()</a>.</p>
-
-</div>
-</div>
-<a id="a0c871e4ff0665f56cbf70eaa4535094e" name="a0c871e4ff0665f56cbf70eaa4535094e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0c871e4ff0665f56cbf70eaa4535094e">&#9670;&#160;</a></span>CreerNouveauPNJ()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void BesoinPlayers::CreerNouveauPNJ </td>
-          <td>(</td>
-          <td class="paramtype">GameObject</td>          <td class="paramname"><span class="paramname"><em>prefabPNJ</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Vector3</td>          <td class="paramname"><span class="paramname"><em>position</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Instancie un nouveau PNJ dans la scène à la position donnée. </p>
-
-<p class="definition">Définition à la ligne <a class="el" href="_besoin_players_8cs_source.html#l00288">288</a> du fichier <a class="el" href="_besoin_players_8cs_source.html">BesoinPlayers.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  289</span>    {</div>
-<div class="line"><span class="lineno">  290</span>        GameObject nouveauPNJ = GameObject.Instantiate(prefabPNJ, position, Quaternion.identity);</div>
-<div class="line"><span class="lineno">  291</span>        Debug.Log(<span class="stringliteral">&quot;👶 Nouveau PNJ créé !&quot;</span>);</div>
-<div class="line"><span class="lineno">  292</span>    }</div>
-</div><!-- fragment -->
 </div>
 </div>
 <a id="a354ecc3db942bbf36bc1d26fc37b63e2" name="a354ecc3db942bbf36bc1d26fc37b63e2"></a>
@@ -542,13 +487,15 @@ Attributs privés</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="_besoin_players_8cs_source.html#l00195">195</a> du fichier <a class="el" href="_besoin_players_8cs_source.html">BesoinPlayers.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  196</span>    {</div>
-<div class="line"><span class="lineno">  197</span>        Debug.Log(<span class="stringliteral">&quot;Recherche d&#39;une maison pour dormir...&quot;</span>);</div>
-<div class="line"><span class="lineno">  198</span>        StartCoroutine(<a class="code hl_function" href="#adb55a28ed2542204c990da6b4be57607">AttendreEtChercher</a>(<span class="stringliteral">&quot;Maison&quot;</span>, <a class="code hl_enumeration" href="#a9692fc8e12255c50c6bbde946a29984c">EtatPNJ</a>.AllerDormir));</div>
-<div class="line"><span class="lineno">  199</span>    }</div>
+<p>Lance la recherche et le déplacement vers une maison pour dormir. </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="_besoin_players_8cs_source.html#l00214">214</a> du fichier <a class="el" href="_besoin_players_8cs_source.html">BesoinPlayers.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  215</span>    {</div>
+<div class="line"><span class="lineno">  216</span>        Debug.Log(<span class="stringliteral">&quot;Recherche d&#39;une maison pour dormir...&quot;</span>);</div>
+<div class="line"><span class="lineno">  217</span>        StartCoroutine(<a class="code hl_function" href="#adb55a28ed2542204c990da6b4be57607">AttendreEtChercher</a>(<span class="stringliteral">&quot;Maison&quot;</span>, <a class="code hl_enumeration" href="#a9692fc8e12255c50c6bbde946a29984c">EtatPNJ</a>.AllerDormir));</div>
+<div class="line"><span class="lineno">  218</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">Références <a class="el" href="_besoin_players_8cs_source.html#l00257">AttendreEtChercher()</a>.</p>
+<p class="reference">Références <a class="el" href="_besoin_players_8cs_source.html#l00300">AttendreEtChercher()</a>.</p>
 
 </div>
 </div>
@@ -575,21 +522,23 @@ Attributs privés</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="_besoin_players_8cs_source.html#l00186">186</a> du fichier <a class="el" href="_besoin_players_8cs_source.html">BesoinPlayers.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  187</span>    {</div>
-<div class="line"><span class="lineno">  188</span>        <a class="code hl_variable" href="#a2d8b408760c455c49a9707dc7ed36e2c">soif</a> = 1f;</div>
-<div class="line"><span class="lineno">  189</span>        <a class="code hl_variable" href="#a80ce0430a9c55b4009a489c7d4e3b58b">etatActuel</a> = <a class="code hl_enumeration" href="#a9692fc8e12255c50c6bbde946a29984c">EtatPNJ</a>.Idle;</div>
-<div class="line"><span class="lineno">  190</span>        <a class="code hl_variable" href="#adb1e6b3df199adab079b0828bc87b7b5">actionTimer</a> = 0f;</div>
-<div class="line"><span class="lineno">  191</span>        <a class="code hl_function" href="#a92a208954f3801d2361d1418b4ba47cb">LibererRessource</a>();</div>
-<div class="line"><span class="lineno">  192</span>        Debug.Log(<span class="stringliteral">&quot;Soif étanchée.&quot;</span>);</div>
-<div class="line"><span class="lineno">  193</span>    }</div>
-<div class="ttc" id="aclass_besoin_players_html_a2d8b408760c455c49a9707dc7ed36e2c"><div class="ttname"><a href="#a2d8b408760c455c49a9707dc7ed36e2c">BesoinPlayers::soif</a></div><div class="ttdeci">float soif</div><div class="ttdoc">Valeur de la soif du PNJ (1 = pleine, 0 = vide).</div><div class="ttdef"><b>Definition</b> <a href="_besoin_players_8cs_source.html#l00011">BesoinPlayers.cs:11</a></div></div>
-<div class="ttc" id="aclass_besoin_players_html_a92a208954f3801d2361d1418b4ba47cb"><div class="ttname"><a href="#a92a208954f3801d2361d1418b4ba47cb">BesoinPlayers::LibererRessource</a></div><div class="ttdeci">void LibererRessource()</div><div class="ttdoc">Libère la ressource actuellement ciblée par le PNJ.</div><div class="ttdef"><b>Definition</b> <a href="_besoin_players_8cs_source.html#l00247">BesoinPlayers.cs:247</a></div></div>
-<div class="ttc" id="aclass_besoin_players_html_adb1e6b3df199adab079b0828bc87b7b5"><div class="ttname"><a href="#adb1e6b3df199adab079b0828bc87b7b5">BesoinPlayers::actionTimer</a></div><div class="ttdeci">float actionTimer</div><div class="ttdef"><b>Definition</b> <a href="_besoin_players_8cs_source.html#l00031">BesoinPlayers.cs:31</a></div></div>
-</div><!-- fragment -->
-<p class="reference">Références <a class="el" href="_besoin_players_8cs_source.html#l00031">actionTimer</a>, <a class="el" href="#a80ce0430a9c55b4009a489c7d4e3b58b">etatActuel</a>, <a class="el" href="_besoin_players_8cs_source.html#l00247">LibererRessource()</a>, et <a class="el" href="_besoin_players_8cs_source.html#l00011">soif</a>.</p>
+<p>Termine l'action de boire, remet la soif à 1. </p>
 
-<p class="reference">Référencé par <a class="el" href="_besoin_players_8cs_source.html#l00065">Update()</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_besoin_players_8cs_source.html#l00204">204</a> du fichier <a class="el" href="_besoin_players_8cs_source.html">BesoinPlayers.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  205</span>    {</div>
+<div class="line"><span class="lineno">  206</span>        <a class="code hl_variable" href="#a2d8b408760c455c49a9707dc7ed36e2c">soif</a> = 1f;</div>
+<div class="line"><span class="lineno">  207</span>        <a class="code hl_variable" href="#a80ce0430a9c55b4009a489c7d4e3b58b">etatActuel</a> = <a class="code hl_enumeration" href="#a9692fc8e12255c50c6bbde946a29984c">EtatPNJ</a>.Idle;</div>
+<div class="line"><span class="lineno">  208</span>        <a class="code hl_variable" href="#adb1e6b3df199adab079b0828bc87b7b5">actionTimer</a> = 0f;</div>
+<div class="line"><span class="lineno">  209</span>        <a class="code hl_function" href="#a92a208954f3801d2361d1418b4ba47cb">LibererRessource</a>();</div>
+<div class="line"><span class="lineno">  210</span>        Debug.Log(<span class="stringliteral">&quot;Soif étanchée.&quot;</span>);</div>
+<div class="line"><span class="lineno">  211</span>    }</div>
+<div class="ttc" id="aclass_besoin_players_html_a2d8b408760c455c49a9707dc7ed36e2c"><div class="ttname"><a href="#a2d8b408760c455c49a9707dc7ed36e2c">BesoinPlayers::soif</a></div><div class="ttdeci">float soif</div><div class="ttdoc">Valeur actuelle de la soif (entre 0 et 1).</div><div class="ttdef"><b>Definition</b> <a href="_besoin_players_8cs_source.html#l00010">BesoinPlayers.cs:10</a></div></div>
+<div class="ttc" id="aclass_besoin_players_html_a92a208954f3801d2361d1418b4ba47cb"><div class="ttname"><a href="#a92a208954f3801d2361d1418b4ba47cb">BesoinPlayers::LibererRessource</a></div><div class="ttdeci">void LibererRessource()</div><div class="ttdoc">Libère la ressource actuellement utilisée par le PNJ, si applicable.</div><div class="ttdef"><b>Definition</b> <a href="_besoin_players_8cs_source.html#l00287">BesoinPlayers.cs:287</a></div></div>
+<div class="ttc" id="aclass_besoin_players_html_adb1e6b3df199adab079b0828bc87b7b5"><div class="ttname"><a href="#adb1e6b3df199adab079b0828bc87b7b5">BesoinPlayers::actionTimer</a></div><div class="ttdeci">float actionTimer</div><div class="ttdef"><b>Definition</b> <a href="_besoin_players_8cs_source.html#l00049">BesoinPlayers.cs:49</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Références <a class="el" href="_besoin_players_8cs_source.html#l00049">actionTimer</a>, <a class="el" href="#a80ce0430a9c55b4009a489c7d4e3b58b">etatActuel</a>, <a class="el" href="_besoin_players_8cs_source.html#l00287">LibererRessource()</a>, et <a class="el" href="_besoin_players_8cs_source.html#l00010">soif</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="_besoin_players_8cs_source.html#l00058">Update()</a>.</p>
 
 </div>
 </div>
@@ -616,19 +565,23 @@ Attributs privés</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="_besoin_players_8cs_source.html#l00201">201</a> du fichier <a class="el" href="_besoin_players_8cs_source.html">BesoinPlayers.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  202</span>    {</div>
-<div class="line"><span class="lineno">  203</span>        <a class="code hl_variable" href="#ac1e677a229be0c7346ab74b2f0ce3739">energie</a> = 1f;</div>
-<div class="line"><span class="lineno">  204</span>        <a class="code hl_variable" href="#a80ce0430a9c55b4009a489c7d4e3b58b">etatActuel</a> = <a class="code hl_enumeration" href="#a9692fc8e12255c50c6bbde946a29984c">EtatPNJ</a>.Idle;</div>
-<div class="line"><span class="lineno">  205</span>        <a class="code hl_variable" href="#adb1e6b3df199adab079b0828bc87b7b5">actionTimer</a> = 0f;</div>
-<div class="line"><span class="lineno">  206</span>        <a class="code hl_function" href="#a92a208954f3801d2361d1418b4ba47cb">LibererRessource</a>();</div>
-<div class="line"><span class="lineno">  207</span>        Debug.Log(<span class="stringliteral">&quot;Énergie restaurée.&quot;</span>);</div>
-<div class="line"><span class="lineno">  208</span>    }</div>
-<div class="ttc" id="aclass_besoin_players_html_ac1e677a229be0c7346ab74b2f0ce3739"><div class="ttname"><a href="#ac1e677a229be0c7346ab74b2f0ce3739">BesoinPlayers::energie</a></div><div class="ttdeci">float energie</div><div class="ttdef"><b>Definition</b> <a href="_besoin_players_8cs_source.html#l00011">BesoinPlayers.cs:11</a></div></div>
-</div><!-- fragment -->
-<p class="reference">Références <a class="el" href="_besoin_players_8cs_source.html#l00031">actionTimer</a>, <a class="el" href="_besoin_players_8cs_source.html#l00011">energie</a>, <a class="el" href="#a80ce0430a9c55b4009a489c7d4e3b58b">etatActuel</a>, et <a class="el" href="_besoin_players_8cs_source.html#l00247">LibererRessource()</a>.</p>
+<p>Termine l'action de dormir, remet l'énergie à 1 et marque le logement comme acquis. </p>
 
-<p class="reference">Référencé par <a class="el" href="_besoin_players_8cs_source.html#l00065">Update()</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_besoin_players_8cs_source.html#l00221">221</a> du fichier <a class="el" href="_besoin_players_8cs_source.html">BesoinPlayers.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  222</span>    {</div>
+<div class="line"><span class="lineno">  223</span>        <a class="code hl_variable" href="#ac1e677a229be0c7346ab74b2f0ce3739">energie</a> = 1f;</div>
+<div class="line"><span class="lineno">  224</span>        <a class="code hl_variable" href="#a80ce0430a9c55b4009a489c7d4e3b58b">etatActuel</a> = <a class="code hl_enumeration" href="#a9692fc8e12255c50c6bbde946a29984c">EtatPNJ</a>.Idle;</div>
+<div class="line"><span class="lineno">  225</span>        <a class="code hl_variable" href="#adb1e6b3df199adab079b0828bc87b7b5">actionTimer</a> = 0f;</div>
+<div class="line"><span class="lineno">  226</span>        <a class="code hl_variable" href="#ac026c45777b96643b2df81df2ab3358e">aUnLogement</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  227</span>        <a class="code hl_function" href="#a92a208954f3801d2361d1418b4ba47cb">LibererRessource</a>();</div>
+<div class="line"><span class="lineno">  228</span>        Debug.Log(<span class="stringliteral">&quot;Énergie restaurée.&quot;</span>);</div>
+<div class="line"><span class="lineno">  229</span>    }</div>
+<div class="ttc" id="aclass_besoin_players_html_ac026c45777b96643b2df81df2ab3358e"><div class="ttname"><a href="#ac026c45777b96643b2df81df2ab3358e">BesoinPlayers::aUnLogement</a></div><div class="ttdeci">bool aUnLogement</div><div class="ttdoc">Indique si le PNJ possède un logement attribué.</div><div class="ttdef"><b>Definition</b> <a href="_besoin_players_8cs_source.html#l00046">BesoinPlayers.cs:46</a></div></div>
+<div class="ttc" id="aclass_besoin_players_html_ac1e677a229be0c7346ab74b2f0ce3739"><div class="ttname"><a href="#ac1e677a229be0c7346ab74b2f0ce3739">BesoinPlayers::energie</a></div><div class="ttdeci">float energie</div><div class="ttdoc">Valeur actuelle de l&#39;énergie (entre 0 et 1).</div><div class="ttdef"><b>Definition</b> <a href="_besoin_players_8cs_source.html#l00016">BesoinPlayers.cs:16</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Références <a class="el" href="_besoin_players_8cs_source.html#l00049">actionTimer</a>, <a class="el" href="_besoin_players_8cs_source.html#l00046">aUnLogement</a>, <a class="el" href="_besoin_players_8cs_source.html#l00016">energie</a>, <a class="el" href="#a80ce0430a9c55b4009a489c7d4e3b58b">etatActuel</a>, et <a class="el" href="_besoin_players_8cs_source.html#l00287">LibererRessource()</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="_besoin_players_8cs_source.html#l00058">Update()</a>.</p>
 
 </div>
 </div>
@@ -655,26 +608,65 @@ Attributs privés</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="_besoin_players_8cs_source.html#l00165">165</a> du fichier <a class="el" href="_besoin_players_8cs_source.html">BesoinPlayers.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  166</span>    {</div>
-<div class="line"><span class="lineno">  167</span>        <a class="code hl_variable" href="#a9903b249259c41231b5b9adaa7f0f7fd">faim</a> = 1f;</div>
-<div class="line"><span class="lineno">  168</span>        <a class="code hl_variable" href="#a80ce0430a9c55b4009a489c7d4e3b58b">etatActuel</a> = <a class="code hl_enumeration" href="#a9692fc8e12255c50c6bbde946a29984c">EtatPNJ</a>.Idle;</div>
-<div class="line"><span class="lineno">  169</span>        <a class="code hl_variable" href="#adb1e6b3df199adab079b0828bc87b7b5">actionTimer</a> = 0f;</div>
-<div class="line"><span class="lineno">  170</span> </div>
-<div class="line"><span class="lineno">  171</span>        Transform target = GetComponent&lt;PathfindingAI&gt;().target;</div>
-<div class="line"><span class="lineno">  172</span>        <span class="keywordflow">if</span> (target != null)</div>
-<div class="line"><span class="lineno">  173</span>        {</div>
-<div class="line"><span class="lineno">  174</span>            StartCoroutine(<a class="code hl_function" href="#a21b495cac4cb8d48f181f2f4eb554e41">AttendreEtDetruire</a>(target.gameObject));</div>
-<div class="line"><span class="lineno">  175</span>        }</div>
-<div class="line"><span class="lineno">  176</span> </div>
-<div class="line"><span class="lineno">  177</span>        Debug.Log(<span class="stringliteral">&quot;Faim satisfaite, baie en cours de suppression.&quot;</span>);</div>
-<div class="line"><span class="lineno">  178</span>    }</div>
-<div class="ttc" id="aclass_besoin_players_html_a21b495cac4cb8d48f181f2f4eb554e41"><div class="ttname"><a href="#a21b495cac4cb8d48f181f2f4eb554e41">BesoinPlayers::AttendreEtDetruire</a></div><div class="ttdeci">System Collections IEnumerator AttendreEtDetruire(GameObject cible)</div><div class="ttdef"><b>Definition</b> <a href="_besoin_players_8cs_source.html#l00274">BesoinPlayers.cs:274</a></div></div>
-<div class="ttc" id="aclass_besoin_players_html_a9903b249259c41231b5b9adaa7f0f7fd"><div class="ttname"><a href="#a9903b249259c41231b5b9adaa7f0f7fd">BesoinPlayers::faim</a></div><div class="ttdeci">float faim</div><div class="ttdef"><b>Definition</b> <a href="_besoin_players_8cs_source.html#l00011">BesoinPlayers.cs:11</a></div></div>
-</div><!-- fragment -->
-<p class="reference">Références <a class="el" href="_besoin_players_8cs_source.html#l00031">actionTimer</a>, <a class="el" href="_besoin_players_8cs_source.html#l00274">AttendreEtDetruire()</a>, <a class="el" href="#a80ce0430a9c55b4009a489c7d4e3b58b">etatActuel</a>, et <a class="el" href="_besoin_players_8cs_source.html#l00011">faim</a>.</p>
+<p>Termine l'action de manger, remet la faim à 1 et détruit la ressource. </p>
 
-<p class="reference">Référencé par <a class="el" href="_besoin_players_8cs_source.html#l00065">Update()</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_besoin_players_8cs_source.html#l00183">183</a> du fichier <a class="el" href="_besoin_players_8cs_source.html">BesoinPlayers.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  184</span>    {</div>
+<div class="line"><span class="lineno">  185</span>        Transform cible = GetComponent&lt;PathfindingAI&gt;().target;</div>
+<div class="line"><span class="lineno">  186</span>        <a class="code hl_variable" href="#a9903b249259c41231b5b9adaa7f0f7fd">faim</a> = 1f;</div>
+<div class="line"><span class="lineno">  187</span>        <a class="code hl_variable" href="#a80ce0430a9c55b4009a489c7d4e3b58b">etatActuel</a> = <a class="code hl_enumeration" href="#a9692fc8e12255c50c6bbde946a29984c">EtatPNJ</a>.Idle;</div>
+<div class="line"><span class="lineno">  188</span>        <a class="code hl_variable" href="#adb1e6b3df199adab079b0828bc87b7b5">actionTimer</a> = 0f;</div>
+<div class="line"><span class="lineno">  189</span>        <span class="keywordflow">if</span> (cible != null)</div>
+<div class="line"><span class="lineno">  190</span>        {</div>
+<div class="line"><span class="lineno">  191</span>            StartCoroutine(<a class="code hl_function" href="#a21b495cac4cb8d48f181f2f4eb554e41">AttendreEtDetruire</a>(cible.gameObject));</div>
+<div class="line"><span class="lineno">  192</span>        }</div>
+<div class="line"><span class="lineno">  193</span>        Debug.Log(<span class="stringliteral">&quot;Faim satisfaite, baie en cours de suppression.&quot;</span>);</div>
+<div class="line"><span class="lineno">  194</span>    }</div>
+<div class="ttc" id="aclass_besoin_players_html_a21b495cac4cb8d48f181f2f4eb554e41"><div class="ttname"><a href="#a21b495cac4cb8d48f181f2f4eb554e41">BesoinPlayers::AttendreEtDetruire</a></div><div class="ttdeci">System Collections IEnumerator AttendreEtDetruire(GameObject cible)</div><div class="ttdoc">Coroutine qui attend puis détruit un objet ressource après un court délai.</div><div class="ttdef"><b>Definition</b> <a href="_besoin_players_8cs_source.html#l00320">BesoinPlayers.cs:320</a></div></div>
+<div class="ttc" id="aclass_besoin_players_html_a9903b249259c41231b5b9adaa7f0f7fd"><div class="ttname"><a href="#a9903b249259c41231b5b9adaa7f0f7fd">BesoinPlayers::faim</a></div><div class="ttdeci">float faim</div><div class="ttdoc">Valeur actuelle de la faim (entre 0 et 1).</div><div class="ttdef"><b>Definition</b> <a href="_besoin_players_8cs_source.html#l00013">BesoinPlayers.cs:13</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Références <a class="el" href="_besoin_players_8cs_source.html#l00049">actionTimer</a>, <a class="el" href="_besoin_players_8cs_source.html#l00320">AttendreEtDetruire()</a>, <a class="el" href="#a80ce0430a9c55b4009a489c7d4e3b58b">etatActuel</a>, et <a class="el" href="_besoin_players_8cs_source.html#l00013">faim</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="_besoin_players_8cs_source.html#l00058">Update()</a>.</p>
+
+</div>
+</div>
+<a id="a8dfa18889de23e0b1112879f0f393053" name="a8dfa18889de23e0b1112879f0f393053"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8dfa18889de23e0b1112879f0f393053">&#9670;&#160;</a></span>FinTravailler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BesoinPlayers::FinTravailler </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Termine l'action de travail. </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="_besoin_players_8cs_source.html#l00240">240</a> du fichier <a class="el" href="_besoin_players_8cs_source.html">BesoinPlayers.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  241</span>    {</div>
+<div class="line"><span class="lineno">  242</span>        <a class="code hl_variable" href="#a80ce0430a9c55b4009a489c7d4e3b58b">etatActuel</a> = <a class="code hl_enumeration" href="#a9692fc8e12255c50c6bbde946a29984c">EtatPNJ</a>.Idle;</div>
+<div class="line"><span class="lineno">  243</span>        <a class="code hl_variable" href="#adb1e6b3df199adab079b0828bc87b7b5">actionTimer</a> = 0f;</div>
+<div class="line"><span class="lineno">  244</span>        <a class="code hl_function" href="#a92a208954f3801d2361d1418b4ba47cb">LibererRessource</a>();</div>
+<div class="line"><span class="lineno">  245</span>        Debug.Log(<span class="stringliteral">&quot;Travail accompli.&quot;</span>);</div>
+<div class="line"><span class="lineno">  246</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">Références <a class="el" href="_besoin_players_8cs_source.html#l00049">actionTimer</a>, <a class="el" href="#a80ce0430a9c55b4009a489c7d4e3b58b">etatActuel</a>, et <a class="el" href="_besoin_players_8cs_source.html#l00287">LibererRessource()</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="_besoin_players_8cs_source.html#l00058">Update()</a>.</p>
 
 </div>
 </div>
@@ -701,65 +693,21 @@ Attributs privés</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Retourne le besoin prioritaire selon les valeurs actuelles. </p>
+<p>Retourne le besoin prioritaire du PNJ en fonction des seuils critiques. </p>
 
-<p class="definition">Définition à la ligne <a class="el" href="_besoin_players_8cs_source.html#l00123">123</a> du fichier <a class="el" href="_besoin_players_8cs_source.html">BesoinPlayers.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  124</span>    {</div>
-<div class="line"><span class="lineno">  125</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a9903b249259c41231b5b9adaa7f0f7fd">faim</a> &lt;= 0.15f) <span class="keywordflow">return</span> <a class="code hl_enumeration" href="#aa6d9cca74f6935b3d9c85b61f400b09f">BesoinType</a>.Faim;</div>
-<div class="line"><span class="lineno">  126</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a2d8b408760c455c49a9707dc7ed36e2c">soif</a> &lt;= 0.15f) <span class="keywordflow">return</span> <a class="code hl_enumeration" href="#aa6d9cca74f6935b3d9c85b61f400b09f">BesoinType</a>.Soif;</div>
-<div class="line"><span class="lineno">  127</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="#ac1e677a229be0c7346ab74b2f0ce3739">energie</a> &lt;= 0.15f) <span class="keywordflow">return</span> <a class="code hl_enumeration" href="#aa6d9cca74f6935b3d9c85b61f400b09f">BesoinType</a>.Energie;</div>
-<div class="line"><span class="lineno">  128</span>        <span class="keywordflow">return</span> <a class="code hl_enumeration" href="#aa6d9cca74f6935b3d9c85b61f400b09f">BesoinType</a>.Rien;</div>
-<div class="line"><span class="lineno">  129</span>    }</div>
-<div class="ttc" id="aclass_besoin_players_html_aa6d9cca74f6935b3d9c85b61f400b09f"><div class="ttname"><a href="#aa6d9cca74f6935b3d9c85b61f400b09f">BesoinPlayers::BesoinType</a></div><div class="ttdeci">BesoinType</div><div class="ttdoc">Type de besoin prioritaire du PNJ.</div><div class="ttdef"><b>Definition</b> <a href="_besoin_players_8cs_source.html#l00017">BesoinPlayers.cs:17</a></div></div>
+<p class="definition">Définition à la ligne <a class="el" href="_besoin_players_8cs_source.html#l00133">133</a> du fichier <a class="el" href="_besoin_players_8cs_source.html">BesoinPlayers.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  134</span>    {</div>
+<div class="line"><span class="lineno">  135</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a9903b249259c41231b5b9adaa7f0f7fd">faim</a> &lt;= <a class="code hl_variable" href="#a187345d2e2cd31b4c3a42d113aab2530">seuilCritique</a>) <span class="keywordflow">return</span> <a class="code hl_enumeration" href="#aa6d9cca74f6935b3d9c85b61f400b09f">BesoinType</a>.Faim;</div>
+<div class="line"><span class="lineno">  136</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a2d8b408760c455c49a9707dc7ed36e2c">soif</a> &lt;= <a class="code hl_variable" href="#a187345d2e2cd31b4c3a42d113aab2530">seuilCritique</a>) <span class="keywordflow">return</span> <a class="code hl_enumeration" href="#aa6d9cca74f6935b3d9c85b61f400b09f">BesoinType</a>.Soif;</div>
+<div class="line"><span class="lineno">  137</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="#ac1e677a229be0c7346ab74b2f0ce3739">energie</a> &lt;= <a class="code hl_variable" href="#a187345d2e2cd31b4c3a42d113aab2530">seuilCritique</a>) <span class="keywordflow">return</span> <a class="code hl_enumeration" href="#aa6d9cca74f6935b3d9c85b61f400b09f">BesoinType</a>.Energie;</div>
+<div class="line"><span class="lineno">  138</span>        <span class="keywordflow">return</span> <a class="code hl_enumeration" href="#aa6d9cca74f6935b3d9c85b61f400b09f">BesoinType</a>.Rien;</div>
+<div class="line"><span class="lineno">  139</span>    }</div>
+<div class="ttc" id="aclass_besoin_players_html_a187345d2e2cd31b4c3a42d113aab2530"><div class="ttname"><a href="#a187345d2e2cd31b4c3a42d113aab2530">BesoinPlayers::seuilCritique</a></div><div class="ttdeci">enum BesoinPlayers::BesoinType seuilCritique</div><div class="ttdoc">Seuil à partir duquel un besoin est considéré critique et doit être comblé en priorité.</div></div>
+<div class="ttc" id="aclass_besoin_players_html_aa6d9cca74f6935b3d9c85b61f400b09f"><div class="ttname"><a href="#aa6d9cca74f6935b3d9c85b61f400b09f">BesoinPlayers::BesoinType</a></div><div class="ttdeci">BesoinType</div><div class="ttdoc">Types de besoins pouvant être prioritaires pour un PNJ.</div><div class="ttdef"><b>Definition</b> <a href="_besoin_players_8cs_source.html#l00028">BesoinPlayers.cs:28</a></div></div>
 </div><!-- fragment -->
-<p class="reference">Références <a class="el" href="_besoin_players_8cs_source.html#l00011">energie</a>, <a class="el" href="_besoin_players_8cs_source.html#l00011">faim</a>, et <a class="el" href="_besoin_players_8cs_source.html#l00011">soif</a>.</p>
+<p class="reference">Références <a class="el" href="_besoin_players_8cs_source.html#l00016">energie</a>, <a class="el" href="_besoin_players_8cs_source.html#l00013">faim</a>, <a class="el" href="#a187345d2e2cd31b4c3a42d113aab2530">seuilCritique</a>, et <a class="el" href="_besoin_players_8cs_source.html#l00010">soif</a>.</p>
 
-<p class="reference">Référencé par <a class="el" href="_besoin_players_8cs_source.html#l00065">Update()</a>.</p>
-
-</div>
-</div>
-<a id="a81475c872c7d03e50e2bb71de822e3d6" name="a81475c872c7d03e50e2bb71de822e3d6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a81475c872c7d03e50e2bb71de822e3d6">&#9670;&#160;</a></span>LateUpdate()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void BesoinPlayers::LateUpdate </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Définition à la ligne <a class="el" href="_besoin_players_8cs_source.html#l00049">49</a> du fichier <a class="el" href="_besoin_players_8cs_source.html">BesoinPlayers.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   50</span>    {</div>
-<div class="line"><span class="lineno">   51</span>        <a class="code hl_variable" href="#aef701e3cc998217dacabfdd420cfff6f">vieEcoulee</a> += Time.deltaTime;</div>
-<div class="line"><span class="lineno">   52</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="#aef701e3cc998217dacabfdd420cfff6f">vieEcoulee</a> &gt;= <a class="code hl_variable" href="#a37ff36746687fd557e644ad5091463a0">dureeDeVie</a>)</div>
-<div class="line"><span class="lineno">   53</span>        {</div>
-<div class="line"><span class="lineno">   54</span>            Debug.Log($<span class="stringliteral">&quot;{gameObject.name} est mort de vieillesse.&quot;</span>);</div>
-<div class="line"><span class="lineno">   55</span> </div>
-<div class="line"><span class="lineno">   56</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a7a84ee6dd9bb1bfaccfb501780abcb2d">populationManager</a> != null)</div>
-<div class="line"><span class="lineno">   57</span>            {</div>
-<div class="line"><span class="lineno">   58</span>                <a class="code hl_variable" href="#a7a84ee6dd9bb1bfaccfb501780abcb2d">populationManager</a>.PNJMort();</div>
-<div class="line"><span class="lineno">   59</span>            }</div>
-<div class="line"><span class="lineno">   60</span> </div>
-<div class="line"><span class="lineno">   61</span>            Destroy(gameObject);</div>
-<div class="line"><span class="lineno">   62</span>        }</div>
-<div class="line"><span class="lineno">   63</span>    }</div>
-<div class="ttc" id="aclass_besoin_players_html_a7a84ee6dd9bb1bfaccfb501780abcb2d"><div class="ttname"><a href="#a7a84ee6dd9bb1bfaccfb501780abcb2d">BesoinPlayers::populationManager</a></div><div class="ttdeci">PopulationManager populationManager</div><div class="ttdoc">Référence au gestionnaire de population (pour notifier les décès).</div><div class="ttdef"><b>Definition</b> <a href="_besoin_players_8cs_source.html#l00042">BesoinPlayers.cs:42</a></div></div>
-<div class="ttc" id="aclass_besoin_players_html_aef701e3cc998217dacabfdd420cfff6f"><div class="ttname"><a href="#aef701e3cc998217dacabfdd420cfff6f">BesoinPlayers::vieEcoulee</a></div><div class="ttdeci">float vieEcoulee</div><div class="ttdef"><b>Definition</b> <a href="_besoin_players_8cs_source.html#l00039">BesoinPlayers.cs:39</a></div></div>
-</div><!-- fragment -->
-<p class="reference">Références <a class="el" href="_besoin_players_8cs_source.html#l00038">dureeDeVie</a>, <a class="el" href="_besoin_players_8cs_source.html#l00042">populationManager</a>, et <a class="el" href="_besoin_players_8cs_source.html#l00039">vieEcoulee</a>.</p>
+<p class="reference">Référencé par <a class="el" href="_besoin_players_8cs_source.html#l00058">Update()</a>.</p>
 
 </div>
 </div>
@@ -786,21 +734,19 @@ Attributs privés</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Libère la ressource actuellement ciblée par le PNJ. </p>
+<p>Libère la ressource actuellement utilisée par le PNJ, si applicable. </p>
 
-<p class="definition">Définition à la ligne <a class="el" href="_besoin_players_8cs_source.html#l00247">247</a> du fichier <a class="el" href="_besoin_players_8cs_source.html">BesoinPlayers.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  248</span>    {</div>
-<div class="line"><span class="lineno">  249</span>        Transform currentTarget = GetComponent&lt;PathfindingAI&gt;().target;</div>
-<div class="line"><span class="lineno">  250</span>        <span class="keywordflow">if</span> (currentTarget != null)</div>
-<div class="line"><span class="lineno">  251</span>        {</div>
-<div class="line"><span class="lineno">  252</span>            var slot = currentTarget.GetComponent&lt;RessourceMaxPlayerCapacity&gt;();</div>
-<div class="line"><span class="lineno">  253</span>            <span class="keywordflow">if</span> (slot != null) slot.Liberer();</div>
-<div class="line"><span class="lineno">  254</span>        }</div>
-<div class="line"><span class="lineno">  255</span>    }</div>
+<p class="definition">Définition à la ligne <a class="el" href="_besoin_players_8cs_source.html#l00287">287</a> du fichier <a class="el" href="_besoin_players_8cs_source.html">BesoinPlayers.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  288</span>    {</div>
+<div class="line"><span class="lineno">  289</span>        Transform currentTarget = GetComponent&lt;PathfindingAI&gt;().target;</div>
+<div class="line"><span class="lineno">  290</span>        <span class="keywordflow">if</span> (currentTarget != null)</div>
+<div class="line"><span class="lineno">  291</span>        {</div>
+<div class="line"><span class="lineno">  292</span>            var slot = currentTarget.GetComponent&lt;RessourceMaxPlayerCapacity&gt;();</div>
+<div class="line"><span class="lineno">  293</span>            <span class="keywordflow">if</span> (slot != null) slot.Liberer();</div>
+<div class="line"><span class="lineno">  294</span>        }</div>
+<div class="line"><span class="lineno">  295</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">Références <a class="el" href="_ressource_max_player_capacity_8cs_source.html#l00033">RessourceMaxPlayerCapacity::Liberer()</a>.</p>
-
-<p class="reference">Référencé par <a class="el" href="_besoin_players_8cs_source.html#l00186">FinBoire()</a>, et <a class="el" href="_besoin_players_8cs_source.html#l00201">FinDormir()</a>.</p>
+<p class="reference">Référencé par <a class="el" href="_besoin_players_8cs_source.html#l00204">FinBoire()</a>, <a class="el" href="_besoin_players_8cs_source.html#l00221">FinDormir()</a>, et <a class="el" href="_besoin_players_8cs_source.html#l00240">FinTravailler()</a>.</p>
 
 </div>
 </div>
@@ -827,13 +773,15 @@ Attributs privés</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="_besoin_players_8cs_source.html#l00159">159</a> du fichier <a class="el" href="_besoin_players_8cs_source.html">BesoinPlayers.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  160</span>    {</div>
-<div class="line"><span class="lineno">  161</span>        Debug.Log(<span class="stringliteral">&quot;Recherche d&#39;un buisson pour manger...&quot;</span>);</div>
-<div class="line"><span class="lineno">  162</span>        StartCoroutine(<a class="code hl_function" href="#adb55a28ed2542204c990da6b4be57607">AttendreEtChercher</a>(<span class="stringliteral">&quot;baies&quot;</span>, <a class="code hl_enumeration" href="#a9692fc8e12255c50c6bbde946a29984c">EtatPNJ</a>.AllerManger));</div>
-<div class="line"><span class="lineno">  163</span>    }</div>
+<p>Lance la recherche et le déplacement vers une ressource de type "baies". </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="_besoin_players_8cs_source.html#l00176">176</a> du fichier <a class="el" href="_besoin_players_8cs_source.html">BesoinPlayers.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  177</span>    {</div>
+<div class="line"><span class="lineno">  178</span>        Debug.Log(<span class="stringliteral">&quot;Recherche d&#39;un buisson pour manger...&quot;</span>);</div>
+<div class="line"><span class="lineno">  179</span>        StartCoroutine(<a class="code hl_function" href="#adb55a28ed2542204c990da6b4be57607">AttendreEtChercher</a>(<span class="stringliteral">&quot;baies&quot;</span>, <a class="code hl_enumeration" href="#a9692fc8e12255c50c6bbde946a29984c">EtatPNJ</a>.AllerManger));</div>
+<div class="line"><span class="lineno">  180</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">Références <a class="el" href="_besoin_players_8cs_source.html#l00257">AttendreEtChercher()</a>.</p>
+<p class="reference">Références <a class="el" href="_besoin_players_8cs_source.html#l00300">AttendreEtChercher()</a>.</p>
 
 </div>
 </div>
@@ -860,36 +808,77 @@ Attributs privés</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Notifie l'arrivée à la ressource et change l'état vers l'action correspondante. </p>
+<p>Notifie le script que le PNJ est arrivé à destination, déclenchant l’action correspondante. </p>
 
-<p class="definition">Définition à la ligne <a class="el" href="_besoin_players_8cs_source.html#l00132">132</a> du fichier <a class="el" href="_besoin_players_8cs_source.html">BesoinPlayers.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  133</span>    {</div>
-<div class="line"><span class="lineno">  134</span>        Transform target = GetComponent&lt;PathfindingAI&gt;().target;</div>
-<div class="line"><span class="lineno">  135</span>        <span class="keywordflow">if</span> (target == null)</div>
-<div class="line"><span class="lineno">  136</span>        {</div>
-<div class="line"><span class="lineno">  137</span>            Debug.LogWarning(<span class="stringliteral">&quot;La ressource a disparu avant l’arrivée. Retour à l’état Idle.&quot;</span>);</div>
-<div class="line"><span class="lineno">  138</span>            <a class="code hl_variable" href="#a80ce0430a9c55b4009a489c7d4e3b58b">etatActuel</a> = <a class="code hl_enumeration" href="#a9692fc8e12255c50c6bbde946a29984c">EtatPNJ</a>.Idle;</div>
-<div class="line"><span class="lineno">  139</span>            <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  140</span>        }</div>
-<div class="line"><span class="lineno">  141</span> </div>
-<div class="line"><span class="lineno">  142</span>        <span class="keywordflow">switch</span> (<a class="code hl_variable" href="#a80ce0430a9c55b4009a489c7d4e3b58b">etatActuel</a>)</div>
-<div class="line"><span class="lineno">  143</span>        {</div>
-<div class="line"><span class="lineno">  144</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="#a9692fc8e12255c50c6bbde946a29984c">EtatPNJ</a>.AllerManger:</div>
-<div class="line"><span class="lineno">  145</span>                <a class="code hl_variable" href="#a80ce0430a9c55b4009a489c7d4e3b58b">etatActuel</a> = <a class="code hl_enumeration" href="#a9692fc8e12255c50c6bbde946a29984c">EtatPNJ</a>.Manger;</div>
-<div class="line"><span class="lineno">  146</span>                <a class="code hl_variable" href="#adb1e6b3df199adab079b0828bc87b7b5">actionTimer</a> = 0f;</div>
-<div class="line"><span class="lineno">  147</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  148</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="#a9692fc8e12255c50c6bbde946a29984c">EtatPNJ</a>.AllerBoire:</div>
-<div class="line"><span class="lineno">  149</span>                <a class="code hl_variable" href="#a80ce0430a9c55b4009a489c7d4e3b58b">etatActuel</a> = <a class="code hl_enumeration" href="#a9692fc8e12255c50c6bbde946a29984c">EtatPNJ</a>.Boire;</div>
-<div class="line"><span class="lineno">  150</span>                <a class="code hl_variable" href="#adb1e6b3df199adab079b0828bc87b7b5">actionTimer</a> = 0f;</div>
-<div class="line"><span class="lineno">  151</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  152</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="#a9692fc8e12255c50c6bbde946a29984c">EtatPNJ</a>.AllerDormir:</div>
-<div class="line"><span class="lineno">  153</span>                <a class="code hl_variable" href="#a80ce0430a9c55b4009a489c7d4e3b58b">etatActuel</a> = <a class="code hl_enumeration" href="#a9692fc8e12255c50c6bbde946a29984c">EtatPNJ</a>.Dormir;</div>
-<div class="line"><span class="lineno">  154</span>                <a class="code hl_variable" href="#adb1e6b3df199adab079b0828bc87b7b5">actionTimer</a> = 0f;</div>
-<div class="line"><span class="lineno">  155</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  156</span>        }</div>
-<div class="line"><span class="lineno">  157</span>    }</div>
+<p class="definition">Définition à la ligne <a class="el" href="_besoin_players_8cs_source.html#l00144">144</a> du fichier <a class="el" href="_besoin_players_8cs_source.html">BesoinPlayers.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  145</span>    {</div>
+<div class="line"><span class="lineno">  146</span>        Transform target = GetComponent&lt;PathfindingAI&gt;().target;</div>
+<div class="line"><span class="lineno">  147</span>        <span class="keywordflow">if</span> (target == null)</div>
+<div class="line"><span class="lineno">  148</span>        {</div>
+<div class="line"><span class="lineno">  149</span>            Debug.LogWarning(<span class="stringliteral">&quot;La ressource a disparu avant l’arrivée. Retour à l’état Idle.&quot;</span>);</div>
+<div class="line"><span class="lineno">  150</span>            <a class="code hl_variable" href="#a80ce0430a9c55b4009a489c7d4e3b58b">etatActuel</a> = <a class="code hl_enumeration" href="#a9692fc8e12255c50c6bbde946a29984c">EtatPNJ</a>.Idle;</div>
+<div class="line"><span class="lineno">  151</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  152</span>        }</div>
+<div class="line"><span class="lineno">  153</span> </div>
+<div class="line"><span class="lineno">  154</span>        <span class="keywordflow">switch</span> (<a class="code hl_variable" href="#a80ce0430a9c55b4009a489c7d4e3b58b">etatActuel</a>)</div>
+<div class="line"><span class="lineno">  155</span>        {</div>
+<div class="line"><span class="lineno">  156</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="#a9692fc8e12255c50c6bbde946a29984c">EtatPNJ</a>.AllerManger:</div>
+<div class="line"><span class="lineno">  157</span>                <a class="code hl_variable" href="#a80ce0430a9c55b4009a489c7d4e3b58b">etatActuel</a> = <a class="code hl_enumeration" href="#a9692fc8e12255c50c6bbde946a29984c">EtatPNJ</a>.Manger;</div>
+<div class="line"><span class="lineno">  158</span>                <a class="code hl_variable" href="#adb1e6b3df199adab079b0828bc87b7b5">actionTimer</a> = 0f;</div>
+<div class="line"><span class="lineno">  159</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  160</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="#a9692fc8e12255c50c6bbde946a29984c">EtatPNJ</a>.AllerBoire:</div>
+<div class="line"><span class="lineno">  161</span>                <a class="code hl_variable" href="#a80ce0430a9c55b4009a489c7d4e3b58b">etatActuel</a> = <a class="code hl_enumeration" href="#a9692fc8e12255c50c6bbde946a29984c">EtatPNJ</a>.Boire;</div>
+<div class="line"><span class="lineno">  162</span>                <a class="code hl_variable" href="#adb1e6b3df199adab079b0828bc87b7b5">actionTimer</a> = 0f;</div>
+<div class="line"><span class="lineno">  163</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  164</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="#a9692fc8e12255c50c6bbde946a29984c">EtatPNJ</a>.AllerDormir:</div>
+<div class="line"><span class="lineno">  165</span>                <a class="code hl_variable" href="#a80ce0430a9c55b4009a489c7d4e3b58b">etatActuel</a> = <a class="code hl_enumeration" href="#a9692fc8e12255c50c6bbde946a29984c">EtatPNJ</a>.Dormir;</div>
+<div class="line"><span class="lineno">  166</span>                <a class="code hl_variable" href="#adb1e6b3df199adab079b0828bc87b7b5">actionTimer</a> = 0f;</div>
+<div class="line"><span class="lineno">  167</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  168</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="#a9692fc8e12255c50c6bbde946a29984c">EtatPNJ</a>.AllerTravailler:</div>
+<div class="line"><span class="lineno">  169</span>                <a class="code hl_variable" href="#a80ce0430a9c55b4009a489c7d4e3b58b">etatActuel</a> = <a class="code hl_enumeration" href="#a9692fc8e12255c50c6bbde946a29984c">EtatPNJ</a>.Travailler;</div>
+<div class="line"><span class="lineno">  170</span>                <a class="code hl_variable" href="#adb1e6b3df199adab079b0828bc87b7b5">actionTimer</a> = 0f;</div>
+<div class="line"><span class="lineno">  171</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  172</span>        }</div>
+<div class="line"><span class="lineno">  173</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">Références <a class="el" href="_besoin_players_8cs_source.html#l00031">actionTimer</a>, et <a class="el" href="#a80ce0430a9c55b4009a489c7d4e3b58b">etatActuel</a>.</p>
+<p class="reference">Références <a class="el" href="_besoin_players_8cs_source.html#l00049">actionTimer</a>, et <a class="el" href="#a80ce0430a9c55b4009a489c7d4e3b58b">etatActuel</a>.</p>
+
+</div>
+</div>
+<a id="ac28589e4f53138d346675800f29aeedb" name="ac28589e4f53138d346675800f29aeedb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac28589e4f53138d346675800f29aeedb">&#9670;&#160;</a></span>Travailler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BesoinPlayers::Travailler </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Recherche une usine aléatoire disponible pour aller travailler. </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="_besoin_players_8cs_source.html#l00232">232</a> du fichier <a class="el" href="_besoin_players_8cs_source.html">BesoinPlayers.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  233</span>    {</div>
+<div class="line"><span class="lineno">  234</span>        Debug.Log(<span class="stringliteral">&quot;Recherche d&#39;une usine pour travailler...&quot;</span>);</div>
+<div class="line"><span class="lineno">  235</span>        <span class="keywordtype">string</span> tagAleatoire = <a class="code hl_variable" href="#aa7a145b3220b9f20697b362e7c3d817a">tagsUsines</a>[Random.Range(0, <a class="code hl_variable" href="#aa7a145b3220b9f20697b362e7c3d817a">tagsUsines</a>.Length)];</div>
+<div class="line"><span class="lineno">  236</span>        StartCoroutine(<a class="code hl_function" href="#adb55a28ed2542204c990da6b4be57607">AttendreEtChercher</a>(tagAleatoire, <a class="code hl_enumeration" href="#a9692fc8e12255c50c6bbde946a29984c">EtatPNJ</a>.AllerTravailler));</div>
+<div class="line"><span class="lineno">  237</span>    }</div>
+<div class="ttc" id="aclass_besoin_players_html_aa7a145b3220b9f20697b362e7c3d817a"><div class="ttname"><a href="#aa7a145b3220b9f20697b362e7c3d817a">BesoinPlayers::tagsUsines</a></div><div class="ttdeci">string[] tagsUsines</div><div class="ttdoc">Liste des tags d’usines pour la recherche d’un lieu de travail.</div><div class="ttdef"><b>Definition</b> <a href="_besoin_players_8cs_source.html#l00053">BesoinPlayers.cs:53</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Références <a class="el" href="_besoin_players_8cs_source.html#l00300">AttendreEtChercher()</a>, et <a class="el" href="_besoin_players_8cs_source.html#l00053">tagsUsines</a>.</p>
 
 </div>
 </div>
@@ -911,78 +900,96 @@ Attributs privés</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="_besoin_players_8cs_source.html#l00065">65</a> du fichier <a class="el" href="_besoin_players_8cs_source.html">BesoinPlayers.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   66</span>    {</div>
-<div class="line"><span class="lineno">   67</span>        <a class="code hl_variable" href="#a9903b249259c41231b5b9adaa7f0f7fd">faim</a> = Mathf.Clamp01(<a class="code hl_variable" href="#a9903b249259c41231b5b9adaa7f0f7fd">faim</a> - <a class="code hl_variable" href="#ad20711cbabe145714a47be93f358dbb5">tauxFaim</a> * Time.deltaTime);</div>
-<div class="line"><span class="lineno">   68</span>        <a class="code hl_variable" href="#a2d8b408760c455c49a9707dc7ed36e2c">soif</a> = Mathf.Clamp01(<a class="code hl_variable" href="#a2d8b408760c455c49a9707dc7ed36e2c">soif</a> - <a class="code hl_variable" href="#a5ec5ff3f54925e155bbbf5412e71a7cf">tauxSoif</a> * Time.deltaTime);</div>
-<div class="line"><span class="lineno">   69</span>        <a class="code hl_variable" href="#ac1e677a229be0c7346ab74b2f0ce3739">energie</a> = Mathf.Clamp01(<a class="code hl_variable" href="#ac1e677a229be0c7346ab74b2f0ce3739">energie</a> - <a class="code hl_variable" href="#a1842c85c6263bd47528a8b35fdaea830">tauxEnergie</a> * Time.deltaTime);</div>
-<div class="line"><span class="lineno">   70</span> </div>
-<div class="line"><span class="lineno">   71</span>        Debug.Log($<span class="stringliteral">&quot;État actuel : {etatActuel} | Faim: {faim:F2} | Soif: {soif:F2} | Énergie: {energie:F2}&quot;</span>);</div>
-<div class="line"><span class="lineno">   72</span> </div>
-<div class="line"><span class="lineno">   73</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a80ce0430a9c55b4009a489c7d4e3b58b">etatActuel</a> == <a class="code hl_enumeration" href="#a9692fc8e12255c50c6bbde946a29984c">EtatPNJ</a>.AllerManger || <a class="code hl_variable" href="#a80ce0430a9c55b4009a489c7d4e3b58b">etatActuel</a> == <a class="code hl_enumeration" href="#a9692fc8e12255c50c6bbde946a29984c">EtatPNJ</a>.AllerBoire || <a class="code hl_variable" href="#a80ce0430a9c55b4009a489c7d4e3b58b">etatActuel</a> == <a class="code hl_enumeration" href="#a9692fc8e12255c50c6bbde946a29984c">EtatPNJ</a>.AllerDormir)</div>
-<div class="line"><span class="lineno">   74</span>        {</div>
-<div class="line"><span class="lineno">   75</span>            var currentTarget = GetComponent&lt;PathfindingAI&gt;().target;</div>
-<div class="line"><span class="lineno">   76</span>            <span class="keywordflow">if</span> (currentTarget == null)</div>
-<div class="line"><span class="lineno">   77</span>            {</div>
-<div class="line"><span class="lineno">   78</span>                Debug.LogWarning(<span class="stringliteral">&quot;La ressource a été détruite avant l’arrivée. Retour à Idle.&quot;</span>);</div>
-<div class="line"><span class="lineno">   79</span>                <a class="code hl_variable" href="#a80ce0430a9c55b4009a489c7d4e3b58b">etatActuel</a> = <a class="code hl_enumeration" href="#a9692fc8e12255c50c6bbde946a29984c">EtatPNJ</a>.Idle;</div>
-<div class="line"><span class="lineno">   80</span>                <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   81</span>            }</div>
-<div class="line"><span class="lineno">   82</span>        }</div>
-<div class="line"><span class="lineno">   83</span> </div>
-<div class="line"><span class="lineno">   84</span>        <span class="keywordflow">switch</span> (<a class="code hl_variable" href="#a80ce0430a9c55b4009a489c7d4e3b58b">etatActuel</a>)</div>
-<div class="line"><span class="lineno">   85</span>        {</div>
-<div class="line"><span class="lineno">   86</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="#a9692fc8e12255c50c6bbde946a29984c">EtatPNJ</a>.Idle:</div>
-<div class="line"><span class="lineno">   87</span>                <a class="code hl_variable" href="#adaab9e87c701ed10e89d2bb422a94cd7">besoinActuel</a> = <a class="code hl_function" href="#ae6ee2f8f3b1ae0bfa7a56acf6bc6d2e6">GetBesoinPrioritaire</a>();</div>
-<div class="line"><span class="lineno">   88</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="#adaab9e87c701ed10e89d2bb422a94cd7">besoinActuel</a> != <a class="code hl_enumeration" href="#aa6d9cca74f6935b3d9c85b61f400b09f">BesoinType</a>.Rien)</div>
-<div class="line"><span class="lineno">   89</span>                {</div>
-<div class="line"><span class="lineno">   90</span>                    <span class="keywordflow">switch</span> (<a class="code hl_variable" href="#adaab9e87c701ed10e89d2bb422a94cd7">besoinActuel</a>)</div>
-<div class="line"><span class="lineno">   91</span>                    {</div>
-<div class="line"><span class="lineno">   92</span>                        <span class="keywordflow">case</span> <a class="code hl_enumeration" href="#aa6d9cca74f6935b3d9c85b61f400b09f">BesoinType</a>.Faim:</div>
-<div class="line"><span class="lineno">   93</span>                            <a class="code hl_enumvalue" href="#a9692fc8e12255c50c6bbde946a29984caf8996d8f698439956405a49bd84ed0f3">Manger</a>();</div>
-<div class="line"><span class="lineno">   94</span>                            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">   95</span>                        <span class="keywordflow">case</span> <a class="code hl_enumeration" href="#aa6d9cca74f6935b3d9c85b61f400b09f">BesoinType</a>.Soif:</div>
-<div class="line"><span class="lineno">   96</span>                            <a class="code hl_enumvalue" href="#a9692fc8e12255c50c6bbde946a29984caab2b133a25cca6f98899eb4a9a46a916">Boire</a>();</div>
-<div class="line"><span class="lineno">   97</span>                            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">   98</span>                        <span class="keywordflow">case</span> <a class="code hl_enumeration" href="#aa6d9cca74f6935b3d9c85b61f400b09f">BesoinType</a>.Energie:</div>
-<div class="line"><span class="lineno">   99</span>                            <a class="code hl_enumvalue" href="#a9692fc8e12255c50c6bbde946a29984ca8460695e1a99572444ccce4ac4c919a5">Dormir</a>();</div>
-<div class="line"><span class="lineno">  100</span>                            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  101</span>                    }</div>
-<div class="line"><span class="lineno">  102</span>                }</div>
-<div class="line"><span class="lineno">  103</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  104</span> </div>
-<div class="line"><span class="lineno">  105</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="#a9692fc8e12255c50c6bbde946a29984c">EtatPNJ</a>.Manger:</div>
+<p>Met à jour les besoins du PNJ et gère les transitions d'état en fonction des priorités. </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="_besoin_players_8cs_source.html#l00058">58</a> du fichier <a class="el" href="_besoin_players_8cs_source.html">BesoinPlayers.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   59</span>    {</div>
+<div class="line"><span class="lineno">   60</span>        <a class="code hl_variable" href="#a9903b249259c41231b5b9adaa7f0f7fd">faim</a> = Mathf.Clamp01(<a class="code hl_variable" href="#a9903b249259c41231b5b9adaa7f0f7fd">faim</a> - <a class="code hl_variable" href="#ad20711cbabe145714a47be93f358dbb5">tauxFaim</a> * Time.deltaTime);</div>
+<div class="line"><span class="lineno">   61</span>        <a class="code hl_variable" href="#a2d8b408760c455c49a9707dc7ed36e2c">soif</a> = Mathf.Clamp01(<a class="code hl_variable" href="#a2d8b408760c455c49a9707dc7ed36e2c">soif</a> - <a class="code hl_variable" href="#a5ec5ff3f54925e155bbbf5412e71a7cf">tauxSoif</a> * Time.deltaTime);</div>
+<div class="line"><span class="lineno">   62</span>        <a class="code hl_variable" href="#ac1e677a229be0c7346ab74b2f0ce3739">energie</a> = Mathf.Clamp01(<a class="code hl_variable" href="#ac1e677a229be0c7346ab74b2f0ce3739">energie</a> - <a class="code hl_variable" href="#a1842c85c6263bd47528a8b35fdaea830">tauxEnergie</a> * Time.deltaTime);</div>
+<div class="line"><span class="lineno">   63</span> </div>
+<div class="line"><span class="lineno">   64</span>        Debug.Log($<span class="stringliteral">&quot;\u00c9tat actuel : {etatActuel} | Faim: {faim:F2} | Soif: {soif:F2} | \u00c9nergie: {energie:F2}&quot;</span>);</div>
+<div class="line"><span class="lineno">   65</span> </div>
+<div class="line"><span class="lineno">   66</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a80ce0430a9c55b4009a489c7d4e3b58b">etatActuel</a> == <a class="code hl_enumeration" href="#a9692fc8e12255c50c6bbde946a29984c">EtatPNJ</a>.AllerManger || <a class="code hl_variable" href="#a80ce0430a9c55b4009a489c7d4e3b58b">etatActuel</a> == <a class="code hl_enumeration" href="#a9692fc8e12255c50c6bbde946a29984c">EtatPNJ</a>.AllerBoire || <a class="code hl_variable" href="#a80ce0430a9c55b4009a489c7d4e3b58b">etatActuel</a> == <a class="code hl_enumeration" href="#a9692fc8e12255c50c6bbde946a29984c">EtatPNJ</a>.AllerDormir || <a class="code hl_variable" href="#a80ce0430a9c55b4009a489c7d4e3b58b">etatActuel</a> == <a class="code hl_enumeration" href="#a9692fc8e12255c50c6bbde946a29984c">EtatPNJ</a>.AllerTravailler)</div>
+<div class="line"><span class="lineno">   67</span>        {</div>
+<div class="line"><span class="lineno">   68</span>            var currentTarget = GetComponent&lt;PathfindingAI&gt;().target;</div>
+<div class="line"><span class="lineno">   69</span>            <span class="keywordflow">if</span> (currentTarget == null)</div>
+<div class="line"><span class="lineno">   70</span>            {</div>
+<div class="line"><span class="lineno">   71</span>                Debug.LogWarning(<span class="stringliteral">&quot;La ressource a été détruite avant l’arrivée. Retour à Idle.&quot;</span>);</div>
+<div class="line"><span class="lineno">   72</span>                <a class="code hl_variable" href="#a80ce0430a9c55b4009a489c7d4e3b58b">etatActuel</a> = <a class="code hl_enumeration" href="#a9692fc8e12255c50c6bbde946a29984c">EtatPNJ</a>.Idle;</div>
+<div class="line"><span class="lineno">   73</span>                <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   74</span>            }</div>
+<div class="line"><span class="lineno">   75</span>        }</div>
+<div class="line"><span class="lineno">   76</span> </div>
+<div class="line"><span class="lineno">   77</span>        <span class="keywordflow">switch</span> (<a class="code hl_variable" href="#a80ce0430a9c55b4009a489c7d4e3b58b">etatActuel</a>)</div>
+<div class="line"><span class="lineno">   78</span>        {</div>
+<div class="line"><span class="lineno">   79</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="#a9692fc8e12255c50c6bbde946a29984c">EtatPNJ</a>.Idle:</div>
+<div class="line"><span class="lineno">   80</span>                <a class="code hl_variable" href="#adaab9e87c701ed10e89d2bb422a94cd7">besoinActuel</a> = <a class="code hl_function" href="#ae6ee2f8f3b1ae0bfa7a56acf6bc6d2e6">GetBesoinPrioritaire</a>();</div>
+<div class="line"><span class="lineno">   81</span>                Debug.Log($<span class="stringliteral">&quot;Besoin prioritaire détecté : {besoinActuel}&quot;</span>);</div>
+<div class="line"><span class="lineno">   82</span>                <span class="keywordflow">switch</span> (<a class="code hl_variable" href="#adaab9e87c701ed10e89d2bb422a94cd7">besoinActuel</a>)</div>
+<div class="line"><span class="lineno">   83</span>                {</div>
+<div class="line"><span class="lineno">   84</span>                    <span class="keywordflow">case</span> <a class="code hl_enumeration" href="#aa6d9cca74f6935b3d9c85b61f400b09f">BesoinType</a>.Faim:</div>
+<div class="line"><span class="lineno">   85</span>                        <a class="code hl_enumvalue" href="#a9692fc8e12255c50c6bbde946a29984caf8996d8f698439956405a49bd84ed0f3">Manger</a>();</div>
+<div class="line"><span class="lineno">   86</span>                        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   87</span>                    <span class="keywordflow">case</span> <a class="code hl_enumeration" href="#aa6d9cca74f6935b3d9c85b61f400b09f">BesoinType</a>.Soif:</div>
+<div class="line"><span class="lineno">   88</span>                        <a class="code hl_enumvalue" href="#a9692fc8e12255c50c6bbde946a29984caab2b133a25cca6f98899eb4a9a46a916">Boire</a>();</div>
+<div class="line"><span class="lineno">   89</span>                        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   90</span>                    <span class="keywordflow">case</span> <a class="code hl_enumeration" href="#aa6d9cca74f6935b3d9c85b61f400b09f">BesoinType</a>.Energie:</div>
+<div class="line"><span class="lineno">   91</span>                        <a class="code hl_enumvalue" href="#a9692fc8e12255c50c6bbde946a29984ca8460695e1a99572444ccce4ac4c919a5">Dormir</a>();</div>
+<div class="line"><span class="lineno">   92</span>                        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   93</span>                    <span class="keywordflow">case</span> <a class="code hl_enumeration" href="#aa6d9cca74f6935b3d9c85b61f400b09f">BesoinType</a>.Rien:</div>
+<div class="line"><span class="lineno">   94</span>                        <a class="code hl_enumvalue" href="#a9692fc8e12255c50c6bbde946a29984caa9f90631800b17516f2cb532fbd9ff61">Travailler</a>();</div>
+<div class="line"><span class="lineno">   95</span>                        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   96</span>                }</div>
+<div class="line"><span class="lineno">   97</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   98</span> </div>
+<div class="line"><span class="lineno">   99</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="#a9692fc8e12255c50c6bbde946a29984c">EtatPNJ</a>.Manger:</div>
+<div class="line"><span class="lineno">  100</span>                <a class="code hl_variable" href="#adb1e6b3df199adab079b0828bc87b7b5">actionTimer</a> += Time.deltaTime;</div>
+<div class="line"><span class="lineno">  101</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="#adb1e6b3df199adab079b0828bc87b7b5">actionTimer</a> &gt;= <a class="code hl_variable" href="#a21c7c51fdad637012f0f692649292df6">actionDuration</a>)</div>
+<div class="line"><span class="lineno">  102</span>                {</div>
+<div class="line"><span class="lineno">  103</span>                    <a class="code hl_function" href="#a78f9c5499a83a625f1e18bf48fcb645a">FinManger</a>();</div>
+<div class="line"><span class="lineno">  104</span>                }</div>
+<div class="line"><span class="lineno">  105</span>                <span class="keywordflow">break</span>;</div>
 <div class="line"><span class="lineno">  106</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="#a9692fc8e12255c50c6bbde946a29984c">EtatPNJ</a>.Boire:</div>
-<div class="line"><span class="lineno">  107</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="#a9692fc8e12255c50c6bbde946a29984c">EtatPNJ</a>.Dormir:</div>
-<div class="line"><span class="lineno">  108</span>                <a class="code hl_variable" href="#adb1e6b3df199adab079b0828bc87b7b5">actionTimer</a> += Time.deltaTime;</div>
-<div class="line"><span class="lineno">  109</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="#adb1e6b3df199adab079b0828bc87b7b5">actionTimer</a> &gt;= <a class="code hl_variable" href="#a21c7c51fdad637012f0f692649292df6">actionDuration</a>)</div>
-<div class="line"><span class="lineno">  110</span>                {</div>
-<div class="line"><span class="lineno">  111</span>                    <span class="keywordflow">switch</span> (<a class="code hl_variable" href="#a80ce0430a9c55b4009a489c7d4e3b58b">etatActuel</a>)</div>
-<div class="line"><span class="lineno">  112</span>                    {</div>
-<div class="line"><span class="lineno">  113</span>                        <span class="keywordflow">case</span> <a class="code hl_enumeration" href="#a9692fc8e12255c50c6bbde946a29984c">EtatPNJ</a>.Manger: <a class="code hl_function" href="#a78f9c5499a83a625f1e18bf48fcb645a">FinManger</a>(); <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  114</span>                        <span class="keywordflow">case</span> <a class="code hl_enumeration" href="#a9692fc8e12255c50c6bbde946a29984c">EtatPNJ</a>.Boire: <a class="code hl_function" href="#ae7503ed05a93ce0df2b9f3200d23ff1d">FinBoire</a>(); <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  115</span>                        <span class="keywordflow">case</span> <a class="code hl_enumeration" href="#a9692fc8e12255c50c6bbde946a29984c">EtatPNJ</a>.Dormir: <a class="code hl_function" href="#ab9baee7053421f9360934999b21d1062">FinDormir</a>(); <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  116</span>                    }</div>
-<div class="line"><span class="lineno">  117</span>                }</div>
-<div class="line"><span class="lineno">  118</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  119</span>        }</div>
-<div class="line"><span class="lineno">  120</span>    }</div>
-<div class="ttc" id="aclass_besoin_players_html_a1842c85c6263bd47528a8b35fdaea830"><div class="ttname"><a href="#a1842c85c6263bd47528a8b35fdaea830">BesoinPlayers::tauxEnergie</a></div><div class="ttdeci">float tauxEnergie</div><div class="ttdef"><b>Definition</b> <a href="_besoin_players_8cs_source.html#l00014">BesoinPlayers.cs:14</a></div></div>
-<div class="ttc" id="aclass_besoin_players_html_a21c7c51fdad637012f0f692649292df6"><div class="ttname"><a href="#a21c7c51fdad637012f0f692649292df6">BesoinPlayers::actionDuration</a></div><div class="ttdeci">float actionDuration</div><div class="ttdef"><b>Definition</b> <a href="_besoin_players_8cs_source.html#l00032">BesoinPlayers.cs:32</a></div></div>
-<div class="ttc" id="aclass_besoin_players_html_a5ec5ff3f54925e155bbbf5412e71a7cf"><div class="ttname"><a href="#a5ec5ff3f54925e155bbbf5412e71a7cf">BesoinPlayers::tauxSoif</a></div><div class="ttdeci">float tauxSoif</div><div class="ttdef"><b>Definition</b> <a href="_besoin_players_8cs_source.html#l00014">BesoinPlayers.cs:14</a></div></div>
-<div class="ttc" id="aclass_besoin_players_html_a78f9c5499a83a625f1e18bf48fcb645a"><div class="ttname"><a href="#a78f9c5499a83a625f1e18bf48fcb645a">BesoinPlayers::FinManger</a></div><div class="ttdeci">void FinManger()</div><div class="ttdef"><b>Definition</b> <a href="_besoin_players_8cs_source.html#l00165">BesoinPlayers.cs:165</a></div></div>
-<div class="ttc" id="aclass_besoin_players_html_ab9baee7053421f9360934999b21d1062"><div class="ttname"><a href="#ab9baee7053421f9360934999b21d1062">BesoinPlayers::FinDormir</a></div><div class="ttdeci">void FinDormir()</div><div class="ttdef"><b>Definition</b> <a href="_besoin_players_8cs_source.html#l00201">BesoinPlayers.cs:201</a></div></div>
-<div class="ttc" id="aclass_besoin_players_html_ad20711cbabe145714a47be93f358dbb5"><div class="ttname"><a href="#ad20711cbabe145714a47be93f358dbb5">BesoinPlayers::tauxFaim</a></div><div class="ttdeci">float tauxFaim</div><div class="ttdoc">Vitesse de diminution de la faim, de la soif et de l&#39;énergie.</div><div class="ttdef"><b>Definition</b> <a href="_besoin_players_8cs_source.html#l00014">BesoinPlayers.cs:14</a></div></div>
-<div class="ttc" id="aclass_besoin_players_html_adaab9e87c701ed10e89d2bb422a94cd7"><div class="ttname"><a href="#adaab9e87c701ed10e89d2bb422a94cd7">BesoinPlayers::besoinActuel</a></div><div class="ttdeci">BesoinType besoinActuel</div><div class="ttdef"><b>Definition</b> <a href="_besoin_players_8cs_source.html#l00029">BesoinPlayers.cs:29</a></div></div>
-<div class="ttc" id="aclass_besoin_players_html_ae6ee2f8f3b1ae0bfa7a56acf6bc6d2e6"><div class="ttname"><a href="#ae6ee2f8f3b1ae0bfa7a56acf6bc6d2e6">BesoinPlayers::GetBesoinPrioritaire</a></div><div class="ttdeci">BesoinType GetBesoinPrioritaire()</div><div class="ttdoc">Retourne le besoin prioritaire selon les valeurs actuelles.</div><div class="ttdef"><b>Definition</b> <a href="_besoin_players_8cs_source.html#l00123">BesoinPlayers.cs:123</a></div></div>
-<div class="ttc" id="aclass_besoin_players_html_ae7503ed05a93ce0df2b9f3200d23ff1d"><div class="ttname"><a href="#ae7503ed05a93ce0df2b9f3200d23ff1d">BesoinPlayers::FinBoire</a></div><div class="ttdeci">void FinBoire()</div><div class="ttdef"><b>Definition</b> <a href="_besoin_players_8cs_source.html#l00186">BesoinPlayers.cs:186</a></div></div>
+<div class="line"><span class="lineno">  107</span>                <a class="code hl_variable" href="#adb1e6b3df199adab079b0828bc87b7b5">actionTimer</a> += Time.deltaTime;</div>
+<div class="line"><span class="lineno">  108</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="#adb1e6b3df199adab079b0828bc87b7b5">actionTimer</a> &gt;= <a class="code hl_variable" href="#a21c7c51fdad637012f0f692649292df6">actionDuration</a>)</div>
+<div class="line"><span class="lineno">  109</span>                {</div>
+<div class="line"><span class="lineno">  110</span>                    <a class="code hl_function" href="#ae7503ed05a93ce0df2b9f3200d23ff1d">FinBoire</a>();</div>
+<div class="line"><span class="lineno">  111</span>                }</div>
+<div class="line"><span class="lineno">  112</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  113</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="#a9692fc8e12255c50c6bbde946a29984c">EtatPNJ</a>.Dormir:</div>
+<div class="line"><span class="lineno">  114</span>                <a class="code hl_variable" href="#adb1e6b3df199adab079b0828bc87b7b5">actionTimer</a> += Time.deltaTime;</div>
+<div class="line"><span class="lineno">  115</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="#adb1e6b3df199adab079b0828bc87b7b5">actionTimer</a> &gt;= <a class="code hl_variable" href="#a21c7c51fdad637012f0f692649292df6">actionDuration</a>)</div>
+<div class="line"><span class="lineno">  116</span>                {</div>
+<div class="line"><span class="lineno">  117</span>                    <a class="code hl_function" href="#ab9baee7053421f9360934999b21d1062">FinDormir</a>();</div>
+<div class="line"><span class="lineno">  118</span>                }</div>
+<div class="line"><span class="lineno">  119</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  120</span>            <span class="keywordflow">case</span> <a class="code hl_enumeration" href="#a9692fc8e12255c50c6bbde946a29984c">EtatPNJ</a>.Travailler:</div>
+<div class="line"><span class="lineno">  121</span>                <a class="code hl_variable" href="#adb1e6b3df199adab079b0828bc87b7b5">actionTimer</a> += Time.deltaTime;</div>
+<div class="line"><span class="lineno">  122</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="#adb1e6b3df199adab079b0828bc87b7b5">actionTimer</a> &gt;= <a class="code hl_variable" href="#a21c7c51fdad637012f0f692649292df6">actionDuration</a>)</div>
+<div class="line"><span class="lineno">  123</span>                {</div>
+<div class="line"><span class="lineno">  124</span>                    <a class="code hl_function" href="#a8dfa18889de23e0b1112879f0f393053">FinTravailler</a>();</div>
+<div class="line"><span class="lineno">  125</span>                }</div>
+<div class="line"><span class="lineno">  126</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  127</span>        }</div>
+<div class="line"><span class="lineno">  128</span>    }</div>
+<div class="ttc" id="aclass_besoin_players_html_a1842c85c6263bd47528a8b35fdaea830"><div class="ttname"><a href="#a1842c85c6263bd47528a8b35fdaea830">BesoinPlayers::tauxEnergie</a></div><div class="ttdeci">float tauxEnergie</div><div class="ttdoc">Taux de diminution de l&#39;énergie par seconde.</div><div class="ttdef"><b>Definition</b> <a href="_besoin_players_8cs_source.html#l00025">BesoinPlayers.cs:25</a></div></div>
+<div class="ttc" id="aclass_besoin_players_html_a21c7c51fdad637012f0f692649292df6"><div class="ttname"><a href="#a21c7c51fdad637012f0f692649292df6">BesoinPlayers::actionDuration</a></div><div class="ttdeci">float actionDuration</div><div class="ttdef"><b>Definition</b> <a href="_besoin_players_8cs_source.html#l00050">BesoinPlayers.cs:50</a></div></div>
+<div class="ttc" id="aclass_besoin_players_html_a5ec5ff3f54925e155bbbf5412e71a7cf"><div class="ttname"><a href="#a5ec5ff3f54925e155bbbf5412e71a7cf">BesoinPlayers::tauxSoif</a></div><div class="ttdeci">float tauxSoif</div><div class="ttdoc">Taux de diminution de la soif par seconde.</div><div class="ttdef"><b>Definition</b> <a href="_besoin_players_8cs_source.html#l00022">BesoinPlayers.cs:22</a></div></div>
+<div class="ttc" id="aclass_besoin_players_html_a78f9c5499a83a625f1e18bf48fcb645a"><div class="ttname"><a href="#a78f9c5499a83a625f1e18bf48fcb645a">BesoinPlayers::FinManger</a></div><div class="ttdeci">void FinManger()</div><div class="ttdoc">Termine l&#39;action de manger, remet la faim à 1 et détruit la ressource.</div><div class="ttdef"><b>Definition</b> <a href="_besoin_players_8cs_source.html#l00183">BesoinPlayers.cs:183</a></div></div>
+<div class="ttc" id="aclass_besoin_players_html_a8dfa18889de23e0b1112879f0f393053"><div class="ttname"><a href="#a8dfa18889de23e0b1112879f0f393053">BesoinPlayers::FinTravailler</a></div><div class="ttdeci">void FinTravailler()</div><div class="ttdoc">Termine l&#39;action de travail.</div><div class="ttdef"><b>Definition</b> <a href="_besoin_players_8cs_source.html#l00240">BesoinPlayers.cs:240</a></div></div>
+<div class="ttc" id="aclass_besoin_players_html_ab9baee7053421f9360934999b21d1062"><div class="ttname"><a href="#ab9baee7053421f9360934999b21d1062">BesoinPlayers::FinDormir</a></div><div class="ttdeci">void FinDormir()</div><div class="ttdoc">Termine l&#39;action de dormir, remet l&#39;énergie à 1 et marque le logement comme acquis.</div><div class="ttdef"><b>Definition</b> <a href="_besoin_players_8cs_source.html#l00221">BesoinPlayers.cs:221</a></div></div>
+<div class="ttc" id="aclass_besoin_players_html_ad20711cbabe145714a47be93f358dbb5"><div class="ttname"><a href="#ad20711cbabe145714a47be93f358dbb5">BesoinPlayers::tauxFaim</a></div><div class="ttdeci">float tauxFaim</div><div class="ttdoc">Taux de diminution de la faim par seconde.</div><div class="ttdef"><b>Definition</b> <a href="_besoin_players_8cs_source.html#l00019">BesoinPlayers.cs:19</a></div></div>
+<div class="ttc" id="aclass_besoin_players_html_adaab9e87c701ed10e89d2bb422a94cd7"><div class="ttname"><a href="#adaab9e87c701ed10e89d2bb422a94cd7">BesoinPlayers::besoinActuel</a></div><div class="ttdeci">BesoinType besoinActuel</div><div class="ttdef"><b>Definition</b> <a href="_besoin_players_8cs_source.html#l00048">BesoinPlayers.cs:48</a></div></div>
+<div class="ttc" id="aclass_besoin_players_html_ae6ee2f8f3b1ae0bfa7a56acf6bc6d2e6"><div class="ttname"><a href="#ae6ee2f8f3b1ae0bfa7a56acf6bc6d2e6">BesoinPlayers::GetBesoinPrioritaire</a></div><div class="ttdeci">BesoinType GetBesoinPrioritaire()</div><div class="ttdoc">Retourne le besoin prioritaire du PNJ en fonction des seuils critiques.</div><div class="ttdef"><b>Definition</b> <a href="_besoin_players_8cs_source.html#l00133">BesoinPlayers.cs:133</a></div></div>
+<div class="ttc" id="aclass_besoin_players_html_ae7503ed05a93ce0df2b9f3200d23ff1d"><div class="ttname"><a href="#ae7503ed05a93ce0df2b9f3200d23ff1d">BesoinPlayers::FinBoire</a></div><div class="ttdeci">void FinBoire()</div><div class="ttdoc">Termine l&#39;action de boire, remet la soif à 1.</div><div class="ttdef"><b>Definition</b> <a href="_besoin_players_8cs_source.html#l00204">BesoinPlayers.cs:204</a></div></div>
 </div><!-- fragment -->
-<p class="reference">Références <a class="el" href="_besoin_players_8cs_source.html#l00032">actionDuration</a>, <a class="el" href="_besoin_players_8cs_source.html#l00031">actionTimer</a>, <a class="el" href="_besoin_players_8cs_source.html#l00029">besoinActuel</a>, <a class="el" href="_besoin_players_8cs_source.html#l00026">Boire</a>, <a class="el" href="_besoin_players_8cs_source.html#l00026">Dormir</a>, <a class="el" href="_besoin_players_8cs_source.html#l00011">energie</a>, <a class="el" href="#a80ce0430a9c55b4009a489c7d4e3b58b">etatActuel</a>, <a class="el" href="_besoin_players_8cs_source.html#l00011">faim</a>, <a class="el" href="_besoin_players_8cs_source.html#l00186">FinBoire()</a>, <a class="el" href="_besoin_players_8cs_source.html#l00201">FinDormir()</a>, <a class="el" href="_besoin_players_8cs_source.html#l00165">FinManger()</a>, <a class="el" href="_besoin_players_8cs_source.html#l00123">GetBesoinPrioritaire()</a>, <a class="el" href="_besoin_players_8cs_source.html#l00026">Manger</a>, <a class="el" href="_besoin_players_8cs_source.html#l00011">soif</a>, <a class="el" href="_besoin_players_8cs_source.html#l00014">tauxEnergie</a>, <a class="el" href="_besoin_players_8cs_source.html#l00014">tauxFaim</a>, et <a class="el" href="_besoin_players_8cs_source.html#l00014">tauxSoif</a>.</p>
+<p class="reference">Références <a class="el" href="_besoin_players_8cs_source.html#l00050">actionDuration</a>, <a class="el" href="_besoin_players_8cs_source.html#l00049">actionTimer</a>, <a class="el" href="_besoin_players_8cs_source.html#l00048">besoinActuel</a>, <a class="el" href="_besoin_players_8cs_source.html#l00037">Boire</a>, <a class="el" href="_besoin_players_8cs_source.html#l00037">Dormir</a>, <a class="el" href="_besoin_players_8cs_source.html#l00016">energie</a>, <a class="el" href="#a80ce0430a9c55b4009a489c7d4e3b58b">etatActuel</a>, <a class="el" href="_besoin_players_8cs_source.html#l00013">faim</a>, <a class="el" href="_besoin_players_8cs_source.html#l00204">FinBoire()</a>, <a class="el" href="_besoin_players_8cs_source.html#l00221">FinDormir()</a>, <a class="el" href="_besoin_players_8cs_source.html#l00183">FinManger()</a>, <a class="el" href="_besoin_players_8cs_source.html#l00240">FinTravailler()</a>, <a class="el" href="_besoin_players_8cs_source.html#l00133">GetBesoinPrioritaire()</a>, <a class="el" href="_besoin_players_8cs_source.html#l00037">Manger</a>, <a class="el" href="_besoin_players_8cs_source.html#l00010">soif</a>, <a class="el" href="_besoin_players_8cs_source.html#l00025">tauxEnergie</a>, <a class="el" href="_besoin_players_8cs_source.html#l00019">tauxFaim</a>, <a class="el" href="_besoin_players_8cs_source.html#l00022">tauxSoif</a>, et <a class="el" href="_besoin_players_8cs_source.html#l00037">Travailler</a>.</p>
 
 </div>
 </div>
@@ -1007,9 +1014,9 @@ Attributs privés</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="_besoin_players_8cs_source.html#l00032">32</a> du fichier <a class="el" href="_besoin_players_8cs_source.html">BesoinPlayers.cs</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_besoin_players_8cs_source.html#l00050">50</a> du fichier <a class="el" href="_besoin_players_8cs_source.html">BesoinPlayers.cs</a>.</p>
 
-<p class="reference">Référencé par <a class="el" href="_besoin_players_8cs_source.html#l00065">Update()</a>.</p>
+<p class="reference">Référencé par <a class="el" href="_besoin_players_8cs_source.html#l00058">Update()</a>.</p>
 
 </div>
 </div>
@@ -1033,9 +1040,29 @@ Attributs privés</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="_besoin_players_8cs_source.html#l00031">31</a> du fichier <a class="el" href="_besoin_players_8cs_source.html">BesoinPlayers.cs</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_besoin_players_8cs_source.html#l00049">49</a> du fichier <a class="el" href="_besoin_players_8cs_source.html">BesoinPlayers.cs</a>.</p>
 
-<p class="reference">Référencé par <a class="el" href="_besoin_players_8cs_source.html#l00186">FinBoire()</a>, <a class="el" href="_besoin_players_8cs_source.html#l00201">FinDormir()</a>, <a class="el" href="_besoin_players_8cs_source.html#l00165">FinManger()</a>, <a class="el" href="_besoin_players_8cs_source.html#l00132">NotifieArrivee()</a>, et <a class="el" href="_besoin_players_8cs_source.html#l00065">Update()</a>.</p>
+<p class="reference">Référencé par <a class="el" href="_besoin_players_8cs_source.html#l00204">FinBoire()</a>, <a class="el" href="_besoin_players_8cs_source.html#l00221">FinDormir()</a>, <a class="el" href="_besoin_players_8cs_source.html#l00183">FinManger()</a>, <a class="el" href="_besoin_players_8cs_source.html#l00240">FinTravailler()</a>, <a class="el" href="_besoin_players_8cs_source.html#l00144">NotifieArrivee()</a>, et <a class="el" href="_besoin_players_8cs_source.html#l00058">Update()</a>.</p>
+
+</div>
+</div>
+<a id="ac026c45777b96643b2df81df2ab3358e" name="ac026c45777b96643b2df81df2ab3358e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac026c45777b96643b2df81df2ab3358e">&#9670;&#160;</a></span>aUnLogement</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool BesoinPlayers::aUnLogement = false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Indique si le PNJ possède un logement attribué. </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="_besoin_players_8cs_source.html#l00046">46</a> du fichier <a class="el" href="_besoin_players_8cs_source.html">BesoinPlayers.cs</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="_besoin_players_8cs_source.html#l00221">FinDormir()</a>.</p>
 
 </div>
 </div>
@@ -1059,14 +1086,14 @@ Attributs privés</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="_besoin_players_8cs_source.html#l00029">29</a> du fichier <a class="el" href="_besoin_players_8cs_source.html">BesoinPlayers.cs</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_besoin_players_8cs_source.html#l00048">48</a> du fichier <a class="el" href="_besoin_players_8cs_source.html">BesoinPlayers.cs</a>.</p>
 
-<p class="reference">Référencé par <a class="el" href="_besoin_players_8cs_source.html#l00065">Update()</a>.</p>
+<p class="reference">Référencé par <a class="el" href="_besoin_players_8cs_source.html#l00058">Update()</a>.</p>
 
 </div>
 </div>
-<a id="a37ff36746687fd557e644ad5091463a0" name="a37ff36746687fd557e644ad5091463a0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a37ff36746687fd557e644ad5091463a0">&#9670;&#160;</a></span>dureeDeVie</h2>
+<a id="a2956ec7ee4770257d40769af2e2d4f1c" name="a2956ec7ee4770257d40769af2e2d4f1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2956ec7ee4770257d40769af2e2d4f1c">&#9670;&#160;</a></span>enAction</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1075,7 +1102,7 @@ Attributs privés</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">float BesoinPlayers::dureeDeVie</td>
+          <td class="memname">bool BesoinPlayers::enAction = false</td>
         </tr>
       </table>
   </td>
@@ -1085,47 +1112,7 @@ Attributs privés</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="_besoin_players_8cs_source.html#l00038">38</a> du fichier <a class="el" href="_besoin_players_8cs_source.html">BesoinPlayers.cs</a>.</p>
-
-<p class="reference">Référencé par <a class="el" href="_besoin_players_8cs_source.html#l00044">Awake()</a>, et <a class="el" href="_besoin_players_8cs_source.html#l00049">LateUpdate()</a>.</p>
-
-</div>
-</div>
-<a id="a46a55a8843964475b43f04b378a30add" name="a46a55a8843964475b43f04b378a30add"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a46a55a8843964475b43f04b378a30add">&#9670;&#160;</a></span>dureeDeVieMax</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">float BesoinPlayers::dureeDeVieMax = 120f</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Définition à la ligne <a class="el" href="_besoin_players_8cs_source.html#l00036">36</a> du fichier <a class="el" href="_besoin_players_8cs_source.html">BesoinPlayers.cs</a>.</p>
-
-<p class="reference">Référencé par <a class="el" href="_besoin_players_8cs_source.html#l00044">Awake()</a>.</p>
-
-</div>
-</div>
-<a id="a23e00e50017191aec9f20101f67d1864" name="a23e00e50017191aec9f20101f67d1864"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a23e00e50017191aec9f20101f67d1864">&#9670;&#160;</a></span>dureeDeVieMin</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">float BesoinPlayers::dureeDeVieMin = 60f</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Durée de vie minimale et maximale du PNJ. </p>
-
-<p class="definition">Définition à la ligne <a class="el" href="_besoin_players_8cs_source.html#l00035">35</a> du fichier <a class="el" href="_besoin_players_8cs_source.html">BesoinPlayers.cs</a>.</p>
-
-<p class="reference">Référencé par <a class="el" href="_besoin_players_8cs_source.html#l00044">Awake()</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_besoin_players_8cs_source.html#l00042">42</a> du fichier <a class="el" href="_besoin_players_8cs_source.html">BesoinPlayers.cs</a>.</p>
 
 </div>
 </div>
@@ -1141,9 +1128,35 @@ Attributs privés</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="_besoin_players_8cs_source.html#l00011">11</a> du fichier <a class="el" href="_besoin_players_8cs_source.html">BesoinPlayers.cs</a>.</p>
+<p>Valeur actuelle de l'énergie (entre 0 et 1). </p>
 
-<p class="reference">Référencé par <a class="el" href="_besoin_players_8cs_source.html#l00201">FinDormir()</a>, <a class="el" href="_besoin_players_8cs_source.html#l00123">GetBesoinPrioritaire()</a>, et <a class="el" href="_besoin_players_8cs_source.html#l00065">Update()</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_besoin_players_8cs_source.html#l00016">16</a> du fichier <a class="el" href="_besoin_players_8cs_source.html">BesoinPlayers.cs</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="_besoin_players_8cs_source.html#l00221">FinDormir()</a>, <a class="el" href="_besoin_players_8cs_source.html#l00133">GetBesoinPrioritaire()</a>, et <a class="el" href="_besoin_players_8cs_source.html#l00058">Update()</a>.</p>
+
+</div>
+</div>
+<a id="ae49c07fb629f0561c1938c4a78648eed" name="ae49c07fb629f0561c1938c4a78648eed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae49c07fb629f0561c1938c4a78648eed">&#9670;&#160;</a></span>estChezSoi</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool BesoinPlayers::estChezSoi = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="_besoin_players_8cs_source.html#l00043">43</a> du fichier <a class="el" href="_besoin_players_8cs_source.html">BesoinPlayers.cs</a>.</p>
 
 </div>
 </div>
@@ -1159,7 +1172,9 @@ Attributs privés</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="reference">Référencé par <a class="el" href="_besoin_players_8cs_source.html#l00257">AttendreEtChercher()</a>, <a class="el" href="_besoin_players_8cs_source.html#l00186">FinBoire()</a>, <a class="el" href="_besoin_players_8cs_source.html#l00201">FinDormir()</a>, <a class="el" href="_besoin_players_8cs_source.html#l00165">FinManger()</a>, <a class="el" href="_besoin_players_8cs_source.html#l00132">NotifieArrivee()</a>, et <a class="el" href="_besoin_players_8cs_source.html#l00065">Update()</a>.</p>
+<p>État actuel du PNJ. </p>
+
+<p class="reference">Référencé par <a class="el" href="_besoin_players_8cs_source.html#l00300">AttendreEtChercher()</a>, <a class="el" href="_besoin_players_8cs_source.html#l00204">FinBoire()</a>, <a class="el" href="_besoin_players_8cs_source.html#l00221">FinDormir()</a>, <a class="el" href="_besoin_players_8cs_source.html#l00183">FinManger()</a>, <a class="el" href="_besoin_players_8cs_source.html#l00240">FinTravailler()</a>, <a class="el" href="_besoin_players_8cs_source.html#l00144">NotifieArrivee()</a>, et <a class="el" href="_besoin_players_8cs_source.html#l00058">Update()</a>.</p>
 
 </div>
 </div>
@@ -1175,29 +1190,11 @@ Attributs privés</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="_besoin_players_8cs_source.html#l00011">11</a> du fichier <a class="el" href="_besoin_players_8cs_source.html">BesoinPlayers.cs</a>.</p>
+<p>Valeur actuelle de la faim (entre 0 et 1). </p>
 
-<p class="reference">Référencé par <a class="el" href="_besoin_players_8cs_source.html#l00165">FinManger()</a>, <a class="el" href="_besoin_players_8cs_source.html#l00123">GetBesoinPrioritaire()</a>, et <a class="el" href="_besoin_players_8cs_source.html#l00065">Update()</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_besoin_players_8cs_source.html#l00013">13</a> du fichier <a class="el" href="_besoin_players_8cs_source.html">BesoinPlayers.cs</a>.</p>
 
-</div>
-</div>
-<a id="a7a84ee6dd9bb1bfaccfb501780abcb2d" name="a7a84ee6dd9bb1bfaccfb501780abcb2d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7a84ee6dd9bb1bfaccfb501780abcb2d">&#9670;&#160;</a></span>populationManager</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_population_manager.html">PopulationManager</a> BesoinPlayers::populationManager</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Référence au gestionnaire de population (pour notifier les décès). </p>
-
-<p class="definition">Définition à la ligne <a class="el" href="_besoin_players_8cs_source.html#l00042">42</a> du fichier <a class="el" href="_besoin_players_8cs_source.html">BesoinPlayers.cs</a>.</p>
-
-<p class="reference">Référencé par <a class="el" href="_population_manager_8cs_source.html#l00045">PopulationManager::GenererPNJ()</a>, <a class="el" href="_besoin_players_8cs_source.html#l00049">LateUpdate()</a>, et <a class="el" href="_population_manager_8cs_source.html#l00030">PopulationManager::Start()</a>.</p>
+<p class="reference">Référencé par <a class="el" href="_besoin_players_8cs_source.html#l00183">FinManger()</a>, <a class="el" href="_besoin_players_8cs_source.html#l00133">GetBesoinPrioritaire()</a>, et <a class="el" href="_besoin_players_8cs_source.html#l00058">Update()</a>.</p>
 
 </div>
 </div>
@@ -1213,9 +1210,9 @@ Attributs privés</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Seuil d'action à partir duquel le PNJ commence à chercher une solution. </p>
+<p>Seuil à partir duquel un besoin peut déclencher une action (non utilisé dans ce script). </p>
 
-<p class="definition">Définition à la ligne <a class="el" href="_besoin_players_8cs_source.html#l00023">23</a> du fichier <a class="el" href="_besoin_players_8cs_source.html">BesoinPlayers.cs</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_besoin_players_8cs_source.html#l00034">34</a> du fichier <a class="el" href="_besoin_players_8cs_source.html">BesoinPlayers.cs</a>.</p>
 
 </div>
 </div>
@@ -1231,7 +1228,9 @@ Attributs privés</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Seuil critique en-dessous duquel un besoin devient prioritaire. </p>
+<p>Seuil à partir duquel un besoin est considéré critique et doit être comblé en priorité. </p>
+
+<p class="reference">Référencé par <a class="el" href="_besoin_players_8cs_source.html#l00133">GetBesoinPrioritaire()</a>.</p>
 
 </div>
 </div>
@@ -1247,11 +1246,40 @@ Attributs privés</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Valeur de la soif du PNJ (1 = pleine, 0 = vide). </p>
+<p>Valeur actuelle de la soif (entre 0 et 1). </p>
 
-<p class="definition">Définition à la ligne <a class="el" href="_besoin_players_8cs_source.html#l00011">11</a> du fichier <a class="el" href="_besoin_players_8cs_source.html">BesoinPlayers.cs</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_besoin_players_8cs_source.html#l00010">10</a> du fichier <a class="el" href="_besoin_players_8cs_source.html">BesoinPlayers.cs</a>.</p>
 
-<p class="reference">Référencé par <a class="el" href="_besoin_players_8cs_source.html#l00186">FinBoire()</a>, <a class="el" href="_besoin_players_8cs_source.html#l00123">GetBesoinPrioritaire()</a>, et <a class="el" href="_besoin_players_8cs_source.html#l00065">Update()</a>.</p>
+<p class="reference">Référencé par <a class="el" href="_besoin_players_8cs_source.html#l00204">FinBoire()</a>, <a class="el" href="_besoin_players_8cs_source.html#l00133">GetBesoinPrioritaire()</a>, et <a class="el" href="_besoin_players_8cs_source.html#l00058">Update()</a>.</p>
+
+</div>
+</div>
+<a id="aa7a145b3220b9f20697b362e7c3d817a" name="aa7a145b3220b9f20697b362e7c3d817a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7a145b3220b9f20697b362e7c3d817a">&#9670;&#160;</a></span>tagsUsines</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string [] BesoinPlayers::tagsUsines = { &quot;usineArgile&quot;, &quot;usineBrique&quot;, &quot;usineEau&quot;, &quot;usineBaie&quot;, &quot;usineBois&quot;, &quot;usineOutils&quot;, &quot;usinePierre&quot;, &quot;usineOutilsPierre&quot;, &quot;potterie&quot;, &quot;enclotMouton&quot;, &quot;enclotPoule&quot; }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Liste des tags d’usines pour la recherche d’un lieu de travail. </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="_besoin_players_8cs_source.html#l00053">53</a> du fichier <a class="el" href="_besoin_players_8cs_source.html">BesoinPlayers.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   53</span>{ <span class="stringliteral">&quot;usineArgile&quot;</span>, <span class="stringliteral">&quot;usineBrique&quot;</span>, <span class="stringliteral">&quot;usineEau&quot;</span>, <span class="stringliteral">&quot;usineBaie&quot;</span>, <span class="stringliteral">&quot;usineBois&quot;</span>, <span class="stringliteral">&quot;usineOutils&quot;</span>, <span class="stringliteral">&quot;usinePierre&quot;</span>, <span class="stringliteral">&quot;usineOutilsPierre&quot;</span>, <span class="stringliteral">&quot;potterie&quot;</span>, <span class="stringliteral">&quot;enclotMouton&quot;</span>, <span class="stringliteral">&quot;enclotPoule&quot;</span> };</div>
+</div><!-- fragment -->
+<p class="reference">Référencé par <a class="el" href="_besoin_players_8cs_source.html#l00232">Travailler()</a>.</p>
 
 </div>
 </div>
@@ -1267,9 +1295,11 @@ Attributs privés</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="_besoin_players_8cs_source.html#l00014">14</a> du fichier <a class="el" href="_besoin_players_8cs_source.html">BesoinPlayers.cs</a>.</p>
+<p>Taux de diminution de l'énergie par seconde. </p>
 
-<p class="reference">Référencé par <a class="el" href="_besoin_players_8cs_source.html#l00065">Update()</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_besoin_players_8cs_source.html#l00025">25</a> du fichier <a class="el" href="_besoin_players_8cs_source.html">BesoinPlayers.cs</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="_besoin_players_8cs_source.html#l00058">Update()</a>.</p>
 
 </div>
 </div>
@@ -1285,11 +1315,11 @@ Attributs privés</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Vitesse de diminution de la faim, de la soif et de l'énergie. </p>
+<p>Taux de diminution de la faim par seconde. </p>
 
-<p class="definition">Définition à la ligne <a class="el" href="_besoin_players_8cs_source.html#l00014">14</a> du fichier <a class="el" href="_besoin_players_8cs_source.html">BesoinPlayers.cs</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_besoin_players_8cs_source.html#l00019">19</a> du fichier <a class="el" href="_besoin_players_8cs_source.html">BesoinPlayers.cs</a>.</p>
 
-<p class="reference">Référencé par <a class="el" href="_besoin_players_8cs_source.html#l00065">Update()</a>.</p>
+<p class="reference">Référencé par <a class="el" href="_besoin_players_8cs_source.html#l00058">Update()</a>.</p>
 
 </div>
 </div>
@@ -1305,35 +1335,11 @@ Attributs privés</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Définition à la ligne <a class="el" href="_besoin_players_8cs_source.html#l00014">14</a> du fichier <a class="el" href="_besoin_players_8cs_source.html">BesoinPlayers.cs</a>.</p>
+<p>Taux de diminution de la soif par seconde. </p>
 
-<p class="reference">Référencé par <a class="el" href="_besoin_players_8cs_source.html#l00065">Update()</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_besoin_players_8cs_source.html#l00022">22</a> du fichier <a class="el" href="_besoin_players_8cs_source.html">BesoinPlayers.cs</a>.</p>
 
-</div>
-</div>
-<a id="aef701e3cc998217dacabfdd420cfff6f" name="aef701e3cc998217dacabfdd420cfff6f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aef701e3cc998217dacabfdd420cfff6f">&#9670;&#160;</a></span>vieEcoulee</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">float BesoinPlayers::vieEcoulee = 0f</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Définition à la ligne <a class="el" href="_besoin_players_8cs_source.html#l00039">39</a> du fichier <a class="el" href="_besoin_players_8cs_source.html">BesoinPlayers.cs</a>.</p>
-
-<p class="reference">Référencé par <a class="el" href="_besoin_players_8cs_source.html#l00049">LateUpdate()</a>.</p>
+<p class="reference">Référencé par <a class="el" href="_besoin_players_8cs_source.html#l00058">Update()</a>.</p>
 
 </div>
 </div>

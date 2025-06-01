@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SupCity:  Fichier source de Assets/Scripts/StatistiquesManager.cs</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">SupCity
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('_statistiques_manager_8cs_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">StatistiquesManager.cs</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_statistiques_manager_8cs.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using </span>TMPro;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="keyword">using </span>UnityEngine;</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span></div>
+<div class="foldopen" id="foldopen00008" data-start="{" data-end="};">
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="class_statistiques_manager.html">    8</a></span><span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="class_statistiques_manager.html">StatistiquesManager</a> : MonoBehaviour</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>{</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="class_statistiques_manager.html#a64b3a17314f6c56b920a7b1c5ffb8387">   10</a></span>    <span class="keyword">public</span> TextMeshProUGUI <a class="code hl_variable" href="class_statistiques_manager.html#a64b3a17314f6c56b920a7b1c5ffb8387">populationText</a>;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="class_statistiques_manager.html#ac98c3d0b447a19d0cbea4a236e5d1b15">   11</a></span>    <span class="keyword">public</span> TextMeshProUGUI <a class="code hl_variable" href="class_statistiques_manager.html#ac98c3d0b447a19d0cbea4a236e5d1b15">habitationsText</a>;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="class_statistiques_manager.html#af20c952df49fc3b0c5aad1bb2a0f946b">   12</a></span>    <span class="keyword">public</span> TextMeshProUGUI <a class="code hl_variable" href="class_statistiques_manager.html#af20c952df49fc3b0c5aad1bb2a0f946b">emploisText</a>;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="class_statistiques_manager.html#a8370528c37d6be0a2b16ea3c40b51bd8">   13</a></span>    <span class="keyword">public</span> TextMeshProUGUI <a class="code hl_variable" href="class_statistiques_manager.html#a8370528c37d6be0a2b16ea3c40b51bd8">progressionText</a>;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span></div>
+<div class="foldopen" id="foldopen00019" data-start="{" data-end="}">
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="class_statistiques_manager.html#adc7f1a801a5a47b070cd665f16cf3090">   19</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_statistiques_manager.html#adc7f1a801a5a47b070cd665f16cf3090">SetPopulation</a>(<span class="keywordtype">int</span> value)</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_statistiques_manager.html#a64b3a17314f6c56b920a7b1c5ffb8387">populationText</a> != null)</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>            <a class="code hl_variable" href="class_statistiques_manager.html#a64b3a17314f6c56b920a7b1c5ffb8387">populationText</a>.text = <span class="stringliteral">&quot;Population : &quot;</span> + value;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    }</div>
+</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span></div>
+<div class="foldopen" id="foldopen00030" data-start="{" data-end="}">
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="class_statistiques_manager.html#a18abadd299ae5c8f20e97788d5bd40a4">   30</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_statistiques_manager.html#a18abadd299ae5c8f20e97788d5bd40a4">SetHabitations</a>(<span class="keywordtype">int</span> occupes, <span class="keywordtype">int</span> capaciteTotale)</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    {</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_statistiques_manager.html#ac98c3d0b447a19d0cbea4a236e5d1b15">habitationsText</a> != null)</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            <a class="code hl_variable" href="class_statistiques_manager.html#ac98c3d0b447a19d0cbea4a236e5d1b15">habitationsText</a>.text = <span class="stringliteral">&quot;Habitations : &quot;</span> + occupes + <span class="stringliteral">&quot; / &quot;</span> + capaciteTotale;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    }</div>
+</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span></div>
+<div class="foldopen" id="foldopen00041" data-start="{" data-end="}">
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="class_statistiques_manager.html#a16de9dfdb83edde658ca9f5f4021fbfc">   41</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_statistiques_manager.html#a16de9dfdb83edde658ca9f5f4021fbfc">SetEmplois</a>(<span class="keywordtype">int</span> occupes, <span class="keywordtype">int</span> disponibles)</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    {</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_statistiques_manager.html#af20c952df49fc3b0c5aad1bb2a0f946b">emploisText</a> != null)</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            <a class="code hl_variable" href="class_statistiques_manager.html#af20c952df49fc3b0c5aad1bb2a0f946b">emploisText</a>.text = $<span class="stringliteral">&quot;Emplois : {occupes} / {disponibles}&quot;</span>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    }</div>
+</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span></div>
+<div class="foldopen" id="foldopen00051" data-start="{" data-end="}">
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="class_statistiques_manager.html#a73c989a5c889e69a337a8ef6c0799ec5">   51</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_statistiques_manager.html#a73c989a5c889e69a337a8ef6c0799ec5">SetProgression</a>(<span class="keywordtype">float</span> pourcentage)</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    {</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_statistiques_manager.html#a8370528c37d6be0a2b16ea3c40b51bd8">progressionText</a> != null)</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            <a class="code hl_variable" href="class_statistiques_manager.html#a8370528c37d6be0a2b16ea3c40b51bd8">progressionText</a>.text = <span class="stringliteral">&quot;Progression : &quot;</span> + Mathf.RoundToInt(pourcentage * 100f) + <span class="stringliteral">&quot;%&quot;</span>;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    }</div>
+</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>}</div>
+</div>
+<div class="ttc" id="aclass_statistiques_manager_html"><div class="ttname"><a href="class_statistiques_manager.html">StatistiquesManager</a></div><div class="ttdoc">Gère l&#39;affichage des différentes statistiques du jeu dans l&#39;interface utilisateur....</div><div class="ttdef"><b>Definition</b> <a href="#l00008">StatistiquesManager.cs:9</a></div></div>
+<div class="ttc" id="aclass_statistiques_manager_html_a16de9dfdb83edde658ca9f5f4021fbfc"><div class="ttname"><a href="class_statistiques_manager.html#a16de9dfdb83edde658ca9f5f4021fbfc">StatistiquesManager::SetEmplois</a></div><div class="ttdeci">void SetEmplois(int occupes, int disponibles)</div><div class="ttdoc">Met à jour l&#39;affichage des emplois occupés sur le total disponible.</div><div class="ttdef"><b>Definition</b> <a href="#l00041">StatistiquesManager.cs:41</a></div></div>
+<div class="ttc" id="aclass_statistiques_manager_html_a18abadd299ae5c8f20e97788d5bd40a4"><div class="ttname"><a href="class_statistiques_manager.html#a18abadd299ae5c8f20e97788d5bd40a4">StatistiquesManager::SetHabitations</a></div><div class="ttdeci">void SetHabitations(int occupes, int capaciteTotale)</div><div class="ttdoc">Met à jour l&#39;affichage du nombre de personnes logées sur la capacité totale.</div><div class="ttdef"><b>Definition</b> <a href="#l00030">StatistiquesManager.cs:30</a></div></div>
+<div class="ttc" id="aclass_statistiques_manager_html_a64b3a17314f6c56b920a7b1c5ffb8387"><div class="ttname"><a href="class_statistiques_manager.html#a64b3a17314f6c56b920a7b1c5ffb8387">StatistiquesManager::populationText</a></div><div class="ttdeci">TextMeshProUGUI populationText</div><div class="ttdef"><b>Definition</b> <a href="#l00010">StatistiquesManager.cs:10</a></div></div>
+<div class="ttc" id="aclass_statistiques_manager_html_a73c989a5c889e69a337a8ef6c0799ec5"><div class="ttname"><a href="class_statistiques_manager.html#a73c989a5c889e69a337a8ef6c0799ec5">StatistiquesManager::SetProgression</a></div><div class="ttdeci">void SetProgression(float pourcentage)</div><div class="ttdoc">Met à jour l&#39;affichage de la progression du joueur en pourcentage.</div><div class="ttdef"><b>Definition</b> <a href="#l00051">StatistiquesManager.cs:51</a></div></div>
+<div class="ttc" id="aclass_statistiques_manager_html_a8370528c37d6be0a2b16ea3c40b51bd8"><div class="ttname"><a href="class_statistiques_manager.html#a8370528c37d6be0a2b16ea3c40b51bd8">StatistiquesManager::progressionText</a></div><div class="ttdeci">TextMeshProUGUI progressionText</div><div class="ttdef"><b>Definition</b> <a href="#l00013">StatistiquesManager.cs:13</a></div></div>
+<div class="ttc" id="aclass_statistiques_manager_html_ac98c3d0b447a19d0cbea4a236e5d1b15"><div class="ttname"><a href="class_statistiques_manager.html#ac98c3d0b447a19d0cbea4a236e5d1b15">StatistiquesManager::habitationsText</a></div><div class="ttdeci">TextMeshProUGUI habitationsText</div><div class="ttdef"><b>Definition</b> <a href="#l00011">StatistiquesManager.cs:11</a></div></div>
+<div class="ttc" id="aclass_statistiques_manager_html_adc7f1a801a5a47b070cd665f16cf3090"><div class="ttname"><a href="class_statistiques_manager.html#adc7f1a801a5a47b070cd665f16cf3090">StatistiquesManager::SetPopulation</a></div><div class="ttdeci">void SetPopulation(int value)</div><div class="ttdoc">Met à jour le texte affichant la population actuelle.</div><div class="ttdef"><b>Definition</b> <a href="#l00019">StatistiquesManager.cs:19</a></div></div>
+<div class="ttc" id="aclass_statistiques_manager_html_af20c952df49fc3b0c5aad1bb2a0f946b"><div class="ttname"><a href="class_statistiques_manager.html#af20c952df49fc3b0c5aad1bb2a0f946b">StatistiquesManager::emploisText</a></div><div class="ttdeci">TextMeshProUGUI emploisText</div><div class="ttdef"><b>Definition</b> <a href="#l00012">StatistiquesManager.cs:12</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_84bbf7b3c7f28a5a18725745e1505219.html">Assets</a></li><li class="navelem"><a href="dir_f13b41af88cf68434578284aaf699e39.html">Scripts</a></li><li class="navelem"><a href="_statistiques_manager_8cs.html">StatistiquesManager.cs</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,374 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SupCity: Référence de la classe RouteManager</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">SupCity
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('class_route_manager.html','','class_route_manager-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Référence de la classe RouteManager</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Gère les routes dans la scène et permet aux PNJ d'y transiter pour atteindre une destination. Utilise le pattern Singleton pour être facilement accessible depuis d'autres scripts.  
+ <a href="#details">Plus de détails...</a></p>
+<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Graphe d'héritage de RouteManager:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+ <div class="center">
+  <img src="class_route_manager.png" alt=""/>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Fonctions membres publiques</h2></td></tr>
+<tr class="memitem:a58d5f0868b92bfcf1657b61b81275b00" id="r_a58d5f0868b92bfcf1657b61b81275b00"><td class="memItemLeft" align="right" valign="top">GameObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a58d5f0868b92bfcf1657b61b81275b00">GetRouteLaPlusProche</a> (Vector3 position)</td></tr>
+<tr class="memdesc:a58d5f0868b92bfcf1657b61b81275b00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trouve la route la plus proche d’une position donnée.  <br /></td></tr>
+<tr class="memitem:a3af695e59df0a22a641ead1491b0c3e0" id="r_a3af695e59df0a22a641ead1491b0c3e0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3af695e59df0a22a641ead1491b0c3e0">AllerViaRoute</a> (GameObject pnj, Transform destinationFinale)</td></tr>
+<tr class="memdesc:a3af695e59df0a22a641ead1491b0c3e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fait passer un PNJ par la route la plus proche avant d’aller à sa destination finale. Si aucune route n’est trouvée, le PNJ se rend directement à sa destination.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-attribs" class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+Attributs publics statiques</h2></td></tr>
+<tr class="memitem:a797688bb29ad4c87faaeb7946f0e7b52" id="r_a797688bb29ad4c87faaeb7946f0e7b52"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_route_manager.html">RouteManager</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a797688bb29ad4c87faaeb7946f0e7b52">Instance</a></td></tr>
+<tr class="memdesc:a797688bb29ad4c87faaeb7946f0e7b52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instance unique (Singleton) de ce manager.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Fonctions membres privées</h2></td></tr>
+<tr class="memitem:adc40c26488a63b1d066104e8b2f614fe" id="r_adc40c26488a63b1d066104e8b2f614fe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adc40c26488a63b1d066104e8b2f614fe">Awake</a> ()</td></tr>
+<tr class="memitem:a227bde88c32f271c4e76956124edb60f" id="r_a227bde88c32f271c4e76956124edb60f"><td class="memItemLeft" align="right" valign="top">IEnumerator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a227bde88c32f271c4e76956124edb60f">AttenteEtSuite</a> (GameObject pnj, Transform destinationFinale)</td></tr>
+<tr class="memdesc:a227bde88c32f271c4e76956124edb60f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Coroutine qui attend un court délai avant d’envoyer le PNJ vers sa destination finale. Donne le temps au PNJ d’arriver à la route avant de continuer son trajet.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>Gère les routes dans la scène et permet aux PNJ d'y transiter pour atteindre une destination. Utilise le pattern Singleton pour être facilement accessible depuis d'autres scripts. </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="_route_manager_8cs_source.html#l00008">8</a> du fichier <a class="el" href="_route_manager_8cs_source.html">RouteManager.cs</a>.</p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentation des fonctions membres</h2>
+<a id="a3af695e59df0a22a641ead1491b0c3e0" name="a3af695e59df0a22a641ead1491b0c3e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3af695e59df0a22a641ead1491b0c3e0">&#9670;&#160;</a></span>AllerViaRoute()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RouteManager::AllerViaRoute </td>
+          <td>(</td>
+          <td class="paramtype">GameObject</td>          <td class="paramname"><span class="paramname"><em>pnj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Transform</td>          <td class="paramname"><span class="paramname"><em>destinationFinale</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Fait passer un PNJ par la route la plus proche avant d’aller à sa destination finale. Si aucune route n’est trouvée, le PNJ se rend directement à sa destination. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pnj</td><td>Le GameObject du PNJ.</td></tr>
+    <tr><td class="paramname">destinationFinale</td><td>La destination finale à atteindre après la route.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="_route_manager_8cs_source.html#l00055">55</a> du fichier <a class="el" href="_route_manager_8cs_source.html">RouteManager.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   56</span>    {</div>
+<div class="line"><span class="lineno">   57</span>        GameObject route = <a class="code hl_function" href="#a58d5f0868b92bfcf1657b61b81275b00">GetRouteLaPlusProche</a>(pnj.transform.position);</div>
+<div class="line"><span class="lineno">   58</span> </div>
+<div class="line"><span class="lineno">   59</span>        <span class="keywordflow">if</span> (route != null)</div>
+<div class="line"><span class="lineno">   60</span>        {</div>
+<div class="line"><span class="lineno">   61</span>            pnj.GetComponent&lt;PathfindingAI&gt;().setTarget(route.transform);</div>
+<div class="line"><span class="lineno">   62</span>            pnj.GetComponent&lt;BesoinPlayers&gt;().StartCoroutine(<a class="code hl_function" href="#a227bde88c32f271c4e76956124edb60f">AttenteEtSuite</a>(pnj, destinationFinale));</div>
+<div class="line"><span class="lineno">   63</span>        }</div>
+<div class="line"><span class="lineno">   64</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   65</span>        {</div>
+<div class="line"><span class="lineno">   66</span>            <span class="comment">// Aucun chemin → aller direct</span></div>
+<div class="line"><span class="lineno">   67</span>            pnj.GetComponent&lt;PathfindingAI&gt;().setTarget(destinationFinale);</div>
+<div class="line"><span class="lineno">   68</span>        }</div>
+<div class="line"><span class="lineno">   69</span>    }</div>
+<div class="ttc" id="aclass_route_manager_html_a227bde88c32f271c4e76956124edb60f"><div class="ttname"><a href="#a227bde88c32f271c4e76956124edb60f">RouteManager::AttenteEtSuite</a></div><div class="ttdeci">IEnumerator AttenteEtSuite(GameObject pnj, Transform destinationFinale)</div><div class="ttdoc">Coroutine qui attend un court délai avant d’envoyer le PNJ vers sa destination finale....</div><div class="ttdef"><b>Definition</b> <a href="_route_manager_8cs_source.html#l00075">RouteManager.cs:75</a></div></div>
+<div class="ttc" id="aclass_route_manager_html_a58d5f0868b92bfcf1657b61b81275b00"><div class="ttname"><a href="#a58d5f0868b92bfcf1657b61b81275b00">RouteManager::GetRouteLaPlusProche</a></div><div class="ttdeci">GameObject GetRouteLaPlusProche(Vector3 position)</div><div class="ttdoc">Trouve la route la plus proche d’une position donnée.</div><div class="ttdef"><b>Definition</b> <a href="_route_manager_8cs_source.html#l00028">RouteManager.cs:28</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Références <a class="el" href="_route_manager_8cs_source.html#l00075">AttenteEtSuite()</a>, et <a class="el" href="_route_manager_8cs_source.html#l00028">GetRouteLaPlusProche()</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="_besoin_players_8cs_source.html#l00300">BesoinPlayers::AttendreEtChercher()</a>.</p>
+
+</div>
+</div>
+<a id="a227bde88c32f271c4e76956124edb60f" name="a227bde88c32f271c4e76956124edb60f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a227bde88c32f271c4e76956124edb60f">&#9670;&#160;</a></span>AttenteEtSuite()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">IEnumerator RouteManager::AttenteEtSuite </td>
+          <td>(</td>
+          <td class="paramtype">GameObject</td>          <td class="paramname"><span class="paramname"><em>pnj</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Transform</td>          <td class="paramname"><span class="paramname"><em>destinationFinale</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Coroutine qui attend un court délai avant d’envoyer le PNJ vers sa destination finale. Donne le temps au PNJ d’arriver à la route avant de continuer son trajet. </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="_route_manager_8cs_source.html#l00075">75</a> du fichier <a class="el" href="_route_manager_8cs_source.html">RouteManager.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   76</span>    {</div>
+<div class="line"><span class="lineno">   77</span>        yield <span class="keywordflow">return</span> <span class="keyword">new</span> WaitForSeconds(1.5f);</div>
+<div class="line"><span class="lineno">   78</span> </div>
+<div class="line"><span class="lineno">   79</span>        <span class="keywordflow">if</span> (pnj != null &amp;&amp; destinationFinale != null)</div>
+<div class="line"><span class="lineno">   80</span>        {</div>
+<div class="line"><span class="lineno">   81</span>            pnj.GetComponent&lt;PathfindingAI&gt;().setTarget(destinationFinale);</div>
+<div class="line"><span class="lineno">   82</span>        }</div>
+<div class="line"><span class="lineno">   83</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">Référencé par <a class="el" href="_route_manager_8cs_source.html#l00055">AllerViaRoute()</a>.</p>
+
+</div>
+</div>
+<a id="adc40c26488a63b1d066104e8b2f614fe" name="adc40c26488a63b1d066104e8b2f614fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc40c26488a63b1d066104e8b2f614fe">&#9670;&#160;</a></span>Awake()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RouteManager::Awake </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="_route_manager_8cs_source.html#l00015">15</a> du fichier <a class="el" href="_route_manager_8cs_source.html">RouteManager.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   16</span>    {</div>
+<div class="line"><span class="lineno">   17</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a797688bb29ad4c87faaeb7946f0e7b52">Instance</a> == null)</div>
+<div class="line"><span class="lineno">   18</span>            <a class="code hl_variable" href="#a797688bb29ad4c87faaeb7946f0e7b52">Instance</a> = <span class="keyword">this</span>;</div>
+<div class="line"><span class="lineno">   19</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   20</span>            Destroy(gameObject);</div>
+<div class="line"><span class="lineno">   21</span>    }</div>
+<div class="ttc" id="aclass_route_manager_html_a797688bb29ad4c87faaeb7946f0e7b52"><div class="ttname"><a href="#a797688bb29ad4c87faaeb7946f0e7b52">RouteManager::Instance</a></div><div class="ttdeci">static RouteManager Instance</div><div class="ttdoc">Instance unique (Singleton) de ce manager.</div><div class="ttdef"><b>Definition</b> <a href="_route_manager_8cs_source.html#l00013">RouteManager.cs:13</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Références <a class="el" href="_route_manager_8cs_source.html#l00013">Instance</a>.</p>
+
+</div>
+</div>
+<a id="a58d5f0868b92bfcf1657b61b81275b00" name="a58d5f0868b92bfcf1657b61b81275b00"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58d5f0868b92bfcf1657b61b81275b00">&#9670;&#160;</a></span>GetRouteLaPlusProche()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GameObject RouteManager::GetRouteLaPlusProche </td>
+          <td>(</td>
+          <td class="paramtype">Vector3</td>          <td class="paramname"><span class="paramname"><em>position</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Trouve la route la plus proche d’une position donnée. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">position</td><td>Position depuis laquelle chercher la route la plus proche.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>La GameObject de la route la plus proche, ou null si aucune route n’est trouvée.</dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="_route_manager_8cs_source.html#l00028">28</a> du fichier <a class="el" href="_route_manager_8cs_source.html">RouteManager.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   29</span>    {</div>
+<div class="line"><span class="lineno">   30</span>        GameObject[] routes = GameObject.FindGameObjectsWithTag(<span class="stringliteral">&quot;Route&quot;</span>);</div>
+<div class="line"><span class="lineno">   31</span>        <span class="keywordflow">if</span> (routes.Length == 0) <span class="keywordflow">return</span> null;</div>
+<div class="line"><span class="lineno">   32</span> </div>
+<div class="line"><span class="lineno">   33</span>        GameObject plusProche = null;</div>
+<div class="line"><span class="lineno">   34</span>        <span class="keywordtype">float</span> distanceMin = Mathf.Infinity;</div>
+<div class="line"><span class="lineno">   35</span> </div>
+<div class="line"><span class="lineno">   36</span>        <span class="keywordflow">foreach</span> (GameObject route <span class="keywordflow">in</span> routes)</div>
+<div class="line"><span class="lineno">   37</span>        {</div>
+<div class="line"><span class="lineno">   38</span>            <span class="keywordtype">float</span> distance = Vector3.Distance(position, route.transform.position);</div>
+<div class="line"><span class="lineno">   39</span>            <span class="keywordflow">if</span> (distance &lt; distanceMin)</div>
+<div class="line"><span class="lineno">   40</span>            {</div>
+<div class="line"><span class="lineno">   41</span>                distanceMin = distance;</div>
+<div class="line"><span class="lineno">   42</span>                plusProche = route;</div>
+<div class="line"><span class="lineno">   43</span>            }</div>
+<div class="line"><span class="lineno">   44</span>        }</div>
+<div class="line"><span class="lineno">   45</span> </div>
+<div class="line"><span class="lineno">   46</span>        <span class="keywordflow">return</span> plusProche;</div>
+<div class="line"><span class="lineno">   47</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">Référencé par <a class="el" href="_route_manager_8cs_source.html#l00055">AllerViaRoute()</a>.</p>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Documentation des données membres</h2>
+<a id="a797688bb29ad4c87faaeb7946f0e7b52" name="a797688bb29ad4c87faaeb7946f0e7b52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a797688bb29ad4c87faaeb7946f0e7b52">&#9670;&#160;</a></span>Instance</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_route_manager.html">RouteManager</a> RouteManager::Instance</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Instance unique (Singleton) de ce manager. </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="_route_manager_8cs_source.html#l00013">13</a> du fichier <a class="el" href="_route_manager_8cs_source.html">RouteManager.cs</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="_besoin_players_8cs_source.html#l00300">BesoinPlayers::AttendreEtChercher()</a>, et <a class="el" href="_route_manager_8cs_source.html#l00015">Awake()</a>.</p>
+
+</div>
+</div>
+<hr/>La documentation de cette classe a été générée à partir du fichier suivant :<ul>
+<li>Assets/Scripts/<a class="el" href="_route_manager_8cs_source.html">RouteManager.cs</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="class_route_manager.html">RouteManager</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

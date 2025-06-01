@@ -92,7 +92,7 @@ $(function(){initNavTree('class_mouse_position.html','','class_mouse_position-me
 </div><!--header-->
 <div class="contents">
 
-<p>Met à jour en continu la position de la souris dans le monde (2D). Stocke la position en temps réel dans une propriété statique accessible globalement.  
+<p>Met à jour en temps réel la position de la souris dans le monde 2D. La position est accessible globalement via <a class="el" href="#ab8c82ab5841aa7f647d6e108731f320c" title="Position de la souris en coordonnées du monde (z = 0 pour la 2D). Accessible globalement en lecture s...">MouseWorldPosition</a>.  
  <a href="#details">Plus de détails...</a></p>
 <div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Graphe d'héritage de MousePosition:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -105,7 +105,7 @@ $(function(){initNavTree('class_mouse_position.html','','class_mouse_position-me
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-attribs" class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Attributs publics statiques</h2></td></tr>
 <tr class="memitem:ab8c82ab5841aa7f647d6e108731f320c" id="r_ab8c82ab5841aa7f647d6e108731f320c"><td class="memItemLeft" align="right" valign="top">static Vector3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab8c82ab5841aa7f647d6e108731f320c">MouseWorldPosition</a> { get</td></tr>
-<tr class="memdesc:ab8c82ab5841aa7f647d6e108731f320c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Position de la souris dans le monde (plan X/Y, z = 0). Accessible en lecture seule depuis n'importe quel script.  <br /></td></tr>
+<tr class="memdesc:ab8c82ab5841aa7f647d6e108731f320c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Position de la souris en coordonnées du monde (z = 0 pour la 2D). Accessible globalement en lecture seule.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Fonctions membres privées</h2></td></tr>
@@ -117,7 +117,7 @@ Attributs privés</h2></td></tr>
 <tr class="memitem:ab7dabcbc9eb403c4e39a3b2f5caeffc3" id="r_ab7dabcbc9eb403c4e39a3b2f5caeffc3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab7dabcbc9eb403c4e39a3b2f5caeffc3">set</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Description détaillée</h2>
-<div class="textblock"><p>Met à jour en continu la position de la souris dans le monde (2D). Stocke la position en temps réel dans une propriété statique accessible globalement. </p>
+<div class="textblock"><p>Met à jour en temps réel la position de la souris dans le monde 2D. La position est accessible globalement via <a class="el" href="#ab8c82ab5841aa7f647d6e108731f320c" title="Position de la souris en coordonnées du monde (z = 0 pour la 2D). Accessible globalement en lecture s...">MouseWorldPosition</a>. </p>
 
 <p class="definition">Définition à la ligne <a class="el" href="_mouse_position_8cs_source.html#l00007">7</a> du fichier <a class="el" href="_mouse_position_8cs_source.html">MousePosition.cs</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentation des fonctions membres</h2>
@@ -152,7 +152,7 @@ Attributs privés</h2></td></tr>
 <div class="line"><span class="lineno">   21</span>        tempPosition.z = 0f;</div>
 <div class="line"><span class="lineno">   22</span>        <a class="code hl_variable" href="#ab8c82ab5841aa7f647d6e108731f320c">MouseWorldPosition</a> = tempPosition;</div>
 <div class="line"><span class="lineno">   23</span>    }</div>
-<div class="ttc" id="aclass_mouse_position_html_ab8c82ab5841aa7f647d6e108731f320c"><div class="ttname"><a href="#ab8c82ab5841aa7f647d6e108731f320c">MousePosition::MouseWorldPosition</a></div><div class="ttdeci">static Vector3 MouseWorldPosition</div><div class="ttdoc">Position de la souris dans le monde (plan X/Y, z = 0). Accessible en lecture seule depuis n&#39;importe q...</div><div class="ttdef"><b>Definition</b> <a href="_mouse_position_8cs_source.html#l00013">MousePosition.cs:13</a></div></div>
+<div class="ttc" id="aclass_mouse_position_html_ab8c82ab5841aa7f647d6e108731f320c"><div class="ttname"><a href="#ab8c82ab5841aa7f647d6e108731f320c">MousePosition::MouseWorldPosition</a></div><div class="ttdeci">static Vector3 MouseWorldPosition</div><div class="ttdoc">Position de la souris en coordonnées du monde (z = 0 pour la 2D). Accessible globalement en lecture s...</div><div class="ttdef"><b>Definition</b> <a href="_mouse_position_8cs_source.html#l00013">MousePosition.cs:13</a></div></div>
 </div><!-- fragment -->
 <p class="reference">Références <a class="el" href="_mouse_position_8cs_source.html#l00013">MouseWorldPosition</a>.</p>
 
@@ -179,7 +179,7 @@ Attributs privés</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Position de la souris dans le monde (plan X/Y, z = 0). Accessible en lecture seule depuis n'importe quel script. </p>
+<p>Position de la souris en coordonnées du monde (z = 0 pour la 2D). Accessible globalement en lecture seule. </p>
 
 <p class="definition">Définition à la ligne <a class="el" href="_mouse_position_8cs_source.html#l00013">13</a> du fichier <a class="el" href="_mouse_position_8cs_source.html">MousePosition.cs</a>.</p>
 

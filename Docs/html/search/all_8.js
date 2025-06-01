@@ -1,10 +1,11 @@
 var searchData=
 [
   ['idle_0',['Idle',['../class_besoin_players.html#a9692fc8e12255c50c6bbde946a29984ca08aeb9717dc78b86a8ddad342d927873',1,'BesoinPlayers']]],
-  ['instance_1',['instance',['../class_build_manager.html#adb44ee5dcc2eafbefd103e12c7da2ea7',1,'BuildManager']]],
-  ['intervallenaissance_2',['intervalleNaissance',['../class_population_manager.html#ae3286b2d559089f76e2b291018793cc9',1,'PopulationManager']]],
-  ['iserasing_3',['isErasing',['../class_build_manager.html#af3a0972f4e939f4079f5b4c81ef5d5bb',1,'BuildManager']]],
-  ['isproducing_4',['isProducing',['../class_clay_hut.html#a044095c616b973b4fc176f27724eff0a',1,'ClayHut::isProducing'],['../class_food_hut.html#aaa27c3c4bc00ce7e88cfd5ffd865b231',1,'FoodHut::isProducing'],['../class_stone_quarry.html#a3a6dd9328d53cf65d4432d184ab0ddf9',1,'StoneQuarry::isProducing'],['../class_woodcutter_hut.html#a4aef0785637dcd1638aa8b89b31368d6',1,'WoodcutterHut::isProducing']]],
-  ['isstoragefull_5',['IsStorageFull',['../class_stone_quarry.html#a05103010fc696dd2dcda5859917d8e58',1,'StoneQuarry::IsStorageFull()'],['../class_woodcutter_hut.html#a96a6d901d38541189562121aada47c12',1,'WoodcutterHut::IsStorageFull()']]],
-  ['iswalkable_6',['isWalkable',['../class_controle_player.html#afa8f77c33e39711041069a0d046cf912',1,'ControlePlayer::isWalkable()'],['../class_random_n_p_c.html#a4509ee06eed3bc26dcb94dba823c9447',1,'RandomNPC::isWalkable()']]]
+  ['inputamount_1',['inputAmount',['../class_brick_factory.html#acfe5d0b308c37d37b60e51079370f106',1,'BrickFactory::inputAmount'],['../class_production_building.html#ab9ca0a472dcf59bc3c565143c92ce386',1,'ProductionBuilding::inputAmount'],['../class_stone_tool_factory.html#a866b161cb6fa199f1c7e8fc0bb0200e5',1,'StoneToolFactory::inputAmount'],['../class_wood_tool_factory.html#a0c05bf6b40cea6030f5647b8304563f8',1,'WoodToolFactory::inputAmount']]],
+  ['inputresourcetype_2',['inputResourceType',['../class_brick_factory.html#ac3c959c0514e5508148c23accd1d3d0a',1,'BrickFactory::inputResourceType'],['../class_production_building.html#acea7092a17d3fac8f2ab8aebccb31c0a',1,'ProductionBuilding::inputResourceType'],['../class_stone_tool_factory.html#a5c6d8dcbbab446625fb105d59ce56c12',1,'StoneToolFactory::inputResourceType'],['../class_wood_tool_factory.html#a7c37d8dce90c9e1743cca953d351b6b2',1,'WoodToolFactory::inputResourceType']]],
+  ['instance_3',['Instance',['../class_building_registry.html#abff256d9976dc4e37c1befeb7df4694a',1,'BuildingRegistry::Instance'],['../class_population_manager.html#a79261ebdf309704e4d1308a5d9c0cbf7',1,'PopulationManager::Instance'],['../class_resource_manager.html#a50f41190d44e5d3b7bbf1b3216d70aa1',1,'ResourceManager::Instance'],['../class_route_manager.html#a797688bb29ad4c87faaeb7946f0e7b52',1,'RouteManager::Instance']]],
+  ['instance_4',['instance',['../class_build_manager.html#adb44ee5dcc2eafbefd103e12c7da2ea7',1,'BuildManager']]],
+  ['intervallenaissance_5',['intervalleNaissance',['../class_population_manager.html#ae3286b2d559089f76e2b291018793cc9',1,'PopulationManager']]],
+  ['iserasing_6',['isErasing',['../class_build_manager.html#af3a0972f4e939f4079f5b4c81ef5d5bb',1,'BuildManager']]],
+  ['iswalkable_7',['isWalkable',['../class_controle_player.html#afa8f77c33e39711041069a0d046cf912',1,'ControlePlayer::isWalkable()'],['../class_random_n_p_c.html#a4509ee06eed3bc26dcb94dba823c9447',1,'RandomNPC::isWalkable()']]]
 ];

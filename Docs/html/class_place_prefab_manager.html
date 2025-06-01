@@ -92,7 +92,7 @@ $(function(){initNavTree('class_place_prefab_manager.html','','class_place_prefa
 </div><!--header-->
 <div class="contents">
 
-<p>Gère l’aperçu et le placement des prefabs sélectionnés dans la grille. Affiche un objet fantôme (preview) sous la souris et instancie le prefab au clic. Prend en charge le placement en continu si le prefab est marqué comme <code><a class="el" href="class_multi_placeable.html" title="Ce composant sert de balise pour indiquer que cet objet peut être placé en maintenant le clic....">MultiPlaceable</a></code>.  
+<p>Gère le placement de bâtiments sur une grille à la souris, avec aperçu temps réel. Supporte les objets multi-plaçables (drag pour placer en continu) via le composant <a class="el" href="class_multi_placeable.html">MultiPlaceable</a>.  
  <a href="#details">Plus de détails...</a></p>
 <div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Graphe d'héritage de PlacePrefabManager:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -105,27 +105,62 @@ $(function(){initNavTree('class_place_prefab_manager.html','','class_place_prefa
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Attributs publics</h2></td></tr>
 <tr class="memitem:ab70b49e4204f76c3e0584e23ab05cf0c" id="r_ab70b49e4204f76c3e0584e23ab05cf0c"><td class="memItemLeft" align="right" valign="top">Grid&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab70b49e4204f76c3e0584e23ab05cf0c">grid</a></td></tr>
-<tr class="memdesc:ab70b49e4204f76c3e0584e23ab05cf0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Grille de placement utilisée pour aligner les objets sur la carte.  <br /></td></tr>
+<tr class="memdesc:ab70b49e4204f76c3e0584e23ab05cf0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Référence à la grille Unity utilisée pour le placement.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Fonctions membres privées</h2></td></tr>
+<tr class="memitem:ad78b9df22a10d292665350e06ac8d591" id="r_ad78b9df22a10d292665350e06ac8d591"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad78b9df22a10d292665350e06ac8d591">Start</a> ()</td></tr>
+<tr class="memdesc:ad78b9df22a10d292665350e06ac8d591"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise les références (notamment à <a class="el" href="class_emploi_manager.html" title="Gère l&#39;affichage du nombre d&#39;emplois disponibles et occupés dans le jeu. Se base sur les objets actif...">EmploiManager</a>).  <br /></td></tr>
 <tr class="memitem:a292bdd6e250224f31a8f91b9a195d355" id="r_a292bdd6e250224f31a8f91b9a195d355"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a292bdd6e250224f31a8f91b9a195d355">Update</a> ()</td></tr>
-<tr class="memdesc:a292bdd6e250224f31a8f91b9a195d355"><td class="mdescLeft">&#160;</td><td class="mdescRight">Met à jour l’aperçu et place le prefab si l’utilisateur clique dans la grille. Ignore les clics sur l’interface UI grâce à <code>EventSystem</code>.  <br /></td></tr>
+<tr class="memdesc:a292bdd6e250224f31a8f91b9a195d355"><td class="mdescLeft">&#160;</td><td class="mdescRight">Met à jour l'aperçu de placement et instancie les objets sélectionnés par le joueur sur clic souris.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Attributs privés</h2></td></tr>
 <tr class="memitem:a178d805f3995e41fcc64b911420fef81" id="r_a178d805f3995e41fcc64b911420fef81"><td class="memItemLeft" align="right" valign="top">GameObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a178d805f3995e41fcc64b911420fef81">previewObject</a> = null</td></tr>
-<tr class="memdesc:a178d805f3995e41fcc64b911420fef81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Objet fantôme affiché sous la souris pour prévisualiser le placement.  <br /></td></tr>
 <tr class="memitem:a1052fd54186f194fb6088b69f3d6422b" id="r_a1052fd54186f194fb6088b69f3d6422b"><td class="memItemLeft" align="right" valign="top">GameObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1052fd54186f194fb6088b69f3d6422b">lastSelectedPrefab</a> = null</td></tr>
-<tr class="memdesc:a1052fd54186f194fb6088b69f3d6422b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dernier prefab sélectionné pour placement (évite les instanciations inutiles).  <br /></td></tr>
 <tr class="memitem:a2260fd493aedb1fb6bf9e522147ecab1" id="r_a2260fd493aedb1fb6bf9e522147ecab1"><td class="memItemLeft" align="right" valign="top">Vector3Int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2260fd493aedb1fb6bf9e522147ecab1">lastPlacedPosition</a></td></tr>
-<tr class="memdesc:a2260fd493aedb1fb6bf9e522147ecab1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dernière position de cellule où un objet a été placé (évite les doublons).  <br /></td></tr>
+<tr class="memitem:a353e04d08ebd0197584b2adfdc4f2fe6" id="r_a353e04d08ebd0197584b2adfdc4f2fe6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_emploi_manager.html">EmploiManager</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a353e04d08ebd0197584b2adfdc4f2fe6">emploiManager</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Description détaillée</h2>
-<div class="textblock"><p>Gère l’aperçu et le placement des prefabs sélectionnés dans la grille. Affiche un objet fantôme (preview) sous la souris et instancie le prefab au clic. Prend en charge le placement en continu si le prefab est marqué comme <code><a class="el" href="class_multi_placeable.html" title="Ce composant sert de balise pour indiquer que cet objet peut être placé en maintenant le clic....">MultiPlaceable</a></code>. </p>
+<div class="textblock"><p>Gère le placement de bâtiments sur une grille à la souris, avec aperçu temps réel. Supporte les objets multi-plaçables (drag pour placer en continu) via le composant <a class="el" href="class_multi_placeable.html">MultiPlaceable</a>. </p>
 
-<p class="definition">Définition à la ligne <a class="el" href="_place_prefab_manager_8cs_source.html#l00009">9</a> du fichier <a class="el" href="_place_prefab_manager_8cs_source.html">PlacePrefabManager.cs</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_place_prefab_manager_8cs_source.html#l00008">8</a> du fichier <a class="el" href="_place_prefab_manager_8cs_source.html">PlacePrefabManager.cs</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentation des fonctions membres</h2>
+<a id="ad78b9df22a10d292665350e06ac8d591" name="ad78b9df22a10d292665350e06ac8d591"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad78b9df22a10d292665350e06ac8d591">&#9670;&#160;</a></span>Start()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PlacePrefabManager::Start </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initialise les références (notamment à <a class="el" href="class_emploi_manager.html" title="Gère l&#39;affichage du nombre d&#39;emplois disponibles et occupés dans le jeu. Se base sur les objets actif...">EmploiManager</a>). </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="_place_prefab_manager_8cs_source.html#l00024">24</a> du fichier <a class="el" href="_place_prefab_manager_8cs_source.html">PlacePrefabManager.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   25</span>    {</div>
+<div class="line"><span class="lineno">   26</span>        <a class="code hl_variable" href="#a353e04d08ebd0197584b2adfdc4f2fe6">emploiManager</a> = FindObjectOfType&lt;EmploiManager&gt;();</div>
+<div class="line"><span class="lineno">   27</span>    }</div>
+<div class="ttc" id="aclass_place_prefab_manager_html_a353e04d08ebd0197584b2adfdc4f2fe6"><div class="ttname"><a href="#a353e04d08ebd0197584b2adfdc4f2fe6">PlacePrefabManager::emploiManager</a></div><div class="ttdeci">EmploiManager emploiManager</div><div class="ttdef"><b>Definition</b> <a href="_place_prefab_manager_8cs_source.html#l00019">PlacePrefabManager.cs:19</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Références <a class="el" href="_place_prefab_manager_8cs_source.html#l00019">emploiManager</a>.</p>
+
+</div>
+</div>
 <a id="a292bdd6e250224f31a8f91b9a195d355" name="a292bdd6e250224f31a8f91b9a195d355"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a292bdd6e250224f31a8f91b9a195d355">&#9670;&#160;</a></span>Update()</h2>
 
@@ -149,72 +184,97 @@ Attributs privés</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Met à jour l’aperçu et place le prefab si l’utilisateur clique dans la grille. Ignore les clics sur l’interface UI grâce à <code>EventSystem</code>. </p>
+<p>Met à jour l'aperçu de placement et instancie les objets sélectionnés par le joueur sur clic souris. </p>
 
-<p class="definition">Définition à la ligne <a class="el" href="_place_prefab_manager_8cs_source.html#l00027">27</a> du fichier <a class="el" href="_place_prefab_manager_8cs_source.html">PlacePrefabManager.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   28</span>    {</div>
-<div class="line"><span class="lineno">   29</span>        <span class="keywordflow">if</span> (EventSystem.current.IsPointerOverGameObject()) <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   30</span> </div>
-<div class="line"><span class="lineno">   31</span>        GameObject selectedPrefab = BuildManager.instance.GetSelectedPrefab();</div>
-<div class="line"><span class="lineno">   32</span> </div>
-<div class="line"><span class="lineno">   33</span>        <span class="keywordflow">if</span> (selectedPrefab != null)</div>
-<div class="line"><span class="lineno">   34</span>        {</div>
-<div class="line"><span class="lineno">   35</span>            <span class="keywordtype">bool</span> isMultiPlaceable = selectedPrefab.GetComponent&lt;MultiPlaceable&gt;() != null;</div>
-<div class="line"><span class="lineno">   36</span>            Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);</div>
-<div class="line"><span class="lineno">   37</span>            mouseWorld.z = 0f;</div>
-<div class="line"><span class="lineno">   38</span>            Vector3Int cellPos = <a class="code hl_variable" href="#ab70b49e4204f76c3e0584e23ab05cf0c">grid</a>.WorldToCell(mouseWorld);</div>
-<div class="line"><span class="lineno">   39</span>            Vector3 placePos = <a class="code hl_variable" href="#ab70b49e4204f76c3e0584e23ab05cf0c">grid</a>.CellToWorld(cellPos);</div>
-<div class="line"><span class="lineno">   40</span> </div>
-<div class="line"><span class="lineno">   41</span>            <span class="keywordflow">if</span> (selectedPrefab != <a class="code hl_variable" href="#a1052fd54186f194fb6088b69f3d6422b">lastSelectedPrefab</a>)</div>
-<div class="line"><span class="lineno">   42</span>            {</div>
-<div class="line"><span class="lineno">   43</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a178d805f3995e41fcc64b911420fef81">previewObject</a> != null)</div>
-<div class="line"><span class="lineno">   44</span>                {</div>
-<div class="line"><span class="lineno">   45</span>                    Destroy(<a class="code hl_variable" href="#a178d805f3995e41fcc64b911420fef81">previewObject</a>);</div>
-<div class="line"><span class="lineno">   46</span>                }</div>
-<div class="line"><span class="lineno">   47</span>                <a class="code hl_variable" href="#a178d805f3995e41fcc64b911420fef81">previewObject</a> = Instantiate(selectedPrefab, placePos, Quaternion.identity);</div>
-<div class="line"><span class="lineno">   48</span>                <a class="code hl_variable" href="#a1052fd54186f194fb6088b69f3d6422b">lastSelectedPrefab</a> = selectedPrefab;</div>
-<div class="line"><span class="lineno">   49</span>            }</div>
-<div class="line"><span class="lineno">   50</span>            <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">   51</span>            {</div>
-<div class="line"><span class="lineno">   52</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a178d805f3995e41fcc64b911420fef81">previewObject</a> != null)</div>
-<div class="line"><span class="lineno">   53</span>                {</div>
-<div class="line"><span class="lineno">   54</span>                    <a class="code hl_variable" href="#a178d805f3995e41fcc64b911420fef81">previewObject</a>.transform.position = placePos;</div>
-<div class="line"><span class="lineno">   55</span>                }</div>
-<div class="line"><span class="lineno">   56</span>            }</div>
-<div class="line"><span class="lineno">   57</span> </div>
-<div class="line"><span class="lineno">   58</span>            <span class="keywordflow">if</span> (Input.GetMouseButtonDown(0) || (isMultiPlaceable &amp;&amp; Input.GetMouseButton(0)))</div>
-<div class="line"><span class="lineno">   59</span>            {</div>
-<div class="line"><span class="lineno">   60</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a2260fd493aedb1fb6bf9e522147ecab1">lastPlacedPosition</a> != cellPos)</div>
-<div class="line"><span class="lineno">   61</span>                {</div>
-<div class="line"><span class="lineno">   62</span>                    Instantiate(selectedPrefab, placePos, Quaternion.identity);</div>
-<div class="line"><span class="lineno">   63</span>                    <a class="code hl_variable" href="#a2260fd493aedb1fb6bf9e522147ecab1">lastPlacedPosition</a> = cellPos;</div>
+<p class="definition">Définition à la ligne <a class="el" href="_place_prefab_manager_8cs_source.html#l00032">32</a> du fichier <a class="el" href="_place_prefab_manager_8cs_source.html">PlacePrefabManager.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   33</span>    {</div>
+<div class="line"><span class="lineno">   34</span>        <span class="comment">// Ignore le clic si la souris est sur l&#39;UI</span></div>
+<div class="line"><span class="lineno">   35</span>        <span class="keywordflow">if</span> (EventSystem.current.IsPointerOverGameObject()) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   36</span> </div>
+<div class="line"><span class="lineno">   37</span>        GameObject selectedPrefab = BuildManager.instance.GetSelectedPrefab();</div>
+<div class="line"><span class="lineno">   38</span>        <span class="keywordflow">if</span> (selectedPrefab != null)</div>
+<div class="line"><span class="lineno">   39</span>        {</div>
+<div class="line"><span class="lineno">   40</span>            <span class="keywordtype">bool</span> isMultiPlaceable = selectedPrefab.GetComponent&lt;MultiPlaceable&gt;() != null;</div>
+<div class="line"><span class="lineno">   41</span> </div>
+<div class="line"><span class="lineno">   42</span>            Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);</div>
+<div class="line"><span class="lineno">   43</span>            mouseWorld.z = 0f;</div>
+<div class="line"><span class="lineno">   44</span>            Vector3Int cellPos = <a class="code hl_variable" href="#ab70b49e4204f76c3e0584e23ab05cf0c">grid</a>.WorldToCell(mouseWorld);</div>
+<div class="line"><span class="lineno">   45</span>            Vector3 placePos = <a class="code hl_variable" href="#ab70b49e4204f76c3e0584e23ab05cf0c">grid</a>.CellToWorld(cellPos);</div>
+<div class="line"><span class="lineno">   46</span> </div>
+<div class="line"><span class="lineno">   47</span>            <span class="comment">// Création ou mise à jour de l&#39;aperçu du bâtiment</span></div>
+<div class="line"><span class="lineno">   48</span>            <span class="keywordflow">if</span> (selectedPrefab != <a class="code hl_variable" href="#a1052fd54186f194fb6088b69f3d6422b">lastSelectedPrefab</a>)</div>
+<div class="line"><span class="lineno">   49</span>            {</div>
+<div class="line"><span class="lineno">   50</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a178d805f3995e41fcc64b911420fef81">previewObject</a> != null) Destroy(<a class="code hl_variable" href="#a178d805f3995e41fcc64b911420fef81">previewObject</a>);</div>
+<div class="line"><span class="lineno">   51</span> </div>
+<div class="line"><span class="lineno">   52</span>                <a class="code hl_variable" href="#a178d805f3995e41fcc64b911420fef81">previewObject</a> = Instantiate(selectedPrefab, placePos, Quaternion.identity);</div>
+<div class="line"><span class="lineno">   53</span>                <a class="code hl_variable" href="#a1052fd54186f194fb6088b69f3d6422b">lastSelectedPrefab</a> = selectedPrefab;</div>
+<div class="line"><span class="lineno">   54</span>            }</div>
+<div class="line"><span class="lineno">   55</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a178d805f3995e41fcc64b911420fef81">previewObject</a> != null)</div>
+<div class="line"><span class="lineno">   56</span>            {</div>
+<div class="line"><span class="lineno">   57</span>                <a class="code hl_variable" href="#a178d805f3995e41fcc64b911420fef81">previewObject</a>.transform.position = placePos;</div>
+<div class="line"><span class="lineno">   58</span>            }</div>
+<div class="line"><span class="lineno">   59</span> </div>
+<div class="line"><span class="lineno">   60</span>            <span class="comment">// Placement effectif du bâtiment</span></div>
+<div class="line"><span class="lineno">   61</span>            <span class="keywordflow">if</span> ((Input.GetMouseButtonDown(0) || (isMultiPlaceable &amp;&amp; Input.GetMouseButton(0))) &amp;&amp; <a class="code hl_variable" href="#a2260fd493aedb1fb6bf9e522147ecab1">lastPlacedPosition</a> != cellPos)</div>
+<div class="line"><span class="lineno">   62</span>            {</div>
+<div class="line"><span class="lineno">   63</span>                GameObject instance = Instantiate(selectedPrefab, placePos, Quaternion.identity);</div>
 <div class="line"><span class="lineno">   64</span> </div>
-<div class="line"><span class="lineno">   65</span>                    <span class="comment">// Met à jour la grille de navigation (A* Pathfinding)</span></div>
-<div class="line"><span class="lineno">   66</span>                    AstarPath.active.UpdateGraphs(<span class="keyword">new</span> Bounds(placePos, Vector3.one));</div>
-<div class="line"><span class="lineno">   67</span>                }</div>
-<div class="line"><span class="lineno">   68</span>            }</div>
-<div class="line"><span class="lineno">   69</span>        }</div>
-<div class="line"><span class="lineno">   70</span>        <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">   71</span>        {</div>
-<div class="line"><span class="lineno">   72</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a178d805f3995e41fcc64b911420fef81">previewObject</a> != null)</div>
-<div class="line"><span class="lineno">   73</span>            {</div>
-<div class="line"><span class="lineno">   74</span>                Destroy(<a class="code hl_variable" href="#a178d805f3995e41fcc64b911420fef81">previewObject</a>);</div>
-<div class="line"><span class="lineno">   75</span>                <a class="code hl_variable" href="#a178d805f3995e41fcc64b911420fef81">previewObject</a> = null;</div>
-<div class="line"><span class="lineno">   76</span>            }</div>
-<div class="line"><span class="lineno">   77</span> </div>
-<div class="line"><span class="lineno">   78</span>            <a class="code hl_variable" href="#a1052fd54186f194fb6088b69f3d6422b">lastSelectedPrefab</a> = null;</div>
-<div class="line"><span class="lineno">   79</span>        }</div>
-<div class="line"><span class="lineno">   80</span>    }</div>
-<div class="ttc" id="aclass_place_prefab_manager_html_a1052fd54186f194fb6088b69f3d6422b"><div class="ttname"><a href="#a1052fd54186f194fb6088b69f3d6422b">PlacePrefabManager::lastSelectedPrefab</a></div><div class="ttdeci">GameObject lastSelectedPrefab</div><div class="ttdoc">Dernier prefab sélectionné pour placement (évite les instanciations inutiles).</div><div class="ttdef"><b>Definition</b> <a href="_place_prefab_manager_8cs_source.html#l00018">PlacePrefabManager.cs:18</a></div></div>
-<div class="ttc" id="aclass_place_prefab_manager_html_a178d805f3995e41fcc64b911420fef81"><div class="ttname"><a href="#a178d805f3995e41fcc64b911420fef81">PlacePrefabManager::previewObject</a></div><div class="ttdeci">GameObject previewObject</div><div class="ttdoc">Objet fantôme affiché sous la souris pour prévisualiser le placement.</div><div class="ttdef"><b>Definition</b> <a href="_place_prefab_manager_8cs_source.html#l00015">PlacePrefabManager.cs:15</a></div></div>
-<div class="ttc" id="aclass_place_prefab_manager_html_a2260fd493aedb1fb6bf9e522147ecab1"><div class="ttname"><a href="#a2260fd493aedb1fb6bf9e522147ecab1">PlacePrefabManager::lastPlacedPosition</a></div><div class="ttdeci">Vector3Int lastPlacedPosition</div><div class="ttdoc">Dernière position de cellule où un objet a été placé (évite les doublons).</div><div class="ttdef"><b>Definition</b> <a href="_place_prefab_manager_8cs_source.html#l00021">PlacePrefabManager.cs:21</a></div></div>
-<div class="ttc" id="aclass_place_prefab_manager_html_ab70b49e4204f76c3e0584e23ab05cf0c"><div class="ttname"><a href="#ab70b49e4204f76c3e0584e23ab05cf0c">PlacePrefabManager::grid</a></div><div class="ttdeci">Grid grid</div><div class="ttdoc">Grille de placement utilisée pour aligner les objets sur la carte.</div><div class="ttdef"><b>Definition</b> <a href="_place_prefab_manager_8cs_source.html#l00012">PlacePrefabManager.cs:12</a></div></div>
+<div class="line"><span class="lineno">   65</span>                <a class="code hl_variable" href="#a353e04d08ebd0197584b2adfdc4f2fe6">emploiManager</a>?.RafraichirListePostes(); <span class="comment">// 🔁 Mise à jour des stats d&#39;emploi</span></div>
+<div class="line"><span class="lineno">   66</span> </div>
+<div class="line"><span class="lineno">   67</span>                <a class="code hl_variable" href="#a2260fd493aedb1fb6bf9e522147ecab1">lastPlacedPosition</a> = cellPos;</div>
+<div class="line"><span class="lineno">   68</span> </div>
+<div class="line"><span class="lineno">   69</span>                <span class="comment">// Mise à jour du graphe de navigation A* pour prendre en compte le nouveau bâtiment</span></div>
+<div class="line"><span class="lineno">   70</span>                AstarPath.active.UpdateGraphs(<span class="keyword">new</span> Bounds(placePos, Vector3.one));</div>
+<div class="line"><span class="lineno">   71</span>            }</div>
+<div class="line"><span class="lineno">   72</span>        }</div>
+<div class="line"><span class="lineno">   73</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   74</span>        {</div>
+<div class="line"><span class="lineno">   75</span>            <span class="comment">// Si aucun prefab n’est sélectionné, supprimer l’aperçu si présent</span></div>
+<div class="line"><span class="lineno">   76</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a178d805f3995e41fcc64b911420fef81">previewObject</a> != null)</div>
+<div class="line"><span class="lineno">   77</span>            {</div>
+<div class="line"><span class="lineno">   78</span>                Destroy(<a class="code hl_variable" href="#a178d805f3995e41fcc64b911420fef81">previewObject</a>);</div>
+<div class="line"><span class="lineno">   79</span>                <a class="code hl_variable" href="#a178d805f3995e41fcc64b911420fef81">previewObject</a> = null;</div>
+<div class="line"><span class="lineno">   80</span>            }</div>
+<div class="line"><span class="lineno">   81</span> </div>
+<div class="line"><span class="lineno">   82</span>            <a class="code hl_variable" href="#a1052fd54186f194fb6088b69f3d6422b">lastSelectedPrefab</a> = null;</div>
+<div class="line"><span class="lineno">   83</span>        }</div>
+<div class="line"><span class="lineno">   84</span>    }</div>
+<div class="ttc" id="aclass_place_prefab_manager_html_a1052fd54186f194fb6088b69f3d6422b"><div class="ttname"><a href="#a1052fd54186f194fb6088b69f3d6422b">PlacePrefabManager::lastSelectedPrefab</a></div><div class="ttdeci">GameObject lastSelectedPrefab</div><div class="ttdef"><b>Definition</b> <a href="_place_prefab_manager_8cs_source.html#l00016">PlacePrefabManager.cs:16</a></div></div>
+<div class="ttc" id="aclass_place_prefab_manager_html_a178d805f3995e41fcc64b911420fef81"><div class="ttname"><a href="#a178d805f3995e41fcc64b911420fef81">PlacePrefabManager::previewObject</a></div><div class="ttdeci">GameObject previewObject</div><div class="ttdef"><b>Definition</b> <a href="_place_prefab_manager_8cs_source.html#l00015">PlacePrefabManager.cs:15</a></div></div>
+<div class="ttc" id="aclass_place_prefab_manager_html_a2260fd493aedb1fb6bf9e522147ecab1"><div class="ttname"><a href="#a2260fd493aedb1fb6bf9e522147ecab1">PlacePrefabManager::lastPlacedPosition</a></div><div class="ttdeci">Vector3Int lastPlacedPosition</div><div class="ttdef"><b>Definition</b> <a href="_place_prefab_manager_8cs_source.html#l00017">PlacePrefabManager.cs:17</a></div></div>
+<div class="ttc" id="aclass_place_prefab_manager_html_ab70b49e4204f76c3e0584e23ab05cf0c"><div class="ttname"><a href="#ab70b49e4204f76c3e0584e23ab05cf0c">PlacePrefabManager::grid</a></div><div class="ttdeci">Grid grid</div><div class="ttdoc">Référence à la grille Unity utilisée pour le placement.</div><div class="ttdef"><b>Definition</b> <a href="_place_prefab_manager_8cs_source.html#l00013">PlacePrefabManager.cs:13</a></div></div>
 </div><!-- fragment -->
-<p class="reference">Références <a class="el" href="_build_manager_8cs_source.html#l00068">BuildManager::GetSelectedPrefab()</a>, <a class="el" href="_place_prefab_manager_8cs_source.html#l00012">grid</a>, <a class="el" href="_build_manager_8cs_source.html#l00014">BuildManager::instance</a>, <a class="el" href="_place_prefab_manager_8cs_source.html#l00021">lastPlacedPosition</a>, <a class="el" href="_place_prefab_manager_8cs_source.html#l00018">lastSelectedPrefab</a>, et <a class="el" href="_place_prefab_manager_8cs_source.html#l00015">previewObject</a>.</p>
+<p class="reference">Références <a class="el" href="_place_prefab_manager_8cs_source.html#l00019">emploiManager</a>, <a class="el" href="_build_manager_8cs_source.html#l00078">BuildManager::GetSelectedPrefab()</a>, <a class="el" href="_place_prefab_manager_8cs_source.html#l00013">grid</a>, <a class="el" href="_build_manager_8cs_source.html#l00013">BuildManager::instance</a>, <a class="el" href="_place_prefab_manager_8cs_source.html#l00017">lastPlacedPosition</a>, <a class="el" href="_place_prefab_manager_8cs_source.html#l00016">lastSelectedPrefab</a>, et <a class="el" href="_place_prefab_manager_8cs_source.html#l00015">previewObject</a>.</p>
 
 </div>
 </div>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Documentation des données membres</h2>
+<a id="a353e04d08ebd0197584b2adfdc4f2fe6" name="a353e04d08ebd0197584b2adfdc4f2fe6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a353e04d08ebd0197584b2adfdc4f2fe6">&#9670;&#160;</a></span>emploiManager</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_emploi_manager.html">EmploiManager</a> PlacePrefabManager::emploiManager</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="_place_prefab_manager_8cs_source.html#l00019">19</a> du fichier <a class="el" href="_place_prefab_manager_8cs_source.html">PlacePrefabManager.cs</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="_place_prefab_manager_8cs_source.html#l00024">Start()</a>, et <a class="el" href="_place_prefab_manager_8cs_source.html#l00032">Update()</a>.</p>
+
+</div>
+</div>
 <a id="ab70b49e4204f76c3e0584e23ab05cf0c" name="ab70b49e4204f76c3e0584e23ab05cf0c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab70b49e4204f76c3e0584e23ab05cf0c">&#9670;&#160;</a></span>grid</h2>
 
@@ -227,11 +287,11 @@ Attributs privés</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Grille de placement utilisée pour aligner les objets sur la carte. </p>
+<p>Référence à la grille Unity utilisée pour le placement. </p>
 
-<p class="definition">Définition à la ligne <a class="el" href="_place_prefab_manager_8cs_source.html#l00012">12</a> du fichier <a class="el" href="_place_prefab_manager_8cs_source.html">PlacePrefabManager.cs</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_place_prefab_manager_8cs_source.html#l00013">13</a> du fichier <a class="el" href="_place_prefab_manager_8cs_source.html">PlacePrefabManager.cs</a>.</p>
 
-<p class="reference">Référencé par <a class="el" href="_place_prefab_manager_8cs_source.html#l00027">Update()</a>.</p>
+<p class="reference">Référencé par <a class="el" href="_place_prefab_manager_8cs_source.html#l00032">Update()</a>.</p>
 
 </div>
 </div>
@@ -255,11 +315,9 @@ Attributs privés</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Dernière position de cellule où un objet a été placé (évite les doublons). </p>
+<p class="definition">Définition à la ligne <a class="el" href="_place_prefab_manager_8cs_source.html#l00017">17</a> du fichier <a class="el" href="_place_prefab_manager_8cs_source.html">PlacePrefabManager.cs</a>.</p>
 
-<p class="definition">Définition à la ligne <a class="el" href="_place_prefab_manager_8cs_source.html#l00021">21</a> du fichier <a class="el" href="_place_prefab_manager_8cs_source.html">PlacePrefabManager.cs</a>.</p>
-
-<p class="reference">Référencé par <a class="el" href="_place_prefab_manager_8cs_source.html#l00027">Update()</a>.</p>
+<p class="reference">Référencé par <a class="el" href="_place_prefab_manager_8cs_source.html#l00032">Update()</a>.</p>
 
 </div>
 </div>
@@ -283,11 +341,9 @@ Attributs privés</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Dernier prefab sélectionné pour placement (évite les instanciations inutiles). </p>
+<p class="definition">Définition à la ligne <a class="el" href="_place_prefab_manager_8cs_source.html#l00016">16</a> du fichier <a class="el" href="_place_prefab_manager_8cs_source.html">PlacePrefabManager.cs</a>.</p>
 
-<p class="definition">Définition à la ligne <a class="el" href="_place_prefab_manager_8cs_source.html#l00018">18</a> du fichier <a class="el" href="_place_prefab_manager_8cs_source.html">PlacePrefabManager.cs</a>.</p>
-
-<p class="reference">Référencé par <a class="el" href="_place_prefab_manager_8cs_source.html#l00027">Update()</a>.</p>
+<p class="reference">Référencé par <a class="el" href="_place_prefab_manager_8cs_source.html#l00032">Update()</a>.</p>
 
 </div>
 </div>
@@ -311,11 +367,9 @@ Attributs privés</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Objet fantôme affiché sous la souris pour prévisualiser le placement. </p>
-
 <p class="definition">Définition à la ligne <a class="el" href="_place_prefab_manager_8cs_source.html#l00015">15</a> du fichier <a class="el" href="_place_prefab_manager_8cs_source.html">PlacePrefabManager.cs</a>.</p>
 
-<p class="reference">Référencé par <a class="el" href="_place_prefab_manager_8cs_source.html#l00027">Update()</a>.</p>
+<p class="reference">Référencé par <a class="el" href="_place_prefab_manager_8cs_source.html#l00032">Update()</a>.</p>
 
 </div>
 </div>

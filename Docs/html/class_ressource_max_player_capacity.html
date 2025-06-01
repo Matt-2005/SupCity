@@ -102,15 +102,6 @@ $(function(){initNavTree('class_ressource_max_player_capacity.html','','class_re
   <img src="class_ressource_max_player_capacity.png" alt=""/>
  </div></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
-Fonctions membres publiques</h2></td></tr>
-<tr class="memitem:a38627fc017ab33a70048dac5d60829d8" id="r_a38627fc017ab33a70048dac5d60829d8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a38627fc017ab33a70048dac5d60829d8">VoirDisponibilite</a> ()</td></tr>
-<tr class="memdesc:a38627fc017ab33a70048dac5d60829d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tente de réserver la ressource. Incrémente l’occupation si elle est disponible.  <br /></td></tr>
-<tr class="memitem:a65d544b2399f46fed96b5f91b47945ad" id="r_a65d544b2399f46fed96b5f91b47945ad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a65d544b2399f46fed96b5f91b47945ad">Liberer</a> ()</td></tr>
-<tr class="memdesc:a65d544b2399f46fed96b5f91b47945ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Libère un emplacement d’occupation sur la ressource.  <br /></td></tr>
-<tr class="memitem:a0a415e2ec30ae72c2f8046863ef56397" id="r_a0a415e2ec30ae72c2f8046863ef56397"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0a415e2ec30ae72c2f8046863ef56397">EstDisponible</a> ()</td></tr>
-<tr class="memdesc:a0a415e2ec30ae72c2f8046863ef56397"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vérifie si la ressource est encore disponible sans réserver.  <br /></td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Attributs publics</h2></td></tr>
 <tr class="memitem:aa3e20def2e3af0a6a9940428c51c9ea4" id="r_aa3e20def2e3af0a6a9940428c51c9ea4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa3e20def2e3af0a6a9940428c51c9ea4">capaciteMax</a> = 1</td></tr>
@@ -125,121 +116,7 @@ Attributs privés</h2></td></tr>
 <div class="textblock"><p>Représente une ressource ayant une capacité maximale de joueurs pouvant l’utiliser en même temps. Permet de réserver ou libérer dynamiquement l’accès à cette ressource. </p>
 
 <p class="definition">Définition à la ligne <a class="el" href="_ressource_max_player_capacity_8cs_source.html#l00007">7</a> du fichier <a class="el" href="_ressource_max_player_capacity_8cs_source.html">RessourceMaxPlayerCapacity.cs</a>.</p>
-</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentation des fonctions membres</h2>
-<a id="a0a415e2ec30ae72c2f8046863ef56397" name="a0a415e2ec30ae72c2f8046863ef56397"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0a415e2ec30ae72c2f8046863ef56397">&#9670;&#160;</a></span>EstDisponible()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool RessourceMaxPlayerCapacity::EstDisponible </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Vérifie si la ressource est encore disponible sans réserver. </p>
-<dl class="section return"><dt>Renvoie</dt><dd>True si la ressource est disponible, false sinon.</dd></dl>
-
-<p class="definition">Définition à la ligne <a class="el" href="_ressource_max_player_capacity_8cs_source.html#l00042">42</a> du fichier <a class="el" href="_ressource_max_player_capacity_8cs_source.html">RessourceMaxPlayerCapacity.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   43</span>    {</div>
-<div class="line"><span class="lineno">   44</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="#aa5036e3553be5476a6cf5fa8479a9ab2">occupationActuelle</a> &lt; <a class="code hl_variable" href="#aa3e20def2e3af0a6a9940428c51c9ea4">capaciteMax</a>;</div>
-<div class="line"><span class="lineno">   45</span>    }</div>
-<div class="ttc" id="aclass_ressource_max_player_capacity_html_aa3e20def2e3af0a6a9940428c51c9ea4"><div class="ttname"><a href="#aa3e20def2e3af0a6a9940428c51c9ea4">RessourceMaxPlayerCapacity::capaciteMax</a></div><div class="ttdeci">int capaciteMax</div><div class="ttdoc">Nombre maximum de joueurs autorisés en même temps sur cette ressource.</div><div class="ttdef"><b>Definition</b> <a href="_ressource_max_player_capacity_8cs_source.html#l00010">RessourceMaxPlayerCapacity.cs:10</a></div></div>
-<div class="ttc" id="aclass_ressource_max_player_capacity_html_aa5036e3553be5476a6cf5fa8479a9ab2"><div class="ttname"><a href="#aa5036e3553be5476a6cf5fa8479a9ab2">RessourceMaxPlayerCapacity::occupationActuelle</a></div><div class="ttdeci">int occupationActuelle</div><div class="ttdoc">Nombre actuel de joueurs utilisant cette ressource.</div><div class="ttdef"><b>Definition</b> <a href="_ressource_max_player_capacity_8cs_source.html#l00013">RessourceMaxPlayerCapacity.cs:13</a></div></div>
-</div><!-- fragment -->
-<p class="reference">Références <a class="el" href="_ressource_max_player_capacity_8cs_source.html#l00010">capaciteMax</a>, et <a class="el" href="_ressource_max_player_capacity_8cs_source.html#l00013">occupationActuelle</a>.</p>
-
-</div>
-</div>
-<a id="a65d544b2399f46fed96b5f91b47945ad" name="a65d544b2399f46fed96b5f91b47945ad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a65d544b2399f46fed96b5f91b47945ad">&#9670;&#160;</a></span>Liberer()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void RessourceMaxPlayerCapacity::Liberer </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Libère un emplacement d’occupation sur la ressource. </p>
-
-<p class="definition">Définition à la ligne <a class="el" href="_ressource_max_player_capacity_8cs_source.html#l00033">33</a> du fichier <a class="el" href="_ressource_max_player_capacity_8cs_source.html">RessourceMaxPlayerCapacity.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   34</span>    {</div>
-<div class="line"><span class="lineno">   35</span>        <a class="code hl_variable" href="#aa5036e3553be5476a6cf5fa8479a9ab2">occupationActuelle</a> = Mathf.Max(0, <a class="code hl_variable" href="#aa5036e3553be5476a6cf5fa8479a9ab2">occupationActuelle</a> - 1);</div>
-<div class="line"><span class="lineno">   36</span>    }</div>
-</div><!-- fragment -->
-<p class="reference">Références <a class="el" href="_ressource_max_player_capacity_8cs_source.html#l00013">occupationActuelle</a>.</p>
-
-<p class="reference">Référencé par <a class="el" href="_besoin_players_8cs_source.html#l00274">BesoinPlayers::AttendreEtDetruire()</a>, <a class="el" href="_besoin_players_8cs_source.html#l00211">BesoinPlayers::ChercherTarget()</a>, et <a class="el" href="_besoin_players_8cs_source.html#l00247">BesoinPlayers::LibererRessource()</a>.</p>
-
-</div>
-</div>
-<a id="a38627fc017ab33a70048dac5d60829d8" name="a38627fc017ab33a70048dac5d60829d8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a38627fc017ab33a70048dac5d60829d8">&#9670;&#160;</a></span>VoirDisponibilite()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool RessourceMaxPlayerCapacity::VoirDisponibilite </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Tente de réserver la ressource. Incrémente l’occupation si elle est disponible. </p>
-<dl class="section return"><dt>Renvoie</dt><dd>True si la ressource a été réservée avec succès, false sinon.</dd></dl>
-
-<p class="definition">Définition à la ligne <a class="el" href="_ressource_max_player_capacity_8cs_source.html#l00020">20</a> du fichier <a class="el" href="_ressource_max_player_capacity_8cs_source.html">RessourceMaxPlayerCapacity.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   21</span>    {</div>
-<div class="line"><span class="lineno">   22</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="#aa5036e3553be5476a6cf5fa8479a9ab2">occupationActuelle</a> &lt; <a class="code hl_variable" href="#aa3e20def2e3af0a6a9940428c51c9ea4">capaciteMax</a>)</div>
-<div class="line"><span class="lineno">   23</span>        {</div>
-<div class="line"><span class="lineno">   24</span>            <a class="code hl_variable" href="#aa5036e3553be5476a6cf5fa8479a9ab2">occupationActuelle</a>++;</div>
-<div class="line"><span class="lineno">   25</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">   26</span>        }</div>
-<div class="line"><span class="lineno">   27</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   28</span>    }</div>
-</div><!-- fragment -->
-<p class="reference">Références <a class="el" href="_ressource_max_player_capacity_8cs_source.html#l00010">capaciteMax</a>, et <a class="el" href="_ressource_max_player_capacity_8cs_source.html#l00013">occupationActuelle</a>.</p>
-
-</div>
-</div>
-<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Documentation des données membres</h2>
+</div><a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Documentation des données membres</h2>
 <a id="aa3e20def2e3af0a6a9940428c51c9ea4" name="aa3e20def2e3af0a6a9940428c51c9ea4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa3e20def2e3af0a6a9940428c51c9ea4">&#9670;&#160;</a></span>capaciteMax</h2>
 
@@ -256,7 +133,7 @@ Attributs privés</h2></td></tr>
 
 <p class="definition">Définition à la ligne <a class="el" href="_ressource_max_player_capacity_8cs_source.html#l00010">10</a> du fichier <a class="el" href="_ressource_max_player_capacity_8cs_source.html">RessourceMaxPlayerCapacity.cs</a>.</p>
 
-<p class="reference">Référencé par <a class="el" href="_ressource_max_player_capacity_8cs_source.html#l00042">EstDisponible()</a>, et <a class="el" href="_ressource_max_player_capacity_8cs_source.html#l00020">VoirDisponibilite()</a>.</p>
+<p class="reference">Référencé par <a class="el" href="_habitation_manager_8cs_source.html#l00039">HabitationManager::MettreAJourAffichage()</a>.</p>
 
 </div>
 </div>
@@ -283,8 +160,6 @@ Attributs privés</h2></td></tr>
 <p>Nombre actuel de joueurs utilisant cette ressource. </p>
 
 <p class="definition">Définition à la ligne <a class="el" href="_ressource_max_player_capacity_8cs_source.html#l00013">13</a> du fichier <a class="el" href="_ressource_max_player_capacity_8cs_source.html">RessourceMaxPlayerCapacity.cs</a>.</p>
-
-<p class="reference">Référencé par <a class="el" href="_ressource_max_player_capacity_8cs_source.html#l00042">EstDisponible()</a>, <a class="el" href="_ressource_max_player_capacity_8cs_source.html#l00033">Liberer()</a>, et <a class="el" href="_ressource_max_player_capacity_8cs_source.html#l00020">VoirDisponibilite()</a>.</p>
 
 </div>
 </div>

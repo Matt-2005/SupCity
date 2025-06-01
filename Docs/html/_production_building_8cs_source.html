@@ -1,0 +1,183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SupCity:  Fichier source de Assets/Scripts/ProductionBuilding.cs</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">SupCity
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('_production_building_8cs_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">ProductionBuilding.cs</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_production_building_8cs.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using </span>UnityEngine;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span></div>
+<div class="foldopen" id="foldopen00008" data-start="{" data-end="};">
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="class_production_building.html">    8</a></span><span class="keyword">public</span> abstract <span class="keyword">class </span><a class="code hl_class" href="class_production_building.html">ProductionBuilding</a> : MonoBehaviour</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>{</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    [Header(<span class="stringliteral">&quot;Production Settings&quot;</span>)]</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="class_production_building.html#aaed24419e0a66a934a9347ad49763b18">   15</a></span>    <span class="keyword">public</span> <a class="code hl_enumeration" href="_resource_type_8cs.html#a8571efa4409be32e28abf3ea74a0dbb1">ResourceType</a> <a class="code hl_variable" href="class_production_building.html#aaed24419e0a66a934a9347ad49763b18">outputResourceType</a>;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="class_production_building.html#a8f81ec757f4ec8ac8b6e878d300e301f">   20</a></span>    <span class="keyword">public</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="class_production_building.html#a8f81ec757f4ec8ac8b6e878d300e301f">productionAmount</a> = 1;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="class_production_building.html#ae068bb70eda3d062c21be874336c271e">   25</a></span>    <span class="keyword">public</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="class_production_building.html#ae068bb70eda3d062c21be874336c271e">productionInterval</a> = 5f;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="class_production_building.html#acea7092a17d3fac8f2ab8aebccb31c0a">   31</a></span>    <span class="keyword">protected</span> <span class="keyword">virtual</span> <a class="code hl_enumeration" href="_resource_type_8cs.html#a8571efa4409be32e28abf3ea74a0dbb1">ResourceType</a>? <a class="code hl_variable" href="class_production_building.html#acea7092a17d3fac8f2ab8aebccb31c0a">inputResourceType</a> =&gt; null;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="class_production_building.html#ab9ca0a472dcf59bc3c565143c92ce386">   37</a></span>    <span class="keyword">protected</span> <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="class_production_building.html#ab9ca0a472dcf59bc3c565143c92ce386">inputAmount</a> =&gt; 0;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="class_production_building.html#ae8d97e0e96c0a0a0bc8fe8196243db26">   39</a></span>    <span class="keyword">private</span> <span class="keywordtype">float</span> <a class="code hl_variable" href="class_production_building.html#ae8d97e0e96c0a0a0bc8fe8196243db26">timer</a>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span></div>
+<div class="foldopen" id="foldopen00044" data-start="{" data-end="}">
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="class_production_building.html#ac7340d1da8030da6c5c00a1ba6e0d489">   44</a></span>    <span class="keyword">protected</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_production_building.html#ac7340d1da8030da6c5c00a1ba6e0d489">Start</a>()</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    {</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <a class="code hl_variable" href="class_production_building.html#ae8d97e0e96c0a0a0bc8fe8196243db26">timer</a> = <a class="code hl_variable" href="class_production_building.html#ae068bb70eda3d062c21be874336c271e">productionInterval</a>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    }</div>
+</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span></div>
+<div class="foldopen" id="foldopen00052" data-start="{" data-end="}">
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="class_production_building.html#a731a05903b34edbd76507590f6b64648">   52</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_production_building.html#a731a05903b34edbd76507590f6b64648">Update</a>()</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    {</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        <a class="code hl_variable" href="class_production_building.html#ae8d97e0e96c0a0a0bc8fe8196243db26">timer</a> -= Time.deltaTime;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_production_building.html#ae8d97e0e96c0a0a0bc8fe8196243db26">timer</a> &lt;= 0f)</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        {</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            <a class="code hl_function" href="class_production_building.html#a6dff981bddbda7b0bf1a60fe7f0ec6eb">Produce</a>();</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            <a class="code hl_variable" href="class_production_building.html#ae8d97e0e96c0a0a0bc8fe8196243db26">timer</a> = <a class="code hl_variable" href="class_production_building.html#ae068bb70eda3d062c21be874336c271e">productionInterval</a>;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        }</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    }</div>
+</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span></div>
+<div class="foldopen" id="foldopen00067" data-start="{" data-end="}">
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="class_production_building.html#a6dff981bddbda7b0bf1a60fe7f0ec6eb">   67</a></span>    <span class="keyword">protected</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_production_building.html#a6dff981bddbda7b0bf1a60fe7f0ec6eb">Produce</a>()</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    {</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        <span class="keywordflow">if</span> (<a class="code hl_class" href="class_resource_manager.html">ResourceManager</a>.<a class="code hl_variable" href="class_resource_manager.html#a50f41190d44e5d3b7bbf1b3216d70aa1">Instance</a> == null)</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        {</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            Debug.LogError(<span class="stringliteral">&quot;❌ ResourceManager.Instance is null !&quot;</span>);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        }</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        <span class="comment">// Si une ressource d&#39;entrée est requise, on tente de la consommer</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_production_building.html#acea7092a17d3fac8f2ab8aebccb31c0a">inputResourceType</a> != null)</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        {</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>            <span class="keywordflow">if</span> (!<a class="code hl_class" href="class_resource_manager.html">ResourceManager</a>.<a class="code hl_variable" href="class_resource_manager.html#a50f41190d44e5d3b7bbf1b3216d70aa1">Instance</a>.<a class="code hl_function" href="class_resource_manager.html#aef6e3700cdafa1c2c72e0bbfa4f84949">ConsumeResource</a>(<a class="code hl_variable" href="class_production_building.html#acea7092a17d3fac8f2ab8aebccb31c0a">inputResourceType</a>.Value, <a class="code hl_variable" href="class_production_building.html#ab9ca0a472dcf59bc3c565143c92ce386">inputAmount</a>))</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            {</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>                Debug.LogWarning($<span class="stringliteral">&quot;[Production] Not enough {inputResourceType} to produce {outputResourceType}&quot;</span>);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>                <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            }</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        }</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        <a class="code hl_class" href="class_resource_manager.html">ResourceManager</a>.<a class="code hl_variable" href="class_resource_manager.html#a50f41190d44e5d3b7bbf1b3216d70aa1">Instance</a>.<a class="code hl_function" href="class_resource_manager.html#aa4faa038b262373d099ac0935f4d3858">AddResource</a>(<a class="code hl_variable" href="class_production_building.html#aaed24419e0a66a934a9347ad49763b18">outputResourceType</a>, <a class="code hl_variable" href="class_production_building.html#a8f81ec757f4ec8ac8b6e878d300e301f">productionAmount</a>);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    }</div>
+</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>}</div>
+</div>
+<div class="ttc" id="a_resource_type_8cs_html_a8571efa4409be32e28abf3ea74a0dbb1"><div class="ttname"><a href="_resource_type_8cs.html#a8571efa4409be32e28abf3ea74a0dbb1">ResourceType</a></div><div class="ttdeci">ResourceType</div><div class="ttdoc">Enumération représentant les différents types de ressources utilisés dans le jeu.</div><div class="ttdef"><b>Definition</b> <a href="_resource_type_8cs_source.html#l00006">ResourceType.cs:7</a></div></div>
+<div class="ttc" id="aclass_production_building_html"><div class="ttname"><a href="class_production_building.html">ProductionBuilding</a></div><div class="ttdoc">Classe abstraite pour les bâtiments de production. Gère la logique de production cyclique avec ressou...</div><div class="ttdef"><b>Definition</b> <a href="#l00008">ProductionBuilding.cs:9</a></div></div>
+<div class="ttc" id="aclass_production_building_html_a6dff981bddbda7b0bf1a60fe7f0ec6eb"><div class="ttname"><a href="class_production_building.html#a6dff981bddbda7b0bf1a60fe7f0ec6eb">ProductionBuilding::Produce</a></div><div class="ttdeci">virtual void Produce()</div><div class="ttdoc">Méthode de production exécutée à chaque cycle. Tente de consommer les ressources nécessaires,...</div><div class="ttdef"><b>Definition</b> <a href="#l00067">ProductionBuilding.cs:67</a></div></div>
+<div class="ttc" id="aclass_production_building_html_a731a05903b34edbd76507590f6b64648"><div class="ttname"><a href="class_production_building.html#a731a05903b34edbd76507590f6b64648">ProductionBuilding::Update</a></div><div class="ttdeci">void Update()</div><div class="ttdoc">Décrémente le timer et déclenche la production à intervalle régulier.</div><div class="ttdef"><b>Definition</b> <a href="#l00052">ProductionBuilding.cs:52</a></div></div>
+<div class="ttc" id="aclass_production_building_html_a8f81ec757f4ec8ac8b6e878d300e301f"><div class="ttname"><a href="class_production_building.html#a8f81ec757f4ec8ac8b6e878d300e301f">ProductionBuilding::productionAmount</a></div><div class="ttdeci">int productionAmount</div><div class="ttdoc">Quantité de ressource produite à chaque cycle.</div><div class="ttdef"><b>Definition</b> <a href="#l00020">ProductionBuilding.cs:20</a></div></div>
+<div class="ttc" id="aclass_production_building_html_aaed24419e0a66a934a9347ad49763b18"><div class="ttname"><a href="class_production_building.html#aaed24419e0a66a934a9347ad49763b18">ProductionBuilding::outputResourceType</a></div><div class="ttdeci">ResourceType outputResourceType</div><div class="ttdoc">Type de ressource produite par ce bâtiment.</div><div class="ttdef"><b>Definition</b> <a href="#l00015">ProductionBuilding.cs:15</a></div></div>
+<div class="ttc" id="aclass_production_building_html_ab9ca0a472dcf59bc3c565143c92ce386"><div class="ttname"><a href="class_production_building.html#ab9ca0a472dcf59bc3c565143c92ce386">ProductionBuilding::inputAmount</a></div><div class="ttdeci">virtual int inputAmount</div><div class="ttdoc">Quantité de ressource en entrée nécessaire à chaque cycle (0 si aucune). Peut être redéfini dans une ...</div><div class="ttdef"><b>Definition</b> <a href="#l00037">ProductionBuilding.cs:37</a></div></div>
+<div class="ttc" id="aclass_production_building_html_ac7340d1da8030da6c5c00a1ba6e0d489"><div class="ttname"><a href="class_production_building.html#ac7340d1da8030da6c5c00a1ba6e0d489">ProductionBuilding::Start</a></div><div class="ttdeci">virtual void Start()</div><div class="ttdoc">Initialise le timer de production à l’intervalle défini.</div><div class="ttdef"><b>Definition</b> <a href="#l00044">ProductionBuilding.cs:44</a></div></div>
+<div class="ttc" id="aclass_production_building_html_acea7092a17d3fac8f2ab8aebccb31c0a"><div class="ttname"><a href="class_production_building.html#acea7092a17d3fac8f2ab8aebccb31c0a">ProductionBuilding::inputResourceType</a></div><div class="ttdeci">virtual ResourceType inputResourceType</div><div class="ttdoc">Type de ressource consommée pour produire (null si aucune ressource requise). Peut être redéfini dans...</div><div class="ttdef"><b>Definition</b> <a href="#l00031">ProductionBuilding.cs:31</a></div></div>
+<div class="ttc" id="aclass_production_building_html_ae068bb70eda3d062c21be874336c271e"><div class="ttname"><a href="class_production_building.html#ae068bb70eda3d062c21be874336c271e">ProductionBuilding::productionInterval</a></div><div class="ttdeci">float productionInterval</div><div class="ttdoc">Intervalle (en secondes) entre deux productions.</div><div class="ttdef"><b>Definition</b> <a href="#l00025">ProductionBuilding.cs:25</a></div></div>
+<div class="ttc" id="aclass_production_building_html_ae8d97e0e96c0a0a0bc8fe8196243db26"><div class="ttname"><a href="class_production_building.html#ae8d97e0e96c0a0a0bc8fe8196243db26">ProductionBuilding::timer</a></div><div class="ttdeci">float timer</div><div class="ttdef"><b>Definition</b> <a href="#l00039">ProductionBuilding.cs:39</a></div></div>
+<div class="ttc" id="aclass_resource_manager_html"><div class="ttname"><a href="class_resource_manager.html">ResourceManager</a></div><div class="ttdoc">Gère les ressources du jeu : ajout, consommation, et accès global. Utilise un pattern Singleton pour ...</div><div class="ttdef"><b>Definition</b> <a href="_resource_manager_8cs_source.html#l00008">ResourceManager.cs:9</a></div></div>
+<div class="ttc" id="aclass_resource_manager_html_a50f41190d44e5d3b7bbf1b3216d70aa1"><div class="ttname"><a href="class_resource_manager.html#a50f41190d44e5d3b7bbf1b3216d70aa1">ResourceManager::Instance</a></div><div class="ttdeci">static ResourceManager Instance</div><div class="ttdoc">Instance globale du ResourceManager (pattern Singleton).</div><div class="ttdef"><b>Definition</b> <a href="_resource_manager_8cs_source.html#l00013">ResourceManager.cs:13</a></div></div>
+<div class="ttc" id="aclass_resource_manager_html_aa4faa038b262373d099ac0935f4d3858"><div class="ttname"><a href="class_resource_manager.html#aa4faa038b262373d099ac0935f4d3858">ResourceManager::AddResource</a></div><div class="ttdeci">void AddResource(ResourceType type, int amount)</div><div class="ttdoc">Ajoute une quantité donnée à une ressource.</div><div class="ttdef"><b>Definition</b> <a href="_resource_manager_8cs_source.html#l00044">ResourceManager.cs:44</a></div></div>
+<div class="ttc" id="aclass_resource_manager_html_aef6e3700cdafa1c2c72e0bbfa4f84949"><div class="ttname"><a href="class_resource_manager.html#aef6e3700cdafa1c2c72e0bbfa4f84949">ResourceManager::ConsumeResource</a></div><div class="ttdeci">bool ConsumeResource(ResourceType type, int amount)</div><div class="ttdoc">Tente de consommer une quantité de ressource. Échoue si la quantité est insuffisante.</div><div class="ttdef"><b>Definition</b> <a href="_resource_manager_8cs_source.html#l00056">ResourceManager.cs:56</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_84bbf7b3c7f28a5a18725745e1505219.html">Assets</a></li><li class="navelem"><a href="dir_f13b41af88cf68434578284aaf699e39.html">Scripts</a></li><li class="navelem"><a href="_production_building_8cs.html">ProductionBuilding.cs</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

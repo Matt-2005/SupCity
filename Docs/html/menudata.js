@@ -66,6 +66,7 @@ var menudata={children:[
 {text:"n",url:"functions_func.html#index_n"},
 {text:"o",url:"functions_func.html#index_o"},
 {text:"p",url:"functions_func.html#index_p"},
+{text:"r",url:"functions_func.html#index_r"},
 {text:"s",url:"functions_func.html#index_s"},
 {text:"t",url:"functions_func.html#index_t"},
 {text:"u",url:"functions_func.html#index_u"},
@@ -78,6 +79,7 @@ var menudata={children:[
 {text:"e",url:"functions_vars.html#index_e"},
 {text:"f",url:"functions_vars.html#index_f"},
 {text:"g",url:"functions_vars.html#index_g"},
+{text:"h",url:"functions_vars.html#index_h"},
 {text:"i",url:"functions_vars.html#index_i"},
 {text:"l",url:"functions_vars.html#index_l"},
 {text:"m",url:"functions_vars.html#index_m"},
@@ -93,4 +95,8 @@ var menudata={children:[
 {text:"Énumérations",url:"functions_enum.html"},
 {text:"Valeurs énumérées",url:"functions_eval.html"}]}]},
 {text:"Fichiers",url:"files.html",children:[
-{text:"Liste des fichiers",url:"files.html"}]}]}
+{text:"Liste des fichiers",url:"files.html"},
+{text:"Membres de fichier",url:"globals.html",children:[
+{text:"Tout",url:"globals.html"},
+{text:"Énumérations",url:"globals_enum.html"},
+{text:"Valeurs énumérées",url:"globals_eval.html"}]}]}]}

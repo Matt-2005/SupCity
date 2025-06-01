@@ -92,7 +92,7 @@ $(function(){initNavTree('class_auto_destroy_after_use.html','','class_auto_dest
 </div><!--header-->
 <div class="contents">
 
-<p>Détruit automatiquement ce GameObject après un délai prédéfini. Appelle la méthode <code>DéclencherDestruction</code> pour lancer la destruction après <code>delay</code> secondes.  
+<p>Détruit automatiquement le GameObject après un délai donné lorsque la méthode est déclenchée.  
  <a href="#details">Plus de détails...</a></p>
 <div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Graphe d'héritage de AutoDestroyAfterUse:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -105,17 +105,17 @@ $(function(){initNavTree('class_auto_destroy_after_use.html','','class_auto_dest
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
 <tr class="memitem:ad641ee1df711103f49cf01107909999f" id="r_ad641ee1df711103f49cf01107909999f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad641ee1df711103f49cf01107909999f">DéclencherDestruction</a> ()</td></tr>
-<tr class="memdesc:ad641ee1df711103f49cf01107909999f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Déclenche la destruction de ce GameObject après le délai défini.  <br /></td></tr>
+<tr class="memdesc:ad641ee1df711103f49cf01107909999f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Déclenche la destruction du GameObject après le délai spécifié dans <a class="el" href="#a228ab4b0b36e3eb1e0b8dd4b6987e7a8" title="Délai en secondes avant la destruction du GameObject après l&#39;appel de DéclencherDestruction.">delay</a>.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Attributs publics</h2></td></tr>
 <tr class="memitem:a228ab4b0b36e3eb1e0b8dd4b6987e7a8" id="r_a228ab4b0b36e3eb1e0b8dd4b6987e7a8"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a228ab4b0b36e3eb1e0b8dd4b6987e7a8">delay</a> = 2f</td></tr>
-<tr class="memdesc:a228ab4b0b36e3eb1e0b8dd4b6987e7a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Délai en secondes avant la destruction du GameObject.  <br /></td></tr>
+<tr class="memdesc:a228ab4b0b36e3eb1e0b8dd4b6987e7a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Délai en secondes avant la destruction du GameObject après l'appel de <a class="el" href="#ad641ee1df711103f49cf01107909999f" title="Déclenche la destruction du GameObject après le délai spécifié dans delay.">DéclencherDestruction</a>.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Description détaillée</h2>
-<div class="textblock"><p>Détruit automatiquement ce GameObject après un délai prédéfini. Appelle la méthode <code>DéclencherDestruction</code> pour lancer la destruction après <code>delay</code> secondes. </p>
+<div class="textblock"><p>Détruit automatiquement le GameObject après un délai donné lorsque la méthode est déclenchée. </p>
 
-<p class="definition">Définition à la ligne <a class="el" href="_auto_destroy_after_use_8cs_source.html#l00007">7</a> du fichier <a class="el" href="_auto_destroy_after_use_8cs_source.html">AutoDestroyAfterUse.cs</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_auto_destroy_after_use_8cs_source.html#l00006">6</a> du fichier <a class="el" href="_auto_destroy_after_use_8cs_source.html">AutoDestroyAfterUse.cs</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentation des fonctions membres</h2>
 <a id="ad641ee1df711103f49cf01107909999f" name="ad641ee1df711103f49cf01107909999f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad641ee1df711103f49cf01107909999f">&#9670;&#160;</a></span>DéclencherDestruction()</h2>
@@ -140,15 +140,15 @@ Attributs publics</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Déclenche la destruction de ce GameObject après le délai défini. </p>
+<p>Déclenche la destruction du GameObject après le délai spécifié dans <a class="el" href="#a228ab4b0b36e3eb1e0b8dd4b6987e7a8" title="Délai en secondes avant la destruction du GameObject après l&#39;appel de DéclencherDestruction.">delay</a>. </p>
 
-<p class="definition">Définition à la ligne <a class="el" href="_auto_destroy_after_use_8cs_source.html#l00017">17</a> du fichier <a class="el" href="_auto_destroy_after_use_8cs_source.html">AutoDestroyAfterUse.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   18</span>    {</div>
-<div class="line"><span class="lineno">   19</span>        Destroy(gameObject, <a class="code hl_variable" href="#a228ab4b0b36e3eb1e0b8dd4b6987e7a8">delay</a>);</div>
-<div class="line"><span class="lineno">   20</span>    }</div>
-<div class="ttc" id="aclass_auto_destroy_after_use_html_a228ab4b0b36e3eb1e0b8dd4b6987e7a8"><div class="ttname"><a href="#a228ab4b0b36e3eb1e0b8dd4b6987e7a8">AutoDestroyAfterUse::delay</a></div><div class="ttdeci">float delay</div><div class="ttdoc">Délai en secondes avant la destruction du GameObject.</div><div class="ttdef"><b>Definition</b> <a href="_auto_destroy_after_use_8cs_source.html#l00012">AutoDestroyAfterUse.cs:12</a></div></div>
+<p class="definition">Définition à la ligne <a class="el" href="_auto_destroy_after_use_8cs_source.html#l00016">16</a> du fichier <a class="el" href="_auto_destroy_after_use_8cs_source.html">AutoDestroyAfterUse.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   17</span>    {</div>
+<div class="line"><span class="lineno">   18</span>        Destroy(gameObject, <a class="code hl_variable" href="#a228ab4b0b36e3eb1e0b8dd4b6987e7a8">delay</a>);</div>
+<div class="line"><span class="lineno">   19</span>    }</div>
+<div class="ttc" id="aclass_auto_destroy_after_use_html_a228ab4b0b36e3eb1e0b8dd4b6987e7a8"><div class="ttname"><a href="#a228ab4b0b36e3eb1e0b8dd4b6987e7a8">AutoDestroyAfterUse::delay</a></div><div class="ttdeci">float delay</div><div class="ttdoc">Délai en secondes avant la destruction du GameObject après l&#39;appel de DéclencherDestruction.</div><div class="ttdef"><b>Definition</b> <a href="_auto_destroy_after_use_8cs_source.html#l00011">AutoDestroyAfterUse.cs:11</a></div></div>
 </div><!-- fragment -->
-<p class="reference">Références <a class="el" href="_auto_destroy_after_use_8cs_source.html#l00012">delay</a>.</p>
+<p class="reference">Références <a class="el" href="_auto_destroy_after_use_8cs_source.html#l00011">delay</a>.</p>
 
 </div>
 </div>
@@ -165,11 +165,11 @@ Attributs publics</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Délai en secondes avant la destruction du GameObject. </p>
+<p>Délai en secondes avant la destruction du GameObject après l'appel de <a class="el" href="#ad641ee1df711103f49cf01107909999f" title="Déclenche la destruction du GameObject après le délai spécifié dans delay.">DéclencherDestruction</a>. </p>
 
-<p class="definition">Définition à la ligne <a class="el" href="_auto_destroy_after_use_8cs_source.html#l00012">12</a> du fichier <a class="el" href="_auto_destroy_after_use_8cs_source.html">AutoDestroyAfterUse.cs</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_auto_destroy_after_use_8cs_source.html#l00011">11</a> du fichier <a class="el" href="_auto_destroy_after_use_8cs_source.html">AutoDestroyAfterUse.cs</a>.</p>
 
-<p class="reference">Référencé par <a class="el" href="_auto_destroy_after_use_8cs_source.html#l00017">DéclencherDestruction()</a>.</p>
+<p class="reference">Référencé par <a class="el" href="_auto_destroy_after_use_8cs_source.html#l00016">DéclencherDestruction()</a>.</p>
 
 </div>
 </div>

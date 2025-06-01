@@ -1,0 +1,405 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SupCity: Référence de la classe ResourceManager</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">SupCity
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('class_resource_manager.html','','class_resource_manager-members'); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Référence de la classe ResourceManager</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Gère les ressources du jeu : ajout, consommation, et accès global. Utilise un pattern Singleton pour être accessible depuis n'importe quel script.  
+ <a href="#details">Plus de détails...</a></p>
+<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Graphe d'héritage de ResourceManager:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+ <div class="center">
+  <img src="class_resource_manager.png" alt=""/>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Fonctions membres publiques</h2></td></tr>
+<tr class="memitem:aa4faa038b262373d099ac0935f4d3858" id="r_aa4faa038b262373d099ac0935f4d3858"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa4faa038b262373d099ac0935f4d3858">AddResource</a> (<a class="el" href="_resource_type_8cs.html#a8571efa4409be32e28abf3ea74a0dbb1">ResourceType</a> type, int amount)</td></tr>
+<tr class="memdesc:aa4faa038b262373d099ac0935f4d3858"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute une quantité donnée à une ressource.  <br /></td></tr>
+<tr class="memitem:aef6e3700cdafa1c2c72e0bbfa4f84949" id="r_aef6e3700cdafa1c2c72e0bbfa4f84949"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aef6e3700cdafa1c2c72e0bbfa4f84949">ConsumeResource</a> (<a class="el" href="_resource_type_8cs.html#a8571efa4409be32e28abf3ea74a0dbb1">ResourceType</a> type, int amount)</td></tr>
+<tr class="memdesc:aef6e3700cdafa1c2c72e0bbfa4f84949"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tente de consommer une quantité de ressource. Échoue si la quantité est insuffisante.  <br /></td></tr>
+<tr class="memitem:a016ccf0599cedf30c80b9c641af69d63" id="r_a016ccf0599cedf30c80b9c641af69d63"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a016ccf0599cedf30c80b9c641af69d63">GetResource</a> (<a class="el" href="_resource_type_8cs.html#a8571efa4409be32e28abf3ea74a0dbb1">ResourceType</a> type)</td></tr>
+<tr class="memdesc:a016ccf0599cedf30c80b9c641af69d63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Récupère la quantité actuelle d'une ressource.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-attribs" class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+Attributs publics statiques</h2></td></tr>
+<tr class="memitem:a50f41190d44e5d3b7bbf1b3216d70aa1" id="r_a50f41190d44e5d3b7bbf1b3216d70aa1"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_resource_manager.html">ResourceManager</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a50f41190d44e5d3b7bbf1b3216d70aa1">Instance</a></td></tr>
+<tr class="memdesc:a50f41190d44e5d3b7bbf1b3216d70aa1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instance globale du <a class="el" href="class_resource_manager.html" title="Gère les ressources du jeu : ajout, consommation, et accès global. Utilise un pattern Singleton pour ...">ResourceManager</a> (pattern Singleton).  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Fonctions membres privées</h2></td></tr>
+<tr class="memitem:a3440defe9a36e4434da2c44492bd09ab" id="r_a3440defe9a36e4434da2c44492bd09ab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3440defe9a36e4434da2c44492bd09ab">Awake</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Attributs privés</h2></td></tr>
+<tr class="memitem:acd619e137322f97ea9b9b85e757451b1" id="r_acd619e137322f97ea9b9b85e757451b1"><td class="memItemLeft" align="right" valign="top">Dictionary&lt; <a class="el" href="_resource_type_8cs.html#a8571efa4409be32e28abf3ea74a0dbb1">ResourceType</a>, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acd619e137322f97ea9b9b85e757451b1">resources</a> = new Dictionary&lt;<a class="el" href="_resource_type_8cs.html#a8571efa4409be32e28abf3ea74a0dbb1">ResourceType</a>, int&gt;()</td></tr>
+<tr class="memdesc:acd619e137322f97ea9b9b85e757451b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dictionnaire contenant la quantité actuelle de chaque type de ressource.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>Gère les ressources du jeu : ajout, consommation, et accès global. Utilise un pattern Singleton pour être accessible depuis n'importe quel script. </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="_resource_manager_8cs_source.html#l00008">8</a> du fichier <a class="el" href="_resource_manager_8cs_source.html">ResourceManager.cs</a>.</p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentation des fonctions membres</h2>
+<a id="aa4faa038b262373d099ac0935f4d3858" name="aa4faa038b262373d099ac0935f4d3858"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4faa038b262373d099ac0935f4d3858">&#9670;&#160;</a></span>AddResource()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ResourceManager::AddResource </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_resource_type_8cs.html#a8571efa4409be32e28abf3ea74a0dbb1">ResourceType</a></td>          <td class="paramname"><span class="paramname"><em>type</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>amount</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ajoute une quantité donnée à une ressource. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">type</td><td>Le type de ressource à ajouter.</td></tr>
+    <tr><td class="paramname">amount</td><td>La quantité à ajouter.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="_resource_manager_8cs_source.html#l00044">44</a> du fichier <a class="el" href="_resource_manager_8cs_source.html">ResourceManager.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   45</span>    {</div>
+<div class="line"><span class="lineno">   46</span>        <a class="code hl_variable" href="#acd619e137322f97ea9b9b85e757451b1">resources</a>[type] += amount;</div>
+<div class="line"><span class="lineno">   47</span>        Debug.Log($<span class="stringliteral">&quot;[ResourceManager] +{amount} {type} (Total: {resources[type]})&quot;</span>);</div>
+<div class="line"><span class="lineno">   48</span>    }</div>
+<div class="ttc" id="aclass_resource_manager_html_acd619e137322f97ea9b9b85e757451b1"><div class="ttname"><a href="#acd619e137322f97ea9b9b85e757451b1">ResourceManager::resources</a></div><div class="ttdeci">Dictionary&lt; ResourceType, int &gt; resources</div><div class="ttdoc">Dictionnaire contenant la quantité actuelle de chaque type de ressource.</div><div class="ttdef"><b>Definition</b> <a href="_resource_manager_8cs_source.html#l00018">ResourceManager.cs:18</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Références <a class="el" href="_resource_manager_8cs_source.html#l00018">resources</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="_production_building_8cs_source.html#l00067">ProductionBuilding::Produce()</a>.</p>
+
+</div>
+</div>
+<a id="a3440defe9a36e4434da2c44492bd09ab" name="a3440defe9a36e4434da2c44492bd09ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3440defe9a36e4434da2c44492bd09ab">&#9670;&#160;</a></span>Awake()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ResourceManager::Awake </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="_resource_manager_8cs_source.html#l00020">20</a> du fichier <a class="el" href="_resource_manager_8cs_source.html">ResourceManager.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   21</span>    {</div>
+<div class="line"><span class="lineno">   22</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a50f41190d44e5d3b7bbf1b3216d70aa1">Instance</a> == null)</div>
+<div class="line"><span class="lineno">   23</span>        {</div>
+<div class="line"><span class="lineno">   24</span>            <a class="code hl_variable" href="#a50f41190d44e5d3b7bbf1b3216d70aa1">Instance</a> = <span class="keyword">this</span>;</div>
+<div class="line"><span class="lineno">   25</span>            DontDestroyOnLoad(gameObject);</div>
+<div class="line"><span class="lineno">   26</span> </div>
+<div class="line"><span class="lineno">   27</span>            <span class="comment">// Initialise toutes les ressources à 0</span></div>
+<div class="line"><span class="lineno">   28</span>            <span class="keywordflow">foreach</span> (<a class="code hl_enumeration" href="_resource_type_8cs.html#a8571efa4409be32e28abf3ea74a0dbb1">ResourceType</a> type <span class="keywordflow">in</span> System.Enum.GetValues(typeof(<a class="code hl_enumeration" href="_resource_type_8cs.html#a8571efa4409be32e28abf3ea74a0dbb1">ResourceType</a>)))</div>
+<div class="line"><span class="lineno">   29</span>            {</div>
+<div class="line"><span class="lineno">   30</span>                <a class="code hl_variable" href="#acd619e137322f97ea9b9b85e757451b1">resources</a>[type] = 0;</div>
+<div class="line"><span class="lineno">   31</span>            }</div>
+<div class="line"><span class="lineno">   32</span>        }</div>
+<div class="line"><span class="lineno">   33</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   34</span>        {</div>
+<div class="line"><span class="lineno">   35</span>            Destroy(gameObject);</div>
+<div class="line"><span class="lineno">   36</span>        }</div>
+<div class="line"><span class="lineno">   37</span>    }</div>
+<div class="ttc" id="a_resource_type_8cs_html_a8571efa4409be32e28abf3ea74a0dbb1"><div class="ttname"><a href="_resource_type_8cs.html#a8571efa4409be32e28abf3ea74a0dbb1">ResourceType</a></div><div class="ttdeci">ResourceType</div><div class="ttdoc">Enumération représentant les différents types de ressources utilisés dans le jeu.</div><div class="ttdef"><b>Definition</b> <a href="_resource_type_8cs_source.html#l00006">ResourceType.cs:7</a></div></div>
+<div class="ttc" id="aclass_resource_manager_html_a50f41190d44e5d3b7bbf1b3216d70aa1"><div class="ttname"><a href="#a50f41190d44e5d3b7bbf1b3216d70aa1">ResourceManager::Instance</a></div><div class="ttdeci">static ResourceManager Instance</div><div class="ttdoc">Instance globale du ResourceManager (pattern Singleton).</div><div class="ttdef"><b>Definition</b> <a href="_resource_manager_8cs_source.html#l00013">ResourceManager.cs:13</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Références <a class="el" href="_resource_manager_8cs_source.html#l00013">Instance</a>, et <a class="el" href="_resource_manager_8cs_source.html#l00018">resources</a>.</p>
+
+</div>
+</div>
+<a id="aef6e3700cdafa1c2c72e0bbfa4f84949" name="aef6e3700cdafa1c2c72e0bbfa4f84949"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef6e3700cdafa1c2c72e0bbfa4f84949">&#9670;&#160;</a></span>ConsumeResource()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ResourceManager::ConsumeResource </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_resource_type_8cs.html#a8571efa4409be32e28abf3ea74a0dbb1">ResourceType</a></td>          <td class="paramname"><span class="paramname"><em>type</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>amount</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tente de consommer une quantité de ressource. Échoue si la quantité est insuffisante. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">type</td><td>Le type de ressource à consommer.</td></tr>
+    <tr><td class="paramname">amount</td><td>La quantité souhaitée.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>True si la ressource a été consommée, False sinon.</dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="_resource_manager_8cs_source.html#l00056">56</a> du fichier <a class="el" href="_resource_manager_8cs_source.html">ResourceManager.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   57</span>    {</div>
+<div class="line"><span class="lineno">   58</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="#acd619e137322f97ea9b9b85e757451b1">resources</a>.ContainsKey(type) &amp;&amp; <a class="code hl_variable" href="#acd619e137322f97ea9b9b85e757451b1">resources</a>[type] &gt;= amount)</div>
+<div class="line"><span class="lineno">   59</span>        {</div>
+<div class="line"><span class="lineno">   60</span>            <a class="code hl_variable" href="#acd619e137322f97ea9b9b85e757451b1">resources</a>[type] -= amount;</div>
+<div class="line"><span class="lineno">   61</span>            Debug.Log($<span class="stringliteral">&quot;[ResourceManager] -{amount} {type} (Remaining: {resources[type]})&quot;</span>);</div>
+<div class="line"><span class="lineno">   62</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   63</span>        }</div>
+<div class="line"><span class="lineno">   64</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   65</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">Références <a class="el" href="_resource_manager_8cs_source.html#l00018">resources</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="_production_building_8cs_source.html#l00067">ProductionBuilding::Produce()</a>.</p>
+
+</div>
+</div>
+<a id="a016ccf0599cedf30c80b9c641af69d63" name="a016ccf0599cedf30c80b9c641af69d63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a016ccf0599cedf30c80b9c641af69d63">&#9670;&#160;</a></span>GetResource()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ResourceManager::GetResource </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_resource_type_8cs.html#a8571efa4409be32e28abf3ea74a0dbb1">ResourceType</a></td>          <td class="paramname"><span class="paramname"><em>type</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Récupère la quantité actuelle d'une ressource. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">type</td><td>Le type de ressource à interroger.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>La quantité actuelle disponible.</dd></dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="_resource_manager_8cs_source.html#l00072">72</a> du fichier <a class="el" href="_resource_manager_8cs_source.html">ResourceManager.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   73</span>    {</div>
+<div class="line"><span class="lineno">   74</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="#acd619e137322f97ea9b9b85e757451b1">resources</a>[type];</div>
+<div class="line"><span class="lineno">   75</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">Références <a class="el" href="_resource_manager_8cs_source.html#l00018">resources</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="_unlockable_button_8cs_source.html#l00039">UnlockableItem::CheckUnlock()</a>, et <a class="el" href="_resource_display_u_i_8cs_source.html#l00022">ResourceDisplayUI::Update()</a>.</p>
+
+</div>
+</div>
+<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Documentation des données membres</h2>
+<a id="a50f41190d44e5d3b7bbf1b3216d70aa1" name="a50f41190d44e5d3b7bbf1b3216d70aa1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50f41190d44e5d3b7bbf1b3216d70aa1">&#9670;&#160;</a></span>Instance</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_resource_manager.html">ResourceManager</a> ResourceManager::Instance</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Instance globale du <a class="el" href="class_resource_manager.html" title="Gère les ressources du jeu : ajout, consommation, et accès global. Utilise un pattern Singleton pour ...">ResourceManager</a> (pattern Singleton). </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="_resource_manager_8cs_source.html#l00013">13</a> du fichier <a class="el" href="_resource_manager_8cs_source.html">ResourceManager.cs</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="_resource_manager_8cs_source.html#l00020">Awake()</a>, <a class="el" href="_unlockable_button_8cs_source.html#l00039">UnlockableItem::CheckUnlock()</a>, <a class="el" href="_production_building_8cs_source.html#l00067">ProductionBuilding::Produce()</a>, et <a class="el" href="_resource_display_u_i_8cs_source.html#l00022">ResourceDisplayUI::Update()</a>.</p>
+
+</div>
+</div>
+<a id="acd619e137322f97ea9b9b85e757451b1" name="acd619e137322f97ea9b9b85e757451b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd619e137322f97ea9b9b85e757451b1">&#9670;&#160;</a></span>resources</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Dictionary&lt;<a class="el" href="_resource_type_8cs.html#a8571efa4409be32e28abf3ea74a0dbb1">ResourceType</a>, int&gt; ResourceManager::resources = new Dictionary&lt;<a class="el" href="_resource_type_8cs.html#a8571efa4409be32e28abf3ea74a0dbb1">ResourceType</a>, int&gt;()</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Dictionnaire contenant la quantité actuelle de chaque type de ressource. </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="_resource_manager_8cs_source.html#l00018">18</a> du fichier <a class="el" href="_resource_manager_8cs_source.html">ResourceManager.cs</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="_resource_manager_8cs_source.html#l00044">AddResource()</a>, <a class="el" href="_resource_manager_8cs_source.html#l00020">Awake()</a>, <a class="el" href="_resource_manager_8cs_source.html#l00056">ConsumeResource()</a>, et <a class="el" href="_resource_manager_8cs_source.html#l00072">GetResource()</a>.</p>
+
+</div>
+</div>
+<hr/>La documentation de cette classe a été générée à partir du fichier suivant :<ul>
+<li>Assets/Scripts/<a class="el" href="_resource_manager_8cs_source.html">ResourceManager.cs</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="class_resource_manager.html">ResourceManager</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

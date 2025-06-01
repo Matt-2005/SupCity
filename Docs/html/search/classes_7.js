@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['randomnpc_0',['RandomNPC',['../class_random_n_p_c.html',1,'']]],
-  ['ressourcemaxplayercapacity_1',['RessourceMaxPlayerCapacity',['../class_ressource_max_player_capacity.html',1,'']]]
+  ['objecteraseable_0',['ObjectEraseable',['../class_object_eraseable.html',1,'']]],
+  ['objecttargetmanager_1',['ObjectTargetManager',['../class_object_target_manager.html',1,'']]]
 ];

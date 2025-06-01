@@ -92,7 +92,7 @@ $(function(){initNavTree('class_pathfinding_a_i.html','','class_pathfinding_a_i-
 </div><!--header-->
 <div class="contents">
 
-<p>Gère le déplacement automatique d’un PNJ vers une cible en utilisant le pathfinding A*. Met à jour les animations selon la direction et notifie l'arrivée via le script <code><a class="el" href="class_besoin_players.html" title="Gère les besoins vitaux des PNJ : faim, soif, énergie. Le PNJ choisit une action à effectuer selon se...">BesoinPlayers</a></code>.  
+<p>Gère le déplacement automatique d’un PNJ vers une cible à l’aide d’A* Pathfinding. Met à jour les animations et notifie l’arrivée au script <a class="el" href="class_besoin_players.html" title="Gère les besoins fondamentaux (faim, soif, énergie) et les comportements associés des PNJ....">BesoinPlayers</a>.  
  <a href="#details">Plus de détails...</a></p>
 <div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Graphe d'héritage de PathfindingAI:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -105,40 +105,42 @@ $(function(){initNavTree('class_pathfinding_a_i.html','','class_pathfinding_a_i-
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
 <tr class="memitem:a023d1bf5fbf996d79c05affbf82dd8c2" id="r_a023d1bf5fbf996d79c05affbf82dd8c2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a023d1bf5fbf996d79c05affbf82dd8c2">setTarget</a> (Transform newTarget)</td></tr>
-<tr class="memdesc:a023d1bf5fbf996d79c05affbf82dd8c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Définit dynamiquement une nouvelle cible à atteindre.  <br /></td></tr>
+<tr class="memdesc:a023d1bf5fbf996d79c05affbf82dd8c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Définit dynamiquement une nouvelle cible à atteindre. Réinitialise la notification d’arrivée.  <br /></td></tr>
+<tr class="memitem:a4e7a839920c5f913804b5e85c11172ea" id="r_a4e7a839920c5f913804b5e85c11172ea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4e7a839920c5f913804b5e85c11172ea">setTargetPos</a> (Vector3 worldPosition)</td></tr>
+<tr class="memdesc:a4e7a839920c5f913804b5e85c11172ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crée une cible temporaire à une position donnée et s'y rend.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Attributs publics</h2></td></tr>
 <tr class="memitem:a8e00724150d962786df34afdf7796c3f" id="r_a8e00724150d962786df34afdf7796c3f"><td class="memItemLeft" align="right" valign="top">Transform&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8e00724150d962786df34afdf7796c3f">target</a></td></tr>
-<tr class="memdesc:a8e00724150d962786df34afdf7796c3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transform de la cible à atteindre.  <br /></td></tr>
-<tr class="memitem:a6c95cbdfb75d9db36bc6b9915f371182" id="r_a6c95cbdfb75d9db36bc6b9915f371182"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6c95cbdfb75d9db36bc6b9915f371182">speed</a> = 200f</td></tr>
+<tr class="memdesc:a8e00724150d962786df34afdf7796c3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transform du GameObject cible à atteindre.  <br /></td></tr>
+<tr class="memitem:a6c95cbdfb75d9db36bc6b9915f371182" id="r_a6c95cbdfb75d9db36bc6b9915f371182"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6c95cbdfb75d9db36bc6b9915f371182">speed</a> = 3f</td></tr>
 <tr class="memdesc:a6c95cbdfb75d9db36bc6b9915f371182"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vitesse de déplacement du PNJ.  <br /></td></tr>
 <tr class="memitem:a3de3b16873aa6e43a8c74c6ba4f81f18" id="r_a3de3b16873aa6e43a8c74c6ba4f81f18"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3de3b16873aa6e43a8c74c6ba4f81f18">nextWayPointDistance</a> = 0.3f</td></tr>
-<tr class="memdesc:a3de3b16873aa6e43a8c74c6ba4f81f18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Distance minimale pour passer au waypoint suivant.  <br /></td></tr>
-<tr class="memitem:a26f57b67d5bfff1e16e17e15468a9af7" id="r_a26f57b67d5bfff1e16e17e15468a9af7"><td class="memItemLeft" align="right" valign="top">LayerMask&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a26f57b67d5bfff1e16e17e15468a9af7">solidObjectsLayer</a></td></tr>
-<tr class="memdesc:a26f57b67d5bfff1e16e17e15468a9af7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Layer contenant les objets solides (non traversables).  <br /></td></tr>
+<tr class="memdesc:a3de3b16873aa6e43a8c74c6ba4f81f18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Distance minimale pour considérer qu’un waypoint a été atteint.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Fonctions membres privées</h2></td></tr>
 <tr class="memitem:ac03a8df72db2fc1b3ffaf0d1f8c72c53" id="r_ac03a8df72db2fc1b3ffaf0d1f8c72c53"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac03a8df72db2fc1b3ffaf0d1f8c72c53">Start</a> ()</td></tr>
-<tr class="memdesc:ac03a8df72db2fc1b3ffaf0d1f8c72c53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise le seeker et démarre la mise à jour du chemin à intervalle régulier.  <br /></td></tr>
+<tr class="memdesc:ac03a8df72db2fc1b3ffaf0d1f8c72c53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise les composants et lance la mise à jour régulière du chemin.  <br /></td></tr>
 <tr class="memitem:a95d531b59e51ce606fbaa3e9f08b57f6" id="r_a95d531b59e51ce606fbaa3e9f08b57f6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a95d531b59e51ce606fbaa3e9f08b57f6">UpdatePath</a> ()</td></tr>
-<tr class="memdesc:a95d531b59e51ce606fbaa3e9f08b57f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Demande au Seeker de recalculer un chemin vers la cible.  <br /></td></tr>
+<tr class="memdesc:a95d531b59e51ce606fbaa3e9f08b57f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Met à jour le chemin vers la cible à l’aide de A* Pathfinding.  <br /></td></tr>
 <tr class="memitem:a093aa7f9c249ce2ae27552a4b0f4a2ac" id="r_a093aa7f9c249ce2ae27552a4b0f4a2ac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a093aa7f9c249ce2ae27552a4b0f4a2ac">OnPathComplete</a> (Path p)</td></tr>
-<tr class="memdesc:a093aa7f9c249ce2ae27552a4b0f4a2ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback appelée lorsque le chemin est calculé avec succès.  <br /></td></tr>
+<tr class="memdesc:a093aa7f9c249ce2ae27552a4b0f4a2ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback appelé une fois le chemin calculé avec succès.  <br /></td></tr>
 <tr class="memitem:a8d82023871834564b75cb8fa2b10bd7b" id="r_a8d82023871834564b75cb8fa2b10bd7b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8d82023871834564b75cb8fa2b10bd7b">FixedUpdate</a> ()</td></tr>
-<tr class="memdesc:a8d82023871834564b75cb8fa2b10bd7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Déplace le PNJ frame par frame en suivant le chemin calculé.  <br /></td></tr>
+<tr class="memdesc:a8d82023871834564b75cb8fa2b10bd7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gère le déplacement du PNJ à chaque frame physique. Suit les waypoints du chemin, met à jour les animations et notifie l’arrivée.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Attributs privés</h2></td></tr>
 <tr class="memitem:abbd0546eb23039690a5ae6bd98d41052" id="r_abbd0546eb23039690a5ae6bd98d41052"><td class="memItemLeft" align="right" valign="top">Path&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abbd0546eb23039690a5ae6bd98d41052">path</a></td></tr>
 <tr class="memitem:a631e90c173d619ed023312ef79ecab5e" id="r_a631e90c173d619ed023312ef79ecab5e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a631e90c173d619ed023312ef79ecab5e">currentWayPoint</a> = 0</td></tr>
 <tr class="memitem:aec8ec6c1943e919925c88a6c1a09efb0" id="r_aec8ec6c1943e919925c88a6c1a09efb0"><td class="memItemLeft" align="right" valign="top">Seeker&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aec8ec6c1943e919925c88a6c1a09efb0">seeker</a></td></tr>
+<tr class="memitem:a89cbdfeb1887b72156d188713cc45230" id="r_a89cbdfeb1887b72156d188713cc45230"><td class="memItemLeft" align="right" valign="top">Rigidbody2D&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a89cbdfeb1887b72156d188713cc45230">rb</a></td></tr>
 <tr class="memitem:a36d0eff29837f33849b1145d580fb2a4" id="r_a36d0eff29837f33849b1145d580fb2a4"><td class="memItemLeft" align="right" valign="top">Animator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a36d0eff29837f33849b1145d580fb2a4">animator</a></td></tr>
-<tr class="memdesc:a36d0eff29837f33849b1145d580fb2a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Référence à l’Animator (sur l’enfant du PNJ).  <br /></td></tr>
+<tr class="memitem:acc8c569689cb5b1e5a1ecb75f4922a0d" id="r_acc8c569689cb5b1e5a1ecb75f4922a0d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acc8c569689cb5b1e5a1ecb75f4922a0d">aNotifieArrivee</a> = false</td></tr>
+<tr class="memdesc:acc8c569689cb5b1e5a1ecb75f4922a0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indique si le script a déjà notifié l’arrivée au besoin.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Description détaillée</h2>
-<div class="textblock"><p>Gère le déplacement automatique d’un PNJ vers une cible en utilisant le pathfinding A*. Met à jour les animations selon la direction et notifie l'arrivée via le script <code><a class="el" href="class_besoin_players.html" title="Gère les besoins vitaux des PNJ : faim, soif, énergie. Le PNJ choisit une action à effectuer selon se...">BesoinPlayers</a></code>. </p>
+<div class="textblock"><p>Gère le déplacement automatique d’un PNJ vers une cible à l’aide d’A* Pathfinding. Met à jour les animations et notifie l’arrivée au script <a class="el" href="class_besoin_players.html" title="Gère les besoins fondamentaux (faim, soif, énergie) et les comportements associés des PNJ....">BesoinPlayers</a>. </p>
 
 <p class="definition">Définition à la ligne <a class="el" href="_pathfinding_8cs_source.html#l00008">8</a> du fichier <a class="el" href="_pathfinding_8cs_source.html">Pathfinding.cs</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentation des fonctions membres</h2>
@@ -165,69 +167,74 @@ Attributs privés</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Déplace le PNJ frame par frame en suivant le chemin calculé. </p>
+<p>Gère le déplacement du PNJ à chaque frame physique. Suit les waypoints du chemin, met à jour les animations et notifie l’arrivée. </p>
 
-<p class="definition">Définition à la ligne <a class="el" href="_pathfinding_8cs_source.html#l00058">58</a> du fichier <a class="el" href="_pathfinding_8cs_source.html">Pathfinding.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   59</span>    {</div>
-<div class="line"><span class="lineno">   60</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="#abbd0546eb23039690a5ae6bd98d41052">path</a> == null || <a class="code hl_variable" href="#a8e00724150d962786df34afdf7796c3f">target</a> == null) <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   61</span> </div>
-<div class="line"><span class="lineno">   62</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a631e90c173d619ed023312ef79ecab5e">currentWayPoint</a> &gt;= <a class="code hl_variable" href="#abbd0546eb23039690a5ae6bd98d41052">path</a>.vectorPath.Count)</div>
-<div class="line"><span class="lineno">   63</span>        {</div>
-<div class="line"><span class="lineno">   64</span>            <span class="comment">// Fin du chemin déjà atteinte</span></div>
-<div class="line"><span class="lineno">   65</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a36d0eff29837f33849b1145d580fb2a4">animator</a> != null)</div>
-<div class="line"><span class="lineno">   66</span>            {</div>
-<div class="line"><span class="lineno">   67</span>                <a class="code hl_variable" href="#a36d0eff29837f33849b1145d580fb2a4">animator</a>.SetBool(<span class="stringliteral">&quot;isMoving&quot;</span>, <span class="keyword">false</span>);</div>
-<div class="line"><span class="lineno">   68</span>            }</div>
-<div class="line"><span class="lineno">   69</span> </div>
-<div class="line"><span class="lineno">   70</span>            GetComponent&lt;BesoinPlayers&gt;().NotifieArrivee();</div>
-<div class="line"><span class="lineno">   71</span>            <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   72</span>        }</div>
-<div class="line"><span class="lineno">   73</span> </div>
-<div class="line"><span class="lineno">   74</span>        Vector3 targetPosition = <a class="code hl_variable" href="#abbd0546eb23039690a5ae6bd98d41052">path</a>.vectorPath[<a class="code hl_variable" href="#a631e90c173d619ed023312ef79ecab5e">currentWayPoint</a>];</div>
-<div class="line"><span class="lineno">   75</span>        targetPosition.z = transform.position.z;</div>
-<div class="line"><span class="lineno">   76</span> </div>
-<div class="line"><span class="lineno">   77</span>        Vector3 direction = (targetPosition - transform.position).normalized;</div>
-<div class="line"><span class="lineno">   78</span> </div>
-<div class="line"><span class="lineno">   79</span>        <span class="comment">// 🎞️ Animation</span></div>
-<div class="line"><span class="lineno">   80</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a36d0eff29837f33849b1145d580fb2a4">animator</a> != null)</div>
-<div class="line"><span class="lineno">   81</span>        {</div>
-<div class="line"><span class="lineno">   82</span>            <a class="code hl_variable" href="#a36d0eff29837f33849b1145d580fb2a4">animator</a>.SetFloat(<span class="stringliteral">&quot;moveX&quot;</span>, direction.x);</div>
-<div class="line"><span class="lineno">   83</span>            <a class="code hl_variable" href="#a36d0eff29837f33849b1145d580fb2a4">animator</a>.SetFloat(<span class="stringliteral">&quot;moveY&quot;</span>, direction.y);</div>
-<div class="line"><span class="lineno">   84</span>            <a class="code hl_variable" href="#a36d0eff29837f33849b1145d580fb2a4">animator</a>.SetBool(<span class="stringliteral">&quot;isMoving&quot;</span>, <span class="keyword">true</span>);</div>
-<div class="line"><span class="lineno">   85</span>        }</div>
-<div class="line"><span class="lineno">   86</span> </div>
-<div class="line"><span class="lineno">   87</span>        <span class="comment">// ✅ Mouvement constant</span></div>
-<div class="line"><span class="lineno">   88</span>        Vector3 move = direction * <a class="code hl_variable" href="#a6c95cbdfb75d9db36bc6b9915f371182">speed</a> * Time.deltaTime;</div>
-<div class="line"><span class="lineno">   89</span>        transform.position += move;</div>
+<p class="definition">Définition à la ligne <a class="el" href="_pathfinding_8cs_source.html#l00064">64</a> du fichier <a class="el" href="_pathfinding_8cs_source.html">Pathfinding.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   65</span>    {</div>
+<div class="line"><span class="lineno">   66</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="#abbd0546eb23039690a5ae6bd98d41052">path</a> == null || <a class="code hl_variable" href="#a8e00724150d962786df34afdf7796c3f">target</a> == null) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   67</span> </div>
+<div class="line"><span class="lineno">   68</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a631e90c173d619ed023312ef79ecab5e">currentWayPoint</a> &gt;= <a class="code hl_variable" href="#abbd0546eb23039690a5ae6bd98d41052">path</a>.vectorPath.Count)</div>
+<div class="line"><span class="lineno">   69</span>        {</div>
+<div class="line"><span class="lineno">   70</span>            <span class="keywordflow">if</span> (!<a class="code hl_variable" href="#acc8c569689cb5b1e5a1ecb75f4922a0d">aNotifieArrivee</a>)</div>
+<div class="line"><span class="lineno">   71</span>            {</div>
+<div class="line"><span class="lineno">   72</span>                <a class="code hl_variable" href="#acc8c569689cb5b1e5a1ecb75f4922a0d">aNotifieArrivee</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   73</span>                <a class="code hl_variable" href="#a36d0eff29837f33849b1145d580fb2a4">animator</a>?.SetBool(<span class="stringliteral">&quot;isMoving&quot;</span>, <span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">   74</span> </div>
+<div class="line"><span class="lineno">   75</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a8e00724150d962786df34afdf7796c3f">target</a>.name.StartsWith(<span class="stringliteral">&quot;TempTarget&quot;</span>) || <a class="code hl_variable" href="#a8e00724150d962786df34afdf7796c3f">target</a>.name.StartsWith(<span class="stringliteral">&quot;TargetRelax&quot;</span>))</div>
+<div class="line"><span class="lineno">   76</span>                {</div>
+<div class="line"><span class="lineno">   77</span>                    Destroy(<a class="code hl_variable" href="#a8e00724150d962786df34afdf7796c3f">target</a>.gameObject);</div>
+<div class="line"><span class="lineno">   78</span>                    <a class="code hl_variable" href="#a8e00724150d962786df34afdf7796c3f">target</a> = null;</div>
+<div class="line"><span class="lineno">   79</span>                }</div>
+<div class="line"><span class="lineno">   80</span> </div>
+<div class="line"><span class="lineno">   81</span>                GetComponent&lt;BesoinPlayers&gt;()?.NotifieArrivee();</div>
+<div class="line"><span class="lineno">   82</span>            }</div>
+<div class="line"><span class="lineno">   83</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   84</span>        }</div>
+<div class="line"><span class="lineno">   85</span> </div>
+<div class="line"><span class="lineno">   86</span>        Vector2 direction = ((Vector2)<a class="code hl_variable" href="#abbd0546eb23039690a5ae6bd98d41052">path</a>.vectorPath[<a class="code hl_variable" href="#a631e90c173d619ed023312ef79ecab5e">currentWayPoint</a>] - <a class="code hl_variable" href="#a89cbdfeb1887b72156d188713cc45230">rb</a>.position).normalized;</div>
+<div class="line"><span class="lineno">   87</span>        Vector2 movement = direction * <a class="code hl_variable" href="#a6c95cbdfb75d9db36bc6b9915f371182">speed</a> * Time.fixedDeltaTime;</div>
+<div class="line"><span class="lineno">   88</span> </div>
+<div class="line"><span class="lineno">   89</span>        <a class="code hl_variable" href="#a89cbdfeb1887b72156d188713cc45230">rb</a>.MovePosition(<a class="code hl_variable" href="#a89cbdfeb1887b72156d188713cc45230">rb</a>.position + movement);</div>
 <div class="line"><span class="lineno">   90</span> </div>
-<div class="line"><span class="lineno">   91</span>        <span class="keywordtype">float</span> distance = Vector3.Distance(transform.position, targetPosition);</div>
-<div class="line"><span class="lineno">   92</span> </div>
-<div class="line"><span class="lineno">   93</span>        <span class="keywordflow">if</span> (distance &lt; <a class="code hl_variable" href="#a3de3b16873aa6e43a8c74c6ba4f81f18">nextWayPointDistance</a>)</div>
-<div class="line"><span class="lineno">   94</span>        {</div>
-<div class="line"><span class="lineno">   95</span>            <a class="code hl_variable" href="#a631e90c173d619ed023312ef79ecab5e">currentWayPoint</a>++;</div>
-<div class="line"><span class="lineno">   96</span> </div>
-<div class="line"><span class="lineno">   97</span>            <span class="comment">// 📌 Si c’est le dernier point qu’on atteint, snap direct pour éviter le ralentissement</span></div>
-<div class="line"><span class="lineno">   98</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a631e90c173d619ed023312ef79ecab5e">currentWayPoint</a> &gt;= <a class="code hl_variable" href="#abbd0546eb23039690a5ae6bd98d41052">path</a>.vectorPath.Count)</div>
-<div class="line"><span class="lineno">   99</span>            {</div>
-<div class="line"><span class="lineno">  100</span>                transform.position = targetPosition;</div>
-<div class="line"><span class="lineno">  101</span> </div>
-<div class="line"><span class="lineno">  102</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a36d0eff29837f33849b1145d580fb2a4">animator</a> != null)</div>
-<div class="line"><span class="lineno">  103</span>                {</div>
-<div class="line"><span class="lineno">  104</span>                    <a class="code hl_variable" href="#a36d0eff29837f33849b1145d580fb2a4">animator</a>.SetBool(<span class="stringliteral">&quot;isMoving&quot;</span>, <span class="keyword">false</span>);</div>
-<div class="line"><span class="lineno">  105</span>                }</div>
-<div class="line"><span class="lineno">  106</span> </div>
-<div class="line"><span class="lineno">  107</span>                GetComponent&lt;BesoinPlayers&gt;().NotifieArrivee();</div>
-<div class="line"><span class="lineno">  108</span>            }</div>
-<div class="line"><span class="lineno">  109</span>        }</div>
-<div class="line"><span class="lineno">  110</span>    }</div>
-<div class="ttc" id="aclass_pathfinding_a_i_html_a36d0eff29837f33849b1145d580fb2a4"><div class="ttname"><a href="#a36d0eff29837f33849b1145d580fb2a4">PathfindingAI::animator</a></div><div class="ttdeci">Animator animator</div><div class="ttdoc">Référence à l’Animator (sur l’enfant du PNJ).</div><div class="ttdef"><b>Definition</b> <a href="_pathfinding_8cs_source.html#l00028">Pathfinding.cs:28</a></div></div>
-<div class="ttc" id="aclass_pathfinding_a_i_html_a3de3b16873aa6e43a8c74c6ba4f81f18"><div class="ttname"><a href="#a3de3b16873aa6e43a8c74c6ba4f81f18">PathfindingAI::nextWayPointDistance</a></div><div class="ttdeci">float nextWayPointDistance</div><div class="ttdoc">Distance minimale pour passer au waypoint suivant.</div><div class="ttdef"><b>Definition</b> <a href="_pathfinding_8cs_source.html#l00017">Pathfinding.cs:17</a></div></div>
+<div class="line"><span class="lineno">   91</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a36d0eff29837f33849b1145d580fb2a4">animator</a> != null)</div>
+<div class="line"><span class="lineno">   92</span>        {</div>
+<div class="line"><span class="lineno">   93</span>            <a class="code hl_variable" href="#a36d0eff29837f33849b1145d580fb2a4">animator</a>.SetBool(<span class="stringliteral">&quot;isMoving&quot;</span>, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">   94</span>            <a class="code hl_variable" href="#a36d0eff29837f33849b1145d580fb2a4">animator</a>.SetFloat(<span class="stringliteral">&quot;moveX&quot;</span>, direction.x);</div>
+<div class="line"><span class="lineno">   95</span>            <a class="code hl_variable" href="#a36d0eff29837f33849b1145d580fb2a4">animator</a>.SetFloat(<span class="stringliteral">&quot;moveY&quot;</span>, direction.y);</div>
+<div class="line"><span class="lineno">   96</span>        }</div>
+<div class="line"><span class="lineno">   97</span> </div>
+<div class="line"><span class="lineno">   98</span>        <span class="keywordtype">float</span> distance = Vector2.Distance(<a class="code hl_variable" href="#a89cbdfeb1887b72156d188713cc45230">rb</a>.position, <a class="code hl_variable" href="#abbd0546eb23039690a5ae6bd98d41052">path</a>.vectorPath[<a class="code hl_variable" href="#a631e90c173d619ed023312ef79ecab5e">currentWayPoint</a>]);</div>
+<div class="line"><span class="lineno">   99</span>        <span class="keywordflow">if</span> (distance &lt; <a class="code hl_variable" href="#a3de3b16873aa6e43a8c74c6ba4f81f18">nextWayPointDistance</a>)</div>
+<div class="line"><span class="lineno">  100</span>        {</div>
+<div class="line"><span class="lineno">  101</span>            <a class="code hl_variable" href="#a631e90c173d619ed023312ef79ecab5e">currentWayPoint</a>++;</div>
+<div class="line"><span class="lineno">  102</span>        }</div>
+<div class="line"><span class="lineno">  103</span> </div>
+<div class="line"><span class="lineno">  104</span>        <span class="comment">// Correction finale si le dernier waypoint est atteint mais non détecté</span></div>
+<div class="line"><span class="lineno">  105</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a631e90c173d619ed023312ef79ecab5e">currentWayPoint</a> &gt;= <a class="code hl_variable" href="#abbd0546eb23039690a5ae6bd98d41052">path</a>.vectorPath.Count &amp;&amp; !<a class="code hl_variable" href="#acc8c569689cb5b1e5a1ecb75f4922a0d">aNotifieArrivee</a>)</div>
+<div class="line"><span class="lineno">  106</span>        {</div>
+<div class="line"><span class="lineno">  107</span>            <a class="code hl_variable" href="#a89cbdfeb1887b72156d188713cc45230">rb</a>.position = <a class="code hl_variable" href="#abbd0546eb23039690a5ae6bd98d41052">path</a>.vectorPath[^1];</div>
+<div class="line"><span class="lineno">  108</span>            <a class="code hl_variable" href="#acc8c569689cb5b1e5a1ecb75f4922a0d">aNotifieArrivee</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  109</span>            <a class="code hl_variable" href="#a36d0eff29837f33849b1145d580fb2a4">animator</a>?.SetBool(<span class="stringliteral">&quot;isMoving&quot;</span>, <span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  110</span> </div>
+<div class="line"><span class="lineno">  111</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a8e00724150d962786df34afdf7796c3f">target</a>.name.StartsWith(<span class="stringliteral">&quot;TempTarget&quot;</span>) || <a class="code hl_variable" href="#a8e00724150d962786df34afdf7796c3f">target</a>.name.StartsWith(<span class="stringliteral">&quot;TargetRelax&quot;</span>))</div>
+<div class="line"><span class="lineno">  112</span>            {</div>
+<div class="line"><span class="lineno">  113</span>                Destroy(<a class="code hl_variable" href="#a8e00724150d962786df34afdf7796c3f">target</a>.gameObject);</div>
+<div class="line"><span class="lineno">  114</span>                <a class="code hl_variable" href="#a8e00724150d962786df34afdf7796c3f">target</a> = null;</div>
+<div class="line"><span class="lineno">  115</span>            }</div>
+<div class="line"><span class="lineno">  116</span> </div>
+<div class="line"><span class="lineno">  117</span>            GetComponent&lt;BesoinPlayers&gt;()?.NotifieArrivee();</div>
+<div class="line"><span class="lineno">  118</span>        }</div>
+<div class="line"><span class="lineno">  119</span>    }</div>
+<div class="ttc" id="aclass_pathfinding_a_i_html_a36d0eff29837f33849b1145d580fb2a4"><div class="ttname"><a href="#a36d0eff29837f33849b1145d580fb2a4">PathfindingAI::animator</a></div><div class="ttdeci">Animator animator</div><div class="ttdef"><b>Definition</b> <a href="_pathfinding_8cs_source.html#l00024">Pathfinding.cs:24</a></div></div>
+<div class="ttc" id="aclass_pathfinding_a_i_html_a3de3b16873aa6e43a8c74c6ba4f81f18"><div class="ttname"><a href="#a3de3b16873aa6e43a8c74c6ba4f81f18">PathfindingAI::nextWayPointDistance</a></div><div class="ttdeci">float nextWayPointDistance</div><div class="ttdoc">Distance minimale pour considérer qu’un waypoint a été atteint.</div><div class="ttdef"><b>Definition</b> <a href="_pathfinding_8cs_source.html#l00017">Pathfinding.cs:17</a></div></div>
 <div class="ttc" id="aclass_pathfinding_a_i_html_a631e90c173d619ed023312ef79ecab5e"><div class="ttname"><a href="#a631e90c173d619ed023312ef79ecab5e">PathfindingAI::currentWayPoint</a></div><div class="ttdeci">int currentWayPoint</div><div class="ttdef"><b>Definition</b> <a href="_pathfinding_8cs_source.html#l00020">Pathfinding.cs:20</a></div></div>
 <div class="ttc" id="aclass_pathfinding_a_i_html_a6c95cbdfb75d9db36bc6b9915f371182"><div class="ttname"><a href="#a6c95cbdfb75d9db36bc6b9915f371182">PathfindingAI::speed</a></div><div class="ttdeci">float speed</div><div class="ttdoc">Vitesse de déplacement du PNJ.</div><div class="ttdef"><b>Definition</b> <a href="_pathfinding_8cs_source.html#l00014">Pathfinding.cs:14</a></div></div>
-<div class="ttc" id="aclass_pathfinding_a_i_html_a8e00724150d962786df34afdf7796c3f"><div class="ttname"><a href="#a8e00724150d962786df34afdf7796c3f">PathfindingAI::target</a></div><div class="ttdeci">Transform target</div><div class="ttdoc">Transform de la cible à atteindre.</div><div class="ttdef"><b>Definition</b> <a href="_pathfinding_8cs_source.html#l00011">Pathfinding.cs:11</a></div></div>
+<div class="ttc" id="aclass_pathfinding_a_i_html_a89cbdfeb1887b72156d188713cc45230"><div class="ttname"><a href="#a89cbdfeb1887b72156d188713cc45230">PathfindingAI::rb</a></div><div class="ttdeci">Rigidbody2D rb</div><div class="ttdef"><b>Definition</b> <a href="_pathfinding_8cs_source.html#l00023">Pathfinding.cs:23</a></div></div>
+<div class="ttc" id="aclass_pathfinding_a_i_html_a8e00724150d962786df34afdf7796c3f"><div class="ttname"><a href="#a8e00724150d962786df34afdf7796c3f">PathfindingAI::target</a></div><div class="ttdeci">Transform target</div><div class="ttdoc">Transform du GameObject cible à atteindre.</div><div class="ttdef"><b>Definition</b> <a href="_pathfinding_8cs_source.html#l00011">Pathfinding.cs:11</a></div></div>
 <div class="ttc" id="aclass_pathfinding_a_i_html_abbd0546eb23039690a5ae6bd98d41052"><div class="ttname"><a href="#abbd0546eb23039690a5ae6bd98d41052">PathfindingAI::path</a></div><div class="ttdeci">Path path</div><div class="ttdef"><b>Definition</b> <a href="_pathfinding_8cs_source.html#l00019">Pathfinding.cs:19</a></div></div>
+<div class="ttc" id="aclass_pathfinding_a_i_html_acc8c569689cb5b1e5a1ecb75f4922a0d"><div class="ttname"><a href="#acc8c569689cb5b1e5a1ecb75f4922a0d">PathfindingAI::aNotifieArrivee</a></div><div class="ttdeci">bool aNotifieArrivee</div><div class="ttdoc">Indique si le script a déjà notifié l’arrivée au besoin.</div><div class="ttdef"><b>Definition</b> <a href="_pathfinding_8cs_source.html#l00027">Pathfinding.cs:27</a></div></div>
 </div><!-- fragment -->
-<p class="reference">Références <a class="el" href="_pathfinding_8cs_source.html#l00028">animator</a>, <a class="el" href="_pathfinding_8cs_source.html#l00020">currentWayPoint</a>, <a class="el" href="_pathfinding_8cs_source.html#l00017">nextWayPointDistance</a>, <a class="el" href="_pathfinding_8cs_source.html#l00019">path</a>, <a class="el" href="_pathfinding_8cs_source.html#l00014">speed</a>, et <a class="el" href="_pathfinding_8cs_source.html#l00011">target</a>.</p>
+<p class="reference">Références <a class="el" href="_pathfinding_8cs_source.html#l00024">animator</a>, <a class="el" href="_pathfinding_8cs_source.html#l00027">aNotifieArrivee</a>, <a class="el" href="_pathfinding_8cs_source.html#l00020">currentWayPoint</a>, <a class="el" href="_pathfinding_8cs_source.html#l00017">nextWayPointDistance</a>, <a class="el" href="_pathfinding_8cs_source.html#l00019">path</a>, <a class="el" href="_pathfinding_8cs_source.html#l00023">rb</a>, <a class="el" href="_pathfinding_8cs_source.html#l00014">speed</a>, et <a class="el" href="_pathfinding_8cs_source.html#l00011">target</a>.</p>
 
 </div>
 </div>
@@ -254,20 +261,21 @@ Attributs privés</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Callback appelée lorsque le chemin est calculé avec succès. </p>
+<p>Callback appelé une fois le chemin calculé avec succès. </p>
 
-<p class="definition">Définition à la ligne <a class="el" href="_pathfinding_8cs_source.html#l00048">48</a> du fichier <a class="el" href="_pathfinding_8cs_source.html">Pathfinding.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   49</span>    {</div>
-<div class="line"><span class="lineno">   50</span>        <span class="keywordflow">if</span> (!p.error)</div>
-<div class="line"><span class="lineno">   51</span>        {</div>
-<div class="line"><span class="lineno">   52</span>            <a class="code hl_variable" href="#abbd0546eb23039690a5ae6bd98d41052">path</a> = p;</div>
-<div class="line"><span class="lineno">   53</span>            <a class="code hl_variable" href="#a631e90c173d619ed023312ef79ecab5e">currentWayPoint</a> = 0;</div>
-<div class="line"><span class="lineno">   54</span>        }</div>
-<div class="line"><span class="lineno">   55</span>    }</div>
+<p class="definition">Définition à la ligne <a class="el" href="_pathfinding_8cs_source.html#l00050">50</a> du fichier <a class="el" href="_pathfinding_8cs_source.html">Pathfinding.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   51</span>    {</div>
+<div class="line"><span class="lineno">   52</span>        <span class="keywordflow">if</span> (!p.error)</div>
+<div class="line"><span class="lineno">   53</span>        {</div>
+<div class="line"><span class="lineno">   54</span>            <a class="code hl_variable" href="#abbd0546eb23039690a5ae6bd98d41052">path</a> = p;</div>
+<div class="line"><span class="lineno">   55</span>            <a class="code hl_variable" href="#a631e90c173d619ed023312ef79ecab5e">currentWayPoint</a> = 0;</div>
+<div class="line"><span class="lineno">   56</span>            <a class="code hl_variable" href="#acc8c569689cb5b1e5a1ecb75f4922a0d">aNotifieArrivee</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   57</span>        }</div>
+<div class="line"><span class="lineno">   58</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">Références <a class="el" href="_pathfinding_8cs_source.html#l00020">currentWayPoint</a>, et <a class="el" href="_pathfinding_8cs_source.html#l00019">path</a>.</p>
+<p class="reference">Références <a class="el" href="_pathfinding_8cs_source.html#l00027">aNotifieArrivee</a>, <a class="el" href="_pathfinding_8cs_source.html#l00020">currentWayPoint</a>, et <a class="el" href="_pathfinding_8cs_source.html#l00019">path</a>.</p>
 
-<p class="reference">Référencé par <a class="el" href="_pathfinding_8cs_source.html#l00039">UpdatePath()</a>.</p>
+<p class="reference">Référencé par <a class="el" href="_pathfinding_8cs_source.html#l00040">UpdatePath()</a>.</p>
 
 </div>
 </div>
@@ -294,20 +302,66 @@ Attributs privés</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Définit dynamiquement une nouvelle cible à atteindre. </p>
+<p>Définit dynamiquement une nouvelle cible à atteindre. Réinitialise la notification d’arrivée. </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">newTarget</td><td>Transform de la nouvelle cible</td></tr>
+    <tr><td class="paramname">newTarget</td><td>Transform de la nouvelle cible.</td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="_pathfinding_8cs_source.html#l00116">116</a> du fichier <a class="el" href="_pathfinding_8cs_source.html">Pathfinding.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  117</span>    {</div>
-<div class="line"><span class="lineno">  118</span>        <a class="code hl_variable" href="#a8e00724150d962786df34afdf7796c3f">target</a> = newTarget;</div>
-<div class="line"><span class="lineno">  119</span>    }</div>
+<p class="definition">Définition à la ligne <a class="el" href="_pathfinding_8cs_source.html#l00126">126</a> du fichier <a class="el" href="_pathfinding_8cs_source.html">Pathfinding.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  127</span>    {</div>
+<div class="line"><span class="lineno">  128</span>        <a class="code hl_variable" href="#a8e00724150d962786df34afdf7796c3f">target</a> = newTarget;</div>
+<div class="line"><span class="lineno">  129</span>        <a class="code hl_variable" href="#acc8c569689cb5b1e5a1ecb75f4922a0d">aNotifieArrivee</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  130</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">Références <a class="el" href="_pathfinding_8cs_source.html#l00011">target</a>.</p>
+<p class="reference">Références <a class="el" href="_pathfinding_8cs_source.html#l00027">aNotifieArrivee</a>, et <a class="el" href="_pathfinding_8cs_source.html#l00011">target</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="_pathfinding_8cs_source.html#l00136">setTargetPos()</a>.</p>
+
+</div>
+</div>
+<a id="a4e7a839920c5f913804b5e85c11172ea" name="a4e7a839920c5f913804b5e85c11172ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e7a839920c5f913804b5e85c11172ea">&#9670;&#160;</a></span>setTargetPos()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PathfindingAI::setTargetPos </td>
+          <td>(</td>
+          <td class="paramtype">Vector3</td>          <td class="paramname"><span class="paramname"><em>worldPosition</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Crée une cible temporaire à une position donnée et s'y rend. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">worldPosition</td><td>Position dans le monde vers laquelle se déplacer.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Définition à la ligne <a class="el" href="_pathfinding_8cs_source.html#l00136">136</a> du fichier <a class="el" href="_pathfinding_8cs_source.html">Pathfinding.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  137</span>    {</div>
+<div class="line"><span class="lineno">  138</span>        GameObject tempTarget = <span class="keyword">new</span> GameObject(<span class="stringliteral">&quot;TempTarget&quot;</span>);</div>
+<div class="line"><span class="lineno">  139</span>        tempTarget.transform.position = worldPosition;</div>
+<div class="line"><span class="lineno">  140</span>        <a class="code hl_function" href="#a023d1bf5fbf996d79c05affbf82dd8c2">setTarget</a>(tempTarget.transform);</div>
+<div class="line"><span class="lineno">  141</span>    }</div>
+<div class="ttc" id="aclass_pathfinding_a_i_html_a023d1bf5fbf996d79c05affbf82dd8c2"><div class="ttname"><a href="#a023d1bf5fbf996d79c05affbf82dd8c2">PathfindingAI::setTarget</a></div><div class="ttdeci">void setTarget(Transform newTarget)</div><div class="ttdoc">Définit dynamiquement une nouvelle cible à atteindre. Réinitialise la notification d’arrivée.</div><div class="ttdef"><b>Definition</b> <a href="_pathfinding_8cs_source.html#l00126">Pathfinding.cs:126</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Références <a class="el" href="_pathfinding_8cs_source.html#l00126">setTarget()</a>.</p>
 
 </div>
 </div>
@@ -334,17 +388,19 @@ Attributs privés</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Initialise le seeker et démarre la mise à jour du chemin à intervalle régulier. </p>
+<p>Initialise les composants et lance la mise à jour régulière du chemin. </p>
 
-<p class="definition">Définition à la ligne <a class="el" href="_pathfinding_8cs_source.html#l00031">31</a> du fichier <a class="el" href="_pathfinding_8cs_source.html">Pathfinding.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   32</span>    {</div>
-<div class="line"><span class="lineno">   33</span>        <a class="code hl_variable" href="#aec8ec6c1943e919925c88a6c1a09efb0">seeker</a> = GetComponent&lt;Seeker&gt;();</div>
+<p class="definition">Définition à la ligne <a class="el" href="_pathfinding_8cs_source.html#l00030">30</a> du fichier <a class="el" href="_pathfinding_8cs_source.html">Pathfinding.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   31</span>    {</div>
+<div class="line"><span class="lineno">   32</span>        <a class="code hl_variable" href="#aec8ec6c1943e919925c88a6c1a09efb0">seeker</a> = GetComponent&lt;Seeker&gt;();</div>
+<div class="line"><span class="lineno">   33</span>        <a class="code hl_variable" href="#a89cbdfeb1887b72156d188713cc45230">rb</a> = GetComponent&lt;Rigidbody2D&gt;();</div>
 <div class="line"><span class="lineno">   34</span>        <a class="code hl_variable" href="#a36d0eff29837f33849b1145d580fb2a4">animator</a> = GetComponentInChildren&lt;Animator&gt;();</div>
-<div class="line"><span class="lineno">   35</span>        InvokeRepeating(<span class="stringliteral">&quot;UpdatePath&quot;</span>, 0f, 0.5f);</div>
-<div class="line"><span class="lineno">   36</span>    }</div>
+<div class="line"><span class="lineno">   35</span> </div>
+<div class="line"><span class="lineno">   36</span>        InvokeRepeating(<span class="stringliteral">&quot;UpdatePath&quot;</span>, 0f, 0.5f);</div>
+<div class="line"><span class="lineno">   37</span>    }</div>
 <div class="ttc" id="aclass_pathfinding_a_i_html_aec8ec6c1943e919925c88a6c1a09efb0"><div class="ttname"><a href="#aec8ec6c1943e919925c88a6c1a09efb0">PathfindingAI::seeker</a></div><div class="ttdeci">Seeker seeker</div><div class="ttdef"><b>Definition</b> <a href="_pathfinding_8cs_source.html#l00022">Pathfinding.cs:22</a></div></div>
 </div><!-- fragment -->
-<p class="reference">Références <a class="el" href="_pathfinding_8cs_source.html#l00028">animator</a>, et <a class="el" href="_pathfinding_8cs_source.html#l00022">seeker</a>.</p>
+<p class="reference">Références <a class="el" href="_pathfinding_8cs_source.html#l00024">animator</a>, <a class="el" href="_pathfinding_8cs_source.html#l00023">rb</a>, et <a class="el" href="_pathfinding_8cs_source.html#l00022">seeker</a>.</p>
 
 </div>
 </div>
@@ -371,18 +427,19 @@ Attributs privés</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Demande au Seeker de recalculer un chemin vers la cible. </p>
+<p>Met à jour le chemin vers la cible à l’aide de A* Pathfinding. </p>
 
-<p class="definition">Définition à la ligne <a class="el" href="_pathfinding_8cs_source.html#l00039">39</a> du fichier <a class="el" href="_pathfinding_8cs_source.html">Pathfinding.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   40</span>    {</div>
-<div class="line"><span class="lineno">   41</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="#aec8ec6c1943e919925c88a6c1a09efb0">seeker</a>.IsDone() &amp;&amp; <a class="code hl_variable" href="#a8e00724150d962786df34afdf7796c3f">target</a> != null)</div>
-<div class="line"><span class="lineno">   42</span>        {</div>
-<div class="line"><span class="lineno">   43</span>            <a class="code hl_variable" href="#aec8ec6c1943e919925c88a6c1a09efb0">seeker</a>.StartPath(transform.position, <a class="code hl_variable" href="#a8e00724150d962786df34afdf7796c3f">target</a>.position, <a class="code hl_function" href="#a093aa7f9c249ce2ae27552a4b0f4a2ac">OnPathComplete</a>);</div>
-<div class="line"><span class="lineno">   44</span>        }</div>
-<div class="line"><span class="lineno">   45</span>    }</div>
-<div class="ttc" id="aclass_pathfinding_a_i_html_a093aa7f9c249ce2ae27552a4b0f4a2ac"><div class="ttname"><a href="#a093aa7f9c249ce2ae27552a4b0f4a2ac">PathfindingAI::OnPathComplete</a></div><div class="ttdeci">void OnPathComplete(Path p)</div><div class="ttdoc">Callback appelée lorsque le chemin est calculé avec succès.</div><div class="ttdef"><b>Definition</b> <a href="_pathfinding_8cs_source.html#l00048">Pathfinding.cs:48</a></div></div>
+<p class="definition">Définition à la ligne <a class="el" href="_pathfinding_8cs_source.html#l00040">40</a> du fichier <a class="el" href="_pathfinding_8cs_source.html">Pathfinding.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   41</span>    {</div>
+<div class="line"><span class="lineno">   42</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="#aec8ec6c1943e919925c88a6c1a09efb0">seeker</a>.IsDone() &amp;&amp; <a class="code hl_variable" href="#a8e00724150d962786df34afdf7796c3f">target</a> != null)</div>
+<div class="line"><span class="lineno">   43</span>        {</div>
+<div class="line"><span class="lineno">   44</span>            Vector3 startPosition = <a class="code hl_variable" href="#a89cbdfeb1887b72156d188713cc45230">rb</a> != null ? <a class="code hl_variable" href="#a89cbdfeb1887b72156d188713cc45230">rb</a>.position : transform.position;</div>
+<div class="line"><span class="lineno">   45</span>            <a class="code hl_variable" href="#aec8ec6c1943e919925c88a6c1a09efb0">seeker</a>.StartPath(startPosition, <a class="code hl_variable" href="#a8e00724150d962786df34afdf7796c3f">target</a>.position, <a class="code hl_function" href="#a093aa7f9c249ce2ae27552a4b0f4a2ac">OnPathComplete</a>);</div>
+<div class="line"><span class="lineno">   46</span>        }</div>
+<div class="line"><span class="lineno">   47</span>    }</div>
+<div class="ttc" id="aclass_pathfinding_a_i_html_a093aa7f9c249ce2ae27552a4b0f4a2ac"><div class="ttname"><a href="#a093aa7f9c249ce2ae27552a4b0f4a2ac">PathfindingAI::OnPathComplete</a></div><div class="ttdeci">void OnPathComplete(Path p)</div><div class="ttdoc">Callback appelé une fois le chemin calculé avec succès.</div><div class="ttdef"><b>Definition</b> <a href="_pathfinding_8cs_source.html#l00050">Pathfinding.cs:50</a></div></div>
 </div><!-- fragment -->
-<p class="reference">Références <a class="el" href="_pathfinding_8cs_source.html#l00048">OnPathComplete()</a>, <a class="el" href="_pathfinding_8cs_source.html#l00022">seeker</a>, et <a class="el" href="_pathfinding_8cs_source.html#l00011">target</a>.</p>
+<p class="reference">Références <a class="el" href="_pathfinding_8cs_source.html#l00050">OnPathComplete()</a>, <a class="el" href="_pathfinding_8cs_source.html#l00023">rb</a>, <a class="el" href="_pathfinding_8cs_source.html#l00022">seeker</a>, et <a class="el" href="_pathfinding_8cs_source.html#l00011">target</a>.</p>
 
 </div>
 </div>
@@ -407,11 +464,37 @@ Attributs privés</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Référence à l’Animator (sur l’enfant du PNJ). </p>
+<p class="definition">Définition à la ligne <a class="el" href="_pathfinding_8cs_source.html#l00024">24</a> du fichier <a class="el" href="_pathfinding_8cs_source.html">Pathfinding.cs</a>.</p>
 
-<p class="definition">Définition à la ligne <a class="el" href="_pathfinding_8cs_source.html#l00028">28</a> du fichier <a class="el" href="_pathfinding_8cs_source.html">Pathfinding.cs</a>.</p>
+<p class="reference">Référencé par <a class="el" href="_pathfinding_8cs_source.html#l00064">FixedUpdate()</a>, et <a class="el" href="_pathfinding_8cs_source.html#l00030">Start()</a>.</p>
 
-<p class="reference">Référencé par <a class="el" href="_pathfinding_8cs_source.html#l00058">FixedUpdate()</a>, et <a class="el" href="_pathfinding_8cs_source.html#l00031">Start()</a>.</p>
+</div>
+</div>
+<a id="acc8c569689cb5b1e5a1ecb75f4922a0d" name="acc8c569689cb5b1e5a1ecb75f4922a0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc8c569689cb5b1e5a1ecb75f4922a0d">&#9670;&#160;</a></span>aNotifieArrivee</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool PathfindingAI::aNotifieArrivee = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Indique si le script a déjà notifié l’arrivée au besoin. </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="_pathfinding_8cs_source.html#l00027">27</a> du fichier <a class="el" href="_pathfinding_8cs_source.html">Pathfinding.cs</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="_pathfinding_8cs_source.html#l00064">FixedUpdate()</a>, <a class="el" href="_pathfinding_8cs_source.html#l00050">OnPathComplete()</a>, et <a class="el" href="_pathfinding_8cs_source.html#l00126">setTarget()</a>.</p>
 
 </div>
 </div>
@@ -437,7 +520,7 @@ Attributs privés</h2></td></tr>
 
 <p class="definition">Définition à la ligne <a class="el" href="_pathfinding_8cs_source.html#l00020">20</a> du fichier <a class="el" href="_pathfinding_8cs_source.html">Pathfinding.cs</a>.</p>
 
-<p class="reference">Référencé par <a class="el" href="_pathfinding_8cs_source.html#l00058">FixedUpdate()</a>, et <a class="el" href="_pathfinding_8cs_source.html#l00048">OnPathComplete()</a>.</p>
+<p class="reference">Référencé par <a class="el" href="_pathfinding_8cs_source.html#l00064">FixedUpdate()</a>, et <a class="el" href="_pathfinding_8cs_source.html#l00050">OnPathComplete()</a>.</p>
 
 </div>
 </div>
@@ -453,11 +536,11 @@ Attributs privés</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Distance minimale pour passer au waypoint suivant. </p>
+<p>Distance minimale pour considérer qu’un waypoint a été atteint. </p>
 
 <p class="definition">Définition à la ligne <a class="el" href="_pathfinding_8cs_source.html#l00017">17</a> du fichier <a class="el" href="_pathfinding_8cs_source.html">Pathfinding.cs</a>.</p>
 
-<p class="reference">Référencé par <a class="el" href="_pathfinding_8cs_source.html#l00058">FixedUpdate()</a>.</p>
+<p class="reference">Référencé par <a class="el" href="_pathfinding_8cs_source.html#l00064">FixedUpdate()</a>.</p>
 
 </div>
 </div>
@@ -483,7 +566,33 @@ Attributs privés</h2></td></tr>
 
 <p class="definition">Définition à la ligne <a class="el" href="_pathfinding_8cs_source.html#l00019">19</a> du fichier <a class="el" href="_pathfinding_8cs_source.html">Pathfinding.cs</a>.</p>
 
-<p class="reference">Référencé par <a class="el" href="_pathfinding_8cs_source.html#l00058">FixedUpdate()</a>, et <a class="el" href="_pathfinding_8cs_source.html#l00048">OnPathComplete()</a>.</p>
+<p class="reference">Référencé par <a class="el" href="_pathfinding_8cs_source.html#l00064">FixedUpdate()</a>, et <a class="el" href="_pathfinding_8cs_source.html#l00050">OnPathComplete()</a>.</p>
+
+</div>
+</div>
+<a id="a89cbdfeb1887b72156d188713cc45230" name="a89cbdfeb1887b72156d188713cc45230"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89cbdfeb1887b72156d188713cc45230">&#9670;&#160;</a></span>rb</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Rigidbody2D PathfindingAI::rb</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Définition à la ligne <a class="el" href="_pathfinding_8cs_source.html#l00023">23</a> du fichier <a class="el" href="_pathfinding_8cs_source.html">Pathfinding.cs</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="_pathfinding_8cs_source.html#l00064">FixedUpdate()</a>, <a class="el" href="_pathfinding_8cs_source.html#l00030">Start()</a>, et <a class="el" href="_pathfinding_8cs_source.html#l00040">UpdatePath()</a>.</p>
 
 </div>
 </div>
@@ -509,25 +618,7 @@ Attributs privés</h2></td></tr>
 
 <p class="definition">Définition à la ligne <a class="el" href="_pathfinding_8cs_source.html#l00022">22</a> du fichier <a class="el" href="_pathfinding_8cs_source.html">Pathfinding.cs</a>.</p>
 
-<p class="reference">Référencé par <a class="el" href="_pathfinding_8cs_source.html#l00031">Start()</a>, et <a class="el" href="_pathfinding_8cs_source.html#l00039">UpdatePath()</a>.</p>
-
-</div>
-</div>
-<a id="a26f57b67d5bfff1e16e17e15468a9af7" name="a26f57b67d5bfff1e16e17e15468a9af7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a26f57b67d5bfff1e16e17e15468a9af7">&#9670;&#160;</a></span>solidObjectsLayer</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">LayerMask PathfindingAI::solidObjectsLayer</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Layer contenant les objets solides (non traversables). </p>
-
-<p class="definition">Définition à la ligne <a class="el" href="_pathfinding_8cs_source.html#l00025">25</a> du fichier <a class="el" href="_pathfinding_8cs_source.html">Pathfinding.cs</a>.</p>
+<p class="reference">Référencé par <a class="el" href="_pathfinding_8cs_source.html#l00030">Start()</a>, et <a class="el" href="_pathfinding_8cs_source.html#l00040">UpdatePath()</a>.</p>
 
 </div>
 </div>
@@ -538,7 +629,7 @@ Attributs privés</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">float PathfindingAI::speed = 200f</td>
+          <td class="memname">float PathfindingAI::speed = 3f</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -547,7 +638,7 @@ Attributs privés</h2></td></tr>
 
 <p class="definition">Définition à la ligne <a class="el" href="_pathfinding_8cs_source.html#l00014">14</a> du fichier <a class="el" href="_pathfinding_8cs_source.html">Pathfinding.cs</a>.</p>
 
-<p class="reference">Référencé par <a class="el" href="_pathfinding_8cs_source.html#l00058">FixedUpdate()</a>.</p>
+<p class="reference">Référencé par <a class="el" href="_pathfinding_8cs_source.html#l00064">FixedUpdate()</a>.</p>
 
 </div>
 </div>
@@ -563,11 +654,11 @@ Attributs privés</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Transform de la cible à atteindre. </p>
+<p>Transform du GameObject cible à atteindre. </p>
 
 <p class="definition">Définition à la ligne <a class="el" href="_pathfinding_8cs_source.html#l00011">11</a> du fichier <a class="el" href="_pathfinding_8cs_source.html">Pathfinding.cs</a>.</p>
 
-<p class="reference">Référencé par <a class="el" href="_pathfinding_8cs_source.html#l00058">FixedUpdate()</a>, <a class="el" href="_pathfinding_8cs_source.html#l00116">setTarget()</a>, et <a class="el" href="_pathfinding_8cs_source.html#l00039">UpdatePath()</a>.</p>
+<p class="reference">Référencé par <a class="el" href="_pathfinding_8cs_source.html#l00064">FixedUpdate()</a>, <a class="el" href="_pathfinding_8cs_source.html#l00126">setTarget()</a>, et <a class="el" href="_pathfinding_8cs_source.html#l00040">UpdatePath()</a>.</p>
 
 </div>
 </div>

@@ -97,32 +97,24 @@ $(function(){initNavTree('_object_target_manager_8cs_source.html','',''); });
 <div class="foldopen" id="foldopen00008" data-start="{" data-end="};">
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="class_object_target_manager.html">    8</a></span><span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="class_object_target_manager.html">ObjectTargetManager</a> : MonoBehaviour</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>{</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="class_object_target_manager.html#a064d6fc13fa78cbb50204690b69d1dfb">   13</a></span>    <span class="keyword">public</span> List&lt;GameObject&gt; <a class="code hl_variable" href="class_object_target_manager.html#a064d6fc13fa78cbb50204690b69d1dfb">arbresDisponibles</a> = <span class="keyword">new</span> List&lt;GameObject&gt;();</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="class_object_target_manager.html#a86c7b79ab4006c139c70596f6475f8de">   13</a></span>    <span class="keyword">public</span> List&lt;GameObject&gt; <a class="code hl_variable" href="class_object_target_manager.html#a86c7b79ab4006c139c70596f6475f8de">baieDisponibles</a> = <span class="keyword">new</span> List&lt;GameObject&gt;();</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span></div>
 <div class="foldopen" id="foldopen00018" data-start="{" data-end="}">
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="class_object_target_manager.html#a14aab93ed50a595866d2f1f3b90ea7f6">   18</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_object_target_manager.html#a14aab93ed50a595866d2f1f3b90ea7f6">Start</a>()</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    {</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        GameObject[] arbres = GameObject.FindGameObjectsWithTag(<span class="stringliteral">&quot;Arbre&quot;</span>);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        GameObject[] baies = GameObject.FindGameObjectsWithTag(<span class="stringliteral">&quot;usineBaie&quot;</span>);</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <span class="keywordflow">foreach</span> (GameObject arbre <span class="keywordflow">in</span> arbres)</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <span class="keywordflow">foreach</span> (GameObject baie <span class="keywordflow">in</span> baies)</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        {</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>            <a class="code hl_variable" href="class_object_target_manager.html#a064d6fc13fa78cbb50204690b69d1dfb">arbresDisponibles</a>.Add(arbre);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>            <a class="code hl_variable" href="class_object_target_manager.html#a86c7b79ab4006c139c70596f6475f8de">baieDisponibles</a>.Add(baie);</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        }</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    }</div>
 </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span></div>
-<div class="foldopen" id="foldopen00031" data-start="{" data-end="}">
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="class_object_target_manager.html#a41121fa3aadd0782f8381a4fe22ef7c6">   31</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_object_target_manager.html#a41121fa3aadd0782f8381a4fe22ef7c6">Update</a>()</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    {</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    }</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>}</div>
 </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>}</div>
-</div>
-<div class="ttc" id="aclass_object_target_manager_html"><div class="ttname"><a href="class_object_target_manager.html">ObjectTargetManager</a></div><div class="ttdoc">Gère la liste des objets cibles disponibles dans la scène (ex. : arbres). Initialise automatiquement ...</div><div class="ttdef"><b>Definition</b> <a href="#l00008">ObjectTargetManager.cs:9</a></div></div>
-<div class="ttc" id="aclass_object_target_manager_html_a064d6fc13fa78cbb50204690b69d1dfb"><div class="ttname"><a href="class_object_target_manager.html#a064d6fc13fa78cbb50204690b69d1dfb">ObjectTargetManager::arbresDisponibles</a></div><div class="ttdeci">List&lt; GameObject &gt; arbresDisponibles</div><div class="ttdoc">Liste des arbres actuellement disponibles dans la scène.</div><div class="ttdef"><b>Definition</b> <a href="#l00013">ObjectTargetManager.cs:13</a></div></div>
-<div class="ttc" id="aclass_object_target_manager_html_a14aab93ed50a595866d2f1f3b90ea7f6"><div class="ttname"><a href="class_object_target_manager.html#a14aab93ed50a595866d2f1f3b90ea7f6">ObjectTargetManager::Start</a></div><div class="ttdeci">void Start()</div><div class="ttdoc">Initialise la liste des arbres en les trouvant via leur tag &quot;Arbre&quot;.</div><div class="ttdef"><b>Definition</b> <a href="#l00018">ObjectTargetManager.cs:18</a></div></div>
-<div class="ttc" id="aclass_object_target_manager_html_a41121fa3aadd0782f8381a4fe22ef7c6"><div class="ttname"><a href="class_object_target_manager.html#a41121fa3aadd0782f8381a4fe22ef7c6">ObjectTargetManager::Update</a></div><div class="ttdeci">void Update()</div><div class="ttdoc">Méthode appelée à chaque frame (actuellement vide).</div><div class="ttdef"><b>Definition</b> <a href="#l00031">ObjectTargetManager.cs:31</a></div></div>
+<div class="ttc" id="aclass_object_target_manager_html"><div class="ttname"><a href="class_object_target_manager.html">ObjectTargetManager</a></div><div class="ttdoc">Gère la liste des objets cibles disponibles portant le tag &quot;usineBaie&quot;. Utile pour accéder rapidement...</div><div class="ttdef"><b>Definition</b> <a href="#l00008">ObjectTargetManager.cs:9</a></div></div>
+<div class="ttc" id="aclass_object_target_manager_html_a14aab93ed50a595866d2f1f3b90ea7f6"><div class="ttname"><a href="class_object_target_manager.html#a14aab93ed50a595866d2f1f3b90ea7f6">ObjectTargetManager::Start</a></div><div class="ttdeci">void Start()</div><div class="ttdoc">Initialise la liste baieDisponibles en trouvant tous les objets avec le tag &quot;usineBaie&quot; dans la scène...</div><div class="ttdef"><b>Definition</b> <a href="#l00018">ObjectTargetManager.cs:18</a></div></div>
+<div class="ttc" id="aclass_object_target_manager_html_a86c7b79ab4006c139c70596f6475f8de"><div class="ttname"><a href="class_object_target_manager.html#a86c7b79ab4006c139c70596f6475f8de">ObjectTargetManager::baieDisponibles</a></div><div class="ttdeci">List&lt; GameObject &gt; baieDisponibles</div><div class="ttdoc">Liste des GameObjects disponibles avec le tag &quot;usineBaie&quot;.</div><div class="ttdef"><b>Definition</b> <a href="#l00013">ObjectTargetManager.cs:13</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['occupationactuelle_0',['occupationActuelle',['../class_ressource_max_player_capacity.html#aa5036e3553be5476a6cf5fa8479a9ab2',1,'RessourceMaxPlayerCapacity']]]
+  ['nextwaypointdistance_0',['nextWayPointDistance',['../class_pathfinding_a_i.html#a3de3b16873aa6e43a8c74c6ba4f81f18',1,'PathfindingAI']]]
 ];

@@ -92,7 +92,7 @@ $(function(){initNavTree('class_population_manager.html','','class_population_ma
 </div><!--header-->
 <div class="contents">
 
-<p>Gère la population de PNJ dans le jeu. Fait naître régulièrement de nouveaux PNJ jusqu’à une limite maximale. Gère également la notification de décès des PNJ.  
+<p>Gère la génération automatique de PNJ dans la scène. S'assure que la population ne dépasse pas un maximum défini. Met à jour l'affichage via <a class="el" href="class_statistiques_manager.html" title="Gère l&#39;affichage des différentes statistiques du jeu dans l&#39;interface utilisateur....">StatistiquesManager</a>.  
  <a href="#details">Plus de détails...</a></p>
 <div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Graphe d'héritage de PopulationManager:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -104,37 +104,90 @@ $(function(){initNavTree('class_population_manager.html','','class_population_ma
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
-<tr class="memitem:af6d04402eee9928001d9f66cc419a384" id="r_af6d04402eee9928001d9f66cc419a384"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af6d04402eee9928001d9f66cc419a384">PNJMort</a> ()</td></tr>
-<tr class="memdesc:af6d04402eee9928001d9f66cc419a384"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appelé lorsqu’un PNJ meurt. Diminue le compteur de population.  <br /></td></tr>
+<tr class="memitem:a41836fd92ae43e1acc31b38cfda412f8" id="r_a41836fd92ae43e1acc31b38cfda412f8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a41836fd92ae43e1acc31b38cfda412f8">Awake</a> ()</td></tr>
+<tr class="memdesc:a41836fd92ae43e1acc31b38cfda412f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise l’instance Singleton ou détruit les doublons.  <br /></td></tr>
+<tr class="memitem:ab014ba0fa0cdfb59de538c8cdcaefb2f" id="r_ab014ba0fa0cdfb59de538c8cdcaefb2f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab014ba0fa0cdfb59de538c8cdcaefb2f">Start</a> ()</td></tr>
+<tr class="memdesc:ab014ba0fa0cdfb59de538c8cdcaefb2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise la population en comptant les PNJ présents dans la scène. Démarre ensuite la génération automatique.  <br /></td></tr>
+<tr class="memitem:a135f7ec0ca6936967d82f9af2f3909de" id="r_a135f7ec0ca6936967d82f9af2f3909de"><td class="memItemLeft" align="right" valign="top">IEnumerator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a135f7ec0ca6936967d82f9af2f3909de">GenererPNJ</a> ()</td></tr>
+<tr class="memdesc:a135f7ec0ca6936967d82f9af2f3909de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Coroutine qui génère un PNJ à intervalles réguliers selon le timeScale. Ne dépasse jamais <a class="el" href="#af8ea37d49790885b0188648729fc114c" title="Population maximale autorisée.">populationMax</a>.  <br /></td></tr>
+<tr class="memitem:a658dff474962803469e9179a0523c45d" id="r_a658dff474962803469e9179a0523c45d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a658dff474962803469e9179a0523c45d">GetPopulation</a> ()</td></tr>
+<tr class="memdesc:a658dff474962803469e9179a0523c45d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne le nombre de PNJ actuellement présents dans la scène.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Attributs publics</h2></td></tr>
 <tr class="memitem:ac27addcc9d7b8ff6a20ce6af42f93929" id="r_ac27addcc9d7b8ff6a20ce6af42f93929"><td class="memItemLeft" align="right" valign="top">GameObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac27addcc9d7b8ff6a20ce6af42f93929">prefabPNJ</a></td></tr>
-<tr class="memdesc:ac27addcc9d7b8ff6a20ce6af42f93929"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prefab utilisé pour instancier de nouveaux PNJ.  <br /></td></tr>
-<tr class="memitem:ae3286b2d559089f76e2b291018793cc9" id="r_ae3286b2d559089f76e2b291018793cc9"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae3286b2d559089f76e2b291018793cc9">intervalleNaissance</a> = 10f</td></tr>
-<tr class="memdesc:ae3286b2d559089f76e2b291018793cc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Intervalle de temps entre chaque naissance (en secondes).  <br /></td></tr>
-<tr class="memitem:af8ea37d49790885b0188648729fc114c" id="r_af8ea37d49790885b0188648729fc114c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af8ea37d49790885b0188648729fc114c">populationMax</a> = 50</td></tr>
-<tr class="memdesc:af8ea37d49790885b0188648729fc114c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nombre maximal de PNJ autorisés dans la scène.  <br /></td></tr>
+<tr class="memdesc:ac27addcc9d7b8ff6a20ce6af42f93929"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prefab du PNJ à instancier.  <br /></td></tr>
+<tr class="memitem:ae3286b2d559089f76e2b291018793cc9" id="r_ae3286b2d559089f76e2b291018793cc9"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae3286b2d559089f76e2b291018793cc9">intervalleNaissance</a> = 5f</td></tr>
+<tr class="memdesc:ae3286b2d559089f76e2b291018793cc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Temps entre chaque naissance (en secondes).  <br /></td></tr>
+<tr class="memitem:af8ea37d49790885b0188648729fc114c" id="r_af8ea37d49790885b0188648729fc114c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af8ea37d49790885b0188648729fc114c">populationMax</a> = 100</td></tr>
+<tr class="memdesc:af8ea37d49790885b0188648729fc114c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Population maximale autorisée.  <br /></td></tr>
+<tr class="memitem:a12a26c4580047abdcd56595f29ab8646" id="r_a12a26c4580047abdcd56595f29ab8646"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_statistiques_manager.html">StatistiquesManager</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a12a26c4580047abdcd56595f29ab8646">statDisplay</a></td></tr>
+<tr class="memdesc:a12a26c4580047abdcd56595f29ab8646"><td class="mdescLeft">&#160;</td><td class="mdescRight">Composant responsable de l'affichage des statistiques.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-static-attribs" class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+Attributs publics statiques</h2></td></tr>
+<tr class="memitem:a79261ebdf309704e4d1308a5d9c0cbf7" id="r_a79261ebdf309704e4d1308a5d9c0cbf7"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_population_manager.html">PopulationManager</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a79261ebdf309704e4d1308a5d9c0cbf7">Instance</a></td></tr>
+<tr class="memdesc:a79261ebdf309704e4d1308a5d9c0cbf7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instance unique du gestionnaire de population (Singleton).  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Fonctions membres privées</h2></td></tr>
-<tr class="memitem:ab014ba0fa0cdfb59de538c8cdcaefb2f" id="r_ab014ba0fa0cdfb59de538c8cdcaefb2f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab014ba0fa0cdfb59de538c8cdcaefb2f">Start</a> ()</td></tr>
-<tr class="memdesc:ab014ba0fa0cdfb59de538c8cdcaefb2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise le manager : compte les PNJ existants et leur assigne le manager. Lance ensuite la coroutine de génération.  <br /></td></tr>
-<tr class="memitem:a135f7ec0ca6936967d82f9af2f3909de" id="r_a135f7ec0ca6936967d82f9af2f3909de"><td class="memItemLeft" align="right" valign="top">IEnumerator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a135f7ec0ca6936967d82f9af2f3909de">GenererPNJ</a> ()</td></tr>
-<tr class="memdesc:a135f7ec0ca6936967d82f9af2f3909de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Coroutine qui fait naître un nouveau PNJ à intervalle régulier si la population le permet.  <br /></td></tr>
+<tr class="memitem:a073819205798ead7d6f2ca0e97e24331" id="r_a073819205798ead7d6f2ca0e97e24331"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a073819205798ead7d6f2ca0e97e24331">MettreAJourAffichage</a> ()</td></tr>
+<tr class="memdesc:a073819205798ead7d6f2ca0e97e24331"><td class="mdescLeft">&#160;</td><td class="mdescRight">Met à jour l'affichage de la population actuelle via l’interface.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Attributs privés</h2></td></tr>
 <tr class="memitem:a5da90d902b0b502fde31ce8781fb77be" id="r_a5da90d902b0b502fde31ce8781fb77be"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5da90d902b0b502fde31ce8781fb77be">populationActuelle</a> = 0</td></tr>
-<tr class="memdesc:a5da90d902b0b502fde31ce8781fb77be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nombre actuel de PNJ vivants.  <br /></td></tr>
+<tr class="memdesc:a5da90d902b0b502fde31ce8781fb77be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Population actuelle dans la scène.  <br /></td></tr>
 <tr class="memitem:a64c7e3280f85d9442062be4a928b1f85" id="r_a64c7e3280f85d9442062be4a928b1f85"><td class="memItemLeft" align="right" valign="top">Vector3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a64c7e3280f85d9442062be4a928b1f85">spawnPosition</a> = new Vector3(-20f, 22f, 0f)</td></tr>
-<tr class="memdesc:a64c7e3280f85d9442062be4a928b1f85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Position de spawn des nouveaux PNJ.  <br /></td></tr>
+<tr class="memdesc:a64c7e3280f85d9442062be4a928b1f85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Position fixe de génération des PNJ.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Description détaillée</h2>
-<div class="textblock"><p>Gère la population de PNJ dans le jeu. Fait naître régulièrement de nouveaux PNJ jusqu’à une limite maximale. Gère également la notification de décès des PNJ. </p>
+<div class="textblock"><p>Gère la génération automatique de PNJ dans la scène. S'assure que la population ne dépasse pas un maximum défini. Met à jour l'affichage via <a class="el" href="class_statistiques_manager.html" title="Gère l&#39;affichage des différentes statistiques du jeu dans l&#39;interface utilisateur....">StatistiquesManager</a>. </p>
 
 <p class="definition">Définition à la ligne <a class="el" href="_population_manager_8cs_source.html#l00009">9</a> du fichier <a class="el" href="_population_manager_8cs_source.html">PopulationManager.cs</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentation des fonctions membres</h2>
+<a id="a41836fd92ae43e1acc31b38cfda412f8" name="a41836fd92ae43e1acc31b38cfda412f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41836fd92ae43e1acc31b38cfda412f8">&#9670;&#160;</a></span>Awake()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PopulationManager::Awake </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initialise l’instance Singleton ou détruit les doublons. </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="_population_manager_8cs_source.html#l00033">33</a> du fichier <a class="el" href="_population_manager_8cs_source.html">PopulationManager.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   34</span>    {</div>
+<div class="line"><span class="lineno">   35</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a79261ebdf309704e4d1308a5d9c0cbf7">Instance</a> == null)</div>
+<div class="line"><span class="lineno">   36</span>        {</div>
+<div class="line"><span class="lineno">   37</span>            <a class="code hl_variable" href="#a79261ebdf309704e4d1308a5d9c0cbf7">Instance</a> = <span class="keyword">this</span>;</div>
+<div class="line"><span class="lineno">   38</span>        }</div>
+<div class="line"><span class="lineno">   39</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   40</span>        {</div>
+<div class="line"><span class="lineno">   41</span>            Destroy(gameObject);</div>
+<div class="line"><span class="lineno">   42</span>        }</div>
+<div class="line"><span class="lineno">   43</span>    }</div>
+<div class="ttc" id="aclass_population_manager_html_a79261ebdf309704e4d1308a5d9c0cbf7"><div class="ttname"><a href="#a79261ebdf309704e4d1308a5d9c0cbf7">PopulationManager::Instance</a></div><div class="ttdeci">static PopulationManager Instance</div><div class="ttdoc">Instance unique du gestionnaire de population (Singleton).</div><div class="ttdef"><b>Definition</b> <a href="_population_manager_8cs_source.html#l00012">PopulationManager.cs:12</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Références <a class="el" href="_population_manager_8cs_source.html#l00012">Instance</a>.</p>
+
+</div>
+</div>
 <a id="a135f7ec0ca6936967d82f9af2f3909de" name="a135f7ec0ca6936967d82f9af2f3909de"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a135f7ec0ca6936967d82f9af2f3909de">&#9670;&#160;</a></span>GenererPNJ()</h2>
 
@@ -153,48 +206,46 @@ Attributs privés</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Coroutine qui fait naître un nouveau PNJ à intervalle régulier si la population le permet. </p>
+<p>Coroutine qui génère un PNJ à intervalles réguliers selon le timeScale. Ne dépasse jamais <a class="el" href="#af8ea37d49790885b0188648729fc114c" title="Population maximale autorisée.">populationMax</a>. </p>
 
-<p class="definition">Définition à la ligne <a class="el" href="_population_manager_8cs_source.html#l00045">45</a> du fichier <a class="el" href="_population_manager_8cs_source.html">PopulationManager.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   46</span>    {</div>
-<div class="line"><span class="lineno">   47</span>        <span class="keywordflow">while</span> (<span class="keyword">true</span>)</div>
-<div class="line"><span class="lineno">   48</span>        {</div>
-<div class="line"><span class="lineno">   49</span>            yield <span class="keywordflow">return</span> <span class="keyword">new</span> WaitForSeconds(<a class="code hl_variable" href="#ae3286b2d559089f76e2b291018793cc9">intervalleNaissance</a>);</div>
-<div class="line"><span class="lineno">   50</span> </div>
-<div class="line"><span class="lineno">   51</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a5da90d902b0b502fde31ce8781fb77be">populationActuelle</a> &lt; <a class="code hl_variable" href="#af8ea37d49790885b0188648729fc114c">populationMax</a>)</div>
-<div class="line"><span class="lineno">   52</span>            {</div>
-<div class="line"><span class="lineno">   53</span>                GameObject nouveau = Instantiate(<a class="code hl_variable" href="#ac27addcc9d7b8ff6a20ce6af42f93929">prefabPNJ</a>, <a class="code hl_variable" href="#a64c7e3280f85d9442062be4a928b1f85">spawnPosition</a>, Quaternion.identity);</div>
-<div class="line"><span class="lineno">   54</span>                <a class="code hl_variable" href="#a5da90d902b0b502fde31ce8781fb77be">populationActuelle</a>++;</div>
-<div class="line"><span class="lineno">   55</span>                Debug.Log($<span class="stringliteral">&quot;👶 PNJ né ! Population : {populationActuelle}&quot;</span>);</div>
-<div class="line"><span class="lineno">   56</span> </div>
-<div class="line"><span class="lineno">   57</span>                BesoinPlayers besoin = nouveau.GetComponent&lt;BesoinPlayers&gt;();</div>
-<div class="line"><span class="lineno">   58</span>                <span class="keywordflow">if</span> (besoin != null)</div>
-<div class="line"><span class="lineno">   59</span>                {</div>
-<div class="line"><span class="lineno">   60</span>                    besoin.<a class="code hl_variable" href="class_besoin_players.html#a7a84ee6dd9bb1bfaccfb501780abcb2d">populationManager</a> = <span class="keyword">this</span>;</div>
-<div class="line"><span class="lineno">   61</span>                }</div>
-<div class="line"><span class="lineno">   62</span>            }</div>
-<div class="line"><span class="lineno">   63</span>        }</div>
-<div class="line"><span class="lineno">   64</span>    }</div>
-<div class="ttc" id="aclass_besoin_players_html_a7a84ee6dd9bb1bfaccfb501780abcb2d"><div class="ttname"><a href="class_besoin_players.html#a7a84ee6dd9bb1bfaccfb501780abcb2d">BesoinPlayers::populationManager</a></div><div class="ttdeci">PopulationManager populationManager</div><div class="ttdoc">Référence au gestionnaire de population (pour notifier les décès).</div><div class="ttdef"><b>Definition</b> <a href="_besoin_players_8cs_source.html#l00042">BesoinPlayers.cs:42</a></div></div>
-<div class="ttc" id="aclass_population_manager_html_a5da90d902b0b502fde31ce8781fb77be"><div class="ttname"><a href="#a5da90d902b0b502fde31ce8781fb77be">PopulationManager::populationActuelle</a></div><div class="ttdeci">int populationActuelle</div><div class="ttdoc">Nombre actuel de PNJ vivants.</div><div class="ttdef"><b>Definition</b> <a href="_population_manager_8cs_source.html#l00021">PopulationManager.cs:21</a></div></div>
-<div class="ttc" id="aclass_population_manager_html_a64c7e3280f85d9442062be4a928b1f85"><div class="ttname"><a href="#a64c7e3280f85d9442062be4a928b1f85">PopulationManager::spawnPosition</a></div><div class="ttdeci">Vector3 spawnPosition</div><div class="ttdoc">Position de spawn des nouveaux PNJ.</div><div class="ttdef"><b>Definition</b> <a href="_population_manager_8cs_source.html#l00024">PopulationManager.cs:24</a></div></div>
-<div class="ttc" id="aclass_population_manager_html_ac27addcc9d7b8ff6a20ce6af42f93929"><div class="ttname"><a href="#ac27addcc9d7b8ff6a20ce6af42f93929">PopulationManager::prefabPNJ</a></div><div class="ttdeci">GameObject prefabPNJ</div><div class="ttdoc">Prefab utilisé pour instancier de nouveaux PNJ.</div><div class="ttdef"><b>Definition</b> <a href="_population_manager_8cs_source.html#l00012">PopulationManager.cs:12</a></div></div>
-<div class="ttc" id="aclass_population_manager_html_ae3286b2d559089f76e2b291018793cc9"><div class="ttname"><a href="#ae3286b2d559089f76e2b291018793cc9">PopulationManager::intervalleNaissance</a></div><div class="ttdeci">float intervalleNaissance</div><div class="ttdoc">Intervalle de temps entre chaque naissance (en secondes).</div><div class="ttdef"><b>Definition</b> <a href="_population_manager_8cs_source.html#l00015">PopulationManager.cs:15</a></div></div>
-<div class="ttc" id="aclass_population_manager_html_af8ea37d49790885b0188648729fc114c"><div class="ttname"><a href="#af8ea37d49790885b0188648729fc114c">PopulationManager::populationMax</a></div><div class="ttdeci">int populationMax</div><div class="ttdoc">Nombre maximal de PNJ autorisés dans la scène.</div><div class="ttdef"><b>Definition</b> <a href="_population_manager_8cs_source.html#l00018">PopulationManager.cs:18</a></div></div>
+<p class="definition">Définition à la ligne <a class="el" href="_population_manager_8cs_source.html#l00061">61</a> du fichier <a class="el" href="_population_manager_8cs_source.html">PopulationManager.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   62</span>    {</div>
+<div class="line"><span class="lineno">   63</span>        <span class="keywordflow">while</span> (<span class="keyword">true</span>)</div>
+<div class="line"><span class="lineno">   64</span>        {</div>
+<div class="line"><span class="lineno">   65</span>            <span class="keywordtype">float</span> facteur = Mathf.Max(0.1f, Time.timeScale);</div>
+<div class="line"><span class="lineno">   66</span>            yield <span class="keywordflow">return</span> <span class="keyword">new</span> WaitForSeconds(<a class="code hl_variable" href="#ae3286b2d559089f76e2b291018793cc9">intervalleNaissance</a> / facteur);</div>
+<div class="line"><span class="lineno">   67</span> </div>
+<div class="line"><span class="lineno">   68</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a5da90d902b0b502fde31ce8781fb77be">populationActuelle</a> &gt;= <a class="code hl_variable" href="#af8ea37d49790885b0188648729fc114c">populationMax</a>) <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">   69</span> </div>
+<div class="line"><span class="lineno">   70</span>            GameObject nouveau = Instantiate(<a class="code hl_variable" href="#ac27addcc9d7b8ff6a20ce6af42f93929">prefabPNJ</a>, <a class="code hl_variable" href="#a64c7e3280f85d9442062be4a928b1f85">spawnPosition</a>, Quaternion.identity);</div>
+<div class="line"><span class="lineno">   71</span>            nouveau.name = $<span class="stringliteral">&quot;Players ({populationActuelle})&quot;</span>;</div>
+<div class="line"><span class="lineno">   72</span> </div>
+<div class="line"><span class="lineno">   73</span>            <a class="code hl_variable" href="#a5da90d902b0b502fde31ce8781fb77be">populationActuelle</a>++;</div>
+<div class="line"><span class="lineno">   74</span>            <a class="code hl_function" href="#a073819205798ead7d6f2ca0e97e24331">MettreAJourAffichage</a>();</div>
+<div class="line"><span class="lineno">   75</span> </div>
+<div class="line"><span class="lineno">   76</span>            Debug.Log($<span class="stringliteral">&quot;👶 Nouveau PNJ généré : {nouveau.name}&quot;</span>);</div>
+<div class="line"><span class="lineno">   77</span>        }</div>
+<div class="line"><span class="lineno">   78</span>    }</div>
+<div class="ttc" id="aclass_population_manager_html_a073819205798ead7d6f2ca0e97e24331"><div class="ttname"><a href="#a073819205798ead7d6f2ca0e97e24331">PopulationManager::MettreAJourAffichage</a></div><div class="ttdeci">void MettreAJourAffichage()</div><div class="ttdoc">Met à jour l&#39;affichage de la population actuelle via l’interface.</div><div class="ttdef"><b>Definition</b> <a href="_population_manager_8cs_source.html#l00083">PopulationManager.cs:83</a></div></div>
+<div class="ttc" id="aclass_population_manager_html_a5da90d902b0b502fde31ce8781fb77be"><div class="ttname"><a href="#a5da90d902b0b502fde31ce8781fb77be">PopulationManager::populationActuelle</a></div><div class="ttdeci">int populationActuelle</div><div class="ttdoc">Population actuelle dans la scène.</div><div class="ttdef"><b>Definition</b> <a href="_population_manager_8cs_source.html#l00024">PopulationManager.cs:24</a></div></div>
+<div class="ttc" id="aclass_population_manager_html_a64c7e3280f85d9442062be4a928b1f85"><div class="ttname"><a href="#a64c7e3280f85d9442062be4a928b1f85">PopulationManager::spawnPosition</a></div><div class="ttdeci">Vector3 spawnPosition</div><div class="ttdoc">Position fixe de génération des PNJ.</div><div class="ttdef"><b>Definition</b> <a href="_population_manager_8cs_source.html#l00027">PopulationManager.cs:27</a></div></div>
+<div class="ttc" id="aclass_population_manager_html_ac27addcc9d7b8ff6a20ce6af42f93929"><div class="ttname"><a href="#ac27addcc9d7b8ff6a20ce6af42f93929">PopulationManager::prefabPNJ</a></div><div class="ttdeci">GameObject prefabPNJ</div><div class="ttdoc">Prefab du PNJ à instancier.</div><div class="ttdef"><b>Definition</b> <a href="_population_manager_8cs_source.html#l00015">PopulationManager.cs:15</a></div></div>
+<div class="ttc" id="aclass_population_manager_html_ae3286b2d559089f76e2b291018793cc9"><div class="ttname"><a href="#ae3286b2d559089f76e2b291018793cc9">PopulationManager::intervalleNaissance</a></div><div class="ttdeci">float intervalleNaissance</div><div class="ttdoc">Temps entre chaque naissance (en secondes).</div><div class="ttdef"><b>Definition</b> <a href="_population_manager_8cs_source.html#l00018">PopulationManager.cs:18</a></div></div>
+<div class="ttc" id="aclass_population_manager_html_af8ea37d49790885b0188648729fc114c"><div class="ttname"><a href="#af8ea37d49790885b0188648729fc114c">PopulationManager::populationMax</a></div><div class="ttdeci">int populationMax</div><div class="ttdoc">Population maximale autorisée.</div><div class="ttdef"><b>Definition</b> <a href="_population_manager_8cs_source.html#l00021">PopulationManager.cs:21</a></div></div>
 </div><!-- fragment -->
-<p class="reference">Références <a class="el" href="_population_manager_8cs_source.html#l00015">intervalleNaissance</a>, <a class="el" href="_population_manager_8cs_source.html#l00021">populationActuelle</a>, <a class="el" href="_besoin_players_8cs_source.html#l00042">BesoinPlayers::populationManager</a>, <a class="el" href="_population_manager_8cs_source.html#l00018">populationMax</a>, <a class="el" href="_population_manager_8cs_source.html#l00012">prefabPNJ</a>, et <a class="el" href="_population_manager_8cs_source.html#l00024">spawnPosition</a>.</p>
+<p class="reference">Références <a class="el" href="_population_manager_8cs_source.html#l00018">intervalleNaissance</a>, <a class="el" href="_population_manager_8cs_source.html#l00083">MettreAJourAffichage()</a>, <a class="el" href="_population_manager_8cs_source.html#l00024">populationActuelle</a>, <a class="el" href="_population_manager_8cs_source.html#l00021">populationMax</a>, <a class="el" href="_population_manager_8cs_source.html#l00015">prefabPNJ</a>, et <a class="el" href="_population_manager_8cs_source.html#l00027">spawnPosition</a>.</p>
 
-<p class="reference">Référencé par <a class="el" href="_population_manager_8cs_source.html#l00030">Start()</a>.</p>
+<p class="reference">Référencé par <a class="el" href="_population_manager_8cs_source.html#l00049">Start()</a>.</p>
 
 </div>
 </div>
-<a id="af6d04402eee9928001d9f66cc419a384" name="af6d04402eee9928001d9f66cc419a384"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af6d04402eee9928001d9f66cc419a384">&#9670;&#160;</a></span>PNJMort()</h2>
+<a id="a658dff474962803469e9179a0523c45d" name="a658dff474962803469e9179a0523c45d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a658dff474962803469e9179a0523c45d">&#9670;&#160;</a></span>GetPopulation()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -203,7 +254,7 @@ Attributs privés</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void PopulationManager::PNJMort </td>
+          <td class="memname">int PopulationManager::GetPopulation </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -216,15 +267,57 @@ Attributs privés</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Appelé lorsqu’un PNJ meurt. Diminue le compteur de population. </p>
+<p>Retourne le nombre de PNJ actuellement présents dans la scène. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>Population actuelle.</dd></dl>
 
-<p class="definition">Définition à la ligne <a class="el" href="_population_manager_8cs_source.html#l00069">69</a> du fichier <a class="el" href="_population_manager_8cs_source.html">PopulationManager.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   70</span>    {</div>
-<div class="line"><span class="lineno">   71</span>        <a class="code hl_variable" href="#a5da90d902b0b502fde31ce8781fb77be">populationActuelle</a> = Mathf.Max(0, <a class="code hl_variable" href="#a5da90d902b0b502fde31ce8781fb77be">populationActuelle</a> - 1);</div>
-<div class="line"><span class="lineno">   72</span>        Debug.Log($<span class="stringliteral">&quot;💀 PNJ mort. Population : {populationActuelle}&quot;</span>);</div>
-<div class="line"><span class="lineno">   73</span>    }</div>
+<p class="definition">Définition à la ligne <a class="el" href="_population_manager_8cs_source.html#l00095">95</a> du fichier <a class="el" href="_population_manager_8cs_source.html">PopulationManager.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   96</span>    {</div>
+<div class="line"><span class="lineno">   97</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="#a5da90d902b0b502fde31ce8781fb77be">populationActuelle</a>;</div>
+<div class="line"><span class="lineno">   98</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">Références <a class="el" href="_population_manager_8cs_source.html#l00021">populationActuelle</a>.</p>
+<p class="reference">Références <a class="el" href="_population_manager_8cs_source.html#l00024">populationActuelle</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="_unlockable_button_8cs_source.html#l00039">UnlockableItem::CheckUnlock()</a>.</p>
+
+</div>
+</div>
+<a id="a073819205798ead7d6f2ca0e97e24331" name="a073819205798ead7d6f2ca0e97e24331"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a073819205798ead7d6f2ca0e97e24331">&#9670;&#160;</a></span>MettreAJourAffichage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PopulationManager::MettreAJourAffichage </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Met à jour l'affichage de la population actuelle via l’interface. </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="_population_manager_8cs_source.html#l00083">83</a> du fichier <a class="el" href="_population_manager_8cs_source.html">PopulationManager.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   84</span>    {</div>
+<div class="line"><span class="lineno">   85</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="#a12a26c4580047abdcd56595f29ab8646">statDisplay</a> != null)</div>
+<div class="line"><span class="lineno">   86</span>        {</div>
+<div class="line"><span class="lineno">   87</span>            <a class="code hl_variable" href="#a12a26c4580047abdcd56595f29ab8646">statDisplay</a>.SetPopulation(<a class="code hl_variable" href="#a5da90d902b0b502fde31ce8781fb77be">populationActuelle</a>);</div>
+<div class="line"><span class="lineno">   88</span>        }</div>
+<div class="line"><span class="lineno">   89</span>    }</div>
+<div class="ttc" id="aclass_population_manager_html_a12a26c4580047abdcd56595f29ab8646"><div class="ttname"><a href="#a12a26c4580047abdcd56595f29ab8646">PopulationManager::statDisplay</a></div><div class="ttdeci">StatistiquesManager statDisplay</div><div class="ttdoc">Composant responsable de l&#39;affichage des statistiques.</div><div class="ttdef"><b>Definition</b> <a href="_population_manager_8cs_source.html#l00030">PopulationManager.cs:30</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Références <a class="el" href="_population_manager_8cs_source.html#l00024">populationActuelle</a>, et <a class="el" href="_population_manager_8cs_source.html#l00030">statDisplay</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="_population_manager_8cs_source.html#l00061">GenererPNJ()</a>, et <a class="el" href="_population_manager_8cs_source.html#l00049">Start()</a>.</p>
 
 </div>
 </div>
@@ -246,31 +339,55 @@ Attributs privés</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel private">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Initialise le manager : compte les PNJ existants et leur assigne le manager. Lance ensuite la coroutine de génération. </p>
+<p>Initialise la population en comptant les PNJ présents dans la scène. Démarre ensuite la génération automatique. </p>
 
-<p class="definition">Définition à la ligne <a class="el" href="_population_manager_8cs_source.html#l00030">30</a> du fichier <a class="el" href="_population_manager_8cs_source.html">PopulationManager.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   31</span>    {</div>
-<div class="line"><span class="lineno">   32</span>        <a class="code hl_variable" href="#a5da90d902b0b502fde31ce8781fb77be">populationActuelle</a> = GameObject.FindObjectsOfType&lt;BesoinPlayers&gt;().Length;</div>
-<div class="line"><span class="lineno">   33</span> </div>
-<div class="line"><span class="lineno">   34</span>        <span class="keywordflow">foreach</span> (BesoinPlayers p <span class="keywordflow">in</span> GameObject.FindObjectsOfType&lt;BesoinPlayers&gt;())</div>
-<div class="line"><span class="lineno">   35</span>        {</div>
-<div class="line"><span class="lineno">   36</span>            p.<a class="code hl_variable" href="class_besoin_players.html#a7a84ee6dd9bb1bfaccfb501780abcb2d">populationManager</a> = <span class="keyword">this</span>;</div>
-<div class="line"><span class="lineno">   37</span>        }</div>
-<div class="line"><span class="lineno">   38</span> </div>
-<div class="line"><span class="lineno">   39</span>        StartCoroutine(<a class="code hl_function" href="#a135f7ec0ca6936967d82f9af2f3909de">GenererPNJ</a>());</div>
-<div class="line"><span class="lineno">   40</span>    }</div>
-<div class="ttc" id="aclass_population_manager_html_a135f7ec0ca6936967d82f9af2f3909de"><div class="ttname"><a href="#a135f7ec0ca6936967d82f9af2f3909de">PopulationManager::GenererPNJ</a></div><div class="ttdeci">IEnumerator GenererPNJ()</div><div class="ttdoc">Coroutine qui fait naître un nouveau PNJ à intervalle régulier si la population le permet.</div><div class="ttdef"><b>Definition</b> <a href="_population_manager_8cs_source.html#l00045">PopulationManager.cs:45</a></div></div>
+<p class="definition">Définition à la ligne <a class="el" href="_population_manager_8cs_source.html#l00049">49</a> du fichier <a class="el" href="_population_manager_8cs_source.html">PopulationManager.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   50</span>    {</div>
+<div class="line"><span class="lineno">   51</span>        <a class="code hl_variable" href="#a5da90d902b0b502fde31ce8781fb77be">populationActuelle</a> = GameObject.FindObjectsOfType&lt;BesoinPlayers&gt;().Length;</div>
+<div class="line"><span class="lineno">   52</span>        <a class="code hl_function" href="#a073819205798ead7d6f2ca0e97e24331">MettreAJourAffichage</a>();</div>
+<div class="line"><span class="lineno">   53</span> </div>
+<div class="line"><span class="lineno">   54</span>        StartCoroutine(<a class="code hl_function" href="#a135f7ec0ca6936967d82f9af2f3909de">GenererPNJ</a>());</div>
+<div class="line"><span class="lineno">   55</span>    }</div>
+<div class="ttc" id="aclass_population_manager_html_a135f7ec0ca6936967d82f9af2f3909de"><div class="ttname"><a href="#a135f7ec0ca6936967d82f9af2f3909de">PopulationManager::GenererPNJ</a></div><div class="ttdeci">IEnumerator GenererPNJ()</div><div class="ttdoc">Coroutine qui génère un PNJ à intervalles réguliers selon le timeScale. Ne dépasse jamais populationM...</div><div class="ttdef"><b>Definition</b> <a href="_population_manager_8cs_source.html#l00061">PopulationManager.cs:61</a></div></div>
 </div><!-- fragment -->
-<p class="reference">Références <a class="el" href="_population_manager_8cs_source.html#l00045">GenererPNJ()</a>, <a class="el" href="_population_manager_8cs_source.html#l00021">populationActuelle</a>, et <a class="el" href="_besoin_players_8cs_source.html#l00042">BesoinPlayers::populationManager</a>.</p>
+<p class="reference">Références <a class="el" href="_population_manager_8cs_source.html#l00061">GenererPNJ()</a>, <a class="el" href="_population_manager_8cs_source.html#l00083">MettreAJourAffichage()</a>, et <a class="el" href="_population_manager_8cs_source.html#l00024">populationActuelle</a>.</p>
 
 </div>
 </div>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Documentation des données membres</h2>
+<a id="a79261ebdf309704e4d1308a5d9c0cbf7" name="a79261ebdf309704e4d1308a5d9c0cbf7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79261ebdf309704e4d1308a5d9c0cbf7">&#9670;&#160;</a></span>Instance</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_population_manager.html">PopulationManager</a> PopulationManager::Instance</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Instance unique du gestionnaire de population (Singleton). </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="_population_manager_8cs_source.html#l00012">12</a> du fichier <a class="el" href="_population_manager_8cs_source.html">PopulationManager.cs</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="_population_manager_8cs_source.html#l00033">Awake()</a>, et <a class="el" href="_unlockable_button_8cs_source.html#l00039">UnlockableItem::CheckUnlock()</a>.</p>
+
+</div>
+</div>
 <a id="ae3286b2d559089f76e2b291018793cc9" name="ae3286b2d559089f76e2b291018793cc9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae3286b2d559089f76e2b291018793cc9">&#9670;&#160;</a></span>intervalleNaissance</h2>
 
@@ -278,16 +395,16 @@ Attributs privés</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">float PopulationManager::intervalleNaissance = 10f</td>
+          <td class="memname">float PopulationManager::intervalleNaissance = 5f</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Intervalle de temps entre chaque naissance (en secondes). </p>
+<p>Temps entre chaque naissance (en secondes). </p>
 
-<p class="definition">Définition à la ligne <a class="el" href="_population_manager_8cs_source.html#l00015">15</a> du fichier <a class="el" href="_population_manager_8cs_source.html">PopulationManager.cs</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_population_manager_8cs_source.html#l00018">18</a> du fichier <a class="el" href="_population_manager_8cs_source.html">PopulationManager.cs</a>.</p>
 
-<p class="reference">Référencé par <a class="el" href="_population_manager_8cs_source.html#l00045">GenererPNJ()</a>.</p>
+<p class="reference">Référencé par <a class="el" href="_population_manager_8cs_source.html#l00061">GenererPNJ()</a>.</p>
 
 </div>
 </div>
@@ -311,11 +428,11 @@ Attributs privés</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Nombre actuel de PNJ vivants. </p>
+<p>Population actuelle dans la scène. </p>
 
-<p class="definition">Définition à la ligne <a class="el" href="_population_manager_8cs_source.html#l00021">21</a> du fichier <a class="el" href="_population_manager_8cs_source.html">PopulationManager.cs</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_population_manager_8cs_source.html#l00024">24</a> du fichier <a class="el" href="_population_manager_8cs_source.html">PopulationManager.cs</a>.</p>
 
-<p class="reference">Référencé par <a class="el" href="_population_manager_8cs_source.html#l00045">GenererPNJ()</a>, <a class="el" href="_population_manager_8cs_source.html#l00069">PNJMort()</a>, et <a class="el" href="_population_manager_8cs_source.html#l00030">Start()</a>.</p>
+<p class="reference">Référencé par <a class="el" href="_population_manager_8cs_source.html#l00061">GenererPNJ()</a>, <a class="el" href="_population_manager_8cs_source.html#l00095">GetPopulation()</a>, <a class="el" href="_population_manager_8cs_source.html#l00083">MettreAJourAffichage()</a>, et <a class="el" href="_population_manager_8cs_source.html#l00049">Start()</a>.</p>
 
 </div>
 </div>
@@ -326,16 +443,16 @@ Attributs privés</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int PopulationManager::populationMax = 50</td>
+          <td class="memname">int PopulationManager::populationMax = 100</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Nombre maximal de PNJ autorisés dans la scène. </p>
+<p>Population maximale autorisée. </p>
 
-<p class="definition">Définition à la ligne <a class="el" href="_population_manager_8cs_source.html#l00018">18</a> du fichier <a class="el" href="_population_manager_8cs_source.html">PopulationManager.cs</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_population_manager_8cs_source.html#l00021">21</a> du fichier <a class="el" href="_population_manager_8cs_source.html">PopulationManager.cs</a>.</p>
 
-<p class="reference">Référencé par <a class="el" href="_population_manager_8cs_source.html#l00045">GenererPNJ()</a>.</p>
+<p class="reference">Référencé par <a class="el" href="_population_manager_8cs_source.html#l00061">GenererPNJ()</a>.</p>
 
 </div>
 </div>
@@ -351,11 +468,11 @@ Attributs privés</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Prefab utilisé pour instancier de nouveaux PNJ. </p>
+<p>Prefab du PNJ à instancier. </p>
 
-<p class="definition">Définition à la ligne <a class="el" href="_population_manager_8cs_source.html#l00012">12</a> du fichier <a class="el" href="_population_manager_8cs_source.html">PopulationManager.cs</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_population_manager_8cs_source.html#l00015">15</a> du fichier <a class="el" href="_population_manager_8cs_source.html">PopulationManager.cs</a>.</p>
 
-<p class="reference">Référencé par <a class="el" href="_population_manager_8cs_source.html#l00045">GenererPNJ()</a>.</p>
+<p class="reference">Référencé par <a class="el" href="_population_manager_8cs_source.html#l00061">GenererPNJ()</a>.</p>
 
 </div>
 </div>
@@ -379,11 +496,31 @@ Attributs privés</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Position de spawn des nouveaux PNJ. </p>
+<p>Position fixe de génération des PNJ. </p>
 
-<p class="definition">Définition à la ligne <a class="el" href="_population_manager_8cs_source.html#l00024">24</a> du fichier <a class="el" href="_population_manager_8cs_source.html">PopulationManager.cs</a>.</p>
+<p class="definition">Définition à la ligne <a class="el" href="_population_manager_8cs_source.html#l00027">27</a> du fichier <a class="el" href="_population_manager_8cs_source.html">PopulationManager.cs</a>.</p>
 
-<p class="reference">Référencé par <a class="el" href="_population_manager_8cs_source.html#l00045">GenererPNJ()</a>.</p>
+<p class="reference">Référencé par <a class="el" href="_population_manager_8cs_source.html#l00061">GenererPNJ()</a>.</p>
+
+</div>
+</div>
+<a id="a12a26c4580047abdcd56595f29ab8646" name="a12a26c4580047abdcd56595f29ab8646"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12a26c4580047abdcd56595f29ab8646">&#9670;&#160;</a></span>statDisplay</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_statistiques_manager.html">StatistiquesManager</a> PopulationManager::statDisplay</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Composant responsable de l'affichage des statistiques. </p>
+
+<p class="definition">Définition à la ligne <a class="el" href="_population_manager_8cs_source.html#l00030">30</a> du fichier <a class="el" href="_population_manager_8cs_source.html">PopulationManager.cs</a>.</p>
+
+<p class="reference">Référencé par <a class="el" href="_population_manager_8cs_source.html#l00083">MettreAJourAffichage()</a>.</p>
 
 </div>
 </div>

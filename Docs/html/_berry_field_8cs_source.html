@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SupCity:  Fichier source de Assets/Scripts/BerryField.cs</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">SupCity
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('_berry_field_8cs_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Chargement...</div>
+<div class="SRStatus" id="Searching">Recherche...</div>
+<div class="SRStatus" id="NoMatches">Aucune correspondance</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">BerryField.cs</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_berry_field_8cs.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">using </span>UnityEngine;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span></div>
+<div class="foldopen" id="foldopen00007" data-start="{" data-end="};">
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="class_berry_field.html">    7</a></span><span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="class_berry_field.html">BerryField</a> : <a class="code hl_class" href="class_production_building.html">ProductionBuilding</a></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>{</div>
+<div class="foldopen" id="foldopen00014" data-start="{" data-end="}">
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="class_berry_field.html#a42c4f810b51f11a61c5a480eddaf6b9a">   14</a></span>    <span class="keyword">protected</span> <span class="keyword">override</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_berry_field.html#a42c4f810b51f11a61c5a480eddaf6b9a">Start</a>()</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <a class="code hl_variable" href="class_production_building.html#aaed24419e0a66a934a9347ad49763b18">outputResourceType</a> = <a class="code hl_enumeration" href="_resource_type_8cs.html#a8571efa4409be32e28abf3ea74a0dbb1">ResourceType</a>.Berry;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <a class="code hl_variable" href="class_production_building.html#a8f81ec757f4ec8ac8b6e878d300e301f">productionAmount</a> = 10;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <a class="code hl_variable" href="class_production_building.html#ae068bb70eda3d062c21be874336c271e">productionInterval</a> = 4f;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        base.Start();</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    }</div>
+</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>}</div>
+</div>
+<div class="ttc" id="a_resource_type_8cs_html_a8571efa4409be32e28abf3ea74a0dbb1"><div class="ttname"><a href="_resource_type_8cs.html#a8571efa4409be32e28abf3ea74a0dbb1">ResourceType</a></div><div class="ttdeci">ResourceType</div><div class="ttdoc">Enumération représentant les différents types de ressources utilisés dans le jeu.</div><div class="ttdef"><b>Definition</b> <a href="_resource_type_8cs_source.html#l00006">ResourceType.cs:7</a></div></div>
+<div class="ttc" id="aclass_berry_field_html"><div class="ttname"><a href="class_berry_field.html">BerryField</a></div><div class="ttdoc">Bâtiment de production spécialisé dans la récolte de baies. Hérite de ProductionBuilding et configure...</div><div class="ttdef"><b>Definition</b> <a href="#l00007">BerryField.cs:8</a></div></div>
+<div class="ttc" id="aclass_berry_field_html_a42c4f810b51f11a61c5a480eddaf6b9a"><div class="ttname"><a href="class_berry_field.html#a42c4f810b51f11a61c5a480eddaf6b9a">BerryField::Start</a></div><div class="ttdeci">override void Start()</div><div class="ttdoc">Initialise les paramètres spécifiques au champ de baies : type de ressource produite,...</div><div class="ttdef"><b>Definition</b> <a href="#l00014">BerryField.cs:14</a></div></div>
+<div class="ttc" id="aclass_production_building_html"><div class="ttname"><a href="class_production_building.html">ProductionBuilding</a></div><div class="ttdoc">Classe abstraite pour les bâtiments de production. Gère la logique de production cyclique avec ressou...</div><div class="ttdef"><b>Definition</b> <a href="_production_building_8cs_source.html#l00008">ProductionBuilding.cs:9</a></div></div>
+<div class="ttc" id="aclass_production_building_html_a8f81ec757f4ec8ac8b6e878d300e301f"><div class="ttname"><a href="class_production_building.html#a8f81ec757f4ec8ac8b6e878d300e301f">ProductionBuilding::productionAmount</a></div><div class="ttdeci">int productionAmount</div><div class="ttdoc">Quantité de ressource produite à chaque cycle.</div><div class="ttdef"><b>Definition</b> <a href="_production_building_8cs_source.html#l00020">ProductionBuilding.cs:20</a></div></div>
+<div class="ttc" id="aclass_production_building_html_aaed24419e0a66a934a9347ad49763b18"><div class="ttname"><a href="class_production_building.html#aaed24419e0a66a934a9347ad49763b18">ProductionBuilding::outputResourceType</a></div><div class="ttdeci">ResourceType outputResourceType</div><div class="ttdoc">Type de ressource produite par ce bâtiment.</div><div class="ttdef"><b>Definition</b> <a href="_production_building_8cs_source.html#l00015">ProductionBuilding.cs:15</a></div></div>
+<div class="ttc" id="aclass_production_building_html_ae068bb70eda3d062c21be874336c271e"><div class="ttname"><a href="class_production_building.html#ae068bb70eda3d062c21be874336c271e">ProductionBuilding::productionInterval</a></div><div class="ttdeci">float productionInterval</div><div class="ttdoc">Intervalle (en secondes) entre deux productions.</div><div class="ttdef"><b>Definition</b> <a href="_production_building_8cs_source.html#l00025">ProductionBuilding.cs:25</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_84bbf7b3c7f28a5a18725745e1505219.html">Assets</a></li><li class="navelem"><a href="dir_f13b41af88cf68434578284aaf699e39.html">Scripts</a></li><li class="navelem"><a href="_berry_field_8cs.html">BerryField.cs</a></li>
+    <li class="footer">Généré par <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

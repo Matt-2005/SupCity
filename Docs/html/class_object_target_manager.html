@@ -92,7 +92,7 @@ $(function(){initNavTree('class_object_target_manager.html','','class_object_tar
 </div><!--header-->
 <div class="contents">
 
-<p>Gère la liste des objets cibles disponibles dans la scène (ex. : arbres). Initialise automatiquement la liste en recherchant les GameObjects ayant le tag "Arbre".  
+<p>Gère la liste des objets cibles disponibles portant le tag "usineBaie". Utile pour accéder rapidement aux ressources de type baie dans la scène.  
  <a href="#details">Plus de détails...</a></p>
 <div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Graphe d'héritage de ObjectTargetManager:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -105,17 +105,15 @@ $(function(){initNavTree('class_object_target_manager.html','','class_object_tar
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Fonctions membres publiques</h2></td></tr>
 <tr class="memitem:a14aab93ed50a595866d2f1f3b90ea7f6" id="r_a14aab93ed50a595866d2f1f3b90ea7f6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a14aab93ed50a595866d2f1f3b90ea7f6">Start</a> ()</td></tr>
-<tr class="memdesc:a14aab93ed50a595866d2f1f3b90ea7f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise la liste des arbres en les trouvant via leur tag "Arbre".  <br /></td></tr>
-<tr class="memitem:a41121fa3aadd0782f8381a4fe22ef7c6" id="r_a41121fa3aadd0782f8381a4fe22ef7c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a41121fa3aadd0782f8381a4fe22ef7c6">Update</a> ()</td></tr>
-<tr class="memdesc:a41121fa3aadd0782f8381a4fe22ef7c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Méthode appelée à chaque frame (actuellement vide).  <br /></td></tr>
+<tr class="memdesc:a14aab93ed50a595866d2f1f3b90ea7f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise la liste <a class="el" href="#a86c7b79ab4006c139c70596f6475f8de" title="Liste des GameObjects disponibles avec le tag &quot;usineBaie&quot;.">baieDisponibles</a> en trouvant tous les objets avec le tag "usineBaie" dans la scène.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Attributs publics</h2></td></tr>
-<tr class="memitem:a064d6fc13fa78cbb50204690b69d1dfb" id="r_a064d6fc13fa78cbb50204690b69d1dfb"><td class="memItemLeft" align="right" valign="top">List&lt; GameObject &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a064d6fc13fa78cbb50204690b69d1dfb">arbresDisponibles</a> = new List&lt;GameObject&gt;()</td></tr>
-<tr class="memdesc:a064d6fc13fa78cbb50204690b69d1dfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liste des arbres actuellement disponibles dans la scène.  <br /></td></tr>
+<tr class="memitem:a86c7b79ab4006c139c70596f6475f8de" id="r_a86c7b79ab4006c139c70596f6475f8de"><td class="memItemLeft" align="right" valign="top">List&lt; GameObject &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a86c7b79ab4006c139c70596f6475f8de">baieDisponibles</a> = new List&lt;GameObject&gt;()</td></tr>
+<tr class="memdesc:a86c7b79ab4006c139c70596f6475f8de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Liste des GameObjects disponibles avec le tag "usineBaie".  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Description détaillée</h2>
-<div class="textblock"><p>Gère la liste des objets cibles disponibles dans la scène (ex. : arbres). Initialise automatiquement la liste en recherchant les GameObjects ayant le tag "Arbre". </p>
+<div class="textblock"><p>Gère la liste des objets cibles disponibles portant le tag "usineBaie". Utile pour accéder rapidement aux ressources de type baie dans la scène. </p>
 
 <p class="definition">Définition à la ligne <a class="el" href="_object_target_manager_8cs_source.html#l00008">8</a> du fichier <a class="el" href="_object_target_manager_8cs_source.html">ObjectTargetManager.cs</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentation des fonctions membres</h2>
@@ -142,69 +140,37 @@ Attributs publics</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Initialise la liste des arbres en les trouvant via leur tag "Arbre". </p>
+<p>Initialise la liste <a class="el" href="#a86c7b79ab4006c139c70596f6475f8de" title="Liste des GameObjects disponibles avec le tag &quot;usineBaie&quot;.">baieDisponibles</a> en trouvant tous les objets avec le tag "usineBaie" dans la scène. </p>
 
 <p class="definition">Définition à la ligne <a class="el" href="_object_target_manager_8cs_source.html#l00018">18</a> du fichier <a class="el" href="_object_target_manager_8cs_source.html">ObjectTargetManager.cs</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   19</span>    {</div>
-<div class="line"><span class="lineno">   20</span>        GameObject[] arbres = GameObject.FindGameObjectsWithTag(<span class="stringliteral">&quot;Arbre&quot;</span>);</div>
+<div class="line"><span class="lineno">   20</span>        GameObject[] baies = GameObject.FindGameObjectsWithTag(<span class="stringliteral">&quot;usineBaie&quot;</span>);</div>
 <div class="line"><span class="lineno">   21</span> </div>
-<div class="line"><span class="lineno">   22</span>        <span class="keywordflow">foreach</span> (GameObject arbre <span class="keywordflow">in</span> arbres)</div>
+<div class="line"><span class="lineno">   22</span>        <span class="keywordflow">foreach</span> (GameObject baie <span class="keywordflow">in</span> baies)</div>
 <div class="line"><span class="lineno">   23</span>        {</div>
-<div class="line"><span class="lineno">   24</span>            <a class="code hl_variable" href="#a064d6fc13fa78cbb50204690b69d1dfb">arbresDisponibles</a>.Add(arbre);</div>
+<div class="line"><span class="lineno">   24</span>            <a class="code hl_variable" href="#a86c7b79ab4006c139c70596f6475f8de">baieDisponibles</a>.Add(baie);</div>
 <div class="line"><span class="lineno">   25</span>        }</div>
 <div class="line"><span class="lineno">   26</span>    }</div>
-<div class="ttc" id="aclass_object_target_manager_html_a064d6fc13fa78cbb50204690b69d1dfb"><div class="ttname"><a href="#a064d6fc13fa78cbb50204690b69d1dfb">ObjectTargetManager::arbresDisponibles</a></div><div class="ttdeci">List&lt; GameObject &gt; arbresDisponibles</div><div class="ttdoc">Liste des arbres actuellement disponibles dans la scène.</div><div class="ttdef"><b>Definition</b> <a href="_object_target_manager_8cs_source.html#l00013">ObjectTargetManager.cs:13</a></div></div>
+<div class="ttc" id="aclass_object_target_manager_html_a86c7b79ab4006c139c70596f6475f8de"><div class="ttname"><a href="#a86c7b79ab4006c139c70596f6475f8de">ObjectTargetManager::baieDisponibles</a></div><div class="ttdeci">List&lt; GameObject &gt; baieDisponibles</div><div class="ttdoc">Liste des GameObjects disponibles avec le tag &quot;usineBaie&quot;.</div><div class="ttdef"><b>Definition</b> <a href="_object_target_manager_8cs_source.html#l00013">ObjectTargetManager.cs:13</a></div></div>
 </div><!-- fragment -->
-<p class="reference">Références <a class="el" href="_object_target_manager_8cs_source.html#l00013">arbresDisponibles</a>.</p>
+<p class="reference">Références <a class="el" href="_object_target_manager_8cs_source.html#l00013">baieDisponibles</a>.</p>
 
-</div>
-</div>
-<a id="a41121fa3aadd0782f8381a4fe22ef7c6" name="a41121fa3aadd0782f8381a4fe22ef7c6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a41121fa3aadd0782f8381a4fe22ef7c6">&#9670;&#160;</a></span>Update()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void ObjectTargetManager::Update </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Méthode appelée à chaque frame (actuellement vide). </p>
-
-<p class="definition">Définition à la ligne <a class="el" href="_object_target_manager_8cs_source.html#l00031">31</a> du fichier <a class="el" href="_object_target_manager_8cs_source.html">ObjectTargetManager.cs</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   32</span>    {</div>
-<div class="line"><span class="lineno">   33</span>        </div>
-<div class="line"><span class="lineno">   34</span>    }</div>
-</div><!-- fragment -->
 </div>
 </div>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Documentation des données membres</h2>
-<a id="a064d6fc13fa78cbb50204690b69d1dfb" name="a064d6fc13fa78cbb50204690b69d1dfb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a064d6fc13fa78cbb50204690b69d1dfb">&#9670;&#160;</a></span>arbresDisponibles</h2>
+<a id="a86c7b79ab4006c139c70596f6475f8de" name="a86c7b79ab4006c139c70596f6475f8de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86c7b79ab4006c139c70596f6475f8de">&#9670;&#160;</a></span>baieDisponibles</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">List&lt;GameObject&gt; ObjectTargetManager::arbresDisponibles = new List&lt;GameObject&gt;()</td>
+          <td class="memname">List&lt;GameObject&gt; ObjectTargetManager::baieDisponibles = new List&lt;GameObject&gt;()</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Liste des arbres actuellement disponibles dans la scène. </p>
+<p>Liste des GameObjects disponibles avec le tag "usineBaie". </p>
 
 <p class="definition">Définition à la ligne <a class="el" href="_object_target_manager_8cs_source.html#l00013">13</a> du fichier <a class="el" href="_object_target_manager_8cs_source.html">ObjectTargetManager.cs</a>.</p>
 

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['mouseposition_0',['MousePosition',['../class_mouse_position.html',1,'']]],
-  ['multiplaceable_1',['MultiPlaceable',['../class_multi_placeable.html',1,'']]]
+  ['gamemanager_0',['GameManager',['../class_game_manager.html',1,'']]],
+  ['gamespeedmanager_1',['GameSpeedManager',['../class_game_speed_manager.html',1,'']]]
 ];
