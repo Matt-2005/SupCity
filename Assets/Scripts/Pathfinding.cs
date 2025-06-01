@@ -3,12 +3,17 @@ using Pathfinding;
 
 /// <summary>
 /// Gère le déplacement automatique d’un PNJ vers une cible à l’aide d’A* Pathfinding.
-/// Met à jour les animations et notifie l’arrivée au script BesoinPlayers.
+/// Met à jour les animations et notifie l’arrivée au script <see cref="BesoinPlayers"/>.
 /// </summary>
 public class PathfindingAI : MonoBehaviour
 {
+    /// <summary>Transform du GameObject cible à atteindre.</summary>
     public Transform target;
+
+    /// <summary>Vitesse de déplacement du PNJ.</summary>
     public float speed = 3f;
+
+    /// <summary>Distance minimale pour considérer qu’un waypoint a été atteint.</summary>
     public float nextWayPointDistance = 0.3f;
 
     private Path path;
@@ -18,8 +23,10 @@ public class PathfindingAI : MonoBehaviour
     private Rigidbody2D rb;
     private Animator animator;
 
+    /// <summary>Indique si le script a déjà notifié l’arrivée au besoin.</summary>
     private bool aNotifieArrivee = false;
 
+    /// <summary>Initialise les composants et lance la mise à jour régulière du chemin.</summary>
     void Start()
     {
         seeker = GetComponent<Seeker>();
@@ -29,6 +36,7 @@ public class PathfindingAI : MonoBehaviour
         InvokeRepeating("UpdatePath", 0f, 0.5f);
     }
 
+    /// <summary>Met à jour le chemin vers la cible à l’aide de A* Pathfinding.</summary>
     void UpdatePath()
     {
         if (seeker.IsDone() && target != null)
@@ -38,6 +46,7 @@ public class PathfindingAI : MonoBehaviour
         }
     }
 
+    /// <summary>Callback appelé une fois le chemin calculé avec succès.</summary>
     void OnPathComplete(Path p)
     {
         if (!p.error)
@@ -48,6 +57,10 @@ public class PathfindingAI : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Gère le déplacement du PNJ à chaque frame physique.
+    /// Suit les waypoints du chemin, met à jour les animations et notifie l’arrivée.
+    /// </summary>
     void FixedUpdate()
     {
         if (path == null || target == null) return;
@@ -88,7 +101,7 @@ public class PathfindingAI : MonoBehaviour
             currentWayPoint++;
         }
 
-        // Snap final
+        // Correction finale si le dernier waypoint est atteint mais non détecté
         if (currentWayPoint >= path.vectorPath.Count && !aNotifieArrivee)
         {
             rb.position = path.vectorPath[^1];
@@ -105,13 +118,21 @@ public class PathfindingAI : MonoBehaviour
         }
     }
 
-    /// <summary>Définit dynamiquement une nouvelle cible à atteindre.</summary>
+    /// <summary>
+    /// Définit dynamiquement une nouvelle cible à atteindre.
+    /// Réinitialise la notification d’arrivée.
+    /// </summary>
+    /// <param name="newTarget">Transform de la nouvelle cible.</param>
     public void setTarget(Transform newTarget)
     {
         target = newTarget;
         aNotifieArrivee = false;
     }
 
+    /// <summary>
+    /// Crée une cible temporaire à une position donnée et s'y rend.
+    /// </summary>
+    /// <param name="worldPosition">Position dans le monde vers laquelle se déplacer.</param>
     public void setTargetPos(Vector3 worldPosition)
     {
         GameObject tempTarget = new GameObject("TempTarget");

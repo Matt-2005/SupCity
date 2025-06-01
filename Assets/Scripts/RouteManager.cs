@@ -1,8 +1,15 @@
 using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// Gère les routes dans la scène et permet aux PNJ d'y transiter pour atteindre une destination.
+/// Utilise le pattern Singleton pour être facilement accessible depuis d'autres scripts.
+/// </summary>
 public class RouteManager : MonoBehaviour
 {
+    /// <summary>
+    /// Instance unique (Singleton) de ce manager.
+    /// </summary>
     public static RouteManager Instance;
 
     private void Awake()
@@ -13,6 +20,11 @@ public class RouteManager : MonoBehaviour
             Destroy(gameObject);
     }
 
+    /// <summary>
+    /// Trouve la route la plus proche d’une position donnée.
+    /// </summary>
+    /// <param name="position">Position depuis laquelle chercher la route la plus proche.</param>
+    /// <returns>La GameObject de la route la plus proche, ou null si aucune route n’est trouvée.</returns>
     public GameObject GetRouteLaPlusProche(Vector3 position)
     {
         GameObject[] routes = GameObject.FindGameObjectsWithTag("Route");
@@ -34,6 +46,12 @@ public class RouteManager : MonoBehaviour
         return plusProche;
     }
 
+    /// <summary>
+    /// Fait passer un PNJ par la route la plus proche avant d’aller à sa destination finale.
+    /// Si aucune route n’est trouvée, le PNJ se rend directement à sa destination.
+    /// </summary>
+    /// <param name="pnj">Le GameObject du PNJ.</param>
+    /// <param name="destinationFinale">La destination finale à atteindre après la route.</param>
     public void AllerViaRoute(GameObject pnj, Transform destinationFinale)
     {
         GameObject route = GetRouteLaPlusProche(pnj.transform.position);
@@ -50,6 +68,10 @@ public class RouteManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Coroutine qui attend un court délai avant d’envoyer le PNJ vers sa destination finale.
+    /// Donne le temps au PNJ d’arriver à la route avant de continuer son trajet.
+    /// </summary>
     private IEnumerator AttenteEtSuite(GameObject pnj, Transform destinationFinale)
     {
         yield return new WaitForSeconds(1.5f);

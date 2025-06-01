@@ -1,7 +1,15 @@
 using UnityEngine;
 
+/// <summary>
+/// Gère la vitesse du temps dans le jeu via Time.timeScale.
+/// Permet de mettre en pause, de jouer à vitesse normale ou d'accélérer le jeu.
+/// Les méthodes peuvent être liées à des boutons dans l'interface Unity.
+/// </summary>
 public class GameSpeedManager : MonoBehaviour
 {
+    /// <summary>
+    /// États possibles de la vitesse du jeu.
+    /// </summary>
     public enum SpeedState
     {
         Paused,
@@ -10,9 +18,14 @@ public class GameSpeedManager : MonoBehaviour
         UltraFast
     }
 
+    /// <summary>
+    /// Vitesse actuelle sélectionnée.
+    /// </summary>
     private SpeedState currentSpeed = SpeedState.Normal;
 
-    // Met à jour le timeScale en fonction de l'état actuel
+    /// <summary>
+    /// Met à jour la valeur de <see cref="Time.timeScale"/> en fonction de l’état actuel.
+    /// </summary>
     private void UpdateTimeScale()
     {
         switch (currentSpeed)
@@ -34,31 +47,46 @@ public class GameSpeedManager : MonoBehaviour
         Debug.Log("Speed set to: " + currentSpeed + " (Time.timeScale = " + Time.timeScale + ")");
     }
 
-    // Méthodes publiques à lier aux boutons dans Unity
+    /// <summary>
+    /// Met le jeu en pause.
+    /// </summary>
     public void SetPaused()
     {
         currentSpeed = SpeedState.Paused;
         UpdateTimeScale();
     }
 
+    /// <summary>
+    /// Définit la vitesse normale (1x).
+    /// </summary>
     public void SetNormal()
     {
         currentSpeed = SpeedState.Normal;
         UpdateTimeScale();
     }
 
+    /// <summary>
+    /// Définit une vitesse accélérée (2x).
+    /// </summary>
     public void SetFast()
     {
         currentSpeed = SpeedState.Fast;
         UpdateTimeScale();
     }
 
+    /// <summary>
+    /// Définit une vitesse ultra-rapide (4x).
+    /// </summary>
     public void SetUltraFast()
     {
         currentSpeed = SpeedState.UltraFast;
         UpdateTimeScale();
     }
 
+    /// <summary>
+    /// Retourne l’état de vitesse actuel.
+    /// </summary>
+    /// <returns>L'état actuel de <see cref="SpeedState"/>.</returns>
     public SpeedState GetCurrentSpeed()
     {
         return currentSpeed;

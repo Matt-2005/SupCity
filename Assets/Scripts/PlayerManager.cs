@@ -2,7 +2,7 @@ using UnityEngine;
 
 /// <summary>
 /// Gère le comportement des PNJ en basculant du déplacement aléatoire vers un système de besoins avec pathfinding.
-/// Active automatiquement les composants <c>BesoinPlayers</c> et <c>PathfindingAI</c> lorsqu’un feu est détecté.
+/// Active automatiquement les composants <c>BesoinPlayers</c> et <c>PathfindingAI</c> lorsqu’un objet avec le tag "feu" est détecté dans la scène.
 /// </summary>
 public class PlayerBehaviourManager : MonoBehaviour
 {
@@ -10,6 +10,14 @@ public class PlayerBehaviourManager : MonoBehaviour
     private BesoinPlayers besoinPlayers;
     private PathfindingAI pathfindingAI;
 
+    /// <summary>
+    /// Indique si le mode pathfinding est déjà activé pour éviter une activation multiple.
+    /// </summary>
+    private bool modeActif = false;
+
+    /// <summary>
+    /// Initialise les références aux composants nécessaires sur le PNJ.
+    /// </summary>
     void Start()
     {
         randomNPC = GetComponentInChildren<RandomNPC>();
@@ -17,7 +25,9 @@ public class PlayerBehaviourManager : MonoBehaviour
         pathfindingAI = GetComponent<PathfindingAI>();
     }
 
-    private bool modeActif = false;
+    /// <summary>
+    /// Surveille l'apparition d'un objet avec le tag "feu" et déclenche le passage au mode pathfinding.
+    /// </summary>
     void Update()
     {
         if (!modeActif)
@@ -32,25 +42,34 @@ public class PlayerBehaviourManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Active le mode besoins + pathfinding en désactivant le déplacement aléatoire.
+    /// Réinitialise les jauges de besoins pour forcer une action immédiate.
+    /// </summary>
     void ActiverModePathfinding()
     {
+        // Désactive le déplacement aléatoire
         if (randomNPC != null)
         {
             randomNPC.transform.position = transform.position;
             randomNPC.enabled = false;
         }
 
+        // Active le système de besoins
         if (besoinPlayers != null)
         {
             besoinPlayers.enabled = true;
-            besoinPlayers.faim = 0f;     // Pour forcer un besoin déclenché
+            besoinPlayers.faim = 0f;     // Force un besoin actif
             besoinPlayers.soif = 0f;
             besoinPlayers.energie = 0f;
 
-            besoinPlayers.SendMessage("Start"); // ⚠️ force Start() à s’exécuter
+            besoinPlayers.SendMessage("Start"); // ⚠️ Appelle Start() si nécessaire
         }
 
-        if (pathfindingAI != null) pathfindingAI.enabled = true;
+        // Active le pathfinding
+        if (pathfindingAI != null)
+        {
+            pathfindingAI.enabled = true;
+        }
     }
-
 }
