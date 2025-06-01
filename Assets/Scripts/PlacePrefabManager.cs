@@ -31,7 +31,6 @@ public class PlacePrefabManager : MonoBehaviour
     /// </summary>
     void Update()
     {
-        // Ignore le clic si la souris est sur l'UI
         if (EventSystem.current.IsPointerOverGameObject()) return;
 
         GameObject selectedPrefab = BuildManager.instance.GetSelectedPrefab();
@@ -44,7 +43,6 @@ public class PlacePrefabManager : MonoBehaviour
             Vector3Int cellPos = grid.WorldToCell(mouseWorld);
             Vector3 placePos = grid.CellToWorld(cellPos);
 
-            // Création ou mise à jour de l'aperçu du bâtiment
             if (selectedPrefab != lastSelectedPrefab)
             {
                 if (previewObject != null) Destroy(previewObject);
@@ -57,22 +55,19 @@ public class PlacePrefabManager : MonoBehaviour
                 previewObject.transform.position = placePos;
             }
 
-            // Placement effectif du bâtiment
             if ((Input.GetMouseButtonDown(0) || (isMultiPlaceable && Input.GetMouseButton(0))) && lastPlacedPosition != cellPos)
             {
                 GameObject instance = Instantiate(selectedPrefab, placePos, Quaternion.identity);
 
-                emploiManager?.RafraichirListePostes(); // 🔁 Mise à jour des stats d'emploi
+                emploiManager?.RafraichirListePostes();
 
                 lastPlacedPosition = cellPos;
 
-                // Mise à jour du graphe de navigation A* pour prendre en compte le nouveau bâtiment
                 AstarPath.active.UpdateGraphs(new Bounds(placePos, Vector3.one));
             }
         }
         else
         {
-            // Si aucun prefab n’est sélectionné, supprimer l’aperçu si présent
             if (previewObject != null)
             {
                 Destroy(previewObject);

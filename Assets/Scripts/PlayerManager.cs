@@ -48,25 +48,22 @@ public class PlayerBehaviourManager : MonoBehaviour
     /// </summary>
     void ActiverModePathfinding()
     {
-        // Désactive le déplacement aléatoire
         if (randomNPC != null)
         {
             randomNPC.transform.position = transform.position;
             randomNPC.enabled = false;
         }
 
-        // Active le système de besoins
         if (besoinPlayers != null)
         {
             besoinPlayers.enabled = true;
-            besoinPlayers.faim = 0f;     // Force un besoin actif
+            besoinPlayers.faim = 0f; 
             besoinPlayers.soif = 0f;
             besoinPlayers.energie = 0f;
 
-            besoinPlayers.SendMessage("Start"); // ⚠️ Appelle Start() si nécessaire
+            besoinPlayers.SendMessage("Start");
         }
 
-        // Active le pathfinding
         if (pathfindingAI != null)
         {
             pathfindingAI.enabled = true;

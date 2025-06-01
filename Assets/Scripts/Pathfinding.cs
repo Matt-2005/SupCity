@@ -101,7 +101,6 @@ public class PathfindingAI : MonoBehaviour
             currentWayPoint++;
         }
 
-        // Correction finale si le dernier waypoint est atteint mais non détecté
         if (currentWayPoint >= path.vectorPath.Count && !aNotifieArrivee)
         {
             rb.position = path.vectorPath[^1];

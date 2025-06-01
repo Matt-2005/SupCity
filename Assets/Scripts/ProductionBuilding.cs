@@ -72,7 +72,6 @@ public abstract class ProductionBuilding : MonoBehaviour
             return;
         }
 
-        // Si une ressource d'entrée est requise, on tente de la consommer
         if (inputResourceType != null)
         {
             if (!ResourceManager.Instance.ConsumeResource(inputResourceType.Value, inputAmount))

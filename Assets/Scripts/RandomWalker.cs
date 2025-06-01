@@ -44,7 +44,7 @@ public class RandomWalker : MonoBehaviour
             );
 
             pathfinding.setTargetPos(newPos);
-            timer = waitTime + Random.Range(0f, 2f); // Ajoute une variation
+            timer = waitTime + Random.Range(0f, 2f);
         }
         else
         {

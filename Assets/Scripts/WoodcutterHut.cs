@@ -10,9 +10,9 @@ public class WoodcutterHut : ProductionBuilding
     /// </summary>
     protected override void Start()
     {
-        outputResourceType = ResourceType.Wood; // Type de ressource produite
-        productionAmount = 10;                  // Quantité produite par cycle
-        productionInterval = 3f;                // Intervalle de production en secondes
-        base.Start();                           // Appel de la logique de base
+        outputResourceType = ResourceType.Wood;
+        productionAmount = 10;
+        productionInterval = 3f;
+        base.Start();
     }
 }
